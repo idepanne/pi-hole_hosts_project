@@ -7,25 +7,19 @@
 # For additions, modifications or corrections, you can send an
 # e-mail to idepanne67@gmail.com
 
-#<showheroes.com>
+#<blacklist>
 0.0.0.0	showheroes.com
 0.0.0.0	www.showheroes.com
 0.0.0.0	video-library.showheroes.com
 0.0.0.0 static.showheroes.com
 0.0.0.0 receiver-hetzner.showheroes.com
-#</showheroes.com>
 
-#<ezoic.com>
 0.0.0.0	ezoic.com
 0.0.0.0	www.ezoic.com
-#</ezoic.com>
 
-#<smarthomebeginner.com>
 0.0.0.0	smarthomebeginner.com
 0.0.0.0	www.smarthomebeginner.com
-#</smarthomebeginner.com>
 
-#<etoro.com>
 0.0.0.0	etoro.com
 0.0.0.0 www.etoro.com
-#</etoro.com>
+#</blacklist>
