@@ -7,19 +7,29 @@
 # For additions, modifications or corrections, you can send an
 # e-mail to idepanne67@gmail.com
 
-#<blacklist>
+# Publicites
 0.0.0.0	showheroes.com
 0.0.0.0	www.showheroes.com
 0.0.0.0	video-library.showheroes.com
 0.0.0.0 static.showheroes.com
 0.0.0.0 receiver-hetzner.showheroes.com
-
 0.0.0.0	ezoic.com
-0.0.0.0	www.ezoic.com
-
+0.0.0.0	www.ezoic.co
 0.0.0.0	smarthomebeginner.com
 0.0.0.0	www.smarthomebeginner.com
-
 0.0.0.0	etoro.com
 0.0.0.0 www.etoro.com
-#</blacklist>
+
+# Porno
+0.0.0.0	folieporno.fr
+0.0.0.0	www.folieporno.fr
+0.0.0.0	heureporno.com
+0.0.0.0	www.heureporno.com
+0.0.0.0	fouporno.com
+0.0.0.0	www.fouporno.com
+0.0.0.0	derrierelerideau.com
+0.0.0.0	www.derrierelerideau.com
+0.0.0.0	gangbangparis.com
+0.0.0.0	www.gangbangparis.com
+0.0.0.0	villageporno.com
+0.0.0.0	www.villageporno.com
