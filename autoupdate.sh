@@ -10,8 +10,8 @@ echo ""
 echo ""
 echo "*** Vérification des logiciels prérequis ***"
 echo ""
-$ sudo apt-get install -y dnsutils
-$ sudo apt-get install -y debian-goodies
+sudo apt-get install -y dnsutils
+sudo apt-get install -y debian-goodies
 echo ""
 echo "*** Vérification terminée ***"
 echo ""
