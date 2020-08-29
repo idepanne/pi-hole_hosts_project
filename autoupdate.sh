@@ -18,8 +18,8 @@ echo ""
 echo ""
 echo "*** Mise à jour d'autoupdate_conf.sh ***"
 echo ""
-echo "sudo /usr/bin/curl https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
-sudo /usr/bin/curl  https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh
+echo "sudo /usr/bin/curl https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > /home/pi/autoupdate_conf_new.sh"
+sudo /usr/bin/curl https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > /home/pi/autoupdate_conf_new.sh
 echo ""
 echo "sudo mv autoupdate_conf.sh autoupdate_conf_old.sh"
 sudo mv autoupdate_conf.sh autoupdate_conf_old.sh
@@ -35,4 +35,4 @@ echo "--------------------------------------------------------------------------
 echo ""
 echo ""
 sleep 2
-./autoupdate_conf.sh
+# ./autoupdate_conf.sh
