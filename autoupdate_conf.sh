@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate_conf.sh 2.4.2.1"
+echo "autoupdate_conf.sh 2.4.2.2"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -15,8 +15,6 @@ echo "sudo mv autoupdate_new.sh autoupdate.sh"
 sudo mv autoupdate_new.sh autoupdate.sh
 echo "sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
-echo "sudo rm -rv autoupdate_old.sh"
-sudo rm -rv autoupdate_old.sh
 echo ""
 echo ""
 echo "*** Mises à jour du système ***"
@@ -49,6 +47,12 @@ sudo apt-get autoclean -y
 echo ""
 echo "$ sudo apt-get clean -y"
 sudo apt-get clean -y
+echo ""
+echo "sudo rm -rv autoupdate_old.sh"
+sudo rm -rv autoupdate_old.sh
+echo ""
+echo "sudo rm -rv autoupdate_conf_old.sh"
+sudo rm -rv autoupdate_conf_old.sh
 echo ""
 echo "find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;"
 find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;
