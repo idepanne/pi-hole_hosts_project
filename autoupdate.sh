@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.4.1"
+echo "autoupdate.sh 2.4.2"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 cat /proc/cpuinfo | grep Model
