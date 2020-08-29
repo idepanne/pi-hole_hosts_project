@@ -1,11 +1,11 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.4.2.2"
+echo "autoupdate.sh 2.4.3"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 cat /proc/cpuinfo | grep Model
 cat /proc/cpuinfo | grep Serial
-uname -sr
+echo -n "OS              : "; uname -sr
 echo ""
 echo ""
 echo "*** Vérification des logiciels prérequis ***"
