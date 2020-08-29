@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.4.0b2"
+echo "autoupdate.sh 2.4.0b3"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 cat /proc/cpuinfo | grep Model
@@ -19,8 +19,8 @@ echo "sudo mv autoupdate_new.sh autoupdate.sh"
 sudo mv autoupdate_new.sh autoupdate.sh
 echo "sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
-# echo "sudo rm -rv autoupdate_old.sh"
-# sudo rm -rv autoupdate_old.sh
+echo "sudo rm -rv autoupdate_old.sh"
+sudo rm -rv autoupdate_old.sh
 echo ""
 echo "sudo curl https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
 sudo curl https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh
