@@ -8,6 +8,14 @@ cat /proc/cpuinfo | grep Serial
 uname -sr
 echo ""
 echo ""
+echo "*** Vérification des logiciels prérequis ***"
+echo ""
+$ sudo apt-get install -y dnsutils
+$ sudo apt-get install -y debian-goodies
+echo ""
+echo "*** Vérification terminée ***"
+echo ""
+echo ""
 echo "*** Mise à jour d'autoupdate_conf.sh ***"
 echo ""
 echo "sudo curl https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
