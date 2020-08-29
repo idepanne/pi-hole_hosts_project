@@ -18,8 +18,6 @@ sudo chmod +x autoupdate.sh
 echo "sudo rm -rv autoupdate_old.sh"
 sudo rm -rv autoupdate_old.sh
 echo ""
-echo "*** Execution de autoupdate.sh ***"
-echo ""
 echo ""
 echo "*** Mises à jour du système ***"
 echo ""
