@@ -23,9 +23,9 @@ echo "sudo rm -rv autoupdate_conf_old.sh"
 sudo rm -rv autoupdate_conf_old.sh
 echo ""
 echo "*** Execution de autoupdate_conf.sh ***"
-./autoupdate_conf.sh
 echo ""
 echo ""
 echo "------------------------------------------------------------------------------"
 echo ""
 echo ""
+./autoupdate_conf.sh
