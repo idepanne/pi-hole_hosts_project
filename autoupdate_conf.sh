@@ -1,13 +1,13 @@
 #!/bin/bash
 cd
-echo "autoupdate_conf.sh 2.4.3"
+echo "autoupdate_conf.sh 2.4.4"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
 echo "*** Mise à jour d'autoupdate.sh ***"
 echo ""
-echo "sudo /usr/bin/curl https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate.sh > autoupdate_new.sh"
-sudo /usr/bin/curl https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate.sh > autoupdate_new.sh
+echo "wget -O - -q -t 1 https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate.sh > autoupdate_new.sh"
+wget -O - -q -t 1 https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate.sh > autoupdate_new.sh
 echo ""
 echo "sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
