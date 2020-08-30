@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.4.6"
+echo "autoupdate.sh 2.4.6.1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 cat /proc/cpuinfo | grep Model
@@ -18,8 +18,8 @@ echo ""
 echo ""
 echo "*** Mise à jour d'autoupdate_conf.sh ***"
 echo ""
-echo "wget -O - -t 1 https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
-wget -O - -t 1 https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh
+echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh
 echo ""
 echo "sudo mv autoupdate_conf.sh autoupdate_conf_old.sh"
 sudo mv autoupdate_conf.sh autoupdate_conf_old.sh
