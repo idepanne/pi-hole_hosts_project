@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.4.4.1"
+echo "autoupdate.sh 2.4.5"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 cat /proc/cpuinfo | grep Model
@@ -8,7 +8,7 @@ cat /proc/cpuinfo | grep Serial
 echo -n "OS              : "; uname -sr
 echo ""
 echo ""
-echo "*** Vérification des logiciels prérequis ***"
+echo "*** Vérification des prérequis ***"
 echo ""
 sudo apt-get install -y dnsutils
 sudo apt-get install -y debian-goodies
@@ -30,9 +30,7 @@ sudo chmod +x autoupdate_conf.sh
 echo ""
 echo "*** Execution de autoupdate_conf.sh ***"
 echo ""
-echo ""
 echo "------------------------------------------------------------------------------"
-echo ""
 echo ""
 sleep 2
 ./autoupdate_conf.sh
