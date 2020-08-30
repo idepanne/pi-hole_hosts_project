@@ -30,7 +30,9 @@ sudo chmod +x autoupdate_conf.sh
 echo ""
 echo "*** Execution de autoupdate_conf.sh ***"
 echo ""
+echo ""
 echo "------------------------------------------------------------------------------"
+echo ""
 echo ""
 sleep 2
 ./autoupdate_conf.sh
