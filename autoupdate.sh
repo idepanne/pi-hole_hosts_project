@@ -18,7 +18,7 @@ echo ""
 echo "*** Vérification terminée ***"
 echo ""
 echo ""
-echo "*** Mise à jour d'autoupdate_conf.sh ***"
+echo "*** Mise à jour du module autoupdate_conf.sh ***"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh
@@ -30,7 +30,7 @@ sudo mv autoupdate_conf_new.sh autoupdate_conf.sh
 echo "sudo chmod +x autoupdate_conf.sh"
 sudo chmod +x autoupdate_conf.sh
 echo ""
-echo "*** Execution de autoupdate_conf.sh ***"
+echo "*** Execution du module autoupdate_conf.sh ***"
 echo ""
 echo ""
 echo "------------------------------------------------------------------------------"
