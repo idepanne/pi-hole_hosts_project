@@ -37,5 +37,4 @@ echo ""
 echo "------------------------------------------------------------------------------"
 echo ""
 echo ""
-sleep 2
-# ./autoupdate_conf.sh
+./autoupdate_conf.sh
