@@ -1,10 +1,10 @@
 #!/bin/bash
 cd
-echo "autoupdate_conf.sh 2.4.6.1"
+echo "autoupdate_conf.sh 2.4.7"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
-echo "*** Mise à jour d'autoupdate.sh ***"
+echo "*** Mise à jour du module autoupdate.sh ***"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate.sh > autoupdate_new.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate.sh > autoupdate_new.sh
