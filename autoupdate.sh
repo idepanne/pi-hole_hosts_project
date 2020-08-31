@@ -1,20 +1,23 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.4.8.1"
+echo "autoupdate.sh 2.5.0"
 echo "© 2020 iDépanne – L'expert informatique"
+echo ""
+echo ""
+echo "*** Informations système ***"
 echo ""
 cat /proc/cpuinfo | grep Model
 cat /proc/cpuinfo | grep Serial
 echo -n "OS              : "; uname -sr
-echo ""
-df -h | grep /var/log
-df -h | grep /dev/root
+echo -n "IPv4 & IPv6     : "; hostname -I
+echo -n "RAMDisk logs    : "; df -h | grep /var/log
+echo -n "MicroSD         : "; df -h | grep /dev/root
 echo ""
 echo ""
 echo "*** Vérification des prérequis ***"
 echo ""
-sudo apt-get install -y dnsutils
-sudo apt-get install -y debian-goodies
+sudo apt-get install -yf dnsutils
+sudo apt-get install -yf debian-goodies
 echo ""
 echo "*** Vérification terminée ***"
 echo ""
