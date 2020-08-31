@@ -8,6 +8,7 @@ cat /proc/cpuinfo | grep Serial
 echo -n "OS              : "; uname -sr
 echo ""
 df -h | grep /var/log
+df -h | grep /dev/root
 echo ""
 echo ""
 echo "*** Vérification des prérequis ***"
@@ -37,4 +38,4 @@ echo "--------------------------------------------------------------------------
 echo ""
 echo ""
 sleep 2
-./autoupdate_conf.sh
+# ./autoupdate_conf.sh
