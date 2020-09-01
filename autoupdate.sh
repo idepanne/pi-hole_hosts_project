@@ -4,14 +4,29 @@ echo "autoupdate.sh 2.5.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
+
+
+
 echo "*** Informations système ***"
 echo ""
 cat /proc/cpuinfo | grep Model
 cat /proc/cpuinfo | grep Serial
-echo -n "OS              : "; uname -sr
-echo -n "IPv4 & IPv6     : "; hostname -I
-echo -n "RAMDisk logs    : "; df -h | grep /var/log
-echo -n "MicroSD         : "; df -h | grep /dev/root
+echo ""
+echo -n "Processeur      : "; lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g'
+echo -n "Température     : "; vcgencmd measure_temp
+echo ""
+echo -n "Système         : "; uname -sr
+echo -n "IPv4/IPv6       : "; hostname -I
+echo ""
+echo "Stockage        : "
+df -h /
+df -h | grep /var/log
+echo ""
+echo "RAM             : "
+free -ht
+
+
+
 echo ""
 echo ""
 echo "*** Vérification des prérequis ***"
