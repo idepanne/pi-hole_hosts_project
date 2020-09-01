@@ -4,9 +4,6 @@ echo "autoupdate.sh 2.5.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
-
-
-
 echo "*** Informations système ***"
 echo ""
 cat /proc/cpuinfo | grep Model
@@ -24,9 +21,6 @@ df -h | grep /var/log
 echo ""
 echo "RAM             : "
 free -ht
-
-
-
 echo ""
 echo ""
 echo "*** Vérification des prérequis ***"
