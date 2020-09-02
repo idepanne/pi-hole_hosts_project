@@ -1,10 +1,13 @@
 #!/bin/bash
+clear
 cd
 echo "autoupdate.sh 2.6.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
-echo "*** Informations système ***"
+echo "-------------------------------------------------------------------------------"
+echo "   Informations système"
+echo "-------------------------------------------------------------------------------"
 echo ""
 cat /proc/cpuinfo | grep Model
 cat /proc/cpuinfo | grep Serial
@@ -19,6 +22,9 @@ cpuTempM=$(($cpuTemp2 % $cpuTemp1))
 echo -n "Température     : "; echo CPU temp"="$cpuTemp1"."$cpuTempM"'C"
 echo -n "                  "; echo GPU $(/opt/vc/bin/vcgencmd measure_temp)
 echo ""
+echo -n "Firmware        : "
+/opt/vc/bin/vcgencmd version
+echo ""
 echo -n "Système         : "; uname -sr
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
@@ -30,15 +36,9 @@ echo "RAM             : "
 free -ht
 echo ""
 echo ""
-echo "*** Vérification des prérequis ***"
-echo ""
-sudo apt-get install -yf dnsutils
-sudo apt-get install -yf debian-goodies
-echo ""
-echo "*** Vérification terminée ***"
-echo ""
-echo ""
-echo "*** Mise à jour du module autoupdate_conf.sh ***"
+echo "-------------------------------------------------------------------------------"
+echo "   Mise à jour du module autoupdate_conf.sh"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh
@@ -50,10 +50,9 @@ sudo mv autoupdate_conf_new.sh autoupdate_conf.sh
 echo "sudo chmod +x autoupdate_conf.sh"
 sudo chmod +x autoupdate_conf.sh
 echo ""
-echo "*** Execution du module autoupdate_conf.sh ***"
 echo ""
-echo ""
-echo "------------------------------------------------------------------------------"
-echo ""
+echo "-------------------------------------------------------------------------------"
+echo "   Execution du module autoupdate_conf.sh"
+echo "-------------------------------------------------------------------------------"
 echo ""
 ./autoupdate_conf.sh
