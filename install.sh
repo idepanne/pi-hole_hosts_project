@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 1.0.0b3"
+echo "install.sh 1.0.0b4"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -54,8 +54,8 @@ echo ""
 echo "sudo apt-get install -y ca-certificates git binutils"
 sudo apt-get install -y ca-certificates git binutils
 echo ""
-echo "sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update"
-sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update
+echo "sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update"
+sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update
 echo ""
 echo "sudo mv rpi-update /usr/local/bin/rpi-update"
 sudo mv rpi-update /usr/local/bin/rpi-update
@@ -107,4 +107,4 @@ echo "--------------------------------------------------------------------------
 echo "   Execution du module autoupdate_conf.sh"
 echo "-------------------------------------------------------------------------------"
 echo ""
-# ./autoupdate_conf.sh
+./autoupdate_conf.sh
