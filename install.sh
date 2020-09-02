@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 cd
 echo "install.sh 1.0.0b1"
 echo "© 2020 iDépanne – L'expert informatique"
