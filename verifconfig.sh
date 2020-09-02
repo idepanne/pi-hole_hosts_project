@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "verifconfig.sh 1.0.0"
+echo "verifconfig.sh 1.0.1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -34,5 +34,3 @@ df -h | grep /var/log
 echo ""
 echo "RAM             : "
 free -ht
-echo ""
-sudo rm -rv verifconfig.sh
