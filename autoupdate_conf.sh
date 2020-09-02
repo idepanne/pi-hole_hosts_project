@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate_conf.sh 2.6.0"
+echo "autoupdate_conf.sh 2.6.1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -57,6 +57,12 @@ sudo rm -rv autoupdate_old.sh
 echo ""
 echo "sudo rm -rv autoupdate_conf_old.sh"
 sudo rm -rv autoupdate_conf_old.sh
+echo ""
+echo "sudo rm -rv install*"
+sudo rm -rv install*
+echo ""
+echo "sudo rm -rv verifconfig*"
+sudo rm -rv verifconfig*
 echo ""
 echo "find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;"
 find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;
