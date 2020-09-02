@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.5.0"
+echo "autoupdate.sh 2.6.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -9,7 +9,9 @@ echo ""
 cat /proc/cpuinfo | grep Model
 cat /proc/cpuinfo | grep Serial
 echo ""
-echo -n "Processeur      : "; lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g'
+var1=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g')
+var2=$(lscpu | grep "Vendor ID:" | sed -r 's/Vendor ID:\s{1,}//g')
+echo -n "Processeur      : " && echo "$var2 $var1"
 cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
 cpuTemp1=$(($cpuTemp0/1000))
 cpuTemp2=$(($cpuTemp0/100))
