@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.6.1"
+echo "autoupdate.sh 2.6.2"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
