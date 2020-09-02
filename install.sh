@@ -57,12 +57,12 @@ echo ""
 echo "sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update"
 sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update
 echo ""
-echo "sudo cp rpi-update /usr/local/bin/rpi-update"
-sudo cp rpi-update /usr/local/bin/rpi-update
+echo "sudo mv rpi-update /usr/local/bin/rpi-update"
+sudo mv rpi-update /usr/local/bin/rpi-update
 echo "sudo chmod +x /usr/local/bin/rpi-update"
 sudo chmod +x /usr/local/bin/rpi-update
 echo ""
-echo "sudo rpi-update -y"
+echo "sudo rpi-update"
 sudo rpi-update
 echo ""
 echo "/opt/vc/bin/vcgencmd version"
@@ -107,4 +107,4 @@ echo "--------------------------------------------------------------------------
 echo "   Execution du module autoupdate_conf.sh"
 echo "-------------------------------------------------------------------------------"
 echo ""
-./autoupdate_conf.sh
+# ./autoupdate_conf.sh
