@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "verifconfig.sh 1.0.0b1"
+echo "verifconfig.sh 1.0.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
