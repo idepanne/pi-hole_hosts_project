@@ -1,15 +1,14 @@
 #!/bin/bash
-clear
 cd
 echo "autoupdate.sh 2.6.1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Execution du module verifconfig.sh"
+echo "   Informations système"
 echo "-------------------------------------------------------------------------------"
 echo ""
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/verifconfig.sh > verifconfig.sh
+wget -q - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/verifconfig.sh > verifconfig.sh
 sudo chmod +x verifconfig.sh
 ./verifconfig.sh
 echo ""
