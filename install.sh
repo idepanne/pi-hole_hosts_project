@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 1.0.0b5"
+echo "install.sh 1.0.0b6"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
