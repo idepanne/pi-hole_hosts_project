@@ -22,6 +22,9 @@ cpuTempM=$(($cpuTemp2 % $cpuTemp1))
 echo -n "Température     : "; echo CPU temp"="$cpuTemp1"."$cpuTempM"'C"
 echo -n "                  "; echo GPU $(/opt/vc/bin/vcgencmd measure_temp)
 echo ""
+echo -n "Firmware        : "
+/opt/vc/bin/vcgencmd version
+echo ""
 echo -n "Système         : "; uname -sr
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
@@ -37,8 +40,34 @@ echo "--------------------------------------------------------------------------
 echo "   Installation des prérequis"
 echo "------------------------------------------------------------------------------"
 echo ""
+echo "sudo apt-get install -yf dnsutils"
 sudo apt-get install -yf dnsutils
+echo ""
+echo "sudo apt-get install -yf debian-goodies"
 sudo apt-get install -yf debian-goodies
+echo ""
+echo ""
+echo "------------------------------------------------------------------------------"
+echo "   Mise à jour du firmware du Raspberry Pi"
+echo "------------------------------------------------------------------------------"
+echo ""
+echo "sudo apt-get install -y ca-certificates git-core binutils"
+sudo apt-get install -y ca-certificates git-core binutils
+echo ""
+echo "sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update"
+sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update
+echo ""
+echo "sudo cp rpi-update /usr/local/bin/rpi-update"
+sudo cp rpi-update /usr/local/bin/rpi-update
+echo ""
+echo "sudo chmod +x /usr/local/bin/rpi-update"
+sudo chmod +x /usr/local/bin/rpi-update
+echo ""
+echo "sudo rpi-update -y"
+sudo rpi-update
+echo ""
+echo "/opt/vc/bin/vcgencmd version"
+/opt/vc/bin/vcgencmd version
 echo ""
 echo ""
 echo "------------------------------------------------------------------------------"
