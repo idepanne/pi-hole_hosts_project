@@ -1,13 +1,13 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 1.0.0b1"
+echo "install.sh 1.0.0b2"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo "   Informations système"
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 cat /proc/cpuinfo | grep Model
 cat /proc/cpuinfo | grep Serial
@@ -36,9 +36,9 @@ echo "RAM             : "
 free -ht
 echo ""
 echo ""
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo "   Installation des prérequis"
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo "sudo apt-get install -yf dnsutils"
 sudo apt-get install -yf dnsutils
@@ -47,19 +47,18 @@ echo "sudo apt-get install -yf debian-goodies"
 sudo apt-get install -yf debian-goodies
 echo ""
 echo ""
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo "   Mise à jour du firmware du Raspberry Pi"
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
-echo "sudo apt-get install -y ca-certificates git-core binutils"
-sudo apt-get install -y ca-certificates git-core binutils
+echo "sudo apt-get install -y ca-certificates git binutils"
+sudo apt-get install -y ca-certificates git binutils
 echo ""
 echo "sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update"
 sudo wget https://raw.github.com/Hexxeh/rpi-update/master/rpi-update
 echo ""
 echo "sudo cp rpi-update /usr/local/bin/rpi-update"
 sudo cp rpi-update /usr/local/bin/rpi-update
-echo ""
 echo "sudo chmod +x /usr/local/bin/rpi-update"
 sudo chmod +x /usr/local/bin/rpi-update
 echo ""
@@ -70,9 +69,9 @@ echo "/opt/vc/bin/vcgencmd version"
 /opt/vc/bin/vcgencmd version
 echo ""
 echo ""
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo "   Installation du module autoupdate.sh"
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate.sh > autoupdate.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate.sh > autoupdate.sh
@@ -81,9 +80,9 @@ echo "sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
 echo ""
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo "   Installation du module autoupdate_conf.sh"
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf.sh
@@ -92,20 +91,20 @@ echo "sudo chmod +x autoupdate_conf.sh"
 sudo chmod +x autoupdate_conf.sh
 echo ""
 echo ""
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo "   Création du dossier logs"
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo "mkdir logs"
 mkdir logs
 echo ""
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo "   Installation terminée"
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo ""
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo "   Execution du module autoupdate_conf.sh"
-echo "------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------"
 echo ""
 ./autoupdate_conf.sh
