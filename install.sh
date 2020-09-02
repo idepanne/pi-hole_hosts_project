@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 1.0.0b4"
+echo "install.sh 1.0.0b5"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -46,11 +46,6 @@ echo ""
 echo "sudo apt-get install -yf debian-goodies"
 sudo apt-get install -yf debian-goodies
 echo ""
-echo ""
-echo "-------------------------------------------------------------------------------"
-echo "   Mise à jour du firmware du Raspberry Pi"
-echo "-------------------------------------------------------------------------------"
-echo ""
 echo "sudo apt-get install -y ca-certificates git binutils"
 sudo apt-get install -y ca-certificates git binutils
 echo ""
@@ -61,6 +56,11 @@ echo "sudo mv rpi-update /usr/local/bin/rpi-update"
 sudo mv rpi-update /usr/local/bin/rpi-update
 echo "sudo chmod +x /usr/local/bin/rpi-update"
 sudo chmod +x /usr/local/bin/rpi-update
+echo ""
+echo ""
+echo "-------------------------------------------------------------------------------"
+echo "   Mise à jour du firmware du Raspberry Pi"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo "sudo rpi-update"
 sudo rpi-update
