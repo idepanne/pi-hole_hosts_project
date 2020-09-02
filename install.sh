@@ -79,4 +79,4 @@ echo "--------------------------------------------------------------------------
 echo "   Execution du module autoupdate_conf.sh"
 echo "------------------------------------------------------------------------------"
 echo ""
-# ./autoupdate_conf.sh
+./autoupdate_conf.sh
