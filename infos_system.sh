@@ -26,10 +26,6 @@ echo -n "Firmware        : "
 /opt/vc/bin/vcgencmd version
 echo ""
 echo -n "Système         : " && uname -sr
-
-echo -n "Système         : " && cat /etc/os-release | grep "PRETTY_NAME" | sed -r 's/PRETTY_NAME\s{1,}//g')
-echo -n "Système         : " && cat /etc/os-release | grep "PRETTY_NAME" | sed -r 's/PRETTY_NAME="//g'
-
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
 echo "Stockage        : "
