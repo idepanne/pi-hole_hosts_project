@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "infos_system.sh 1.1.0"
+echo "infos_system.sh 1.1.1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -25,7 +25,7 @@ echo ""
 echo -n "Firmware        : "
 /opt/vc/bin/vcgencmd version
 echo ""
-echo -n "Système         : " && uname -sr
+echo -n "Système         : "; uname -sr
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
 echo "Stockage        : "
