@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 1.0.0"
+echo "install.sh 1.1.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -73,9 +73,13 @@ echo "--------------------------------------------------------------------------
 echo "   Installation du module autoupdate_conf.sh"
 echo "-------------------------------------------------------------------------------"
 echo ""
-echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf.sh
+echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh
 echo ""
+echo "sudo mv autoupdate_conf.sh autoupdate_conf_old.sh"
+sudo mv autoupdate_conf.sh autoupdate_conf_old.sh
+echo "sudo mv autoupdate_conf_new.sh autoupdate_conf.sh"
+sudo mv autoupdate_conf_new.sh autoupdate_conf.sh
 echo "sudo chmod +x autoupdate_conf.sh"
 sudo chmod +x autoupdate_conf.sh
 echo ""
