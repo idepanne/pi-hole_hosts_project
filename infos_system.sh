@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "infos_system.sh 1.2.0b1"
+echo "infos_system.sh 1.2.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
