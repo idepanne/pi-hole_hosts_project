@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate_conf.sh 2.6.2"
+echo "autoupdate_conf.sh 2.6.3"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
