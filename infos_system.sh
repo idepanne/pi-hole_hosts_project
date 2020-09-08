@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "infos_system.sh 1.1.1"
+echo "infos_system.sh 1.2.0b1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -24,6 +24,9 @@ echo -n "                  "; echo GPU $(/opt/vc/bin/vcgencmd measure_temp)
 echo ""
 echo -n "Firmware        : "
 /opt/vc/bin/vcgencmd version
+echo ""
+echo -n "EEPROM          : "
+sudo rpi-eeprom-update
 echo ""
 echo -n "Système         : "; uname -sr
 echo -n "IPv4/IPv6       : "; hostname -I
