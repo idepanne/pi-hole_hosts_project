@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 2.6.2"
+echo "autoupdate.sh 2.6.3"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -23,6 +23,9 @@ echo -n "                  "; echo GPU $(/opt/vc/bin/vcgencmd measure_temp)
 echo ""
 echo -n "Firmware        : "
 /opt/vc/bin/vcgencmd version
+echo ""
+echo -n "EEPROM          : "
+sudo rpi-eeprom-update
 echo ""
 echo -n "Système         : "; uname -sr
 echo -n "IPv4/IPv6       : "; hostname -I
