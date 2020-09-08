@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 1.1.0"
+echo "install.sh 1.2.0b1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -24,6 +24,9 @@ echo -n "                  "; echo GPU $(/opt/vc/bin/vcgencmd measure_temp)
 echo ""
 echo -n "Firmware        : "
 /opt/vc/bin/vcgencmd version
+echo ""
+echo -n "EEPROM          : "
+sudo rpi-eeprom-update
 echo ""
 echo -n "Système         : "; uname -sr
 echo -n "IPv4/IPv6       : "; hostname -I
@@ -59,7 +62,7 @@ sudo chmod +x /usr/local/bin/rpi-update
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Mise à jour du firmware du Raspberry Pi"
+echo "   Mise à jour du firmware"
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "sudo rpi-update"
@@ -67,6 +70,14 @@ sudo rpi-update
 echo ""
 echo "/opt/vc/bin/vcgencmd version"
 /opt/vc/bin/vcgencmd version
+echo ""
+echo ""
+echo "-------------------------------------------------------------------------------"
+echo "   Mise à jour de l'EEPROM"
+echo "-------------------------------------------------------------------------------"
+echo ""
+echo "sudo rpi-eeprom-update -a"
+sudo rpi-eeprom-update -a
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
