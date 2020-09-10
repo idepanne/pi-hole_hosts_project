@@ -1,4 +1,4 @@
-# Ads hosts list
+# Ads Block List
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
@@ -10,7 +10,6 @@
 # For additions, modifications or corrections, you can send an
 # e-mail to idepanne67@gmail.com
 
-# Ads Block List
 0.0.0.0 ampproject.org
 0.0.0.0 www.ampproject.org
 0.0.0.0 cdn.ampproject.org
