@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 3.0.0b2"
+echo "autoupdate.sh 3.0.0b3"
 echo "© 2020 iDépanne – L'expert informatique"
 echo "https://idepanne.now.site"
 echo ""
@@ -26,4 +26,4 @@ sudo mv autoupdate_conf_new.sh autoupdate_conf.sh
 echo "sudo chmod +x autoupdate_conf.sh"
 sudo chmod +x autoupdate_conf.sh
 echo ""
-./info_system.sh
+./infos_system.sh
