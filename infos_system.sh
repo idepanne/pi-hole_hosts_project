@@ -1,10 +1,9 @@
 #!/bin/bash
-clear
+
+# infos_system.sh 1.3.0b1"
+# © 2020 iDépanne – L'expert informatique
+
 cd
-echo "infos_system.sh 1.3.0"
-echo "© 2020 iDépanne – L'expert informatique"
-echo ""
-echo ""
 echo "-------------------------------------------------------------------------------"
 echo "   Informations système"
 echo "-------------------------------------------------------------------------------"
@@ -31,7 +30,9 @@ echo ""
 echo -n "Système         : "; uname -sr
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
-uptime -s && uptime -p
+var3=$(uptime -s)
+var4=$(uptime -p)
+echo -n "Démarré depuis  : " && echo "$var3 - $var4"
 echo ""
 echo "Stockage        : "
 df -h /
