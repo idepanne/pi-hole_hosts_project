@@ -41,3 +41,14 @@ df -h | grep /var/log
 echo ""
 echo "RAM             : "
 free -ht
+echo ""
+
+# Variable à modifier pour indiquer le chemin du fichier recherché
+varfile=/home/pi/install.sh
+
+# Vérification de la présence du fichier
+if [ -f "$varfile" ]; then
+    ./install2.sh
+else
+    ./autoupdate_conf.sh
+fi
