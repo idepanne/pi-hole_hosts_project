@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# install2.sh 2.0.0b1
+# install2.sh 2.0.0b4
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
+echo ""
 echo "-------------------------------------------------------------------------------"
 echo "   Installation des prérequis"
 echo "-------------------------------------------------------------------------------"
