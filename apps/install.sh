@@ -12,4 +12,5 @@ echo ""
 echo "sudo chmod +x infos_system.sh"
 sudo chmod +x infos_system.sh
 echo ""
+echo ""
 ./infos_system.sh
