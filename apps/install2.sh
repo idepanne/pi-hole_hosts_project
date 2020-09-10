@@ -1,14 +1,15 @@
 #!/bin/bash
 
-# install2.sh 2.0.0b1"
+# install2.sh 2.0.0b1
 # © 2020 iDépanne – L'expert informatique
+# https://idepanne.now.site
 
 echo "-------------------------------------------------------------------------------"
 echo "   Installation des prérequis"
 echo "-------------------------------------------------------------------------------"
 echo ""
-echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/autoupdate_conf.sh > autoupdate_conf_new.sh
+echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh
 echo ""
 echo "sudo mv autoupdate_conf.sh autoupdate_conf_old.sh"
 sudo mv autoupdate_conf.sh autoupdate_conf_old.sh
@@ -47,6 +48,14 @@ sudo rpi-update
 echo ""
 echo "/opt/vc/bin/vcgencmd version"
 /opt/vc/bin/vcgencmd version
+echo ""
+echo ""
+echo "-------------------------------------------------------------------------------"
+echo "   Mise à jour de l'EEPROM"
+echo "-------------------------------------------------------------------------------"
+echo ""
+echo "sudo rpi-eeprom-update -a"
+sudo rpi-eeprom-update -a
 echo ""
 echo ""
 ./autoupdate_conf.sh
