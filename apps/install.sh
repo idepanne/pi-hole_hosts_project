@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 2.0.0b3"
+echo "install.sh 2.0.0b4"
 echo "© 2020 iDépanne – L'expert informatique"
 echo "https://idepanne.now.site"
 echo ""
@@ -17,6 +17,5 @@ sudo chmod +x infos_system.sh
 echo ""
 echo "sudo chmod +x install2.sh"
 sudo chmod +x install2.sh
-echo ""
 echo ""
 ./infos_system.sh
