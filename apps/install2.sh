@@ -58,5 +58,4 @@ echo ""
 echo "sudo rpi-eeprom-update -a"
 sudo rpi-eeprom-update -a
 echo ""
-echo ""
 ./autoupdate_conf.sh
