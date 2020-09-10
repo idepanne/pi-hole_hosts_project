@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "infos_system.sh 1.2.0"
+echo "infos_system.sh 1.3.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo ""
 echo ""
@@ -30,6 +30,8 @@ sudo rpi-eeprom-update
 echo ""
 echo -n "Système         : "; uname -sr
 echo -n "IPv4/IPv6       : "; hostname -I
+echo ""
+uptime -s && uptime -p
 echo ""
 echo "Stockage        : "
 df -h /
