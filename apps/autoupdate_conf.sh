@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "autoupdate_conf.sh 3.1.0b5"
+echo "autoupdate_conf.sh 3.1.0b6"
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
@@ -82,11 +82,13 @@ if [ "$var" == "" ]; then
         if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
                 echo "$var"
                 echo ""
+                echo ""
                 echo "-------------------------------------------------------------------------------"
                 echo "   Aucun redémarrage nécessaire"
                 echo "-------------------------------------------------------------------------------"
         else
                 echo "$var"
+                echo ""
                 echo ""
                 echo "-------------------------------------------------------------------------------"
                 echo "   Redémarrage du Raspberry Pi"
