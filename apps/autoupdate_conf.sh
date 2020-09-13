@@ -59,26 +59,46 @@ echo ""
 echo "sudo rm -rv *_new.sh"
 sudo rm -rv *_new.sh
 echo ""
-echo "sudo rm -rv install*"
-sudo rm -rv install*
-echo ""
 echo "find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;"
 find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;
 echo ""
 echo ""
-var=$(sudo checkrestart)
-if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
-        echo "$var"
+echo "-------------------------------------------------------------------------------"
+echo "   Recherche des fichiers d'installation"
+echo "-------------------------------------------------------------------------------"
+echo ""
+FILE=/home/pi/install*
+if [ -f "$FILE" ]; then
+        echo "Fichiers d'installation détectés..."
+        echo ""
+        echo "sudo rm -rv install*"
+        sudo rm -rv install*
+        echo ""
         echo ""
         echo "-------------------------------------------------------------------------------"
-        echo "   Aucun redémarrage nécessaire"
+        echo "   Redémarrage et vérification de la structure du disque"
         echo "-------------------------------------------------------------------------------"
+        echo ""
+        echo "sudo shutdown -rF now"
+        sudo shutdown -rF now
 else
-        echo "$var"
+        echo "Fichiers d'installation non détectés"
         echo ""
-        echo "-------------------------------------------------------------------------------"
-        echo "   Redémarrage du Raspberry Pi"
-        echo "-------------------------------------------------------------------------------"
-        sleep 1
-        sudo reboot
+        echo ""
+        var=$(sudo checkrestart)
+        if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
+                echo "$var"
+                echo ""
+                echo "-------------------------------------------------------------------------------"
+                echo "   Aucun redémarrage nécessaire"
+                echo "-------------------------------------------------------------------------------"
+        else
+                echo "$var"
+                echo ""
+                echo "-------------------------------------------------------------------------------"
+                echo "   Redémarrage du Raspberry Pi"
+                echo "-------------------------------------------------------------------------------"
+                sleep 1
+                sudo reboot
+        fi
 fi
