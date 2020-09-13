@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# autoupdate_conf.sh 3.1.0b2
+# autoupdate_conf.sh 3.1.0b3
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
@@ -14,8 +14,10 @@ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/maste
 echo ""
 echo "sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
+echo ""
 echo "sudo mv autoupdate_new.sh autoupdate.sh"
 sudo mv autoupdate_new.sh autoupdate.sh
+echo ""
 echo "sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
@@ -25,18 +27,27 @@ echo "   Mises à jour du système"
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "$ sudo apt-get update"
+echo ""
 sudo apt-get update
 echo ""
+echo ""
 echo "$ sudo apt-get upgrade -y"
+echo ""
 sudo apt-get upgrade -y
 echo ""
+echo ""
 echo "$ sudo apt-get dist-upgrade -y"
+echo ""
 sudo apt-get dist-upgrade -y
 echo ""
+echo ""
 echo "$ sudo pihole -up"
+echo ""
 sudo pihole -up
 echo ""
+echo ""
 echo "$ sudo pihole -g"
+echo ""
 sudo pihole -g
 echo ""
 echo ""
@@ -45,19 +56,29 @@ echo "   Nettoyage du système"
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "$ sudo apt-get autoremove -y"
+echo ""
 sudo apt-get autoremove -y
 echo ""
+echo ""
 echo "$ sudo apt-get autoclean -y"
+echo ""
 sudo apt-get autoclean -y
 echo ""
+echo ""
 echo "$ sudo apt-get clean -y"
+echo ""
 sudo apt-get clean -y
 echo ""
+echo ""
 echo "sudo rm -rv *_old.sh"
+echo ""
 sudo rm -rv *_old.sh
 echo ""
+echo ""
 echo "sudo rm -rv *_new.sh"
+echo ""
 sudo rm -rv *_new.sh
+echo ""
 echo ""
 echo "find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;"
 find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;
@@ -71,6 +92,7 @@ var="$(find . -name 'install*')"
 if [ "$var" == "" ]; then
         echo "Fichiers d'installation non détectés"
         echo "$var"
+        echo ""
         echo ""
         echo "-------------------------------------------------------------------------------"
         echo "   Vérification des processus de mises à jour"
@@ -94,9 +116,12 @@ if [ "$var" == "" ]; then
         fi
 else
         echo "Fichiers d'installation détectés..."
+        echo ""
         echo "$var"
         echo ""
+        echo ""
         echo "sudo rm -rv install*"
+        echo ""
         sudo rm -rv install*
         echo ""
         echo ""
