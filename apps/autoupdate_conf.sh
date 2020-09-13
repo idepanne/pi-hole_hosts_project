@@ -67,9 +67,10 @@ echo "--------------------------------------------------------------------------
 echo "   Recherche des fichiers d'installation"
 echo "-------------------------------------------------------------------------------"
 echo ""
-FILE=/home/pi/install*
-if [ -f "$FILE" ]; then
+var="$(find . -name 'install*')"
+if [ "$var" == "" ]; then
         echo "Fichiers d'installation détectés..."
+        echo "$var"
         echo ""
         echo "sudo rm -rv install*"
         sudo rm -rv install*
@@ -82,7 +83,7 @@ if [ -f "$FILE" ]; then
         sudo shutdown -rF now
 else
         echo "Fichiers d'installation non détectés"
-        echo ""
+        echo "$var"
         echo ""
         echo "-------------------------------------------------------------------------------"
         echo "   Vérification des processus de mises à jour"
