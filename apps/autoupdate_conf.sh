@@ -78,12 +78,15 @@ if [ -f "$FILE" ]; then
         echo "-------------------------------------------------------------------------------"
         echo "   Redémarrage et vérification de la structure du disque"
         echo "-------------------------------------------------------------------------------"
-        echo ""
-        echo "sudo shutdown -rF now"
+        sleep 1
         sudo shutdown -rF now
 else
         echo "Fichiers d'installation non détectés"
         echo ""
+        echo ""
+        echo "-------------------------------------------------------------------------------"
+        echo "   Vérification des processus de mises à jour"
+        echo "-------------------------------------------------------------------------------"
         echo ""
         var=$(sudo checkrestart)
         if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
