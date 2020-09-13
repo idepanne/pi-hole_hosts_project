@@ -27,27 +27,18 @@ echo "   Mises à jour du système"
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "$ sudo apt-get update"
-echo ""
 sudo apt-get update
 echo ""
-echo ""
 echo "$ sudo apt-get upgrade -y"
-echo ""
 sudo apt-get upgrade -y
 echo ""
-echo ""
 echo "$ sudo apt-get dist-upgrade -y"
-echo ""
 sudo apt-get dist-upgrade -y
 echo ""
-echo ""
 echo "$ sudo pihole -up"
-echo ""
 sudo pihole -up
 echo ""
-echo ""
 echo "$ sudo pihole -g"
-echo ""
 sudo pihole -g
 echo ""
 echo ""
@@ -56,29 +47,19 @@ echo "   Nettoyage du système"
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "$ sudo apt-get autoremove -y"
-echo ""
 sudo apt-get autoremove -y
 echo ""
-echo ""
 echo "$ sudo apt-get autoclean -y"
-echo ""
 sudo apt-get autoclean -y
 echo ""
-echo ""
 echo "$ sudo apt-get clean -y"
-echo ""
 sudo apt-get clean -y
 echo ""
-echo ""
 echo "sudo rm -rv *_old.sh"
-echo ""
 sudo rm -rv *_old.sh
 echo ""
-echo ""
 echo "sudo rm -rv *_new.sh"
-echo ""
 sudo rm -rv *_new.sh
-echo ""
 echo ""
 echo "find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;"
 find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;
@@ -116,12 +97,9 @@ if [ "$var" == "" ]; then
         fi
 else
         echo "Fichiers d'installation détectés..."
-        echo ""
         echo "$var"
         echo ""
-        echo ""
         echo "sudo rm -rv install*"
-        echo ""
         sudo rm -rv install*
         echo ""
         echo ""
