@@ -14,10 +14,8 @@ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/maste
 echo ""
 echo "sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
-echo ""
 echo "sudo mv autoupdate_new.sh autoupdate.sh"
 sudo mv autoupdate_new.sh autoupdate.sh
-echo ""
 echo "sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
