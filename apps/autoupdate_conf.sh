@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "autoupdate_conf.sh 3.1.0b6"
+# autoupdate_conf.sh 3.1.0
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
@@ -66,12 +66,12 @@ find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Recherche des fichiers d'installation"
+echo "   Recherche du programme d'installation"
 echo "-------------------------------------------------------------------------------"
 echo ""
 var="$(find . -name 'install*')"
 if [ "$var" == "" ]; then
-        echo "Fichiers d'installation non détectés"
+        echo "Programme d'installation non détecté"
         echo "$var"
         echo ""
         echo "-------------------------------------------------------------------------------"
@@ -97,7 +97,7 @@ if [ "$var" == "" ]; then
                 sudo reboot
         fi
 else
-        echo "Fichiers d'installation détectés..."
+        echo "Programme d'installation détecté..."
         echo "$var"
         echo ""
         echo "sudo rm -rv install*"
