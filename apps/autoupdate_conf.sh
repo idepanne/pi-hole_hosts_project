@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# autoupdate_conf.sh 3.1.0b3
+# autoupdate_conf.sh 3.1.0b4
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
@@ -73,7 +73,6 @@ var="$(find . -name 'install*')"
 if [ "$var" == "" ]; then
         echo "Fichiers d'installation non détectés"
         echo "$var"
-        echo ""
         echo ""
         echo "-------------------------------------------------------------------------------"
         echo "   Vérification des processus de mises à jour"
