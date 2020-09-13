@@ -69,19 +69,6 @@ echo "--------------------------------------------------------------------------
 echo ""
 var="$(find . -name 'install*')"
 if [ "$var" == "" ]; then
-        echo "Fichiers d'installation détectés..."
-        echo "$var"
-        echo ""
-        echo "sudo rm -rv install*"
-        sudo rm -rv install*
-        echo ""
-        echo ""
-        echo "-------------------------------------------------------------------------------"
-        echo "   Redémarrage et vérification de la structure du disque"
-        echo "-------------------------------------------------------------------------------"
-        sleep 1
-        sudo shutdown -rF now
-else
         echo "Fichiers d'installation non détectés"
         echo "$var"
         echo ""
@@ -105,4 +92,17 @@ else
                 sleep 1
                 sudo reboot
         fi
+else
+        echo "Fichiers d'installation détectés..."
+        echo "$var"
+        echo ""
+        echo "sudo rm -rv install*"
+        sudo rm -rv install*
+        echo ""
+        echo ""
+        echo "-------------------------------------------------------------------------------"
+        echo "   Redémarrage et vérification de la structure du disque"
+        echo "-------------------------------------------------------------------------------"
+        sleep 1
+        sudo shutdown -rF now
 fi
