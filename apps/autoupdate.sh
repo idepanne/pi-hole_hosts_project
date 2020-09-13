@@ -1,6 +1,6 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 3.0.0"
+echo "autoupdate.sh 3.1.0b1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo "https://idepanne.now.site"
 echo ""
