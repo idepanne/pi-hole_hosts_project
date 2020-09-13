@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# install2.sh 3.0.0
+echo "install2.sh 3.1.0b1"
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
@@ -19,14 +19,20 @@ sudo mv autoupdate_conf_new.sh autoupdate_conf.sh
 echo "sudo chmod +x autoupdate_conf.sh"
 sudo chmod +x autoupdate_conf.sh
 echo ""
+echo "sudo apt-get update"
+sudo apt-get update
+echo ""
 echo "sudo apt-get install -yf dnsutils"
 sudo apt-get install -yf dnsutils
 echo ""
 echo "sudo apt-get install -yf debian-goodies"
 sudo apt-get install -yf debian-goodies
 echo ""
-echo "sudo apt-get install -y ca-certificates git binutils"
-sudo apt-get install -y ca-certificates git binutils
+echo "sudo apt-get install -yf iftop"
+sudo apt-get install -yf iftop
+echo ""
+echo "sudo apt-get install -yf ca-certificates git binutils"
+sudo apt-get install -yf ca-certificates git binutils
 echo ""
 echo "sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update"
 sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update
