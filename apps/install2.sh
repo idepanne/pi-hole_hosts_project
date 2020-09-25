@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# install2.sh 3.1.0"
+# install2.sh 3.1.1"
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
