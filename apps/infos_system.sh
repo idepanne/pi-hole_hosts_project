@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# infos_system.sh 3.1.0
+# infos_system.sh 3.1.1
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
@@ -44,10 +44,7 @@ echo "RAM             : "
 free -ht
 echo ""
 
-# Variable à modifier pour indiquer le chemin du fichier recherché
 varfile=/home/pi/install.sh
-
-# Vérification de la présence du fichier
 if [ -f "$varfile" ]; then
     ./install2.sh
 else
