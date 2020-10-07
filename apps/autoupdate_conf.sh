@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# autoupdate_conf.sh 3.1.1
+# autoupdate_conf.sh 3.2.0b1
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
@@ -33,11 +33,14 @@ echo ""
 echo "$ sudo apt-get dist-upgrade -y"
 sudo apt-get dist-upgrade -y
 echo ""
+echo "$ sudo apt-get full-upgrade -y"
+sudo apt-get full-upgrade -y
+echo ""
 echo "$ sudo pihole -up"
 sudo pihole -up
-echo ""
-echo "$ sudo pihole -g"
-sudo pihole -g
+# echo ""
+# echo "$ sudo pihole -g"
+# sudo pihole -g
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
