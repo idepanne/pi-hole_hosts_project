@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# infos_system.sh 3.1.1
+# infos_system.sh 3.2.0
 # © 2020 iDépanne – L'expert informatique
 # https://idepanne.now.site
 
