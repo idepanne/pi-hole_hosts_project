@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# autoupdate_conf.sh 3.2.0
-# © 2020 iDépanne – L'expert informatique
-# https://idepanne.now.site
+# echo "autoupdate_conf.sh 3.2.0"
+# echo "© 2020 iDépanne – L'expert informatique"
+# echo "https://idepanne.now.site"
 
 echo ""
 echo "-------------------------------------------------------------------------------"
