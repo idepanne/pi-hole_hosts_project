@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# install2.sh 3.1.1"
-# © 2020 iDépanne – L'expert informatique
-# https://idepanne.now.site
+# echo "install2.sh 3.2.0"
+# echo "© 2020 iDépanne – L'expert informatique"
+# echo "https://idepanne.now.site"
 
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Installation des prérequis"
+echo "   Installation des logiciels prérequis"
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh"
