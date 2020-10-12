@@ -23,6 +23,10 @@
 0.0.0.0 maxcdn.bootstrapcdn.com
 0.0.0.0 netdna.bootstrapcdn.com
 
+0.0.0.0 criteo.com
+0.0.0.0 www.criteo.com
+0.0.0.0 cat.nl.eu.criteo.com
+
 0.0.0.0 etoro.com
 0.0.0.0 www.etoro.com
 
