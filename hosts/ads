@@ -14,6 +14,9 @@
 0.0.0.0 www.ampproject.org
 0.0.0.0 cdn.ampproject.org
 
+0.0.0.0 aservium.com
+0.0.0.0 www.aservium.com
+
 0.0.0.0 azureedge.net
 0.0.0.0 www.azureedge.net
 0.0.0.0 cdn-stamped-io.azureedge.net
