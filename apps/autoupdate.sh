@@ -1,9 +1,13 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 3.2.0"
+echo "autoupdate.sh 3.3.0"
 echo "© 2020 iDépanne – L'expert informatique"
 echo "https://idepanne.now.site"
 echo ""
+echo ""
+echo "-------------------------------------------------------------------------------"
+echo "   Mise à jour du module infos_system.sh"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system_new.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system_new.sh
@@ -15,6 +19,10 @@ sudo mv infos_system_new.sh infos_system.sh
 echo "sudo chmod +x infos_system.sh"
 sudo chmod +x infos_system.sh
 echo ""
+echo ""
+echo "-------------------------------------------------------------------------------"
+echo "   Mise à jour du module autoupdate_conf.sh"
+echo "-------------------------------------------------------------------------------"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh
