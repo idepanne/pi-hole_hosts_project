@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "install2.sh 3.3.0"
+# echo "install2.sh 3.3.1"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
@@ -52,9 +52,6 @@ echo "--------------------------------------------------------------------------
 echo ""
 echo "sudo rpi-update"
 sudo rpi-update
-echo ""
-echo "/opt/vc/bin/vcgencmd version"
-/opt/vc/bin/vcgencmd version
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
