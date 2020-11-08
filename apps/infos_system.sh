@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "infos_system.sh 3.2.0"
+# echo "infos_system.sh 3.3.0"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
