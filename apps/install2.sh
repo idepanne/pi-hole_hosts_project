@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "install2.sh 3.2.0"
+# echo "install2.sh 3.3.0"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
