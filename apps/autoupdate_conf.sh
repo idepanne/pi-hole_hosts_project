@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "autoupdate_conf.sh 3.3.1"
+# echo "autoupdate_conf.sh 4.0.0b1"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
@@ -42,6 +42,10 @@ echo ""
 echo "$ sudo pihole -g"
 sudo pihole -g
 echo ""
+echo "Mise à jour du Crontab"
+crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="tomorrow" +"%Y%m%d"`_autoupdate.log 2>&1"
+mkdir log
+echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
 echo "   Nettoyage du système"
@@ -64,6 +68,9 @@ sudo rm -rv *_new.sh
 echo ""
 echo "find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;"
 find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;
+echo ""
+echo "find /home/pi/log/* -mtime +30 -exec rm -rv {} \;"
+find /home/pi/log/* -mtime +30 -exec rm -rv {} \;
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
