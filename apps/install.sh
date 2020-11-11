@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 3.3.1"
+echo "install.sh 4.0.0b1"
 echo "© 2020 iDépanne – L'expert informatique"
 echo "https://idepanne.now.site"
 echo ""
