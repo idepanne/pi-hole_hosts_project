@@ -43,9 +43,10 @@ echo ""
 # sudo pihole -g
 # echo ""
 echo "Mise à jour du Crontab"
+echo -n "Ancien cron : "; echo $(crontab -l)
 crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="tomorrow" +"%Y%m%d"`_autoupdate.log 2>&1"
 sudo /etc/init.d/cron restart
-crontab -l
+echo -n "Nouveau cron : "; echo $(crontab -l)
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
