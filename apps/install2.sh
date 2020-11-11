@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "install2.sh 3.3.1"
+# echo "install2.sh 4.0.0b1"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
@@ -42,8 +42,8 @@ sudo mv rpi-update /usr/local/bin/rpi-update
 echo "sudo chmod +x /usr/local/bin/rpi-update"
 sudo chmod +x /usr/local/bin/rpi-update
 echo ""
-echo "mkdir logs"
-mkdir logs
+echo "mkdir log"
+mkdir log
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
