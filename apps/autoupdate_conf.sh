@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "autoupdate_conf.sh 4.0.0b1"
+# echo "autoupdate_conf.sh 4.0.0b2"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
@@ -39,8 +39,8 @@ echo ""
 echo "$ sudo pihole -up"
 sudo pihole -up
 echo ""
-# echo "$ sudo pihole -g"
-# sudo pihole -g
+echo "$ sudo pihole -g"
+sudo pihole -g
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
