@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "autoupdate_conf.sh 4.0.0b2"
+# echo "autoupdate_conf.sh 4.0.0"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
@@ -47,13 +47,13 @@ echo "--------------------------------------------------------------------------
 echo "   Mise à jour du crontab"
 echo "-------------------------------------------------------------------------------"
 echo ""
-echo "Ancien cron : "
+echo "Ancienne crontab :"
 crontab -l
 echo ""
 crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="tomorrow" +"%Y%m%d"`_autoupdate.log 2>&1"
 sudo /etc/init.d/cron restart
 echo ""
-echo "Nouveau cron : "
+echo "Nouvelle crontab :"
 crontab -l
 echo ""
 echo ""
