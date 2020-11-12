@@ -47,13 +47,13 @@ echo "--------------------------------------------------------------------------
 echo "   Mise à jour du crontab"
 echo "-------------------------------------------------------------------------------"
 echo ""
-echo "Ancienne crontab :"
+echo "Ancien crontab :"
 crontab -l
 echo ""
 crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="tomorrow" +"%Y%m%d"`_autoupdate.log 2>&1"
 sudo /etc/init.d/cron restart
 echo ""
-echo "Nouvelle crontab :"
+echo "Nouveau crontab :"
 crontab -l
 echo ""
 echo ""
