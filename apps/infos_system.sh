@@ -36,6 +36,9 @@ var3=$(uptime -s)
 var4=$(uptime -p)
 echo -n "Démarré depuis  : " && echo "$var3 - $var4"
 echo ""
+echo "Synchronisation de l'horloge :"
+sudo service systemd-timesyncd status
+echo ""
 echo "Stockage        : "
 df -h /
 df -h | grep /var/log
