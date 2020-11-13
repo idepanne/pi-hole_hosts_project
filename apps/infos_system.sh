@@ -36,8 +36,10 @@ var3=$(uptime -s)
 var4=$(uptime -p)
 echo -n "Démarré depuis  : " && echo "$var3 - $var4"
 echo ""
+echo "*******************************"
 echo "Synchronisation de l'horloge :"
 timedatectl timesync-status
+echo "*******************************"
 echo ""
 echo "Stockage        : "
 df -h /
