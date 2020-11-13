@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "infos_system.sh 4.0.0"
+# echo "infos_system.sh 4.0.1"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
@@ -37,7 +37,7 @@ var4=$(uptime -p)
 echo -n "Démarré depuis  : " && echo "$var3 - $var4"
 echo ""
 echo "Synchronisation de l'horloge :"
-sudo service systemd-timesyncd status
+service systemd-timesyncd status
 echo ""
 echo "Stockage        : "
 df -h /
