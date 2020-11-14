@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "infos_system.sh 4.0.1"
+# echo "infos_system.sh 4.0.2"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
@@ -37,7 +37,8 @@ var4=$(uptime -p)
 echo -n "Démarré depuis  : " && echo "$var3 - $var4"
 echo ""
 echo "Synchronisation de l'horloge :"
-timedatectl timesync-status
+sudo systemctl daemon-reload
+sudo timedatectl timesync-status
 echo ""
 echo "Stockage        : "
 df -h /
