@@ -10,8 +10,8 @@ echo "--------------------------------------------------------------------------
 echo "   Informations système"
 echo "-------------------------------------------------------------------------------"
 echo ""
-echo "• " && cat /proc/cpuinfo | grep Model
-echo "• " && cat /proc/cpuinfo | grep Serial
+echo -n "• " && cat /proc/cpuinfo | grep Model
+echo -n "• " && cat /proc/cpuinfo | grep Serial
 echo ""
 var1=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g')
 var2=$(lscpu | grep "Vendor ID:" | sed -r 's/Vendor ID:\s{1,}//g')
@@ -30,6 +30,7 @@ echo -n "• EEPROM          : "
 sudo rpi-eeprom-update
 echo ""
 echo -n "• Système         : "; uname -sr
+echo ""
 echo -n "• IPv4/IPv6       : "; hostname -I
 echo ""
 var3=$(uptime -s)
