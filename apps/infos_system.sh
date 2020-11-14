@@ -48,9 +48,9 @@ echo "RAM             : "
 free -ht
 echo ""
 
-# varfile=/home/pi/install.sh
-# if [ -f "$varfile" ]; then
-#     ./install2.sh
-# else
-#     ./autoupdate_conf.sh
-# fi
+varfile=/home/pi/install.sh
+if [ -f "$varfile" ]; then
+    ./install2.sh
+else
+    ./autoupdate_conf.sh
+fi
