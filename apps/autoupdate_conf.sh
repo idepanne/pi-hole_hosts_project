@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "autoupdate_conf.sh 4.0.1"
+# echo "autoupdate_conf.sh 4.0.2"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://idepanne.now.site"
 
