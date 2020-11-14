@@ -30,7 +30,6 @@ echo -n "EEPROM          : "
 sudo rpi-eeprom-update
 echo ""
 echo -n "Système         : "; uname -sr
-echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
 var3=$(uptime -s)
