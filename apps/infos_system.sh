@@ -38,7 +38,7 @@ echo -n "Démarré depuis  : " && echo "$var3 - $var4"
 echo ""
 echo "Synchronisation de l'horloge :"
 sudo systemctl daemon-reload
-sudo timedatectl timesync-status
+timedatectl timesync-status && timedatectl
 echo ""
 echo "Stockage        : "
 df -h /
