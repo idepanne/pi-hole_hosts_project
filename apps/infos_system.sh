@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# echo "infos_system.sh 4.0.2"
+# echo "infos_system.sh 4.0.3"
 # echo "© 2020 iDépanne – L'expert informatique"
-# echo "https://idepanne.now.site"
+# echo "https://fb.me/idepanne/"
 
 cd
 echo ""
