@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "autoupdate_conf.sh 4.0.4"
+# echo "autoupdate_conf.sh 4.1.0"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://fb.me/idepanne/"
 
@@ -75,10 +75,6 @@ sudo rm -rv *_old.sh
 echo ""
 echo "sudo rm -rv *_new.sh"
 sudo rm -rv *_new.sh
-echo ""
-# echo "find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;"
-# find /home/pi/logs/* -mtime +30 -exec rm -rv {} \;
-sudo rm -rv /home/pi/logs
 echo ""
 echo "find /home/pi/log/* -mtime +30 -exec rm -rv {} \;"
 find /home/pi/log/* -mtime +30 -exec rm -rv {} \;
