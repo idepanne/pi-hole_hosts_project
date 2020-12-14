@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo "install2.sh 4.1.0"
+# echo "install2.sh 4.1.1"
 # echo "© 2020 iDépanne – L'expert informatique"
 # echo "https://fb.me/idepanne/"
 
