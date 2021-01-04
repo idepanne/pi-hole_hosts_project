@@ -1,7 +1,7 @@
 #!/bin/bash
 cd
-echo "autoupdate.sh 4.1.1"
-echo "© 2020 iDépanne – L'expert informatique"
+echo "autoupdate.sh 4.1.2"
+echo "© 2020-2021 iDépanne – L'expert informatique"
 echo "https://fb.me/idepanne/"
 echo ""
 echo ""
