@@ -1,8 +1,8 @@
 #!/bin/bash
 clear
 cd
-echo "install.sh 4.1.1"
-echo "© 2020 iDépanne – L'expert informatique"
+echo "install.sh 4.1.2"
+echo "© 2020-2021 iDépanne – L'expert informatique"
 echo "https://fb.me/idepanne/"
 echo ""
 echo ""
