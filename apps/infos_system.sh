@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# infos_system.sh 4.2.0b1
+# infos_system.sh 4.2.0
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 
