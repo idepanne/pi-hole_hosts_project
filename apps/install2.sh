@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# echo "install2.sh 4.1.2"
-# echo "© 2020-2021 iDépanne – L'expert informatique"
-# echo "https://fb.me/idepanne/"
+# install2.sh 4.2.0b1
+# © 2020-2021 iDépanne – L'expert informatique
+# https://fb.me/idepanne/
 
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Installation des logiciels prérequis"
+echo "                      Installation des logiciels prérequis                     "
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh"
@@ -47,7 +47,7 @@ mkdir log
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Mise à jour du firmware"
+echo "                            Mise à jour du firmware                            "
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "sudo rpi-update"
@@ -55,7 +55,7 @@ sudo rpi-update
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Mise à jour de l'EEPROM"
+echo "                            Mise à jour de l'EEPROM                            "
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "sudo rpi-eeprom-update -a"
