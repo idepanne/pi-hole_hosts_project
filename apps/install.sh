@@ -2,7 +2,6 @@
 clear
 cd
 echo ""
-echo ""
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
 echo "                   lc   ;cccl'   'll;:ll' .O                                   "
@@ -29,7 +28,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                                install.sh 4.2.0a5                             "
+echo "                                install.sh 4.2.0b1                             "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
