@@ -55,4 +55,4 @@ echo ""
 echo "sudo chmod +x install2.sh"
 sudo chmod +x install2.sh
 echo ""
-# ./infos_system.sh
+./infos_system.sh
