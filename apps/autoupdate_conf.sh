@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# echo "autoupdate_conf.sh 4.1.2"
-# echo "© 2020-2021 iDépanne – L'expert informatique"
-# echo "https://fb.me/idepanne/"
+# autoupdate_conf.sh 4.2.0b1
+# © 2020-2021 iDépanne – L'expert informatique
+# https://fb.me/idepanne/
 
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Mise à jour du module autoupdate.sh"
+echo "                      Mise à jour du module autoupdate.sh                      "
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh"
@@ -21,7 +21,7 @@ sudo chmod +x autoupdate.sh
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Mises à jour du système"
+echo "                            Mises à jour du système                            "
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "$ sudo apt-get update"
@@ -44,7 +44,7 @@ sudo pihole -g
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Mise à jour du crontab"
+echo "                             Mise à jour du crontab                            "
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "Ancien crontab :"
@@ -58,7 +58,7 @@ crontab -l
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Nettoyage du système"
+echo "                              Nettoyage du système                             "
 echo "-------------------------------------------------------------------------------"
 echo ""
 echo "$ sudo apt-get autoremove -y"
@@ -81,7 +81,7 @@ find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Recherche du programme d'installation"
+echo "                     Recherche du programme d'installation                     "
 echo "-------------------------------------------------------------------------------"
 echo ""
 var="$(find . -name 'install*')"
@@ -90,7 +90,7 @@ if [ "$var" == "" ]; then
         echo "$var"
         echo ""
         echo "-------------------------------------------------------------------------------"
-        echo "   Vérification des processus de mises à jour"
+        echo "                   Vérification des processus de mises à jour                  "
         echo "-------------------------------------------------------------------------------"
         echo ""
         var=$(sudo checkrestart)
@@ -99,14 +99,14 @@ if [ "$var" == "" ]; then
                 echo ""
                 echo ""
                 echo "-------------------------------------------------------------------------------"
-                echo "   Aucun redémarrage nécessaire"
+                echo "                          Aucun redémarrage nécessaire                         "
                 echo "-------------------------------------------------------------------------------"
         else
                 echo "$var"
                 echo ""
                 echo ""
                 echo "-------------------------------------------------------------------------------"
-                echo "   Redémarrage du Raspberry Pi"
+                echo "                          Redémarrage du Raspberry Pi                          "
                 echo "-------------------------------------------------------------------------------"
                 sleep 1
                 sudo reboot
@@ -120,7 +120,7 @@ else
         echo ""
         echo ""
         echo "-------------------------------------------------------------------------------"
-        echo "   Redémarrage et vérification de la structure du disque"
+        echo "             Redémarrage et vérification de la structure du disque             "
         echo "-------------------------------------------------------------------------------"
         sleep 1
         sudo shutdown -rF now
