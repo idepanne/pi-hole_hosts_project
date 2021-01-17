@@ -1,6 +1,8 @@
 #!/bin/bash
 clear
 cd
+echo ""
+echo ""
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
 echo "                   lc   ;cccl'   'll;:ll' .O                                   "
