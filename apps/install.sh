@@ -1,6 +1,31 @@
 #!/bin/bash
 clear
 cd
+echo "                   'o:::::::::::::::::::::lc                                   "
+echo "                   lc                     .O                                   "
+echo "                   lc   ;cccl'   'll;:ll' .O                                   "
+echo "                   lc  dMMMMMk   oMMOXMMl .O                                   "
+echo "      cXMNd        lc  dMMMMMx   cKKdOKKc .O :d:::::::oo                       "
+echo "      OMMMN.       lc   dXKXK:   cXXx0XXc .O o:       'k  .,,,.                "
+echo "       ;l:.        lc                     .O o:       'k .0...0.               "
+echo "  ,OOOOOOOkxo;.    cx,,,,,,,,,,,,,,,,,,,,,ck o: .''.  'k .O . O.               "
+echo "  cMMxccccldKMWd    .........x;''x.........  o:       'k .O   O.               "
+echo "  cMM,       ;XMO      od.  ;xxddxl          ,o:::::::lc  l:::c                "
+echo "  cMM, :d:    :MM;    lx.                                                      "
+echo "  cMM, kMk    'MMc .xOxxOk' .K0kxxOx.  lOkxk0k. 'XOkxOKd  ;XkkxOKd  .oOkxkO:   "
+echo "  cMM, kMk    :MM;.WK'...0W..WN'   0N..l; ..dMl ,M0   oMc :Mx   kM: 0W:...dMl  "
+echo "  cMM, kMk   'XMO ;MKdddddd..W0    xM'.kKOkdkMl ,Mx   cMl :Mc   dMc.NNdddddd:  "
+echo "  cMM, kMKco0MWx  .KX,  .OO..WWl  ;NO xMd  .kMo ,Mx   cMl :Mc   dMc dWl. .oK,  "
+echo "  ;00. o000kd:.     cxOOkl. .WNdkOx:  .lkkkd:xl .k:   ,k, 'k,   :k,  ,dOOOd'   "
+echo "                            .WX                                                "
+echo "           .                 c:   .     ''                  .                  "
+echo "       l  .,.;:',,';. .;;.;,.d:'  ;..,.:d;'' ,,';.:,. .;..d,:' ': '.'.:,       "
+echo "       o..  dc:'kc:d:ckc:lc .o,   l,ko:ll.d:lx  Ocd;lcldd.d.'cocx:olld::       "
+echo "       ...  .'..:cco..,:...  ..   .  . ., .. .  ' . ... . .  .'.:.. ..'        "
+echo "            .lc;.                                                              "
+echo ""
+echo ""
+
 echo "install.sh 4.1.2"
 echo "© 2020-2021 iDépanne – L'expert informatique"
 echo "https://fb.me/idepanne/"
@@ -27,4 +52,4 @@ echo ""
 echo "sudo chmod +x install2.sh"
 sudo chmod +x install2.sh
 echo ""
-./infos_system.sh
+# ./infos_system.sh
