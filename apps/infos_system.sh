@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# infos_system.sh 4.2.0
+# infos_system.sh 4.2.1
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 
 cd
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "   Informations système"
+echo "                              Informations système                             "
 echo "-------------------------------------------------------------------------------"
 echo ""
 cat /proc/cpuinfo | grep Model
