@@ -36,12 +36,11 @@ echo ""
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
 echo ""
+echo "$ sudo pihole -up"
 var=$(sudo pihole -up)
         echo "$var"
         echo ""
-        echo ""
-        # if [[ "$var" =~ "update available" ]]; then
-        if [[ "$var" =~ "up to date" ]]; then
+        if [[ "$var" =~ "update available" ]]; then
                 echo ""
         else
                 echo "$ sudo pihole -g"
