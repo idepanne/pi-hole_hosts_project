@@ -26,7 +26,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                             autoupdate.sh 4.2.2b8                             "
+echo "                             autoupdate.sh 4.2.2b9                             "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
@@ -36,7 +36,7 @@ echo "--------------------------------------------------------------------------
 echo "                         Test de la connexion Internet                         "
 echo "-------------------------------------------------------------------------------"
 echo ""
-var=$(ping -c 3 raw.githubusercontent.com)
+var=$(ping -c 3 raw.githubusercontent.con)
         echo "$var"
         echo ""
         echo ""
