@@ -78,5 +78,5 @@ echo ""
         else
                 echo "Connexion Internet : Erreur"
                 echo ""
-                echo "*** Arrêt du programme de mise à jour ***
+                echo "*** Arrêt du programme de mise à jour ***"
         fi
