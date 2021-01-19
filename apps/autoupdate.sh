@@ -26,7 +26,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                             autoupdate.sh 4.2.2b6                             "
+echo "                             autoupdate.sh 4.2.2b7                             "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
@@ -39,7 +39,7 @@ echo ""
 var=$(ping -c 3 raw.githubusercontent.com)
         echo "$var"
         echo ""
-        if [ "$var" =~ "PING github.map.fastly.net" ]; then
+        if [[ "$var" =~ "0% packet loss" ]]; then
                 echo "Connexion Internet : OK"
                 echo ""
                 echo ""
