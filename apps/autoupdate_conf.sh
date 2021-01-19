@@ -40,15 +40,13 @@ var=$(sudo pihole -up)
         echo "$var"
         echo ""
         echo ""
-        if [[ "$var" =~ "update available" ]]; then
+        # if [[ "$var" =~ "update available" ]]; then
+        if [[ "$var" =~ "up to date" ]]; then
                 echo ""
         else
-                echo "$ sudo pihole -up"
-                sudo pihole -up
+                echo "$ sudo pihole -g"
+                sudo pihole -g
 fi
-echo ""
-echo "$ sudo pihole -g"
-sudo pihole -g
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
