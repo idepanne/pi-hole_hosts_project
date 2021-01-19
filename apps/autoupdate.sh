@@ -26,7 +26,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                             autoupdate.sh 4.2.2b1                             "
+echo "                             autoupdate.sh 4.2.2b2                             "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
@@ -36,47 +36,45 @@ echo "--------------------------------------------------------------------------
 echo "                         Test de la connexion Internet                         "
 echo "-------------------------------------------------------------------------------"
 echo ""
-# echo "ping -c 4 raw.githubusercontent.com"
-# ping -c 4 raw.githubusercontent.com
-
-
+echo "." && wait 1 && echo "." && wait 1 && echo "." && wait 1 && echo "." && wait 1 && echo "." && wait 1
+echo ""
 var=$(ping -c 3 raw.githubusercontent.com)
         if [ "$var" = "PING github.map.fastly.net" ]; then
                 echo "Connexion Internet : OK"
                 echo ""
                 echo ""
-echo "-------------------------------------------------------------------------------"
-echo "                     Mise à jour du module infos_system.sh                     "
-echo "-------------------------------------------------------------------------------"
-echo ""
-echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system_new.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system_new.sh
-echo ""
-echo "sudo mv infos_system.sh infos_system_old.sh"
-sudo mv infos_system.sh infos_system_old.sh
-echo "sudo mv infos_system_new.sh infos_system.sh"
-sudo mv infos_system_new.sh infos_system.sh
-echo "sudo chmod +x infos_system.sh"
-sudo chmod +x infos_system.sh
-echo ""
-echo ""
-echo "-------------------------------------------------------------------------------"
-echo "                    Mise à jour du module autoupdate_conf.sh                   "
-echo "-------------------------------------------------------------------------------"
-echo ""
-echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh
-echo ""
-echo "sudo mv autoupdate_conf.sh autoupdate_conf_old.sh"
-sudo mv autoupdate_conf.sh autoupdate_conf_old.sh
-echo "sudo mv autoupdate_conf_new.sh autoupdate_conf.sh"
-sudo mv autoupdate_conf_new.sh autoupdate_conf.sh
-echo "sudo chmod +x autoupdate_conf.sh"
-sudo chmod +x autoupdate_conf.sh
-echo ""
-# ./infos_system.sh
+                echo "-------------------------------------------------------------------------------"
+                echo "                     Mise à jour du module infos_system.sh                     "
+                echo "-------------------------------------------------------------------------------"
+                echo ""
+                echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system_new.sh"
+                wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system_new.sh
+                echo ""
+                echo "sudo mv infos_system.sh infos_system_old.sh"
+                sudo mv infos_system.sh infos_system_old.sh
+                echo "sudo mv infos_system_new.sh infos_system.sh"
+                sudo mv infos_system_new.sh infos_system.sh
+                echo "sudo chmod +x infos_system.sh"
+                sudo chmod +x infos_system.sh
+                echo ""
+                echo ""
+                echo "-------------------------------------------------------------------------------"
+                echo "                    Mise à jour du module autoupdate_conf.sh                   "
+                echo "-------------------------------------------------------------------------------"
+                echo ""
+                echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh"
+                wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_conf.sh > autoupdate_conf_new.sh
+                echo ""
+                echo "sudo mv autoupdate_conf.sh autoupdate_conf_old.sh"
+                sudo mv autoupdate_conf.sh autoupdate_conf_old.sh
+                echo "sudo mv autoupdate_conf_new.sh autoupdate_conf.sh"
+                sudo mv autoupdate_conf_new.sh autoupdate_conf.sh
+                echo "sudo chmod +x autoupdate_conf.sh"
+                sudo chmod +x autoupdate_conf.sh
+                echo ""
+                # ./infos_system.sh
         else
                 echo "Connexion Internet : Erreur"
                 echo ""
-                echo "*** Arrêt du programme de mise à jour ***"
+                echo "*** Echec du processus de mise à jour ***"
         fi
