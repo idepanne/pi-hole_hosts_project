@@ -40,8 +40,8 @@ echo ""
 # ping -c 4 raw.githubusercontent.com
 
 
-var=$(ping -c 4 raw.githubusercontent.com)
-        if [ "$var" = "0% packet loss" ]; then
+var=$(ping -c 3 raw.githubusercontent.com)
+        if [ "$var" = "PING github.map.fastly.net" ]; then
                 echo "Connexion Internet : OK"
                 echo ""
                 echo ""
@@ -77,4 +77,6 @@ echo ""
 # ./infos_system.sh
         else
                 echo "Connexion Internet : Erreur"
+                echo ""
+                echo "*** Arrêt du programme de mise à jour ***
         fi
