@@ -39,6 +39,7 @@ echo ""
 var=$(ping -c 3 raw.githubusercontent.com)
         echo "$var"
         echo ""
+        echo ""
         if [[ "$var" =~ "0% packet loss" ]]; then
                 echo "Connexion Internet : OK"
                 echo ""
@@ -75,6 +76,7 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 # ./infos_system.sh
         else
                 echo "Connexion Internet : Erreur"
+                echo ""
                 echo ""
                 echo "*** Echec du processus de mise à jour ***"
                 echo ""
