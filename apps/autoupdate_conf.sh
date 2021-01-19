@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# autoupdate_conf.sh 4.2.1
+# autoupdate_conf.sh 4.3.0
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 
