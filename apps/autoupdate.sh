@@ -36,13 +36,13 @@ echo "--------------------------------------------------------------------------
 echo "                         Test de la connexion Internet                         "
 echo "-------------------------------------------------------------------------------"
 echo ""
-echo "ping -c 4 raw.githubusercontent.com"
-ping -c 4 raw.githubusercontent.com
+# echo "ping -c 4 raw.githubusercontent.com"
+# ping -c 4 raw.githubusercontent.com
 
 
 var=$(ping -c 4 raw.githubusercontent.com)
         if [ "$var" = "0% packet loss" ]; then
-                echo "Connexion Internet OK"
+                echo "Connexion Internet : OK"
                 echo ""
                 echo ""
 echo "-------------------------------------------------------------------------------"
@@ -76,5 +76,5 @@ sudo chmod +x autoupdate_conf.sh
 echo ""
 # ./infos_system.sh
         else
-                echo "$var"
+                echo "Connexion Internet : Erreur"
         fi
