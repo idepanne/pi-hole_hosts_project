@@ -26,7 +26,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                             autoupdate.sh 4.2.2b9                             "
+echo "                              autoupdate.sh 4.3.0                              "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
@@ -36,7 +36,7 @@ echo "--------------------------------------------------------------------------
 echo "                         Test de la connexion Internet                         "
 echo "-------------------------------------------------------------------------------"
 echo ""
-var=$(ping -c 3 raw.githubusercontent.con)
+var=$(ping -c 3 raw.githubusercontent.com)
         echo "$var"
         echo ""
         echo ""
@@ -73,7 +73,7 @@ var=$(ping -c 3 raw.githubusercontent.con)
                 echo "sudo chmod +x autoupdate_conf.sh"
                 sudo chmod +x autoupdate_conf.sh
                 echo ""
-                # ./infos_system.sh
+                ./infos_system.sh
         else
                 echo "Connexion Internet: Echec"
                 echo ""
