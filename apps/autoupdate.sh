@@ -26,7 +26,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                             autoupdate.sh 4.2.2b2                             "
+echo "                             autoupdate.sh 4.2.2b3                             "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
@@ -36,7 +36,7 @@ echo "--------------------------------------------------------------------------
 echo "                         Test de la connexion Internet                         "
 echo "-------------------------------------------------------------------------------"
 echo ""
-echo "." && wait 1 && echo "." && wait 1 && echo "." && wait 1 && echo "." && wait 1 && echo "." && wait 1
+echo "." && sleep 1 && echo "." && sleep 1 && echo "." && sleep 1 && echo "." && sleep 1 && echo "." && sleep 1
 echo ""
 var=$(ping -c 3 raw.githubusercontent.com)
         if [ "$var" = "PING github.map.fastly.net" ]; then
@@ -77,4 +77,5 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 echo "Connexion Internet : Erreur"
                 echo ""
                 echo "*** Echec du processus de mise à jour ***"
+                echo ""
         fi
