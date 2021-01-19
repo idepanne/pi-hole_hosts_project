@@ -26,12 +26,25 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                              autoupdate.sh 4.2.1                              "
+echo "                             autoupdate.sh 4.2.2b1                             "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
 echo ""
 echo ""
+echo "-------------------------------------------------------------------------------"
+echo "                         Test de la connexion Internet                         "
+echo "-------------------------------------------------------------------------------"
+echo ""
+echo "ping -c 4 raw.githubusercontent.com"
+ping -c 4 raw.githubusercontent.com
+
+
+var=$(ping -c 4 raw.githubusercontent.com)
+        if [ "$var" = "0% packet loss" ]; then
+                echo "Connexion Internet OK"
+                echo ""
+                echo ""
 echo "-------------------------------------------------------------------------------"
 echo "                     Mise à jour du module infos_system.sh                     "
 echo "-------------------------------------------------------------------------------"
@@ -61,4 +74,7 @@ sudo mv autoupdate_conf_new.sh autoupdate_conf.sh
 echo "sudo chmod +x autoupdate_conf.sh"
 sudo chmod +x autoupdate_conf.sh
 echo ""
-./infos_system.sh
+# ./infos_system.sh
+        else
+                echo "$var"
+        fi
