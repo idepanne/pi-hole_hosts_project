@@ -26,7 +26,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                             autoupdate.sh 4.2.2b7                             "
+echo "                             autoupdate.sh 4.2.2b8                             "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
@@ -41,7 +41,7 @@ var=$(ping -c 3 raw.githubusercontent.com)
         echo ""
         echo ""
         if [[ "$var" =~ "0% packet loss" ]]; then
-                echo "Connexion Internet : OK"
+                echo "Connexion Internet: OK"
                 echo ""
                 echo ""
                 echo "-------------------------------------------------------------------------------"
@@ -75,9 +75,9 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 echo ""
                 # ./infos_system.sh
         else
-                echo "Connexion Internet : Erreur"
+                echo "Connexion Internet: Echec"
                 echo ""
                 echo ""
-                echo "*** Echec du processus de mise à jour ***"
+                echo "*** Abandon des mises à jour - Nouvelle tentative dans 24h ***"
                 echo ""
         fi
