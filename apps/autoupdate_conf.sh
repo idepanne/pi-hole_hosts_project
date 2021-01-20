@@ -41,12 +41,12 @@ var=$(sudo pihole -up)
         echo "$var"
         echo ""
         if [[ "$var" =~ "update available" ]]; then
-                sleep 1
+                echo ""
         else
                 echo "$ sudo pihole -g"
                 sudo pihole -g
+                echo ""
 fi
-echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
 echo "                             Mise à jour du crontab                            "
