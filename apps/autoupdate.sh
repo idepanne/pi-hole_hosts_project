@@ -80,4 +80,18 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 echo ""
                 echo "*** Abandon des mises à jour - Nouvelle tentative dans 24h ***"
                 echo ""
+                echo ""
+                echo "-------------------------------------------------------------------------------"
+                echo "                             Mise à jour du crontab                            "
+                echo "-------------------------------------------------------------------------------"
+                echo ""
+                echo "Ancien crontab :"
+                crontab -l
+                echo ""
+                crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+                sudo /etc/init.d/cron restart
+                echo ""
+                echo "Nouveau crontab :"
+                crontab -l
+                echo ""
         fi
