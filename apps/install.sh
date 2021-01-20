@@ -71,6 +71,6 @@ var=$(ping -c 3 raw.githubusercontent.con)
                 echo "Connexion Internet: Echec"
                 echo ""
                 echo ""
-                echo "*** Abandon des mises à jour - Veuillez vérifier les réglages réseaux ***"
+                echo "*** Abandon de l'installation - Veuillez vérifier les réglages réseaux ***"
                 echo ""
         fi
