@@ -34,43 +34,24 @@ echo ""
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "                         Test de la connexion Internet                         "
+echo "                     Mise à jour du module infos_system.sh                     "
 echo "-------------------------------------------------------------------------------"
 echo ""
-var=$(ping -c 3 raw.githubusercontent.con)
-        echo "$var"
-        echo ""
-        echo ""
-        if [[ "$var" =~ "0% packet loss" ]]; then
-                echo "Connexion Internet: OK"
-                echo ""
-                echo ""
-                echo "-------------------------------------------------------------------------------"
-                echo "                     Mise à jour du module infos_system.sh                     "
-                echo "-------------------------------------------------------------------------------"
-                echo ""
-                echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system.sh"
-                wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system.sh
-                echo ""
-                echo "sudo chmod +x infos_system.sh"
-                sudo chmod +x infos_system.sh
-                echo ""
-                echo ""
-                echo "-------------------------------------------------------------------------------"
-                echo "                       Mise à jour du module install2.sh                       "
-                echo "-------------------------------------------------------------------------------"
-                echo ""
-                echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/install2.sh > install2.sh"
-                wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/install2.sh > install2.sh
-                echo ""
-                echo "sudo chmod +x install2.sh"
-                sudo chmod +x install2.sh
-                echo ""
-                ./infos_system.sh      
-        else
-                echo "Connexion Internet: Echec"
-                echo ""
-                echo ""
-                echo "*** Abandon de l'installation - Veuillez vérifier les réglages réseaux ***"
-                echo ""
-        fi
+echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infos_system.sh > infos_system.sh
+echo ""
+echo "sudo chmod +x infos_system.sh"
+sudo chmod +x infos_system.sh
+echo ""
+echo ""
+echo "-------------------------------------------------------------------------------"
+echo "                       Mise à jour du module install2.sh                       "
+echo "-------------------------------------------------------------------------------"
+echo ""
+echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/install2.sh > install2.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/install2.sh > install2.sh
+echo ""
+echo "sudo chmod +x install2.sh"
+sudo chmod +x install2.sh
+echo ""
+./infos_system.sh
