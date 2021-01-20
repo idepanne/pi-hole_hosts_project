@@ -55,7 +55,7 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="tomorrow" +"%Y%m%d"`_autoupdate.log 2>&1"
+crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 sudo /etc/init.d/cron restart
 echo ""
 echo "Nouveau crontab :"
