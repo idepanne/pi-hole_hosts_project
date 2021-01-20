@@ -42,7 +42,6 @@ var=$(sudo pihole -up)
         echo ""
         # if [[ "$var" =~ "update available" ]]; then
         if [[ "$var" =~ "up to date" ]]; then
-                echo ""
         else
                 echo "$ sudo pihole -g"
                 sudo pihole -g
