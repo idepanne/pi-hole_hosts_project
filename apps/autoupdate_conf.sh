@@ -41,7 +41,7 @@ var=$(sudo pihole -up)
         echo "$var"
         echo ""
         if [[ "$var" =~ "update available" ]]; then
-        sleep 1
+                sleep 1
         else
                 echo "$ sudo pihole -g"
                 sudo pihole -g
