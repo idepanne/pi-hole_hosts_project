@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# autoupdate_conf.sh 4.3.1
+# autoupdate_conf.sh 4.3.0
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 
@@ -44,7 +44,7 @@ var=$(sudo pihole -up)
         else
                 echo ""
                 echo "$ sudo pihole -g"
-                # sudo pihole -g
+                sudo pihole -g
                 echo ""
 fi
 echo ""
@@ -105,17 +105,7 @@ if [ "$var" == "" ]; then
                 echo ""
                 echo "-------------------------------------------------------------------------------"
                 echo "                          Aucun redémarrage nécessaire                         "
-                echo "-------------------------------------------------------------------------------"
-                echo ""
-                echo ""
-                
-                time2=$SECONDS
-                echo "$time1"
-                echo "$time2"
-                time=$time1+$time2
-                echo "$time"
-                echo -n "Durée d'exécution du programme: " && printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
-                
+                echo "-------------------------------------------------------------------------------" 
         else
                 echo "$var"
                 echo ""
@@ -123,16 +113,6 @@ if [ "$var" == "" ]; then
                 echo "-------------------------------------------------------------------------------"
                 echo "                          Redémarrage du Raspberry Pi                          "
                 echo "-------------------------------------------------------------------------------"
-                echo ""
-                echo ""
-                
-                time2=$SECONDS
-                echo "$time1"
-                echo "$time2"
-                time=$time1+$time2
-                echo "$time"
-                echo -n "Durée d'exécution du programme: " && printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
-                
                 sleep 1
                 sudo reboot
         fi
@@ -147,16 +127,6 @@ else
         echo "-------------------------------------------------------------------------------"
         echo "             Redémarrage et vérification de la structure du disque             "
         echo "-------------------------------------------------------------------------------"
-        echo ""
-        echo ""
-        
-        time2=$SECONDS
-        echo "$time1"
-        echo "$time2"
-        time=$time1+$time2
-        echo "$time"
-        echo -n "Durée d'exécution du programme: " && printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
-        
         sleep 1
         sudo shutdown -rF now
 fi
