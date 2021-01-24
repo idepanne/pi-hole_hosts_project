@@ -81,6 +81,13 @@ echo ""
 echo "sudo rm -rv *_new.sh"
 sudo rm -rv *_new.sh
 echo ""
+echo "sudo rm -rv *test*.sh"
+sudo rm -rv *test*.sh
+echo ""
+echo "cd /home/pi/log/ && sudo rm -rv *test*.log"
+cd /home/pi/log/ && sudo rm -rv *test*.log
+cd
+echo ""
 echo "find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
 find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
 echo ""
