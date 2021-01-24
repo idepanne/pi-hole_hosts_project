@@ -1,5 +1,4 @@
 #!/bin/bash
-tempo1=$SECONDS
 cd
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
@@ -94,9 +93,5 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 echo ""
                 echo "Nouveau crontab :"
                 crontab -l
-                echo ""
-                echo ""
-                tempo2=$SECONDS
-                echo "Durée d'exécution du programme: $(($tempo1+$tempo2)) secondes"
         fi
         
