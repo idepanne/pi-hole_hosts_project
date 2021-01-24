@@ -1,4 +1,6 @@
 #!/bin/bash
+SECONDS="0"
+time1=$SECONDS
 cd
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
