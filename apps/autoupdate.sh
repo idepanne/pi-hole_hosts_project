@@ -1,6 +1,4 @@
 #!/bin/bash
-SECONDS="0"
-time1=$SECONDS
 cd
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
@@ -96,4 +94,3 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 echo "Nouveau crontab :"
                 crontab -l
         fi
-        
