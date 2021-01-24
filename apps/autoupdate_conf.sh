@@ -113,6 +113,10 @@ if [ "$var" == "" ]; then
                 echo "-------------------------------------------------------------------------------"
                 echo "                          Redémarrage du Raspberry Pi                          "
                 echo "-------------------------------------------------------------------------------"
+                echo ""
+                echo ""
+                tempo2=$SECONDS
+                echo "*** Durée d'exécution du programme: $(($tempo1+$tempo2)) secondes ***"                
                 sleep 1
                 sudo reboot
         fi
@@ -127,6 +131,10 @@ else
         echo "-------------------------------------------------------------------------------"
         echo "             Redémarrage et vérification de la structure du disque             "
         echo "-------------------------------------------------------------------------------"
+        echo ""
+        echo ""
+        tempo2=$SECONDS
+        echo "*** Durée d'exécution du programme: $(($tempo1+$tempo2)) secondes ***"
         sleep 1
         sudo shutdown -rF now
 fi
