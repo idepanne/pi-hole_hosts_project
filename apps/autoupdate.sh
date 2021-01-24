@@ -74,7 +74,7 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 echo "sudo chmod +x autoupdate_conf.sh"
                 sudo chmod +x autoupdate_conf.sh
                 echo ""
-                # ./infos_system.sh
+                ./infos_system.sh
         else
                 echo "Connexion Internet: Echec"
                 echo ""
@@ -95,9 +95,8 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 echo "Nouveau crontab :"
                 crontab -l
                 echo ""
-        fi
-                tempo2=$SECONDS
-                echo $tempo1 secondes
-                echo $tempo2 secondes
                 echo ""
+                tempo2=$SECONDS
                 echo "Durée d'exécution du programme: $(($tempo1+$tempo2)) secondes"
+        fi
+        
