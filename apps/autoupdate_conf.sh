@@ -44,7 +44,7 @@ var=$(sudo pihole -up)
         else
                 echo ""
                 echo "$ sudo pihole -g"
-                sudo pihole -g
+                # sudo pihole -g
                 echo ""
 fi
 echo ""
@@ -106,6 +106,16 @@ if [ "$var" == "" ]; then
                 echo "-------------------------------------------------------------------------------"
                 echo "                          Aucun redémarrage nécessaire                         "
                 echo "-------------------------------------------------------------------------------"
+                echo ""
+                echo ""
+                
+                time2=$SECONDS
+                echo "$time1"
+                echo "$time2"
+                time=$time1+$time2
+                echo "$time"
+                echo -n "Durée d'exécution du programme: " && printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
+                
         else
                 echo "$var"
                 echo ""
