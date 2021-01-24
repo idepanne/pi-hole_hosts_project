@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# autoupdate_conf.sh 4.3.0
+# autoupdate_conf.sh 4.3.1
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 
@@ -115,8 +115,9 @@ if [ "$var" == "" ]; then
                 echo "-------------------------------------------------------------------------------"
                 echo ""
                 echo ""
-                tempo2=$SECONDS
-                echo "*** Durée d'exécution du programme: $(($tempo1+$tempo2)) secondes ***"                
+                time=$SECONDS
+                echo "Durée d'exécution du programme:"
+                printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
                 sleep 1
                 sudo reboot
         fi
@@ -133,8 +134,9 @@ else
         echo "-------------------------------------------------------------------------------"
         echo ""
         echo ""
-        tempo2=$SECONDS
-        echo "*** Durée d'exécution du programme: $(($tempo1+$tempo2)) secondes ***"
+        time=$SECONDS
+        echo "Durée d'exécution du programme:"
+        printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
         sleep 1
         sudo shutdown -rF now
 fi
