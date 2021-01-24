@@ -1,5 +1,5 @@
 #!/bin/bash
-tempo1=$seconds
+tempo1=$SECONDS
 cd
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
@@ -96,7 +96,7 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 crontab -l
                 echo ""
         fi
-                tempo2=$seconds
+                tempo2=$SECONDS
                 echo $tempo1 secondes
                 echo $tempo2 secondes
                 echo ""
