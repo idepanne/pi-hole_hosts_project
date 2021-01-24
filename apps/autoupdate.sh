@@ -1,5 +1,5 @@
 #!/bin/bash
-PARTIE1=$SECONDS
+tempo1=$seconds
 cd
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
@@ -96,6 +96,8 @@ var=$(ping -c 3 raw.githubusercontent.com)
                 crontab -l
                 echo ""
         fi
-                PARTIE2=$SECONDS
+                tempo2=$seconds
+                echo $tempo1 secondes
+                echo $tempo2 secondes
                 echo ""
-                echo "Durée d'exécution du programme: $(($PARTIE1+$PARTIE2)) secondes"
+                echo "Durée d'exécution du programme: $(($tempo1+$tempo2)) secondes"
