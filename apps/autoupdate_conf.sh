@@ -116,8 +116,7 @@ if [ "$var" == "" ]; then
                 echo ""
                 echo ""
                 time=$SECONDS
-                echo "Durée d'exécution du programme:"
-                printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
+                echo -n "Durée d'exécution du programme: " && printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
                 sleep 1
                 sudo reboot
         fi
@@ -135,8 +134,7 @@ else
         echo ""
         echo ""
         time=$SECONDS
-        echo "Durée d'exécution du programme:"
-        printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
+        echo -n "Durée d'exécution du programme: " && printf '%dh:%dm:%ds\n' $(($time/3600)) $(($time%3600/60)) $(($time%60))
         sleep 1
         sudo shutdown -rF now
 fi
