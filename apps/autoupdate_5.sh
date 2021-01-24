@@ -26,7 +26,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                            autoupdate_5.sh 5.0.0b1                            "
+echo "                            autoupdate_5.sh 5.0.0b2                            "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -112,9 +112,25 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		else
 			echo ""
 			echo "$ sudo pihole -g"
-			sudo pihole -g
+			# sudo pihole -g
 			echo ""
 		fi
+	echo ""
+	echo ""
+	echo ""
+	echo "-------------------------------------------------------------------------------"
+	echo "                     Mise à jour du module autoupdate_5.sh                     "
+	echo "-------------------------------------------------------------------------------"
+	echo ""
+	echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_5.sh > autoupdate_5_new.sh"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_5.sh > autoupdate_5_new.sh
+	echo ""
+	echo "sudo mv autoupdate_5.sh autoupdate_5_old.sh"
+	sudo mv autoupdate_5.sh autoupdate_5_old.sh
+	echo "sudo mv autoupdate_5_new.sh autoupdate_5.sh"
+	sudo mv autoupdate_5_new.sh autoupdate_5.sh
+	echo "sudo chmod +x autoupdate_5.sh"
+	sudo chmod +x autoupdate_5.sh
 	echo ""
 	echo ""
 	echo ""
@@ -165,22 +181,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "-------------------------------------------------------------------------------"
-	echo "                      Mise à jour du module autoupdate_5.sh                      "
-	echo "-------------------------------------------------------------------------------"
-	echo ""
-	echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_5.sh > autoupdate_5_new.sh"
-	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate_5.sh > autoupdate_5_new.sh
-	echo ""
-	echo "sudo mv autoupdate_5.sh autoupdate_5_old.sh"
-	sudo mv autoupdate_5.sh autoupdate_5_old.sh
-	echo "sudo mv autoupdate_5_new.sh autoupdate_5.sh"
-	sudo mv autoupdate_5_new.sh autoupdate_5.sh
-	echo "sudo chmod +x autoupdate_5.sh"
-	sudo chmod +x autoupdate_5.sh
-	echo ""
-	echo ""
-	echo ""
-	echo "-------------------------------------------------------------------------------"
 	echo "                     Recherche du programme d'installation                     "
 	echo "-------------------------------------------------------------------------------"
 	echo ""
@@ -200,11 +200,13 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 				echo "$var"
 				echo ""
 				echo ""
+				echo ""
 				echo "-------------------------------------------------------------------------------"
 				echo "                          Aucun redémarrage nécessaire                         "
 				echo "-------------------------------------------------------------------------------" 
 		else
 				echo "$var"
+				echo ""
 				echo ""
 				echo ""
 				echo "-------------------------------------------------------------------------------"
@@ -221,6 +223,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		sudo rm -rv install*
 		echo ""
 		echo ""
+		echo ""
 		echo "-------------------------------------------------------------------------------"
 		echo "             Redémarrage et vérification de la structure du disque             "
 		echo "-------------------------------------------------------------------------------"
@@ -232,6 +235,7 @@ else
 	echo ""
 	echo ""
 	echo "*** Abandon des mises à jour - Nouvelle tentative dans 24h ***"
+	echo ""
 	echo ""
 	echo ""
 	echo "-------------------------------------------------------------------------------"
