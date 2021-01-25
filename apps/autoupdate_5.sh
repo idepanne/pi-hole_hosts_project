@@ -27,7 +27,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                            autoupdate_5.sh 5.0.0b3                            "
+echo "                            autoupdate_5.sh 5.0.0b4                            "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -113,7 +113,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		else
 			echo ""
 			echo "$ sudo pihole -g"
-			# sudo pihole -g
+			sudo pihole -g
 			echo ""
 		fi
 	echo ""
@@ -139,13 +139,13 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "                             Mise à jour du crontab                            "
 	echo "-------------------------------------------------------------------------------"
 	echo ""
-	echo "Ancien crontab :"
+	echo "Ancien crontab:"
 	crontab -l
 	echo ""
 	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	sudo /etc/init.d/cron restart
 	echo ""
-	echo "Nouveau crontab :"
+	echo "Nouveau crontab:"
 	crontab -l
 	echo ""
 	echo ""
@@ -171,6 +171,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "sudo rm -rv *test*.sh"
 	sudo rm -rv *test*.sh
+	echo ""
+	echo "sudo rm -rv autoupdate_conf.sh"
+	sudo rm -rv autoupdate_conf.sh
+	echo ""
+	echo "sudo rm -rv infos_system.sh"
+	sudo rm -rv infos_system.sh
 	echo ""
 	echo "cd /home/pi/log/ && sudo rm -rv *test*.log"
 	cd /home/pi/log/ && sudo rm -rv *test*.log
@@ -209,7 +215,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 				echo ""
 				echo ""
 				duration=$SECONDS
-				echo "Durée d'execution du programme: $(($duration / 60)) min $(($duration % 60)) sec"
+				echo "Durée d'execution: $(($duration / 60)) min $(($duration % 60)) sec"
 		else
 				echo "$var"
 				echo ""
@@ -222,7 +228,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 				echo ""
 				echo ""
 				duration=$SECONDS
-				echo "Durée d'execution du programme: $(($duration / 60)) min $(($duration % 60)) sec"
+				echo "Durée d'execution: $(($duration / 60)) min $(($duration % 60)) sec"
 				echo ""
 				sleep 1
 				sudo reboot
@@ -243,7 +249,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		echo ""
 		duration=$SECONDS
-		echo "Durée d'execution du programme: $(($duration / 60)) min $(($duration % 60)) sec"
+		echo "Durée d'execution: $(($duration / 60)) min $(($duration % 60)) sec"
 		echo ""
 		sleep 1
 		sudo shutdown -rF now
@@ -260,18 +266,18 @@ else
 	echo "                             Mise à jour du crontab                            "
 	echo "-------------------------------------------------------------------------------"
 	echo ""
-	echo "Ancien crontab :"
+	echo "Ancien crontab:"
 	crontab -l
 	echo ""
 	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	sudo /etc/init.d/cron restart
 	echo ""
-	echo "Nouveau crontab :"
+	echo "Nouveau crontab:"
 	crontab -l
 	echo ""
 	echo ""
 	echo ""
 	duration=$SECONDS
-	echo "Durée d'execution du programme: $(($duration / 60)) min $(($duration % 60)) sec"
+	echo "Durée d'execution: $(($duration / 60)) min $(($duration % 60)) sec"
 	echo ""
 fi
