@@ -1,4 +1,5 @@
 #!/bin/bash
+SECONDS=0
 cd
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
@@ -26,7 +27,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                            autoupdate_5.sh 5.0.0b2                            "
+echo "                            autoupdate_5.sh 5.0.0b3                            "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -203,7 +204,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 				echo ""
 				echo "-------------------------------------------------------------------------------"
 				echo "                          Aucun redémarrage nécessaire                         "
-				echo "-------------------------------------------------------------------------------" 
+				echo "-------------------------------------------------------------------------------"
+				echo ""
+				echo ""
+				echo ""
+				duration=$SECONDS
+				echo "Durée d'execution du programme: $(($duration / 60)) min $(($duration % 60)) sec"
 		else
 				echo "$var"
 				echo ""
@@ -212,6 +218,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 				echo "-------------------------------------------------------------------------------"
 				echo "                          Redémarrage du Raspberry Pi                          "
 				echo "-------------------------------------------------------------------------------"
+				echo ""
+				echo ""
+				echo ""
+				duration=$SECONDS
+				echo "Durée d'execution du programme: $(($duration / 60)) min $(($duration % 60)) sec"
+				echo ""
 				sleep 1
 				sudo reboot
 		fi
@@ -227,6 +239,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "-------------------------------------------------------------------------------"
 		echo "             Redémarrage et vérification de la structure du disque             "
 		echo "-------------------------------------------------------------------------------"
+		echo ""
+		echo ""
+		echo ""
+		duration=$SECONDS
+		echo "Durée d'execution du programme: $(($duration / 60)) min $(($duration % 60)) sec"
+		echo ""
 		sleep 1
 		sudo shutdown -rF now
 	fi
@@ -250,4 +268,10 @@ else
 	echo ""
 	echo "Nouveau crontab :"
 	crontab -l
+	echo ""
+	echo ""
+	echo ""
+	duration=$SECONDS
+	echo "Durée d'execution du programme: $(($duration / 60)) min $(($duration % 60)) sec"
+	echo ""
 fi
