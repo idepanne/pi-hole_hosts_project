@@ -27,7 +27,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                            autoupdate_5.sh 5.0.0b4                            "
+echo "                            autoupdate_5.sh 5.0.0b5                            "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -215,7 +215,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 				echo ""
 				echo ""
 				duration=$SECONDS
-				echo "Durée d'execution: $(($duration / 60)) min $(($duration % 60)) sec"
+				echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
 		else
 				echo "$var"
 				echo ""
@@ -228,7 +228,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 				echo ""
 				echo ""
 				duration=$SECONDS
-				echo "Durée d'execution: $(($duration / 60)) min $(($duration % 60)) sec"
+				echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
 				echo ""
 				sleep 1
 				sudo reboot
@@ -249,7 +249,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		echo ""
 		duration=$SECONDS
-		echo "Durée d'execution: $(($duration / 60)) min $(($duration % 60)) sec"
+		echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
 		echo ""
 		sleep 1
 		sudo shutdown -rF now
@@ -278,6 +278,6 @@ else
 	echo ""
 	echo ""
 	duration=$SECONDS
-	echo "Durée d'execution: $(($duration / 60)) min $(($duration % 60)) sec"
+	echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
 	echo ""
 fi
