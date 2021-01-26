@@ -27,7 +27,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                             autoupdate.sh 5.0.0b6                             "
+echo "                             autoupdate.sh 5.0.0b7                             "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -114,7 +114,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 			echo ""
 			echo "$ sudo pihole -g"
 			sudo pihole -g
-			echo ""
 		fi
 	echo ""
 	echo ""
@@ -169,19 +168,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "sudo rm -rv *_new.sh"
 	sudo rm -rv *_new.sh
 	echo ""
-	echo "sudo rm -rv *test*.sh"
-	sudo rm -rv *test*.sh
-	echo ""
-	echo "sudo rm -rv autoupdate_conf.sh"
-	sudo rm -rv autoupdate_conf.sh
-	echo ""
-	echo "sudo rm -rv infos_system.sh"
-	sudo rm -rv infos_system.sh
-	echo ""
-	echo "cd /home/pi/log/ && sudo rm -rv *test*.log"
-	cd /home/pi/log/ && sudo rm -rv *test*.log
-	cd
-	echo ""
 	echo "find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
 	find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
 	echo ""
@@ -229,7 +215,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 				echo ""
 				duration=$SECONDS
 				echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
-				echo ""
 				sleep 1
 				sudo reboot
 		fi
@@ -250,7 +235,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		duration=$SECONDS
 		echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
-		echo ""
 		sleep 1
 		sudo shutdown -rF now
 	fi
@@ -279,5 +263,4 @@ else
 	echo ""
 	duration=$SECONDS
 	echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
-	echo ""
 fi
