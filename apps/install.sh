@@ -1,5 +1,6 @@
 #!/bin/bash
 SECONDS=0
+clear
 cd
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
