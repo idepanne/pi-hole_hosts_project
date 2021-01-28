@@ -204,6 +204,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		duration=$SECONDS
 		echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
+		echo ""
 		sleep 1
 		sudo reboot
 	fi
