@@ -27,7 +27,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                              install.sh 5.0.0b1                               "
+echo "                               install.sh 5.0.0                                "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
@@ -155,22 +155,6 @@ echo ""
 echo ""
 echo ""
 echo "-------------------------------------------------------------------------------"
-echo "                      Mise à jour du module autoupdate.sh                      "
-echo "-------------------------------------------------------------------------------"
-echo ""
-echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh
-echo ""
-echo "sudo mv autoupdate.sh autoupdate_old.sh"
-sudo mv autoupdate.sh autoupdate_old.sh
-echo "sudo mv autoupdate_new.sh autoupdate.sh"
-sudo mv autoupdate_new.sh autoupdate.sh
-echo "sudo chmod +x autoupdate.sh"
-sudo chmod +x autoupdate.sh
-echo ""
-echo ""
-echo ""
-echo "-------------------------------------------------------------------------------"
 echo "                             Mise à jour du crontab                            "
 echo "-------------------------------------------------------------------------------"
 echo ""
@@ -218,5 +202,6 @@ echo "--------------------------------------------------------------------------
 echo ""
 duration=$SECONDS
 echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
+echo ""
 sleep 1
 sudo shutdown -rF now
