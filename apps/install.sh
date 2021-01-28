@@ -91,6 +91,16 @@ sudo mv autoupdate_new.sh autoupdate.sh
 echo "sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
+echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys_new.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys_new.sh
+echo ""
+echo "sudo mv infosys.sh infosys_old.sh"
+sudo mv infosys.sh infosys_old.sh
+echo "sudo mv infosys_new.sh infosys.sh"
+sudo mv infosys_new.sh infosys.sh
+echo "sudo chmod +x infosys.sh"
+sudo chmod +x infosys.sh
+echo ""
 echo "sudo apt-get update"
 sudo apt-get update
 echo ""
@@ -200,6 +210,8 @@ echo ""
 echo "-------------------------------------------------------------------------------"
 echo "             Redémarrage et vérification de la structure du disque             "
 echo "-------------------------------------------------------------------------------"
+echo ""
+echo ""
 echo ""
 duration=$SECONDS
 echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
