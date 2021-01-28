@@ -189,8 +189,8 @@ echo ""
 echo "sudo rm -rv *_new.sh"
 sudo rm -rv *_new.sh
 echo ""
-echo "sudo rm -rv install*"
-sudo rm -rv install*
+echo "sudo rm -rv install*.sh"
+sudo rm -rv install*.sh
 echo ""
 echo "find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
 find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
