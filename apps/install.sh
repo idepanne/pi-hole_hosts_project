@@ -92,7 +92,6 @@ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/maste
 echo ""
 echo "sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
-echo ""
 echo "sudo chmod +x infosys.sh"
 sudo chmod +x infosys.sh
 echo ""
@@ -193,9 +192,6 @@ sudo rm -rv *_old.sh
 echo ""
 echo "sudo rm -rv *_new.sh"
 sudo rm -rv *_new.sh
-echo ""
-echo "sudo rm -rv install*.sh"
-sudo rm -rv install*.sh
 echo ""
 echo "find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
 find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
