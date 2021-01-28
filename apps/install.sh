@@ -28,7 +28,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "                               install.sh 5.0.0                                "
+echo "                               install.sh 5.0.1                                "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo ""
@@ -81,23 +81,18 @@ echo "--------------------------------------------------------------------------
 echo "                      Installation des logiciels prérequis                     "
 echo "-------------------------------------------------------------------------------"
 echo ""
-echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh
+echo "sudo rm -rv *.sh"
+sudo rm -rv *.sh
 echo ""
-echo "sudo mv autoupdate.sh autoupdate_old.sh"
-sudo mv autoupdate.sh autoupdate_old.sh
-echo "sudo mv autoupdate_new.sh autoupdate.sh"
-sudo mv autoupdate_new.sh autoupdate.sh
+echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
+echo ""
+echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys.sh
+echo ""
 echo "sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
-echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys_new.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys_new.sh
-echo ""
-echo "sudo mv infosys.sh infosys_old.sh"
-sudo mv infosys.sh infosys_old.sh
-echo "sudo mv infosys_new.sh infosys.sh"
-sudo mv infosys_new.sh infosys.sh
 echo "sudo chmod +x infosys.sh"
 sudo chmod +x infosys.sh
 echo ""
