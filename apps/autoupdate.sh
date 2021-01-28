@@ -174,61 +174,30 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "-------------------------------------------------------------------------------"
-	echo "                     Recherche du programme d'installation                     "
+	echo "                   Vérification des processus de mises à jour                  "
 	echo "-------------------------------------------------------------------------------"
 	echo ""
-	var="$(find . -name 'install*')"
-	if [ "$var" == "" ]; then
-		echo "Programme d'installation non détecté"
+	var=$(sudo checkrestart)
+	if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 		echo "$var"
 		echo ""
 		echo ""
 		echo ""
 		echo "-------------------------------------------------------------------------------"
-		echo "                   Vérification des processus de mises à jour                  "
+		echo "                          Aucun redémarrage nécessaire                         "
 		echo "-------------------------------------------------------------------------------"
 		echo ""
-		var=$(sudo checkrestart)
-		if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
-				echo "$var"
-				echo ""
-				echo ""
-				echo ""
-				echo "-------------------------------------------------------------------------------"
-				echo "                          Aucun redémarrage nécessaire                         "
-				echo "-------------------------------------------------------------------------------"
-				echo ""
-				echo ""
-				echo ""
-				duration=$SECONDS
-				echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
-		else
-				echo "$var"
-				echo ""
-				echo ""
-				echo ""
-				echo "-------------------------------------------------------------------------------"
-				echo "                          Redémarrage du Raspberry Pi                          "
-				echo "-------------------------------------------------------------------------------"
-				echo ""
-				echo ""
-				echo ""
-				duration=$SECONDS
-				echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
-				sleep 1
-				sudo reboot
-		fi
+		echo ""
+		echo ""
+		duration=$SECONDS
+		echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
 	else
-		echo "Programme d'installation détecté..."
 		echo "$var"
-		echo ""
-		echo "sudo rm -rv install*"
-		sudo rm -rv install*
 		echo ""
 		echo ""
 		echo ""
 		echo "-------------------------------------------------------------------------------"
-		echo "             Redémarrage et vérification de la structure du disque             "
+		echo "                          Redémarrage du Raspberry Pi                          "
 		echo "-------------------------------------------------------------------------------"
 		echo ""
 		echo ""
@@ -236,7 +205,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		duration=$SECONDS
 		echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
 		sleep 1
-		sudo shutdown -rF now
+		sudo reboot
 	fi
 else
 	echo "Connexion Internet: Echec"
