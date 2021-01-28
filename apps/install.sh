@@ -216,8 +216,7 @@ echo "--------------------------------------------------------------------------
 echo "             Redémarrage et vérification de la structure du disque             "
 echo "-------------------------------------------------------------------------------"
 echo ""
-	duration=$SECONDS
-	echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
-	sleep 1
-	sudo shutdown -rF now
-fi
+duration=$SECONDS
+echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
+sleep 1
+sudo shutdown -rF now
