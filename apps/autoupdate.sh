@@ -135,6 +135,22 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "-------------------------------------------------------------------------------"
+	echo "                       Mise à jour du module infosys.sh                        "
+	echo "-------------------------------------------------------------------------------"
+	echo ""
+	echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys_new.sh"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys_new.sh
+	echo ""
+	echo "sudo mv infosys.sh infosys_old.sh"
+	sudo mv infosys.sh infosys_old.sh
+	echo "sudo mv infosys_new.sh infosys.sh"
+	sudo mv infosys_new.sh infosys.sh
+	echo "sudo chmod +x infosys.sh"
+	sudo chmod +x infosys.sh
+	echo ""
+	echo ""
+	echo ""
+	echo "-------------------------------------------------------------------------------"
 	echo "                             Mise à jour du crontab                            "
 	echo "-------------------------------------------------------------------------------"
 	echo ""
