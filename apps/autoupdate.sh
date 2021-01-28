@@ -1,6 +1,5 @@
 #!/bin/bash
 SECONDS=0
-clear
 cd
 echo "                   'o:::::::::::::::::::::lc                                   "
 echo "                   lc                     .O                                   "
@@ -168,6 +167,9 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "sudo rm -rv *_new.sh"
 	sudo rm -rv *_new.sh
+	echo ""
+	echo "sudo rm -rv install*.sh"
+	sudo rm -rv install*.sh
 	echo ""
 	echo "find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
 	find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
