@@ -1,42 +1,35 @@
 # Porn Block List
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
-
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
-
 # This hosts file adds additional domains to be blocked in the
 # "Pi-Hole" software on a Raspberry Pi server. Its use is free.
-
 # For additions, modifications or corrections, you can send an
 # e-mail to idepanne67@gmail.com
 
+# A
 0.0.0.0 adameteve.fr
 0.0.0.0 www.adameteve.fr
-
 0.0.0.0 afic.org
 0.0.0.0 www.afic.org
-
 0.0.0.0 ahoyporn.com
 0.0.0.0 www.ahoyporn.com
-
 0.0.0.0 ahxxx.net
 0.0.0.0 www.ahxxx.net
-
 0.0.0.0 aspornvideo.com
 0.0.0.0 www.aspornvideo.com
 
+# B
 0.0.0.0 balancetanude.fr
 0.0.0.0 www.balancetanude.fr
-
 0.0.0.0 beautymovies.com
 0.0.0.0 www.beautymovies.com
-
 0.0.0.0 bonsoirmademoiselle.fr
 0.0.0.0 www.bonsoirmademoiselle.fr
 
+# C
 0.0.0.0 casting-porno.info
 0.0.0.0 www.casting-porno.info
-
 0.0.0.0 chinaporn.com
 0.0.0.0 www.chinaporn.com
 0.0.0.0 chinaporn0.com
@@ -59,87 +52,75 @@
 0.0.0.0 www.chinaporn8.com
 0.0.0.0 chinaporn9.com
 0.0.0.0 www.chinaporn9.com
-
 0.0.0.0 cloudygirls.com
 0.0.0.0 www.cloudygirls.com
-
 0.0.0.0 couplesamateur.fr
 0.0.0.0 www.couplesamateur.fr
-
 0.0.0.0 cuntempire.com
 0.0.0.0 www.cuntempire.com
 
+# D
 0.0.0.0 dagbladet.no
 0.0.0.0 www.dagbladet.no
-
 0.0.0.0 derrierelerideau.com
 0.0.0.0 www.derrierelerideau.com
-
 0.0.0.0 dirtybadger.com
 0.0.0.0 www.dirtybadger.com
 
+# E
 0.0.0.0 eporner.com
 0.0.0.0 www.eporner.com
 0.0.0.0 fr.eporner.com
 
+# F
 0.0.0.0 femme-offerte.com
 0.0.0.0 www.femme-offerte.com
-
 0.0.0.0 filmsexeporno.com
 0.0.0.0 www.filmsexeporno.com
-
 0.0.0.0 filmsxenfrancais.com
 0.0.0.0 www.filmsxenfrancais.com
-
 0.0.0.0 folieporno.fr
 0.0.0.0 www.folieporno.fr
-
 0.0.0.0 fouporno.com
 0.0.0.0 www.fouporno.com
 
+# G
 0.0.0.0 gangbangparis.com
 0.0.0.0 www.gangbangparis.com
-
 0.0.0.0 gesek.info
 0.0.0.0 www.gesek.info
 0.0.0.0 xhams.gesek.info
-
 0.0.0.0 goplre.pro
 0.0.0.0 www.goplre.pro
 0.0.0.0 fz1ok.goplre.pro
-
 0.0.0.0 goshow.tv
 0.0.0.0 www.goshow.tv
 0.0.0.0 porn.goshow.tv
 
+# H
 0.0.0.0 hdvideosporn.com
 0.0.0.0 www.hdvideosporn.com
-
 0.0.0.0 heureporno.com
 0.0.0.0 www.heureporno.com
-
 0.0.0.0 heavy-r.com
 0.0.0.0 www.heavy-r.com
 0.0.0.0 devtestnew.heavy-r.com
-
 0.0.0.0 hot-affectionzone.com
 0.0.0.0 www.hot-affectionzone.com
-
 0.0.0.0 hotporn.us
 0.0.0.0 www.hotporn.us
-
 0.0.0.0 hotwap.net
 0.0.0.0 www.hotwap.net
 
+# I
 0.0.0.0 ijavhd.com
 0.0.0.0 www.ijavhd.com
-
 0.0.0.0 iloopit.net
 0.0.0.0 www.iloopit.net
-
 0.0.0.0 instacoquin.fr
 0.0.0.0 www.instacoquin.fr
 
+# J
 0.0.0.0 javhdporn.net
 0.0.0.0 www.javhdporn.net
 0.0.0.0 www1.javhdporn.net
@@ -148,68 +129,57 @@
 0.0.0.0 www4.javhdporn.net
 0.0.0.0 www5.javhdporn.net
 0.0.0.0 www6.javhdporn.net
-
 0.0.0.0 jemontremabite.com
 0.0.0.0 www.jemontremabite.com
-
 0.0.0.0 jerkmate.com
 0.0.0.0 www.jerkmate.com
 0.0.0.0 landing.jerkmate.com
-
 0.0.0.0 justindianporn.com
 0.0.0.0 www.justindianporn.com
-
 0.0.0.0 justindianporn1.com
 0.0.0.0 www.justindianporn1.com
-
 0.0.0.0 justindianporn2.com
 0.0.0.0 www.justindianporn2.com
 
+# K
 0.0.0.0 katitube.com
 0.0.0.0 www.katitube.com
-
 0.0.0.0 kompoz.me
 0.0.0.0 www.kompoz.me
-
 0.0.0.0 kompoz2.com
 0.0.0.0 www.kompoz2.com
 
+# L
 0.0.0.0 legrivois.org
 0.0.0.0 www.legrivois.org
-
 0.0.0.0 lhentai.org
 0.0.0.0 www.lhentai.org
 
+# M
 0.0.0.0 madnessporn.com
 0.0.0.0 www.madnessporn.com
-
 0.0.0.0 malayfuck.net
 0.0.0.0 www.malayfuck.net
-
 0.0.0.0 mavamo.fr
 0.0.0.0 www.mavamo.fr
-
 0.0.0.0 momzr.com
 0.0.0.0 www.momzr.com
-
 0.0.0.0 mondesensuel.fr
 0.0.0.0 www.mondesensuel.fr
-
 0.0.0.0 mycumx.com
 0.0.0.0 www.mycumx.com
 
+# N
 0.0.0.0 noirporno.com
 0.0.0.0 www.noirporno.com
-
 0.0.0.0 nudechatguys.com
 0.0.0.0 www.nudechatguys.com
-
 0.0.0.0 nudeskinnyteens.com
 0.0.0.0 www.nudeskinnyteens.com
 
+# O
 0.0.0.0 onlyindianporn.tv
 0.0.0.0 www.onlyindianporn.tv
-
 0.0.0.0 openxh.com
 0.0.0.0 www.openxh.com
 0.0.0.0 fr.openxh.com
@@ -241,95 +211,83 @@
 0.0.0.0 www.openxh9.com
 0.0.0.0 fr.openxh9.com
 
+# P
 0.0.0.0 planculsnap.com
 0.0.0.0 www.planculsnap.com
-
 0.0.0.0 planescort.com
 0.0.0.0 www.planescort.com
-
 0.0.0.0 pornica.fr
 0.0.0.0 www.pornica.fr
-
 0.0.0.0 pornocuab.com
 0.0.0.0 www.pornocuab.com
-
 0.0.0.0 pornogratuit.xxx
 0.0.0.0 www.pornogratuit.xxx
-
 0.0.0.0 pornolegende.net
 0.0.0.0 www.pornolegende.net
-
 0.0.0.0 pornosuivre.com
 0.0.0.0 www.pornosuivre.com
-
 0.0.0.0 pornotumblr.com
 0.0.0.0 www.pornotumblr.com
-
 0.0.0.0 pornowatch.net
 0.0.0.0 www.pornowatch.net
-
 0.0.0.0 pornoxxx.fr
 0.0.0.0 www.pornoxxx.fr
-
 0.0.0.0 protrain-china.com
 0.0.0.0 www.protrain-china.com
 
+# Q
+
+# R
 0.0.0.0 raysporn.com
 0.0.0.0 www.raysporn.com
-
 0.0.0.0 reclaimedvoices.org
 0.0.0.0 www.reclaimedvoices.org
-
 0.0.0.0 redwap.xyz
 0.0.0.0 www.redwap.xyz
 
+# S
 0.0.0.0 sexonsnap.com
 0.0.0.0 www.sexonsnap.com
-
 0.0.0.0 sikwap.mobi
 0.0.0.0 www.sikwap.mobi
-
 0.0.0.0 singeporno.com
 0.0.0.0 www.singeporno.com
-
 0.0.0.0 sharingmywife.pro
 0.0.0.0 www.sharingmywife.pro
 
+# T
 0.0.0.0 toomics.com
 0.0.0.0 www.toomics.com
-
 0.0.0.0 trannylime.com
 0.0.0.0 www.trannylime.com
-
 0.0.0.0 transtube.net
 0.0.0.0 www.transtube.net
-
 0.0.0.0 tube4world.com
 0.0.0.0 www.tube4world.com
-
 0.0.0.0 tumblrgallery.com
 0.0.0.0 www.tumblrgallery.com
 
+# U
+
+# V
 0.0.0.0 video-creampie.com
 0.0.0.0 www.video-creampie.com
-
 0.0.0.0 videopornogratuit.fr
 0.0.0.0 www.videopornogratuit.fr
-
 0.0.0.0 vidmo.org
 0.0.0.0 www.vidmo.org
 0.0.0.0 en.vidmo.org
 0.0.0.0 fr.vidmo.org
-
 0.0.0.0 villageporno.com
 0.0.0.0 www.villageporno.com
 
+# W
 0.0.0.0 wifeandstrangers.com
 0.0.0.0 www.wifeandstrangers.com
-
 0.0.0.0 wifefuckstranger.com
 0.0.0.0 www.wifefuckstranger.com
 
+# X
 0.0.0.0 xhamster1.desi
 0.0.0.0 www.xhamster1.desi
 0.0.0.0 fr.xhamster1.desi
@@ -345,7 +303,6 @@
 0.0.0.0 xhamster5.desi
 0.0.0.0 www.xhamster5.desi
 0.0.0.0 fr.xhamster5.desi
-
 0.0.0.0 xhamster1.com
 0.0.0.0 www.xhamster1.com
 0.0.0.0 fr.xhamster1.com
@@ -496,27 +453,23 @@
 0.0.0.0 xhamster50.com
 0.0.0.0 www.xhamster50.com
 0.0.0.0 fr.xhamster50.com
-
 0.0.0.0 xnxx.es
 0.0.0.0 www.xnxx.es
-
 0.0.0.0 xnxx4porn.com
 0.0.0.0 www.xnxx4porn.com
-
 0.0.0.0 xpin.fr
 0.0.0.0 www.xpin.fr
-
 0.0.0.0 xxvideosporns.com
 0.0.0.0 www.xxvideosporns.com
-
 0.0.0.0 xvidio.mobi
 0.0.0.0 www.xvidio.mobi
-
 0.0.0.0 xxxlucah.com
 0.0.0.0 www.xxxlucah.com
 
+# Y
+
+# Z
 0.0.0.0 zigtube.com
 0.0.0.0 www.zigtube.com
-
 0.0.0.0 ztube.org
 0.0.0.0 www.ztube.org
