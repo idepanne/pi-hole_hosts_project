@@ -27,28 +27,28 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                              autoupdate.sh 5.0.2                              "
+echo "                              autoupdate.sh 5.0.3                              "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "-------------------------------------------------------------------------------"
+echo "==============================================================================="
 echo "                         Test de la connexion Internet                         "
-echo "-------------------------------------------------------------------------------"
+echo "==============================================================================="
 echo ""
 var=$(ping -c 3 raw.githubusercontent.com)
 echo "$var"
 echo ""
 echo ""
 if [[ "$var" =~ "0% packet loss" ]]; then
-	echo "Connexion Internet: OK"
+	echo "Connexion Internet : OK"
 	echo ""
 	echo ""
 	echo ""
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo "                              Informations système                             "
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo ""
 	cat /proc/cpuinfo | grep Model
 	cat /proc/cpuinfo | grep Serial
@@ -76,10 +76,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	var4=$(uptime -p)
 	echo -n "Démarré depuis  : " && echo "$var3 - $var4"
 	echo ""
-	echo "Synchronisation de l'horloge :"
-	sudo systemctl daemon-reload
-	timedatectl timesync-status && timedatectl
-	echo ""
 	echo "Stockage        : "
 	df -h /
 	df -h | grep /var/log
@@ -87,11 +83,15 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "RAM             : "
 	free -ht
 	echo ""
+	echo "Synchronisation de l'horloge :"
+	sudo systemctl daemon-reload
+	timedatectl timesync-status && timedatectl
 	echo ""
 	echo ""
-	echo "-------------------------------------------------------------------------------"
+	echo ""
+	echo "==============================================================================="
 	echo "                            Mises à jour du système                            "
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo ""
 	echo "$ sudo apt-get update"
 	sudo apt-get update
@@ -118,56 +118,40 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo ""
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo "                      Mise à jour du module autoupdate.sh                      "
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo ""
-	echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh"
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh"
 	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh
 	echo ""
-	echo "sudo mv autoupdate.sh autoupdate_old.sh"
+	echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
 	sudo mv autoupdate.sh autoupdate_old.sh
-	echo "sudo mv autoupdate_new.sh autoupdate.sh"
+	echo "$ sudo mv autoupdate_new.sh autoupdate.sh"
 	sudo mv autoupdate_new.sh autoupdate.sh
-	echo "sudo chmod +x autoupdate.sh"
+	echo "$ sudo chmod +x autoupdate.sh"
 	sudo chmod +x autoupdate.sh
 	echo ""
 	echo ""
 	echo ""
-	echo "-------------------------------------------------------------------------------"
-	echo "                       Mise à jour du module infosys.sh                        "
-	echo "-------------------------------------------------------------------------------"
-	echo ""
-	echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys_new.sh"
-	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/infosys.sh > infosys_new.sh
-	echo ""
-	echo "sudo mv infosys.sh infosys_old.sh"
-	sudo mv infosys.sh infosys_old.sh
-	echo "sudo mv infosys_new.sh infosys.sh"
-	sudo mv infosys_new.sh infosys.sh
-	echo "sudo chmod +x infosys.sh"
-	sudo chmod +x infosys.sh
-	echo ""
-	echo ""
-	echo ""
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo "                             Mise à jour du crontab                            "
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo ""
-	echo "Ancien crontab:"
+	echo "Ancien crontab :"
 	crontab -l
 	echo ""
 	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	sudo /etc/init.d/cron restart
 	echo ""
-	echo "Nouveau crontab:"
+	echo "Nouveau crontab :"
 	crontab -l
 	echo ""
 	echo ""
 	echo ""
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo "                              Nettoyage du système                             "
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo ""
 	echo "$ sudo apt-get autoremove -y"
 	sudo apt-get autoremove -y
@@ -178,20 +162,20 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo apt-get clean -y"
 	sudo apt-get clean -y
 	echo ""
-	echo "sudo rm -rv *_old.sh"
+	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
 	echo ""
-	echo "sudo rm -rv *_new.sh"
+	echo "$ sudo rm -rv *_new.sh"
 	sudo rm -rv *_new.sh
 	echo ""
-	echo "find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
+	echo "$ find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
 	find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
 	echo ""
 	echo ""
 	echo ""
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo "                   Vérification des processus de mises à jour                  "
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo ""
 	var=$(sudo checkrestart)
 	if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
@@ -199,54 +183,54 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		echo ""
 		echo ""
-		echo "-------------------------------------------------------------------------------"
+		echo "==============================================================================="
 		echo "                          Aucun redémarrage nécessaire                         "
-		echo "-------------------------------------------------------------------------------"
+		echo "==============================================================================="
 		echo ""
 		echo ""
 		echo ""
 		duration=$SECONDS
-		echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
+		echo "Durée d'exécution : $(($duration / 60)) min $(($duration % 60)) sec"
 	else
 		echo "$var"
 		echo ""
 		echo ""
 		echo ""
-		echo "-------------------------------------------------------------------------------"
+		echo "==============================================================================="
 		echo "                          Redémarrage du Raspberry Pi                          "
-		echo "-------------------------------------------------------------------------------"
+		echo "==============================================================================="
 		echo ""
 		echo ""
 		echo ""
 		duration=$SECONDS
-		echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
+		echo "Durée d'exécution : $(($duration / 60)) min $(($duration % 60)) sec"
 		echo ""
 		sleep 1
 		sudo reboot
 	fi
 else
-	echo "Connexion Internet: Echec"
+	echo "Connexion Internet : Echec"
 	echo ""
 	echo ""
 	echo "*** Abandon des mises à jour - Nouvelle tentative dans 24h ***"
 	echo ""
 	echo ""
 	echo ""
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo "                             Mise à jour du crontab                            "
-	echo "-------------------------------------------------------------------------------"
+	echo "==============================================================================="
 	echo ""
-	echo "Ancien crontab:"
+	echo "Ancien crontab :"
 	crontab -l
 	echo ""
 	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	sudo /etc/init.d/cron restart
 	echo ""
-	echo "Nouveau crontab:"
+	echo "Nouveau crontab :"
 	crontab -l
 	echo ""
 	echo ""
 	echo ""
 	duration=$SECONDS
-	echo "Durée d'exécution: $(($duration / 60)) min $(($duration % 60)) sec"
+	echo "Durée d'exécution : $(($duration / 60)) min $(($duration % 60)) sec"
 fi
