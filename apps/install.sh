@@ -81,39 +81,39 @@ echo "==========================================================================
 echo "                      Installation des logiciels prérequis                     "
 echo "==============================================================================="
 echo ""
-echo "sudo rm -rv *.sh"
+echo "$ sudo rm -rv *.sh"
 sudo rm -rv *.sh
 echo ""
-echo "wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
 echo ""
-echo "sudo chmod +x autoupdate.sh"
+echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
-echo "sudo apt-get update"
+echo "$ sudo apt-get update"
 sudo apt-get update
 echo ""
-echo "sudo apt-get install -yf dnsutils"
+echo "$ sudo apt-get install -yf dnsutils"
 sudo apt-get install -yf dnsutils
 echo ""
-echo "sudo apt-get install -yf debian-goodies"
+echo "$ sudo apt-get install -yf debian-goodies"
 sudo apt-get install -yf debian-goodies
 echo ""
-echo "sudo apt-get install -yf iftop"
+echo "$ sudo apt-get install -yf iftop"
 sudo apt-get install -yf iftop
 echo ""
-echo "sudo apt-get install -yf ca-certificates git binutils"
+echo "$ sudo apt-get install -yf ca-certificates git binutils"
 sudo apt-get install -yf ca-certificates git binutils
 echo ""
-echo "sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update"
+echo "$ sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update"
 sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update
 echo ""
-echo "sudo mv rpi-update /usr/local/bin/rpi-update"
+echo "$ sudo mv rpi-update /usr/local/bin/rpi-update"
 sudo mv rpi-update /usr/local/bin/rpi-update
-echo "sudo chmod +x /usr/local/bin/rpi-update"
+echo "$ sudo chmod +x /usr/local/bin/rpi-update"
 sudo chmod +x /usr/local/bin/rpi-update
 echo ""
-echo "mkdir log"
+echo "$ mkdir log"
 mkdir log
 echo ""
 echo ""
@@ -122,7 +122,7 @@ echo "==========================================================================
 echo "                            Mise à jour du firmware                            "
 echo "==============================================================================="
 echo ""
-echo "sudo rpi-update"
+echo "$ sudo rpi-update"
 sudo rpi-update
 echo ""
 echo ""
@@ -131,7 +131,7 @@ echo "==========================================================================
 echo "                            Mise à jour de l'EEPROM                            "
 echo "==============================================================================="
 echo ""
-echo "sudo rpi-eeprom-update -a"
+echo "$ sudo rpi-eeprom-update -a"
 sudo rpi-eeprom-update -a
 echo ""
 echo ""
@@ -182,13 +182,13 @@ echo ""
 echo "$ sudo apt-get clean -y"
 sudo apt-get clean -y
 echo ""
-echo "sudo rm -rv *_old.sh"
+echo "$ sudo rm -rv *_old.sh"
 sudo rm -rv *_old.sh
 echo ""
-echo "sudo rm -rv *_new.sh"
+echo "$ sudo rm -rv *_new.sh"
 sudo rm -rv *_new.sh
 echo ""
-echo "find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
+echo "$ find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
 find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
 echo ""
 echo ""
