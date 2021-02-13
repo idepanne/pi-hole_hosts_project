@@ -28,7 +28,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                               install.sh 5.0.3b9                              "
+echo "                              install.sh 5.0.3b10                              "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -37,46 +37,46 @@ echo "                                                                          
 echo "==============================================================================="
 echo "                              Informations système                             "
 echo "==============================================================================="
+echo ""
 cat /proc/cpuinfo | grep Model
-echo "-------------------------------------------------------------------------------"
+echo ""
 cat /proc/cpuinfo | grep Serial
-echo "-------------------------------------------------------------------------------"
+echo ""
 var1=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g')
 var2=$(lscpu | grep "Vendor ID:" | sed -r 's/Vendor ID:\s{1,}//g')
 echo -n "Processeur      : " && echo "$var2 $var1"
-echo "-------------------------------------------------------------------------------"
+echo ""
 cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
 cpuTemp1=$(($cpuTemp0/1000))
 cpuTemp2=$(($cpuTemp0/100))
 cpuTempM=$(($cpuTemp2 % $cpuTemp1))
 echo -n "Température     : "; echo CPU "= "$cpuTemp1"."$cpuTempM"°C"
 echo -n "                  "; echo "GPU = $(vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*')°C"
-echo "-------------------------------------------------------------------------------"
+echo ""
 echo -n "Firmware        : "
 /opt/vc/bin/vcgencmd version
-echo "-------------------------------------------------------------------------------"
+echo ""
 echo -n "EEPROM          : "
 sudo rpi-eeprom-update
-echo "-------------------------------------------------------------------------------"
+echo ""
 echo -n "Système         : "; uname -sr
-echo "-------------------------------------------------------------------------------"
+echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
-echo "-------------------------------------------------------------------------------"
+echo ""
 var3=$(uptime -s)
 var4=$(uptime -p)
 echo -n "Démarré depuis  : " && echo "$var3 - $var4"
-echo "-------------------------------------------------------------------------------"
+echo ""
 echo "Stockage        : "
 df -h /
 df -h | grep /var/log
-echo "-------------------------------------------------------------------------------"
+echo ""
 echo "RAM             : "
 free -ht
-echo "-------------------------------------------------------------------------------"
+echo ""
 echo "Synchronisation de l'horloge :"
 sudo systemctl daemon-reload
 timedatectl timesync-status && timedatectl
-echo "-------------------------------------------------------------------------------"
 echo ""
 echo ""
 echo ""
