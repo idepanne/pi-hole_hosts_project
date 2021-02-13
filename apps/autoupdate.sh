@@ -51,17 +51,19 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "==============================================================================="
 	echo ""
 	cat /proc/cpuinfo | grep Model
+	echo ""
 	cat /proc/cpuinfo | grep Serial
 	echo ""
 	var1=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g')
 	var2=$(lscpu | grep "Vendor ID:" | sed -r 's/Vendor ID:\s{1,}//g')
 	echo -n "Processeur      : " && echo "$var2 $var1"
+	echo ""
 	cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
 	cpuTemp1=$(($cpuTemp0/1000))
 	cpuTemp2=$(($cpuTemp0/100))
 	cpuTempM=$(($cpuTemp2 % $cpuTemp1))
-	echo -n "Température     : "; echo CPU temp"="$cpuTemp1"."$cpuTempM"'C"
-	echo -n "                  "; echo GPU $(/opt/vc/bin/vcgencmd measure_temp)
+	echo -n "Température     : "; echo CPU "= "$cpuTemp1"."$cpuTempM"°C"
+	echo -n "                  "; echo "GPU = $(vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*')°C"
 	echo ""
 	echo -n "Firmware        : "
 	/opt/vc/bin/vcgencmd version
@@ -70,6 +72,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	sudo rpi-eeprom-update
 	echo ""
 	echo -n "Système         : "; uname -sr
+	echo ""
 	echo -n "IPv4/IPv6       : "; hostname -I
 	echo ""
 	var3=$(uptime -s)
