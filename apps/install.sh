@@ -28,7 +28,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                               install.sh 5.0.3                                "
+echo "                               install.sh 5.0.3b7                              "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -48,8 +48,8 @@ cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
 cpuTemp1=$(($cpuTemp0/1000))
 cpuTemp2=$(($cpuTemp0/100))
 cpuTempM=$(($cpuTemp2 % $cpuTemp1))
-echo -n "Température     : "; echo CPU temp"="$cpuTemp1"."$cpuTempM"'C"
-echo -n "                  "; echo GPU $(/opt/vc/bin/vcgencmd measure_temp)
+echo -n "Température     : "; echo CPU "= "$cpuTemp1"."$cpuTempM"°C"
+echo -n "                  "; echo "GPU = $(vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*')°C"
 echo ""
 echo -n "Firmware        : "
 /opt/vc/bin/vcgencmd version
