@@ -28,7 +28,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                               install.sh 5.0.3b7                              "
+echo "                               install.sh 5.0.3b8                              "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -39,11 +39,13 @@ echo "                              Informations système                       
 echo "==============================================================================="
 echo ""
 cat /proc/cpuinfo | grep Model
+echo ""
 cat /proc/cpuinfo | grep Serial
 echo ""
 var1=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g')
 var2=$(lscpu | grep "Vendor ID:" | sed -r 's/Vendor ID:\s{1,}//g')
 echo -n "Processeur      : " && echo "$var2 $var1"
+echo ""
 cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
 cpuTemp1=$(($cpuTemp0/1000))
 cpuTemp2=$(($cpuTemp0/100))
@@ -58,6 +60,7 @@ echo -n "EEPROM          : "
 sudo rpi-eeprom-update
 echo ""
 echo -n "Système         : "; uname -sr
+echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
 var3=$(uptime -s)
