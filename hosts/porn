@@ -5,6 +5,12 @@
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
 
+# 2
+0.0.0.0 2beeg.me
+0.0.0.0 www.2beeg.me
+0.0.0.0 2beeg.mobi
+0.0.0.0 www.2beeg.mobi
+
 # A
 0.0.0.0 adameteve.fr
 0.0.0.0 www.adameteve.fr
@@ -14,6 +20,8 @@
 0.0.0.0 www.ahoyporn.com
 0.0.0.0 ahxxx.net
 0.0.0.0 www.ahxxx.net
+0.0.0.0 anyxan.com
+0.0.0.0 www.anyxan.com
 0.0.0.0 aspornvideo.com
 0.0.0.0 www.aspornvideo.com
 
@@ -24,6 +32,8 @@
 0.0.0.0 www.beautymovies.com
 0.0.0.0 bonsoirmademoiselle.fr
 0.0.0.0 www.bonsoirmademoiselle.fr
+0.0.0.0 borwap.pro
+0.0.0.0 www.borwap.pro
 
 # C
 0.0.0.0 casting-porno.info
@@ -83,6 +93,8 @@
 0.0.0.0 www.folieporno.fr
 0.0.0.0 fouporno.com
 0.0.0.0 www.fouporno.com
+0.0.0.0 freexxxporn.org
+0.0.0.0 www.freexxxporn.org
 
 # G
 0.0.0.0 gangbangparis.com
@@ -100,6 +112,8 @@
 # H
 0.0.0.0 hdvideosporn.com
 0.0.0.0 www.hdvideosporn.com
+0.0.0.0 hdvideosporn.net
+0.0.0.0 www.hdvideosporn.net
 0.0.0.0 heureporno.com
 0.0.0.0 www.heureporno.com
 0.0.0.0 heavy-r.com
@@ -212,6 +226,12 @@
 0.0.0.0 fr.openxh9.com
 
 # P
+0.0.0.0 pakistaniporn.com
+0.0.0.0 www.pakistaniporn.com
+0.0.0.0 pakistaniporn1.com
+0.0.0.0 www.pakistaniporn1.com
+0.0.0.0 pakistaniporn2.com
+0.0.0.0 www.pakistaniporn2.com
 0.0.0.0 planculsnap.com
 0.0.0.0 www.planculsnap.com
 0.0.0.0 planescort.com
@@ -238,6 +258,8 @@
 # Q
 
 # R
+0.0.0.0 rajwap.biz
+0.0.0.0 www.rajwap.biz
 0.0.0.0 raysporn.com
 0.0.0.0 www.raysporn.com
 0.0.0.0 reclaimedvoices.org
@@ -264,6 +286,8 @@
 0.0.0.0 www.transtube.net
 0.0.0.0 tube4world.com
 0.0.0.0 www.tube4world.com
+0.0.0.0 tubepatrol.org
+0.0.0.0 www.tubepatrol.org
 0.0.0.0 tumblrgallery.com
 0.0.0.0 www.tumblrgallery.com
 
@@ -282,6 +306,9 @@
 0.0.0.0 www.villageporno.com
 
 # W
+0.0.0.0 xnxx.wapka.cc
+0.0.0.0 wapka.cc
+0.0.0.0 www.wapka.cc
 0.0.0.0 wifeandstrangers.com
 0.0.0.0 www.wifeandstrangers.com
 0.0.0.0 wifefuckstranger.com
