@@ -171,7 +171,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo rm -rv *_new.sh"
 	sudo rm -rv *_new.sh
 	echo ""
-	echo "cd log && find *.log -mtime +27 -exec rm -rv {} \; && cd"
+	echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
 	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
 	echo ""
 	echo ""
