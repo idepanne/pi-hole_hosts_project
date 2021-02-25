@@ -27,7 +27,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                              autoupdate.sh 5.0.3                              "
+echo "                              autoupdate.sh 5.0.4                              "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -171,8 +171,8 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo rm -rv *_new.sh"
 	sudo rm -rv *_new.sh
 	echo ""
-	echo "$ find /home/pi/log/* -mtime +31 -exec rm -rv {} \;"
-	find /home/pi/log/* -mtime +31 -exec rm -rv {} \;
+	echo "cd log && find *.log -mtime +27 -exec rm -rv {} \; && cd"
+	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
 	echo ""
 	echo ""
 	echo ""
