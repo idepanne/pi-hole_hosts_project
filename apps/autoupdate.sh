@@ -27,7 +27,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                              autoupdate.sh 5.0.4                              "
+echo "                              autoupdate.sh 5.0.5                              "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -125,13 +125,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "                      Mise à jour du module autoupdate.sh                      "
 	echo "==============================================================================="
 	echo ""
-	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh"
-	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate_new.sh
-	echo ""
 	echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
 	sudo mv autoupdate.sh autoupdate_old.sh
-	echo "$ sudo mv autoupdate_new.sh autoupdate.sh"
-	sudo mv autoupdate_new.sh autoupdate.sh
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
+	echo ""
 	echo "$ sudo chmod +x autoupdate.sh"
 	sudo chmod +x autoupdate.sh
 	echo ""
@@ -167,9 +166,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
-	echo ""
-	echo "$ sudo rm -rv *_new.sh"
-	sudo rm -rv *_new.sh
 	echo ""
 	echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
 	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
