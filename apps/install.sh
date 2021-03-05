@@ -28,7 +28,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                                install.sh 5.0.4                               "
+echo "                                install.sh 5.0.5                               "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -187,9 +187,6 @@ sudo apt-get clean -y
 echo ""
 echo "$ sudo rm -rv *_old.sh"
 sudo rm -rv *_old.sh
-echo ""
-echo "$ sudo rm -rv *_new.sh"
-sudo rm -rv *_new.sh
 echo ""
 echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
 cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
