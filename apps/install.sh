@@ -111,8 +111,8 @@ echo ""
 echo "$ sudo apt-get install -yf ca-certificates git binutils"
 sudo apt-get install -yf ca-certificates git binutils
 echo ""
-echo "$ sudo apt-get install fail2ban"
-sudo apt-get install fail2ban
+echo "$ sudo apt-get install -yf fail2ban"
+sudo apt-get install -yf fail2ban
 echo ""
 echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 sudo rm -rv /etc/fail2ban/jail.local
