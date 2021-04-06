@@ -120,8 +120,8 @@ echo ""
 echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
 echo ""
-echo "$ sudo cp jail.local /etc/fail2ban/jail.local"
-sudo cp jail.local /etc/fail2ban/jail.local
+echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
+sudo mv jail.local /etc/fail2ban/jail.local
 echo ""
 echo "$ sudo service fail2ban restart"
 sudo service fail2ban restart
