@@ -28,7 +28,7 @@ echo "                                                                          
 echo "                                                                               "
 echo "                                                                               "
 echo "                                                                               "
-echo "                                install.sh 5.0.5                               "
+echo "                                install.sh 5.1.0                               "
 echo "                 © 2020-2021 iDépanne – L'expert informatique                  "
 echo "                            https://fb.me/idepanne/                            "
 echo "                                                                               "
@@ -96,6 +96,9 @@ echo ""
 echo "$ sudo apt-get update"
 sudo apt-get update
 echo ""
+echo "$ sudo apt-get upgrade"
+sudo apt-get upgrade
+echo ""
 echo "$ sudo apt-get install -yf dnsutils"
 sudo apt-get install -yf dnsutils
 echo ""
@@ -107,6 +110,18 @@ sudo apt-get install -yf iftop
 echo ""
 echo "$ sudo apt-get install -yf ca-certificates git binutils"
 sudo apt-get install -yf ca-certificates git binutils
+echo ""
+echo "$ sudo apt-get install fail2ban"
+sudo apt-get install fail2ban
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
+echo ""
+echo "$ sudo cp jail.local /etc/fail2ban/jail.local"
+sudo cp jail.local /etc/fail2ban/jail.local
+echo ""
+echo "$ sudo service fail2ban restart"
+sudo service fail2ban restart
 echo ""
 echo "$ sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update"
 sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update
