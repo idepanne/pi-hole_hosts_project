@@ -116,7 +116,7 @@ sudo apt-get install fail2ban
 echo ""
 echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 sudo rm -rv /etc/fail2ban/jail.local
-ech ""
+echo ""
 echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
 echo ""
