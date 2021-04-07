@@ -245,8 +245,8 @@ enabled   = true
 filter    = sshd
 port      = ssh
 banaction = iptables-multiport
-bantime   = -1
-maxretry  = 3
+bantime   = 1800
+maxretry  = 5
 logpath   = %(sshd_log)s
 backend   = %(sshd_backend)s
 
