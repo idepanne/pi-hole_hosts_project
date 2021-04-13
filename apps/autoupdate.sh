@@ -100,11 +100,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo ""
-	echo "curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash"
-	curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash
-	echo ""
-	echo ""
-	echo ""
 	echo "==============================================================================="
 	echo "                      Mise à jour du module autoupdate.sh                      "
 	echo "==============================================================================="
@@ -150,15 +145,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
-	echo ""
-	echo "$ sudo mv *.tar /home/pi/backup/"
-	sudo mv *.tar /home/pi/backup/
-	echo ""
-	echo "cd backup && find *.tar -mtime +7 -exec rm -rv {} \; && cd"
-	cd backup && find *.tar -mtime +7 -exec rm -rv {} \; && cd
-	echo ""
-	echo "$ sudo mv *.log /home/pi/log/"
-	sudo mv *.log /home/pi/log/
 	echo ""
 	echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
 	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
