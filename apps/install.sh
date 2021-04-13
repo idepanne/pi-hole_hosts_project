@@ -110,9 +110,6 @@ sudo mv rpi-update /usr/local/bin/rpi-update
 echo "$ sudo chmod +x /usr/local/bin/rpi-update"
 sudo chmod +x /usr/local/bin/rpi-update
 echo ""
-echo "$ mkdir backup"
-mkdir backup
-echo ""
 echo "$ mkdir log"
 mkdir log
 echo ""
