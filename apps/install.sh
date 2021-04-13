@@ -102,9 +102,6 @@ echo ""
 echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
 sudo mv jail.local /etc/fail2ban/jail.local
 echo ""
-echo "$ sudo service fail2ban restart"
-sudo service fail2ban restart
-echo ""
 echo "$ sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update"
 sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update
 echo ""
