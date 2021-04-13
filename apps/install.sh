@@ -140,6 +140,9 @@ echo ""
 echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
 sudo mv jail.local /etc/fail2ban/jail.local
 echo ""
+echo "$ mkdir backup"
+mkdir backup
+echo ""
 echo "$ mkdir log"
 mkdir log
 echo ""
@@ -152,7 +155,12 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+crontab <<<"0 3 * * 1 python ~/pialert/back/pialert.py update_vendors >~/pialert/log/pialert.vendors.log 2>&1
+*/1 * * * * python ~/pialert/back/pialert.py internet_IP >~/pialert/log/pialert.IP.log 2>&1
+*/1 * * * * python ~/pialert/back/pialert.py 1 >~/pialert/log/pialert.1.log 2>&1
+*/15 * * * * python ~/pialert/back/pialert.py 15 >~/pialert/log/pialert.15.log 2>&1
+0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+echo ""
 sudo /etc/init.d/cron restart
 echo ""
 echo "Nouveau crontab :"
