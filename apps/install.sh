@@ -4,7 +4,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                              install.sh 5.2.0                               #"
+echo "#                              install.sh 5.2.1                               #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -60,47 +60,8 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "                      Installation des logiciels prérequis                     "
+echo "                            Mise à jour du firmware                            "
 echo "==============================================================================="
-echo ""
-echo "$ sudo rm -rv *.sh"
-sudo rm -rv *.sh
-echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
-echo ""
-echo "$ sudo chmod +x autoupdate.sh"
-sudo chmod +x autoupdate.sh
-echo ""
-echo "$ sudo apt-get update"
-sudo apt-get update
-echo ""
-echo "$ sudo apt-get upgrade"
-sudo apt-get upgrade
-echo ""
-echo "$ sudo apt-get install -yf dnsutils"
-sudo apt-get install -yf dnsutils
-echo ""
-echo "$ sudo apt-get install -yf debian-goodies"
-sudo apt-get install -yf debian-goodies
-echo ""
-echo "$ sudo apt-get install -yf iftop"
-sudo apt-get install -yf iftop
-echo ""
-echo "$ sudo apt-get install -yf ca-certificates git binutils"
-sudo apt-get install -yf ca-certificates git binutils
-echo ""
-echo "$ sudo apt-get install -yf fail2ban"
-sudo apt-get install -yf fail2ban
-echo ""
-echo "$ sudo rm -rv /etc/fail2ban/jail.local"
-sudo rm -rv /etc/fail2ban/jail.local
-echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
-echo ""
-echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
-sudo mv jail.local /etc/fail2ban/jail.local
 echo ""
 echo "$ sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update"
 sudo wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update
@@ -109,15 +70,6 @@ echo "$ sudo mv rpi-update /usr/local/bin/rpi-update"
 sudo mv rpi-update /usr/local/bin/rpi-update
 echo "$ sudo chmod +x /usr/local/bin/rpi-update"
 sudo chmod +x /usr/local/bin/rpi-update
-echo ""
-echo "$ mkdir log"
-mkdir log
-echo ""
-echo ""
-echo ""
-echo "==============================================================================="
-echo "                            Mise à jour du firmware                            "
-echo "==============================================================================="
 echo ""
 echo "$ sudo rpi-update"
 sudo rpi-update
@@ -148,6 +100,48 @@ sudo apt-get dist-upgrade -y
 echo ""
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
+echo ""
+echo ""
+echo ""
+echo "==============================================================================="
+echo "                      Installation des logiciels prérequis                     "
+echo "==============================================================================="
+echo ""
+echo "$ sudo rm -rv *.sh"
+sudo rm -rv *.sh
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
+echo ""
+echo "$ sudo chmod +x autoupdate.sh"
+sudo chmod +x autoupdate.sh
+echo ""
+echo "$ sudo apt-get install -yf dnsutils"
+sudo apt-get install -yf dnsutils
+echo ""
+echo "$ sudo apt-get install -yf debian-goodies"
+sudo apt-get install -yf debian-goodies
+echo ""
+echo "$ sudo apt-get install -yf iftop"
+sudo apt-get install -yf iftop
+echo ""
+echo "$ sudo apt-get install -yf ca-certificates git binutils"
+sudo apt-get install -yf ca-certificates git binutils
+echo ""
+echo "$ sudo apt-get install -yf fail2ban"
+sudo apt-get install -yf fail2ban
+echo ""
+echo "$ sudo rm -rv /etc/fail2ban/jail.local"
+sudo rm -rv /etc/fail2ban/jail.local
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
+echo ""
+echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
+sudo mv jail.local /etc/fail2ban/jail.local
+echo ""
+echo "$ mkdir log"
+mkdir log
 echo ""
 echo ""
 echo ""
