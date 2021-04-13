@@ -60,14 +60,14 @@ before = paths-debian.conf
 ignorecommand =
 
 # "bantime" is the number of seconds that a host is banned.
-bantime  = 10m
+bantime  = 1800
 
 # A host is banned if it has generated "maxretry" during the last "findtime"
 # seconds.
 findtime  = 10m
 
 # "maxretry" is the number of failures before a host get banned.
-maxretry = 5
+maxretry = 10
 
 # "backend" specifies the backend used to get files modification.
 # Available options are "pyinotify", "gamin", "polling", "systemd" and "auto".
@@ -245,8 +245,8 @@ enabled   = true
 filter    = sshd
 port      = ssh
 banaction = iptables-multiport
-bantime   = 1800
-maxretry  = 5
+bantime   = 30m
+maxretry  = 10
 logpath   = %(sshd_log)s
 backend   = %(sshd_backend)s
 
