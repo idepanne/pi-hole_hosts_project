@@ -100,6 +100,11 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo ""
+	echo "curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash"
+	curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash
+	echo ""
+	echo ""
+	echo ""
 	echo "==============================================================================="
 	echo "                      Mise à jour du module autoupdate.sh                      "
 	echo "==============================================================================="
