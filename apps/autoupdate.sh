@@ -3,7 +3,7 @@ SECONDS=0
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                            autoupdate.sh 5.2.1                              #"
+echo "#                            autoupdate.sh 5.2.2                              #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -98,8 +98,10 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 			sudo pihole -g
 		fi
 	echo ""
+	cd
 	echo "curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash"
 	curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash
+	cd
 	echo ""
 	echo ""
 	echo ""
@@ -130,7 +132,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 */1 * * * * python ~/pialert/back/pialert.py 1 >~/pialert/log/pialert.1.log 2>&1
 */15 * * * * python ~/pialert/back/pialert.py 15 >~/pialert/log/pialert.15.log 2>&1
 0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
-	echo ""
 	sudo /etc/init.d/cron restart
 	echo ""
 	echo "Nouveau crontab :"
