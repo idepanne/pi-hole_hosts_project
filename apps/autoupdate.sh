@@ -98,6 +98,9 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 			sudo pihole -g
 		fi
 	echo ""
+	echo "curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash"
+	curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash
+	echo ""
 	echo ""
 	echo ""
 	echo "==============================================================================="
@@ -122,7 +125,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "Ancien crontab :"
 	crontab -l
 	echo ""
-	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	crontab <<<"0 3 * * 1 python ~/pialert/back/pialert.py update_vendors >~/pialert/log/pialert.vendors.log 2>&1
+*/1 * * * * python ~/pialert/back/pialert.py internet_IP >~/pialert/log/pialert.IP.log 2>&1
+*/1 * * * * python ~/pialert/back/pialert.py 1 >~/pialert/log/pialert.1.log 2>&1
+*/15 * * * * python ~/pialert/back/pialert.py 15 >~/pialert/log/pialert.15.log 2>&1
+0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	echo ""
 	sudo /etc/init.d/cron restart
 	echo ""
 	echo "Nouveau crontab :"
@@ -145,6 +153,15 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
+	echo ""
+	echo "$ sudo mv *.bak /home/pi/backup/"
+	sudo mv *.bak /home/pi/backup/
+	echo ""
+	echo "cd backup && find *.bak -mtime +7 -exec rm -rv {} \; && cd"
+	cd backup && find *.bak -mtime +7 -exec rm -rv {} \; && cd
+	echo ""
+	echo "$ sudo mv *.log /home/pi/log/"
+	sudo mv *.log /home/pi/log/
 	echo ""
 	echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
 	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
