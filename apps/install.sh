@@ -149,33 +149,6 @@ echo ""
 echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
 sudo mv jail.local /etc/fail2ban/jail.local
 echo ""
-echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-auth.conf"
-sudo rm -rv /etc/fail2ban/filter.d/nginx-auth.conf
-echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-auth.conf > nginx-auth.conf"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-auth.conf > nginx-auth.conf
-echo ""
-echo "$ sudo mv nginx-auth.conf /etc/fail2ban/filter.d/nginx-auth.conf"
-sudo mv nginx-auth.conf /etc/fail2ban/filter.d/nginx-auth.conf
-echo ""
-echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-login.conf"
-sudo rm -rv /etc/fail2ban/filter.d/nginx-login.conf
-echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-login.conf > nginx-login.conf"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-login.conf > nginx-login.conf
-echo ""
-echo "$ sudo mv nginx-login.conf /etc/fail2ban/filter.d/nginx-login.conf"
-sudo mv nginx-login.conf /etc/fail2ban/filter.d/nginx-login.conf
-echo ""
-echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-noscript.conf"
-sudo rm -rv /etc/fail2ban/filter.d/nginx-noscript.conf
-echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-noscript.conf > nginx-noscript.conf"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-noscript.conf > nginx-noscript.conf
-echo ""
-echo "$ sudo mv nginx-noscript.conf /etc/fail2ban/filter.d/nginx-noscript.conf"
-sudo mv nginx-noscript.conf /etc/fail2ban/filter.d/nginx-noscript.conf
-echo ""
 echo "$ sudo service fail2ban restart"
 sudo service fail2ban restart
 echo ""

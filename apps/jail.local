@@ -342,32 +342,6 @@ action = iptables-allports[name=NoAuthFailures]
 logpath = /opt/openhab/logs/request.log
 
 
-[nginx-auth]
-enabled = true
-filter = nginx-auth
-action = iptables-multiport[name=NoAuthFailures, port="http,https"]
-logpath = /var/log/nginx*/*error*.log
-maxretry = 3
-
-
-[nginx-login]
-enabled = true
-filter = nginx-login
-action = iptables-multiport[name=NoLoginFailures, port="http,https"]
-logpath = /var/log/nginx*/*access*.log
-maxretry = 3
-
-
-[nginx-noscript]
-enabled = true
-action = iptables-multiport[name=NoScript, port="http,https"]
-filter = nginx-noscript
-logpath = /var/log/nginx*/*access*.log
-maxretry = 3
-findtime = 86400
-bantime  = 86400
-
-
 [nginx-http-auth]
 
 port    = http,https
