@@ -3,7 +3,7 @@ SECONDS=0
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                            autoupdate.sh 5.2.2                              #"
+echo "#                            autoupdate.sh 5.2.3                              #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -98,11 +98,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 			sudo pihole -g
 		fi
 	echo ""
-	cd
-	echo "curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash"
-	curl -sSL https://github.com/pucherot/Pi.Alert/raw/main/install/pialert_update.sh | bash
-	cd
-	echo ""
 	echo ""
 	echo ""
 	echo "==============================================================================="
@@ -127,11 +122,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "Ancien crontab :"
 	crontab -l
 	echo ""
-	crontab <<<"0 3 * * 1 python ~/pialert/back/pialert.py update_vendors >~/pialert/log/pialert.vendors.log 2>&1
-*/1 * * * * python ~/pialert/back/pialert.py internet_IP >~/pialert/log/pialert.IP.log 2>&1
-*/1 * * * * python ~/pialert/back/pialert.py 1 >~/pialert/log/pialert.1.log 2>&1
-*/15 * * * * python ~/pialert/back/pialert.py 15 >~/pialert/log/pialert.15.log 2>&1
-0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	sudo /etc/init.d/cron restart
 	echo ""
 	echo "Nouveau crontab :"
@@ -155,14 +146,11 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
 	echo ""
-	echo "$ sudo mv *.tar /home/pi/backup/"
-	sudo mv *.tar /home/pi/backup/
+	echo "$ sudo rm -rv pialert*"
+	sudo rm -rv pialert*
 	echo ""
-	echo "cd backup && find *.tar -mtime +7 -exec rm -rv {} \; && cd"
-	cd backup && find *.tar -mtime +7 -exec rm -rv {} \; && cd
-	echo ""
-	echo "$ sudo mv *.log /home/pi/log/"
-	sudo mv *.log /home/pi/log/
+	echo "$ sudo rm -rv backup*"
+	sudo rm -rv backup*
 	echo ""
 	echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
 	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
