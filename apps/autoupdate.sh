@@ -3,7 +3,7 @@ SECONDS=0
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                            autoupdate.sh 5.2.3                              #"
+echo "#                            autoupdate.sh 5.2.4                              #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -72,6 +72,15 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "==============================================================================="
+	echo "                        Vérification des connexions SSH                        "
+	echo "==============================================================================="
+	echo ""
+	echo "netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head"
+	netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
+	echo ""
+	echo ""
+	echo ""
+	echo "==============================================================================="
 	echo "                            Mises à jour du système                            "
 	echo "==============================================================================="
 	echo ""
@@ -86,6 +95,45 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "$ sudo apt-get full-upgrade -y"
 	sudo apt-get full-upgrade -y
+	echo ""
+	echo "$ sudo rm -rv /etc/fail2ban/jail.local"
+	sudo rm -rv /etc/fail2ban/jail.local
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
+	echo ""
+	echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
+	sudo mv jail.local /etc/fail2ban/jail.local
+	echo ""
+	echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-auth.conf"
+	sudo rm -rv /etc/fail2ban/filter.d/nginx-auth.conf
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-auth.conf > nginx-auth.conf"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-auth.conf > nginx-auth.conf
+	echo ""
+	echo "$ sudo mv nginx-auth.conf /etc/fail2ban/filter.d/nginx-auth.conf"
+	sudo mv nginx-auth.conf /etc/fail2ban/filter.d/nginx-auth.conf
+	echo ""
+	echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-login.conf"
+	sudo rm -rv /etc/fail2ban/filter.d/nginx-login.conf
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-login.conf > nginx-login.conf"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-login.conf > nginx-login.conf
+	echo ""
+	echo "$ sudo mv nginx-login.conf /etc/fail2ban/filter.d/nginx-login.conf"
+	sudo mv nginx-login.conf /etc/fail2ban/filter.d/nginx-login.conf
+	echo ""
+	echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-noscript.conf"
+	sudo rm -rv /etc/fail2ban/filter.d/nginx-noscript.conf
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-noscript.conf > nginx-noscript.conf"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-noscript.conf > nginx-noscript.conf
+	echo ""
+	echo "$ sudo mv nginx-noscript.conf /etc/fail2ban/filter.d/nginx-noscript.conf"
+	sudo mv nginx-noscript.conf /etc/fail2ban/filter.d/nginx-noscript.conf
+	echo ""
+	echo "$ sudo service fail2ban restart"
+	sudo service fail2ban restart
 	echo ""
 	echo "$ sudo pihole -up"
 	var=$(sudo pihole -up)

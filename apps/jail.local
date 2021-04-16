@@ -46,12 +46,12 @@ before = paths-debian.conf
 
 # "ignorself" specifies whether the local resp. own IP addresses should be ignored
 # (default is true). Fail2ban will not ban a host which matches such addresses.
-#ignorself = true
+ignorself = true
 
 # "ignoreip" can be a list of IP addresses, CIDR masks or DNS hosts. Fail2ban
 # will not ban a host which matches an address in this list. Several addresses
 # can be defined using space (and/or comma) separator.
-#ignoreip = 127.0.0.1/8 ::1
+ignoreip = 127.0.0.1/8 ::1
 
 # External command that will take an tagged arguments to ignore, e.g. <ip>,
 # and return true if the IP is to be ignored. False otherwise.
@@ -60,14 +60,14 @@ before = paths-debian.conf
 ignorecommand =
 
 # "bantime" is the number of seconds that a host is banned.
-bantime  = 1800
+bantime  = 3600
 
 # A host is banned if it has generated "maxretry" during the last "findtime"
 # seconds.
-findtime  = 10m
+findtime  = 3600
 
 # "maxretry" is the number of failures before a host get banned.
-maxretry = 10
+maxretry = 5
 
 # "backend" specifies the backend used to get files modification.
 # Available options are "pyinotify", "gamin", "polling", "systemd" and "auto".
@@ -245,8 +245,9 @@ enabled   = true
 filter    = sshd
 port      = ssh
 banaction = iptables-multiport
-bantime   = 30m
-maxretry  = 10
+bantime   = 86400
+findtime  = 86400
+maxretry  = 5
 logpath   = %(sshd_log)s
 backend   = %(sshd_backend)s
 
@@ -339,6 +340,32 @@ maxretry = 1
 filter = openhab
 action = iptables-allports[name=NoAuthFailures]
 logpath = /opt/openhab/logs/request.log
+
+
+[nginx-auth]
+enabled = true
+filter = nginx-auth
+action = iptables-multiport[name=NoAuthFailures, port="http,https"]
+logpath = /var/log/nginx*/*error*.log
+maxretry = 3
+
+
+[nginx-login]
+enabled = true
+filter = nginx-login
+action = iptables-multiport[name=NoLoginFailures, port="http,https"]
+logpath = /var/log/nginx*/*access*.log
+maxretry = 3
+
+
+[nginx-noscript]
+enabled = true
+action = iptables-multiport[name=NoScript, port="http,https"]
+filter = nginx-noscript
+logpath = /var/log/nginx*/*access*.log
+maxretry = 3
+findtime = 86400
+bantime  = 86400
 
 
 [nginx-http-auth]

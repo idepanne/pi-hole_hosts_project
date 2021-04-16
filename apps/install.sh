@@ -4,7 +4,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                              install.sh 5.2.3                               #"
+echo "#                              install.sh 5.2.4                               #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -56,6 +56,15 @@ echo ""
 echo "Synchronisation de l'horloge :"
 sudo systemctl daemon-reload
 timedatectl timesync-status && timedatectl
+echo ""
+echo ""
+echo ""
+echo "==============================================================================="
+echo "                        Vérification des connexions SSH                        "
+echo "==============================================================================="
+echo ""
+echo "netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head"
+netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
 echo ""
 echo ""
 echo ""
@@ -139,6 +148,36 @@ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/maste
 echo ""
 echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
 sudo mv jail.local /etc/fail2ban/jail.local
+echo ""
+echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-auth.conf"
+sudo rm -rv /etc/fail2ban/filter.d/nginx-auth.conf
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-auth.conf > nginx-auth.conf"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-auth.conf > nginx-auth.conf
+echo ""
+echo "$ sudo mv nginx-auth.conf /etc/fail2ban/filter.d/nginx-auth.conf"
+sudo mv nginx-auth.conf /etc/fail2ban/filter.d/nginx-auth.conf
+echo ""
+echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-login.conf"
+sudo rm -rv /etc/fail2ban/filter.d/nginx-login.conf
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-login.conf > nginx-login.conf"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-login.conf > nginx-login.conf
+echo ""
+echo "$ sudo mv nginx-login.conf /etc/fail2ban/filter.d/nginx-login.conf"
+sudo mv nginx-login.conf /etc/fail2ban/filter.d/nginx-login.conf
+echo ""
+echo "$ sudo rm -rv /etc/fail2ban/filter.d/nginx-noscript.conf"
+sudo rm -rv /etc/fail2ban/filter.d/nginx-noscript.conf
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-noscript.conf > nginx-noscript.conf"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/nginx-noscript.conf > nginx-noscript.conf
+echo ""
+echo "$ sudo mv nginx-noscript.conf /etc/fail2ban/filter.d/nginx-noscript.conf"
+sudo mv nginx-noscript.conf /etc/fail2ban/filter.d/nginx-noscript.conf
+echo ""
+echo "$ sudo service fail2ban restart"
+sudo service fail2ban restart
 echo ""
 echo "$ mkdir log"
 mkdir log
