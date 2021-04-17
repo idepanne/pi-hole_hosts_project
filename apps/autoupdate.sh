@@ -3,7 +3,7 @@ SECONDS=0
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                            autoupdate.sh 5.2.4                              #"
+echo "#                            autoupdate.sh 5.2.5                              #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -26,7 +26,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "==============================================================================="
-	echo "                              Informations système                             "
+	echo "                          A propos de ce Raspberry Pi                          "
 	echo "==============================================================================="
 	echo ""
 	cat /proc/cpuinfo | grep Model
@@ -72,7 +72,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "==============================================================================="
-	echo "                        Vérification des connexions SSH                        "
+	echo "                    Vérification des connexions SSH actives                    "
 	echo "==============================================================================="
 	echo ""
 	netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
@@ -80,7 +80,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "==============================================================================="
-	echo "                            Mises à jour du système                            "
+	echo "                Mises à jour de Raspberry Pi OS et des logiciels               "
 	echo "==============================================================================="
 	echo ""
 	echo "$ sudo apt-get update"
@@ -95,12 +95,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo apt-get full-upgrade -y"
 	sudo apt-get full-upgrade -y
 	echo ""
-	###############################################################################
-	#                                A supprimer !                                #
-	###############################################################################
+	######################################################################################
+	#                        A supprimer dans la version 5.2.6 !                         #
+	######################################################################################
 	echo "$ sudo apt-get install -yf fail2ban"
 	sudo apt-get install -yf fail2ban
-	###############################################################################
+	######################################################################################
 	echo ""
 	echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 	sudo rm -rv /etc/fail2ban/jail.local
@@ -158,7 +158,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "==============================================================================="
-	echo "                              Nettoyage du système                             "
+	echo "                           Nettoyage et optimisation                           "
 	echo "==============================================================================="
 	echo ""
 	echo "$ sudo apt-get autoremove -y"
@@ -173,14 +173,14 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
 	echo ""
-	###############################################################################
-	#                                A supprimer !                                #
-	###############################################################################
+	######################################################################################
+	#                        A supprimer dans la version 5.2.6 !                         #
+	######################################################################################
 	echo "$ sudo rm -rv pialert*"
 	sudo rm -rv pialert*
 	echo "$ sudo rm -rv backup*"
 	sudo rm -rv backup*
-	###############################################################################
+	######################################################################################
 	echo ""
 	echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
 	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
@@ -188,7 +188,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo "==============================================================================="
-	echo "                   Vérification des processus de mises à jour                  "
+	echo "                          Validation des mises à jour                          "
 	echo "==============================================================================="
 	echo ""
 	var=$(sudo checkrestart)
