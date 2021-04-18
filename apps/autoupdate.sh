@@ -3,7 +3,7 @@ SECONDS=0
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                            autoupdate.sh 5.2.6                              #"
+echo "#                            autoupdate.sh 5.2.7                              #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -115,6 +115,10 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "$ sudo service fail2ban restart"
 	sudo service fail2ban restart
+	echo ""
+	sudo systemctl status fail2ban
+	echo ""
+	echo ""
 	echo ""
 	echo "$ sudo pihole -up"
 	var=$(sudo pihole -up)

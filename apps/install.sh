@@ -4,7 +4,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                              install.sh 5.2.6                               #"
+echo "#                              install.sh 5.2.7                               #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -115,6 +115,9 @@ echo "==========================================================================
 echo "                      Installation des logiciels prérequis                     "
 echo "==============================================================================="
 echo ""
+echo "$ mkdir log"
+mkdir log
+echo ""
 echo "$ sudo rm -rv *.sh"
 sudo rm -rv *.sh
 echo ""
@@ -151,8 +154,8 @@ echo ""
 echo "$ sudo service fail2ban restart"
 sudo service fail2ban restart
 echo ""
-echo "$ mkdir log"
-mkdir log
+echo "$ sudo systemctl status fail2ban"
+sudo systemctl status fail2ban
 echo ""
 echo ""
 echo ""
