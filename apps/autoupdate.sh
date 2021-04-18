@@ -3,7 +3,7 @@ SECONDS=0
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                            autoupdate.sh 5.2.5                              #"
+echo "#                            autoupdate.sh 5.2.6                              #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -95,12 +95,14 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo apt-get full-upgrade -y"
 	sudo apt-get full-upgrade -y
 	echo ""
-	######################################################################################
-	#                        A supprimer dans la version 5.2.6 !                         #
-	######################################################################################
-	echo "$ sudo apt-get install -yf fail2ban"
-	sudo apt-get install -yf fail2ban
-	######################################################################################
+	echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
+	sudo mv autoupdate.sh autoupdate_old.sh
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
+	echo ""
+	echo "$ sudo chmod +x autoupdate.sh"
+	sudo chmod +x autoupdate.sh
 	echo ""
 	echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 	sudo rm -rv /etc/fail2ban/jail.local
@@ -124,21 +126,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 			echo "$ sudo pihole -g"
 			sudo pihole -g
 		fi
-	echo ""
-	echo ""
-	echo ""
-	echo "==============================================================================="
-	echo "                      Mise à jour du module autoupdate.sh                      "
-	echo "==============================================================================="
-	echo ""
-	echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
-	sudo mv autoupdate.sh autoupdate_old.sh
-	echo ""
-	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
-	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
-	echo ""
-	echo "$ sudo chmod +x autoupdate.sh"
-	sudo chmod +x autoupdate.sh
 	echo ""
 	echo ""
 	echo ""
@@ -172,15 +159,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
-	echo ""
-	######################################################################################
-	#                        A supprimer dans la version 5.2.6 !                         #
-	######################################################################################
-	echo "$ sudo rm -rv pialert*"
-	sudo rm -rv pialert*
-	echo "$ sudo rm -rv backup*"
-	sudo rm -rv backup*
-	######################################################################################
 	echo ""
 	echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
 	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
