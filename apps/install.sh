@@ -154,8 +154,8 @@ echo ""
 echo "$ sudo service fail2ban restart"
 sudo service fail2ban restart
 echo ""
-echo "$ sudo systemctl status fail2ban"
-sudo systemctl status fail2ban
+echo "$ sudo systemctl --no-pager status fail2ban"
+sudo systemctl --no-pager status fail2ban
 echo ""
 echo ""
 echo ""

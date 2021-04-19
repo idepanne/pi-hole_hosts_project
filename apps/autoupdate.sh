@@ -116,7 +116,8 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo service fail2ban restart"
 	sudo service fail2ban restart
 	echo ""
-	sudo systemctl status fail2ban
+	echo "sudo systemctl --no-pager status fail2ban"
+	sudo systemctl --no-pager status fail2ban
 	echo ""
 	echo ""
 	echo ""
