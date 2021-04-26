@@ -1,7 +1,6 @@
 #!/bin/bash
-var=$(pihole -v)
-if [[ "$var" =~ "Pi-hole version is" ]]; then
-	echo "$var"
+if [[ -d "/etc/pihole" ]]; then
+	pihole -v
 	echo ""
 	echo "$ sudo pihole -up"
 	var=$(sudo pihole -up)
@@ -14,5 +13,5 @@ if [[ "$var" =~ "Pi-hole version is" ]]; then
 			sudo pihole -g
 		fi
 else
-	echo ""
+	echo "Pi-Hole n'existe pas"
 fi
