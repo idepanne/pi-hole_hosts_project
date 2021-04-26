@@ -2,6 +2,7 @@
 	var=$(pihole -v)
 		echo "$var"
 		if [[ "$var" =~ "Pi-hole version is" ]]; then
+		echo ""
 			echo "$ sudo pihole -g"
 			# sudo pihole -g
 		else
