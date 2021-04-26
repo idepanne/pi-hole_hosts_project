@@ -4,7 +4,7 @@
 	echo "==============================================================================="
 	echo ""
 	if [[ -d "/etc/pihole" ]]; then
-		echo "• Pi-Hole :   [Installé]"
+		echo "• Pi-Hole :          [Installé]"
 		echo ""
 		pihole -v
 		echo ""
@@ -19,7 +19,7 @@
 			# sudo pihole -g
 		fi
 	else
-		echo "• Pi-Hole :   [Non installé]"
+		echo "• Pi-Hole :          [Non installé]"
 	fi
 	echo ""
 	echo ""
