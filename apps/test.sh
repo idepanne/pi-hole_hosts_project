@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "$ pihole -v"
 	var=$(pihole -v)
 		echo "$var"
 		if [[ "$var" =~ "commande introuvable" ]]; then
