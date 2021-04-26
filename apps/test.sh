@@ -1,11 +1,11 @@
 #!/bin/bash
 	echo "==============================================================================="
-	echo "                   Mises à jour des logiciels complémentaires                  "
+	echo "                   Mises à jour des logiciels supplémentaires                  "
 	echo "==============================================================================="
 	echo ""
-	echo "• Pi-Hole :"
-	echo ""
 	if [[ -d "/etc/pihole" ]]; then
+		echo "• Pi-Hole :   [Installé]"
+		echo ""
 		pihole -v
 		echo ""
 		echo "$ sudo pihole -up"
@@ -19,5 +19,8 @@
 			# sudo pihole -g
 		fi
 	else
-		echo "Le logiciel \"Pi-Hole\" n'est pas installé"
+		echo "• Pi-Hole :   [Non installé]"
 	fi
+	echo ""
+	echo ""
+	echo ""
