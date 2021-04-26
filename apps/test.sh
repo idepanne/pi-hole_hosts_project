@@ -2,7 +2,7 @@
 	var=$(pihole -v)
 		echo "$var"
 		if [[ "$var" =~ "commande introuvable" ]]; then
-			echo ""
+			echo "RIEN !"
 		else
 			echo ""
 			echo "$ sudo pihole -g"
