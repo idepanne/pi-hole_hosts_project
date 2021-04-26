@@ -1,8 +1,8 @@
 #!/bin/bash
-echo "$ pihole"
-	var=$(pihole)
+echo "$ pihole -v"
+	var=$(pihole -v)
 		echo "$var"
-		if [[ "$var" =~ "introuvable" ]]; then
+		if [[ "$var" =~ "commande introuvable" ]]; then
 			echo ""
 		else
 			echo ""
