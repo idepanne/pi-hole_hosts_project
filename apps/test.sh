@@ -1,8 +1,8 @@
 #!/bin/bash
-echo "$ cd /etc/pihole/"
-	var=$(cd /etc/pihole/)
+echo "$ pihole"
+	var=$(pihole)
 		echo "$var"
-		if [[ "$var" =~ "Aucun" ]]; then
+		if [[ "$var" =~ "introuvable" ]]; then
 			echo ""
 		else
 			echo ""
