@@ -1,9 +1,15 @@
 #!/bin/bash
-if [[ -d "/etc/pihole" ]]; then
-	pihole -v
+	echo "==============================================================================="
+	echo "                   Mises à jour des logiciels complémentaires                  "
+	echo "==============================================================================="
 	echo ""
-	echo "$ sudo pihole -up"
-	var=$(sudo pihole -up)
+	echo "• Pi-Hole :"
+	echo ""
+	if [[ -d "/etc/pihole" ]]; then
+		pihole -v
+		echo ""
+		echo "$ sudo pihole -up"
+		var=$(sudo pihole -up)
 		echo "$var"
 		if [[ "$var" =~ "update available" ]]; then
 			echo ""
@@ -12,6 +18,6 @@ if [[ -d "/etc/pihole" ]]; then
 			echo "$ sudo pihole -g"
 			sudo pihole -g
 		fi
-else
-	echo "Pi-Hole n'existe pas"
-fi
+	else
+		echo "Le logiciel \"Pi-Hole\" n'est pas installé"
+	fi
