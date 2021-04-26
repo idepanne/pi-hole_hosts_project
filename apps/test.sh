@@ -16,7 +16,7 @@
 		else
 			echo ""
 			echo "$ sudo pihole -g"
-			sudo pihole -g
+			# sudo pihole -g
 		fi
 	else
 		echo "Le logiciel \"Pi-Hole\" n'est pas installé"
