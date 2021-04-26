@@ -1,10 +1,10 @@
 #!/bin/bash
-	var=$(pihole -v)
-		echo "$var"
-		if [[ "$var" =~ "Pi-hole version is" ]]; then
-		echo ""
-			echo "$ sudo pihole -g"
-			# sudo pihole -g
-		else
-			echo "RIEN !!!"
-		fi
+var=$(pihole -v)
+if [[ "$var" =~ "Pi-hole version is" ]]; then
+	echo "$var"
+	echo ""
+	echo "$ sudo pihole -g"
+	# sudo pihole -g
+else
+	echo "RIEN !!!"
+fi
