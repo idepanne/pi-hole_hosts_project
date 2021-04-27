@@ -38,7 +38,7 @@
 		echo "sudo systemctl --no-pager status fail2ban"
 		sudo systemctl --no-pager status fail2ban
 	else
-		echo "[\033[1m Non installé \033[0m]   Fail2ban"
+		echo -e "[\033[1m Non installé \033[0m]   Fail2ban"
 	fi
 	echo ""
 	echo ""
@@ -57,7 +57,7 @@
 			sudo pihole -g
 		fi
 	else
-		echo "[\033[1m Non installé \033[0m]   Pi-hole"
+		echo -e "[\033[1m Non installé \033[0m]   Pi-hole"
 	fi
 	echo ""
 	echo ""
