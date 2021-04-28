@@ -188,17 +188,20 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ sudo apt-get clean -y"
 	sudo apt-get clean -y
 	echo ""
+	cd
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
 	echo ""
 	echo "$ sudo rm -rv test*.sh"
 	sudo rm -rv test*.sh
 	echo ""
-	echo "$ cd log && find test*.log -exec rm -rv {} \; && cd"
-	cd log && find test*.log -exec rm -rv {} \; && cd
+	echo "$ cd log && find test*.log -exec rm -rv {} \;"
+	cd log && find test*.log -exec rm -rv {} \;
+	cd
 	echo ""
-	echo "$ cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
-	cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd
+	echo "$ cd log && find *.log -mtime +31 -exec rm -rv {} \;"
+	cd log && find *.log -mtime +31 -exec rm -rv {} \;
+	cd
 	echo ""
 	echo ""
 	echo ""
