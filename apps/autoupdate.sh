@@ -83,16 +83,16 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "                        Mises à jour de Raspberry Pi OS                        "
 	echo "==============================================================================="
 	echo ""
-	echo "$ sudo apt-get update"
+	echo "sudo apt-get update"
 	sudo apt-get update
 	echo ""
-	echo "$ sudo apt-get upgrade -y"
+	echo "sudo apt-get upgrade -y"
 	sudo apt-get upgrade -y
 	echo ""
-	echo "$ sudo apt-get dist-upgrade -y"
+	echo "sudo apt-get dist-upgrade -y"
 	sudo apt-get dist-upgrade -y
 	echo ""
-	echo "$ sudo apt-get full-upgrade -y"
+	echo "sudo apt-get full-upgrade -y"
 	sudo apt-get full-upgrade -y
 	echo ""
 	echo ""
@@ -144,7 +144,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	if [[ -d "/etc/pihole" ]]; then
 		echo "[INSTALLÉ] Pi-hole"
 		echo ""
-		pihole -v
+		sudo pihole -v
 		echo ""
 		var=$(sudo pihole -up)
 		echo "$var"
@@ -179,16 +179,16 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "                           Nettoyage et optimisation                           "
 	echo "==============================================================================="
 	echo ""
-	echo "$ sudo apt-get autoremove -y"
+	echo "sudo apt-get autoremove -y"
 	sudo apt-get autoremove -y
 	echo ""
-	echo "$ sudo apt-get autoclean -y"
+	echo "sudo apt-get autoclean -y"
 	sudo apt-get autoclean -y
 	echo ""
-	echo "$ sudo apt-get clean -y"
+	echo "sudo apt-get clean -y"
 	sudo apt-get clean -y
 	echo ""
-	echo "$ sudo rm -rv *_old.sh"
+	echo "sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
 	echo ""
 	echo "cd log && find *.log -mtime +31 -exec rm -rv {} \; && cd"
