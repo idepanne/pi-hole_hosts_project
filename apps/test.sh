@@ -2,7 +2,7 @@
 if [[ -d "/etc/pihole" ]]; then
 		echo "[INSTALLÉ] Pi-hole"
 		echo ""
-		pihole -v
+		sudo pihole -v
 		echo ""
 		var=$(sudo pihole -up)
 		echo "$var"
