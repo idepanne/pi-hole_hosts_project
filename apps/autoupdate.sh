@@ -102,7 +102,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "==============================================================================="
 	echo ""
 	if [[ -f "/home/pi/autoupdate.sh" ]]; then
-		echo -e "[\033[1mINSTALLÉ\033[0m] autoupdate.sh"
+		echo "[INSTALLÉ] autoupdate.sh"
 		echo ""
 		echo "sudo mv autoupdate.sh autoupdate_old.sh"
 		sudo mv autoupdate.sh autoupdate_old.sh
@@ -113,13 +113,13 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "sudo chmod +x autoupdate.sh"
 		sudo chmod +x autoupdate.sh
 	else
-		echo -e "[\033[1mNON INSTALLÉ\033[0m] autoupdate.sh"
+		echo "[NON INSTALLÉ] autoupdate.sh"
 	fi
 	echo ""
 	echo ""
 	echo ""
 	if [[ -d "/etc/fail2ban" ]]; then
-		echo -e "[\033[1mINSTALLÉ\033[0m] Fail2ban"
+		echo "[INSTALLÉ] Fail2ban"
 		echo ""
 		echo "sudo rm -rv /etc/fail2ban/jail.local"
 		sudo rm -rv /etc/fail2ban/jail.local
@@ -136,13 +136,13 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "sudo systemctl --no-pager status fail2ban"
 		sudo systemctl --no-pager status fail2ban
 	else
-		echo -e "[\033[1mNON INSTALLÉ\033[0m] Fail2ban"
+		echo "[NON INSTALLÉ] Fail2ban"
 	fi
 	echo ""
 	echo ""
 	echo ""
 	if [[ -d "/etc/pihole" ]]; then
-		echo -e "[\033[1mINSTALLÉ\033[0m] Pi-hole"
+		echo "[INSTALLÉ] Pi-hole"
 		echo ""
 		pihole -v
 		echo ""
@@ -155,7 +155,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 			sudo pihole -g
 		fi
 	else
-		echo -e "[\033[1mNON INSTALLÉ\033[0m] Pi-hole"
+		echo "[NON INSTALLÉ] Pi-hole"
 	fi
 	echo ""
 	echo ""
