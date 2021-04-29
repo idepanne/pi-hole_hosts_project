@@ -3,7 +3,7 @@ SECONDS=0
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                            autoupdate.sh 5.3.0                              #"
+echo "#                            autoupdate.sh 5.3.1                              #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -154,6 +154,18 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 			echo ""
 			sudo pihole -g
 		fi
+		echo ""
+		echo "$ wget https://raw.githubusercontent.com/jaykepeters/PSS/master/Pi-hole_SafeSearch.sh"
+		wget https://raw.githubusercontent.com/jaykepeters/PSS/master/Pi-hole_SafeSearch.sh
+		echo ""
+		echo "sudo mv ./Pi-hole_SafeSearch.sh /usr/local/bin/"
+		sudo mv ./Pi-hole_SafeSearch.sh /usr/local/bin/
+		echo ""
+		echo "sudo chmod a+x /usr/local/bin/Pi-hole_SafeSearch.sh"
+		sudo chmod a+x /usr/local/bin/Pi-hole_SafeSearch.sh
+		echo ""
+		echo "sudo Pi-hole_SafeSearch.sh -e"
+		sudo Pi-hole_SafeSearch.sh -e
 	else
 		echo "-> Pi-hole :            [NON INSTALLÉ]"
 	fi

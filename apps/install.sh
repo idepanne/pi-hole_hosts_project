@@ -4,7 +4,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                              install.sh 5.3.0                               #"
+echo "#                              install.sh 5.3.1                               #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
