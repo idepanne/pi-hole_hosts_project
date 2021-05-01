@@ -60,8 +60,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "Stockage        : "
 	df -h
-	# df -h /
-	# df -h | grep /var/log
 	echo ""
 	echo "RAM             : "
 	free -ht
