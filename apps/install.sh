@@ -47,8 +47,9 @@ var4=$(uptime -p)
 echo -n "Démarré depuis  : " && echo "$var3 - $var4"
 echo ""
 echo "Stockage        : "
-df -h /
-df -h | grep /var/log
+df -h
+# df -h /
+# df -h | grep /var/log
 echo ""
 echo "RAM             : "
 free -ht
