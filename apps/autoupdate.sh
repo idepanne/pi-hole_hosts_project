@@ -3,7 +3,7 @@ SECONDS=0
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                            autoupdate.sh 5.3.1                              #"
+echo "#                            autoupdate.sh 5.3.2                              #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -201,31 +201,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "$ cd log && find *.log -mtime +31 -exec rm -rv {} \;"
 	cd log && find *.log -mtime +31 -exec rm -rv {} \;
 	cd
-
-
-	echo "###############################################################################"
-	echo "#                                A SUPPRIMER...                               #
-	echo "###############################################################################"
-	echo ""
-	echo "Suppression du logiciel \"Pi-hole SafeSearch\"..."
-	echo ""
-	echo "$ sudo Pi-hole_SafeSearch.sh --disable"
-	sudo Pi-hole_SafeSearch.sh --disable
-	echo ""
-	echo "$ sudo rm -rv /var/log/pss.log
-	sudo rm -rv /var/log/pss.log
-	echo ""
-	echo "$ sudo rm -rv /etc/pss.ack
-	sudo rm -rv /etc/pss.ack
-	echo ""
-	echo "$ sudo rm -rv /tmp/safesearch.txt
-	sudo rm -rv /tmp/safesearch.txt
-	echo ""
-	echo "$ sudo rm -rv /etc/dnsmasq.d/05-restrict.conf
-	sudo rm -rv /etc/dnsmasq.d/05-restrict.conf
-	echo ""
-	echo "$ sudo reboot"
-	sudo reboot
 	echo ""
 	echo ""
 	echo ""
