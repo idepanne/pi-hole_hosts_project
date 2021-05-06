@@ -1,2 +1,2 @@
 # config.txt
-beta=0
+beta=1
