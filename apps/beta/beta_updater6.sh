@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.0b3
+# Pi-Hole Host Project Updater 6.0.0b4
 # beta_updater6.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -30,20 +30,14 @@ echo "==========================================================================
 echo "                           Mises à jour des logiciels                          "
 echo "==============================================================================="
 echo ""
-#if [[ -f "/home/pi/autoupdate6.sh" ]]; then
-#	echo "-> autoupdate6.sh :      [INSTALLÉ]"
-#	echo ""
-	echo "$ sudo mv autoupdate6.sh autoupdate6_old.sh"
-	sudo mv autoupdate6.sh autoupdate6_old.sh
-	echo ""
-	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate6.sh > autoupdate6.sh"
-	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate6.sh > autoupdate6.sh
-	echo ""
-	echo "$ sudo chmod +x autoupdate6.sh"
-	sudo chmod +x autoupdate6.sh
-#else
-#	echo "-> autoupdate6.sh :      [NON INSTALLÉ]"
-#fi
+echo "$ sudo mv autoupdate6.sh autoupdate6_old.sh"
+sudo mv autoupdate6.sh autoupdate6_old.sh
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate6.sh > autoupdate6.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate6.sh > autoupdate6.sh
+echo ""
+echo "$ sudo chmod +x autoupdate6.sh"
+sudo chmod +x autoupdate6.sh
 echo ""
 echo ""
 echo ""
