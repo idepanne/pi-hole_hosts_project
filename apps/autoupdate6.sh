@@ -1,9 +1,9 @@
 #!/bin/bash
-#SECONDS=0
+clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.0b1                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.0b2                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -79,13 +79,13 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	var=$(find /home/pi/config.txt -exec grep -H 'beta=' {} \;)
-	echo "==============================================================================="
-	echo "                 Sélection du canal de mises à jour : " && echo "$var"
-	echo "==============================================================================="
-	echo ""
-	echo ""
-	echo ""
 	if [[ "$var" =~ "beta=1" ]]; then
+		echo "==============================================================================="
+		echo "                   Sélection du canal de mises à jour : Beta                   "
+		echo "==============================================================================="
+		echo ""
+		echo ""
+		echo ""
 		echo "$ sudo mv updater6.sh updater6_old.sh"
 		sudo mv updater6.sh updater6_old.sh
 		echo ""
@@ -96,6 +96,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		sudo chmod +x updater6.sh
 		./updater6.sh
 	else
+		echo "==============================================================================="
+		echo "                 Sélection du canal de mises à jour : Release                  "
+		echo "==============================================================================="
+		echo ""
+		echo ""
+		echo ""
 		echo "$ sudo mv updater6.sh updater6_old.sh"
 		sudo mv updater6.sh updater6_old.sh
 		echo ""
@@ -129,6 +135,4 @@ else
 	echo ""
 	echo ""
 	echo ""
-	#duration=$SECONDS
-	#echo "Durée d'exécution : $(($duration / 60)) min $(($duration % 60)) sec"
 fi
