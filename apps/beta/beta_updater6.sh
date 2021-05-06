@@ -4,61 +4,7 @@
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 # idepanne67@gmail.com
-
 cd
-echo ""
-echo ""
-echo ""
-echo "==============================================================================="
-echo "                          A propos de ce Raspberry Pi                          "
-echo "==============================================================================="
-echo ""
-cat /proc/cpuinfo | grep Model
-echo ""
-cat /proc/cpuinfo | grep Serial
-echo ""
-var1=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g')
-var2=$(lscpu | grep "Vendor ID:" | sed -r 's/Vendor ID:\s{1,}//g')
-echo -n "Processeur      : " && echo "$var2 $var1"
-echo ""
-cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
-cpuTemp1=$(($cpuTemp0/1000))
-cpuTemp2=$(($cpuTemp0/100))
-cpuTempM=$(($cpuTemp2 % $cpuTemp1))
-echo -n "Température     : "; echo CPU "= "$cpuTemp1"."$cpuTempM"°C"
-echo -n "                  "; echo "GPU = $(vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*')°C"
-echo ""
-echo -n "Firmware        : "
-/opt/vc/bin/vcgencmd version
-echo ""
-echo -n "EEPROM          : "
-sudo rpi-eeprom-update
-echo ""
-echo -n "Système         : "; uname -sr
-echo ""
-echo -n "IPv4/IPv6       : "; hostname -I
-echo ""
-var3=$(uptime -s)
-var4=$(uptime -p)
-echo -n "Démarré depuis  : " && echo "$var3 - $var4"
-echo ""
-echo "Stockage        : "
-df -h
-echo ""
-echo "RAM             : "
-free -ht
-echo ""
-echo "Synchronisation de l'horloge :"
-sudo systemctl daemon-reload
-timedatectl timesync-status && timedatectl
-echo ""
-echo ""
-echo ""
-echo "==============================================================================="
-echo "                    Vérification des connexions SSH actives                    "
-echo "==============================================================================="
-echo ""
-netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
 echo ""
 echo ""
 echo ""
@@ -135,7 +81,7 @@ if [[ -d "/etc/pihole" ]]; then
 		echo ""
 	else
 		echo ""
-		sudo pihole -g
+		#sudo pihole -g
 	fi
 else
 	echo "-> Pi-hole :            [NON INSTALLÉ]"
