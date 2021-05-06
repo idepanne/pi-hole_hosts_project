@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.0b7
+# Pi-Hole Host Project Updater 6.0.0b8
 # beta_updater6.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -75,7 +75,7 @@ if [[ -d "/etc/pihole" ]]; then
 		echo ""
 	else
 		echo ""
-		#sudo pihole -g
+		sudo pihole -g
 	fi
 else
 	echo "-> Pi-hole :            [NON INSTALLÉ]"
