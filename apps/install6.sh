@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.0b4                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.0b5                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -77,8 +77,8 @@ sudo mv rpi-update /usr/local/bin/rpi-update
 echo "$ sudo chmod +x /usr/local/bin/rpi-update"
 sudo chmod +x /usr/local/bin/rpi-update
 echo ""
-echo "$ sudo rpi-update -y"
-sudo rpi-update -y
+echo "$ sudo rpi-update"
+sudo rpi-update
 echo ""
 echo ""
 echo ""
