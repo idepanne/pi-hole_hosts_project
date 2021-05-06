@@ -31,28 +31,28 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	if [[ "$var" =~ "beta=1" ]]; then
 		echo "Mises à jour \"Beta\""
-		#echo ""
-		#echo "$ sudo mv updater6.sh updater6_old.sh"
-		#sudo mv updater6.sh updater6_old.sh
-		#echo ""
-		#echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater6.sh > updater6.sh"
-		#wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater6.sh > updater6.sh
-		#echo ""
-		#echo "$ sudo chmod +x updater6.sh"
-		#sudo chmod +x updater6.sh
-		#./updater6.sh
+		echo ""
+		echo "$ sudo mv updater6.sh updater6_old.sh"
+		sudo mv updater6.sh updater6_old.sh
+		echo ""
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater6.sh > updater6.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater6.sh > updater6.sh
+		echo ""
+		echo "$ sudo chmod +x updater6.sh"
+		sudo chmod +x updater6.sh
+		./updater6.sh
 	else
 		echo "Mises à jour \"Release\""
-		#echo ""
-		#echo "$ sudo mv updater6.sh updater6_old.sh"
-		#sudo mv updater6.sh updater6_old.sh
-		#echo ""
-		#echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater6.sh > updater6.sh"
-		#wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater6.sh > updater6.sh
-		#echo ""
-		#echo "$ sudo chmod +x updater6.sh"
-		#sudo chmod +x updater6.sh
-		#./updater6.sh
+		echo ""
+		echo "$ sudo mv updater6.sh updater6_old.sh"
+		sudo mv updater6.sh updater6_old.sh
+		echo ""
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater6.sh > updater6.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater6.sh > updater6.sh
+		echo ""
+		echo "$ sudo chmod +x updater6.sh"
+		sudo chmod +x updater6.sh
+		./updater6.sh
 	fi
 else
 	echo "Connexion Internet : Echec"
