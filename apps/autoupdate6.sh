@@ -1,9 +1,8 @@
 #!/bin/bash
-clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.0b2                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.0b3                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -132,7 +131,5 @@ else
 	echo ""
 	echo "Nouveau crontab :"
 	crontab -l
-	echo ""
-	echo ""
 	echo ""
 fi
