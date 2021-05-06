@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.0b1
+# Pi-Hole Host Project Updater 6.0.0b2
 # beta_updater6.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -150,8 +150,6 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	echo ""
 	echo ""
-	#duration=$SECONDS
-	#echo "Durée d'exécution : $(($duration / 60)) min $(($duration % 60)) sec"
 else
 	echo "$var"
 	echo ""
@@ -163,9 +161,6 @@ else
 	echo ""
 	echo ""
 	echo ""
-	#duration=$SECONDS
-	#echo "Durée d'exécution : $(($duration / 60)) min $(($duration % 60)) sec"
-	#echo ""
 	sleep 1
 	sudo reboot
 fi
