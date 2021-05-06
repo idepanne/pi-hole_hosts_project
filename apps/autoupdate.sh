@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.0b8                    #"
+echo "#                      Pi-Hole Host Project Updater 6.0.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -83,35 +83,35 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "                   Sélection du canal de mises à jour : Beta                   "
 		echo "==============================================================================="
 		echo ""
-		echo "$ sudo mv updater6.sh updater6_old.sh"
-		sudo mv updater6.sh updater6_old.sh
+		echo "$ sudo mv updater.sh updater_old.sh"
+		sudo mv updater.sh updater_old.sh
 		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater6.sh > updater6.sh"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater6.sh > updater6.sh
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater.sh > updater.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater.sh > updater.sh
 		echo ""
-		echo "$ sudo chmod +x updater6.sh"
-		sudo chmod +x updater6.sh
-		./updater6.sh
+		echo "$ sudo chmod +x updater.sh"
+		sudo chmod +x updater.sh
+		./updater.sh
 	else
 		echo "==============================================================================="
 		echo "                 Sélection du canal de mises à jour : Release                  "
 		echo "==============================================================================="
 		echo ""
-		echo "$ sudo mv updater6.sh updater6_old.sh"
-		sudo mv updater6.sh updater6_old.sh
+		echo "$ sudo mv updater.sh updater_old.sh"
+		sudo mv updater.sh updater_old.sh
 		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater6.sh > updater6.sh"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater6.sh > updater6.sh
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater.sh > updater.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater.sh > updater.sh
 		echo ""
-		echo "$ sudo chmod +x updater6.sh"
-		sudo chmod +x updater6.sh
-		./updater6.sh
+		echo "$ sudo chmod +x updater.sh"
+		sudo chmod +x updater.sh
+		./updater.sh
 	fi
 else
 	echo "Connexion Internet : Echec"
 	echo ""
 	echo ""
-	echo "*** Abandon des mises à jour - Nouvelle tentative dans 24h ***"
+	echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
 	echo ""
 	echo ""
 	echo ""
@@ -122,7 +122,7 @@ else
 	echo "Ancien crontab :"
 	crontab -l
 	echo ""
-	crontab <<<"0 3 * * * /home/pi/autoupdate6.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate6.log 2>&1"
+	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	sudo /etc/init.d/cron restart
 	echo ""
 	echo "Nouveau crontab :"

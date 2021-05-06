@@ -1,10 +1,9 @@
 #!/bin/bash
-SECONDS=0
 clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                              install.sh 5.3.2                               #"
+echo "#                      Pi-Hole Host Project Updater 6.0.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -120,11 +119,17 @@ echo ""
 echo "$ sudo rm -rv *.sh"
 sudo rm -rv *.sh
 echo ""
+echo "$ sudo rm -rv *.txt"
+sudo rm -rv *.txt
+echo ""
 echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
 echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/config.txt > config.txt"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/config.txt > config.txt
 echo ""
 echo "$ sudo apt-get install -yf dnsutils"
 sudo apt-get install -yf dnsutils
@@ -144,8 +149,8 @@ echo ""
 echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 sudo rm -rv /etc/fail2ban/jail.local
 echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/jail.local > jail.local"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/jail.local > jail.local
 echo ""
 echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
 sudo mv jail.local /etc/fail2ban/jail.local
@@ -206,11 +211,5 @@ echo ""
 echo "==============================================================================="
 echo "                          Redémarrage du Raspberry Pi                          "
 echo "==============================================================================="
-echo ""
-echo ""
-echo ""
-duration=$SECONDS
-echo "Durée d'exécution : $(($duration / 60)) min $(($duration % 60)) sec"
-echo ""
 sleep 1
 sudo reboot
