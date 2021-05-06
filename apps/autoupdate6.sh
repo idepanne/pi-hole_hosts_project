@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.0b3                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.0b4                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -83,8 +83,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "                   Sélection du canal de mises à jour : Beta                   "
 		echo "==============================================================================="
 		echo ""
-		echo ""
-		echo ""
 		echo "$ sudo mv updater6.sh updater6_old.sh"
 		sudo mv updater6.sh updater6_old.sh
 		echo ""
@@ -98,8 +96,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "==============================================================================="
 		echo "                 Sélection du canal de mises à jour : Release                  "
 		echo "==============================================================================="
-		echo ""
-		echo ""
 		echo ""
 		echo "$ sudo mv updater6.sh updater6_old.sh"
 		sudo mv updater6.sh updater6_old.sh
