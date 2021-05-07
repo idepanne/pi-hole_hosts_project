@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.0b9                    #"
+echo "#                      Pi-Hole Host Project Updater 6.0.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -119,17 +119,11 @@ echo ""
 echo "$ sudo rm -rv *.sh"
 sudo rm -rv *.sh
 echo ""
-echo "$ sudo rm -rv *.txt"
-sudo rm -rv *.txt
-echo ""
 echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
 echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
-#echo ""
-#echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/config.txt > config.txt"
-#wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/config.txt > config.txt
 echo ""
 echo "$ sudo apt-get install -yf dnsutils"
 sudo apt-get install -yf dnsutils
