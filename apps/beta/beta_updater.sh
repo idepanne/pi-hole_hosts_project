@@ -80,7 +80,7 @@ if [[ -d "/etc/pihole" ]]; then
 		echo ""
 	else
 		echo ""
-		sudo pihole -g
+		#sudo pihole -g
 	fi
 else
 	echo "-> Pi-hole :            [NON INSTALLÉ]"
