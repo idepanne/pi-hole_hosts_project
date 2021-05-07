@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.0b8
+# Pi-Hole Host Project Updater 6.0.0b9
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -47,8 +47,7 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 	sudo rm -rv /etc/fail2ban/jail.local
 	echo ""
-	var=$(find /home/pi/config.txt -exec grep -H 'beta=' {} \;)
-	if [[ "$var" =~ "beta=1" ]]; then
+	if [[ -f "/home/pi/beta" ]]; then
 		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/jail.local > jail.local"
 		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/jail.local > jail.local
 	else
