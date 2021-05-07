@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 02/05/2021 - 14h30
+# Last update : 07/05/2021 - 09h53
 
 # 2
 0.0.0.0 2beeg.me
@@ -37,6 +37,8 @@
 0.0.0.0 www.balancetanude.fr
 0.0.0.0 beautymovies.com
 0.0.0.0 www.beautymovies.com
+0.0.0.0 blumpkintube.com
+0.0.0.0 www.blumpkintube.com
 0.0.0.0 bonsoirmademoiselle.fr
 0.0.0.0 www.bonsoirmademoiselle.fr
 0.0.0.0 borwap.pro
@@ -295,6 +297,8 @@
 0.0.0.0 www.planculsnap.com
 0.0.0.0 planescort.com
 0.0.0.0 www.planescort.com
+0.0.0.0 porm.tv
+0.0.0.0 www.porm.tv
 0.0.0.0 pornano.com
 0.0.0.0 www.pornano.com
 0.0.0.0 pornaph.com
@@ -328,6 +332,8 @@
 0.0.0.0 www.pornowatch.net
 0.0.0.0 pornoxxx.fr
 0.0.0.0 www.pornoxxx.fr
+0.0.0.0 preggoporn.tv
+0.0.0.0 www.preggoporn.tv
 0.0.0.0 protrain-china.com
 0.0.0.0 www.protrain-china.com
 
@@ -596,6 +602,8 @@
 0.0.0.0 www.xpin.fr
 0.0.0.0 xv-horezeedipaif.com
 0.0.0.0 www.xv-horezeedipaif.com
+0.0.0.0 xvds.tv
+0.0.0.0 www.xvds.tv
 0.0.0.0 xxvideosporns.com
 0.0.0.0 www.xxvideosporns.com
 0.0.0.0 xvidio.mobi
