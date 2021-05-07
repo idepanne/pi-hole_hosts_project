@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.0.0                     #"
+echo "#                     Pi-Hole Host Project Updater 6.0.0b9                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -77,8 +77,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo ""
-	var=$(find /home/pi/config.txt -exec grep -H 'beta=' {} \;)
-	if [[ "$var" =~ "beta=1" ]]; then
+	if [[ -f "/home/pi/beta" ]]; then
 		echo "==============================================================================="
 		echo "                   Sélection du canal de mises à jour : Beta                   "
 		echo "==============================================================================="
