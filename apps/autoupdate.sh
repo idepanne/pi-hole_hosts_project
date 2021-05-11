@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "                                                                               "
-echo "                      Pi-Hole Host Project Updater 6.0.1b8                     "
+echo "                       Pi-Hole Host Project Updater 6.0.1                      "
 echo "                  © 2020-2021 iDépanne – L'expert informatique                 "
 echo "                            https://fb.me/idepanne/                            "
 echo "                             idepanne67@gmail.com                              "
@@ -78,7 +78,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "Connexion Internet : OK"
 	echo ""
 	echo ""
-	if [[ -d "/etc/boinc-client2" ]]; then
+	if [[ -d "/etc/boinc-client" ]]; then
 		echo ""
 		var=$(hostname)
 		echo "==============================================================================="
