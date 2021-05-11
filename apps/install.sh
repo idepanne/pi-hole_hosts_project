@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "                                                                               "
-echo "                      Pi-Hole Host Project Updater 6.0.1b7                     "
+echo "                      Pi-Hole Host Project Updater 6.0.1b8                     "
 echo "                  © 2020-2021 iDépanne – L'expert informatique                 "
 echo "                            https://fb.me/idepanne/                            "
 echo "                             idepanne67@gmail.com                              "
@@ -67,7 +67,7 @@ netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uni
 echo ""
 echo ""
 echo ""
-if [[ -d "/etc/boinc-client" ]]; then
+if [[ -d "/etc/boinc-client2" ]]; then
 	var=$(hostname)
 	echo "==============================================================================="
 	echo "                Arrêt du serveur \"$var\" du cluster Boinc                "
