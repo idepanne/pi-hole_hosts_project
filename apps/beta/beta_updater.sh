@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.1b5
+# Pi-Hole Host Project Updater 6.0.1b6
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -159,7 +159,7 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 		echo ""
 	fi
 	echo "###############################################################################"
-	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
+	echo "                 Aucun redémarrage du Raspberry Pi nécessaire                  "
 	echo "###############################################################################"
 	echo ""
 else
@@ -168,7 +168,7 @@ else
 	echo ""
 	echo ""
 	echo "###############################################################################"
-	echo "#                         Redémarrage du Raspberry Pi                         #"
+	echo "                          Redémarrage du Raspberry Pi                          "
 	echo "###############################################################################"
 	echo ""
 	sleep 1
