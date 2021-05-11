@@ -146,8 +146,6 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	echo ""
 	if [[ -d "/etc/boinc-client" ]]; then
-		echo ""
-		echo ""
 		var=$(hostname)
 		echo "==============================================================================="
 		echo "             Redémarrage du serveur \"$var\" du cluster Boinc             "
@@ -156,6 +154,8 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 		echo "$ sudo systemctl start boinc-client"
 		sudo systemctl start boinc-client
 		sleep 1
+		echo ""
+		echo ""
 		echo ""
 	fi
 	echo "###############################################################################"
