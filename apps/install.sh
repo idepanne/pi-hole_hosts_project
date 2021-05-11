@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.1b3                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.1b4                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -72,6 +72,7 @@ if [[ -d "/etc/boinc-client" ]]; then
 	echo ""
 	echo "$ sudo systemctl stop boinc-client"
 	sudo systemctl stop boinc-client
+	sleep 1
 	echo ""
 	echo ""
 	echo ""
@@ -213,8 +214,8 @@ cd
 echo ""
 echo ""
 echo ""
-echo "==============================================================================="
-echo "                          Redémarrage du Raspberry Pi                          "
-echo "==============================================================================="
+echo "###############################################################################"
+echo "#                         Redémarrage du Raspberry Pi                         #"
+echo "###############################################################################"
 sleep 1
 sudo reboot

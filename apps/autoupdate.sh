@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.1b3                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.1b4                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -84,6 +84,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		echo "$ sudo systemctl stop boinc-client"
 		sudo systemctl stop boinc-client
+		sleep 1
 		echo ""
 		echo ""
 		echo ""
@@ -149,6 +150,7 @@ else
 		echo ""
 		echo "$ sudo systemctl start boinc-client"
 		sudo systemctl start boinc-client
+		sleep 1
 		echo ""
 	fi
 fi
