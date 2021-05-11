@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.1b2                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.1b3                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -75,7 +75,6 @@ if [[ -d "/etc/boinc-client" ]]; then
 	echo ""
 	echo ""
 	echo ""
-else
 fi
 echo "==============================================================================="
 echo "                            Mise à jour du firmware                            "

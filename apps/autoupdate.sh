@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.1b2                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.1b3                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -76,8 +76,8 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "Connexion Internet : OK"
 	echo ""
 	echo ""
-	echo ""
 	if [[ -d "/etc/boinc-client" ]]; then
+		echo ""
 		echo "==============================================================================="
 		echo "                         Mise en pause du cluster Boinc                        "
 		echo "==============================================================================="
@@ -88,6 +88,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		echo ""
 	else
+		echo ""
 	fi
 	if [[ -f "/home/pi/beta" ]]; then
 		echo "==============================================================================="
@@ -149,6 +150,5 @@ else
 		echo "$ sudo systemctl start boinc-client"
 		sudo systemctl start boinc-client
 		echo ""
-	else
 	fi
 fi
