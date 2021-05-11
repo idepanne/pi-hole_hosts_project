@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.0.0                     #"
+echo "#                      Pi-Hole Host Project Updater 6.0.1                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -54,6 +54,9 @@ echo ""
 echo "Synchronisation de l'horloge :"
 sudo systemctl daemon-reload
 timedatectl timesync-status && timedatectl
+echo ""
+echo "$ sudo systemctl stop boinc-client"
+sudo systemctl stop boinc-client
 echo ""
 echo ""
 echo ""
