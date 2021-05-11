@@ -30,6 +30,8 @@ echo "==========================================================================
 echo "                           Mises à jour des logiciels                          "
 echo "==============================================================================="
 echo ""
+echo "-> autoupdate.sh :              [INSTALLÉ]"
+echo ""
 echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
 echo ""
@@ -80,7 +82,7 @@ if [[ -d "/etc/pihole" ]]; then
 		echo ""
 	else
 		echo ""
-		sudo pihole -g
+		#sudo pihole -g
 	fi
 else
 	echo "-> Pi-hole :            [NON INSTALLÉ]"
@@ -141,22 +143,34 @@ var=$(sudo checkrestart)
 if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo "$var"
 	echo ""
-	echo "$ sudo systemctl start boinc-client"
-	sudo systemctl start boinc-client
 	echo ""
 	echo ""
+	if [[ -d "/etc/boinc-client" ]]; then
+		var=$(hostname)
+		echo "==============================================================================="
+		echo "             Redémarrage du serveur \"$var\" du cluster Boinc             "
+		echo "==============================================================================="
+		echo ""
+		echo "$ sudo systemctl start boinc-client"
+		sudo systemctl start boinc-client
+		sleep 1
+		echo ""
+		echo ""
+		echo ""
+	fi
+	echo "###############################################################################"
+	echo "                 Aucun redémarrage du Raspberry Pi nécessaire                  "
+	echo "###############################################################################"
 	echo ""
-	echo "==============================================================================="
-	echo "                          Aucun redémarrage nécessaire                         "
-	echo "==============================================================================="
 else
 	echo "$var"
 	echo ""
 	echo ""
 	echo ""
-	echo "==============================================================================="
+	echo "###############################################################################"
 	echo "                          Redémarrage du Raspberry Pi                          "
-	echo "==============================================================================="
+	echo "###############################################################################"
+	echo ""
 	sleep 1
 	sudo reboot
 fi
