@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.1b2
+# Pi-Hole Host Project Updater 6.0.1b3
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -143,9 +143,6 @@ var=$(sudo checkrestart)
 if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo "$var"
 	echo ""
-	echo "$ sudo systemctl start boinc-client"
-	sudo systemctl start boinc-client
-	echo ""
 	echo ""
 	echo ""
 	echo "==============================================================================="
@@ -162,7 +159,6 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 		echo "$ sudo systemctl start boinc-client"
 		sudo systemctl start boinc-client
 		echo ""
-	else
 	fi
 else
 	echo "$var"
