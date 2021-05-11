@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.1b1
+# Pi-Hole Host Project Updater 6.0.1b2
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -29,6 +29,8 @@ echo ""
 echo "==============================================================================="
 echo "                           Mises à jour des logiciels                          "
 echo "==============================================================================="
+echo ""
+echo "-> autoupdate.sh :              [INSTALLÉ]"
 echo ""
 echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
@@ -149,6 +151,19 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo "==============================================================================="
 	echo "                          Aucun redémarrage nécessaire                         "
 	echo "==============================================================================="
+	echo ""
+	if [[ -d "/etc/boinc-client" ]]; then
+		echo ""
+		echo ""
+		echo "==============================================================================="
+		echo "                          Redémarrage du cluster Boinc                         "
+		echo "==============================================================================="
+		echo ""
+		echo "$ sudo systemctl start boinc-client"
+		sudo systemctl start boinc-client
+		echo ""
+	else
+	fi
 else
 	echo "$var"
 	echo ""
@@ -157,6 +172,7 @@ else
 	echo "==============================================================================="
 	echo "                          Redémarrage du Raspberry Pi                          "
 	echo "==============================================================================="
+	echo ""
 	sleep 1
 	sudo reboot
 fi
