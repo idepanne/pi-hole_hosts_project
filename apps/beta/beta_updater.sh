@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.1b3
+# Pi-Hole Host Project Updater 6.0.1b4
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -145,29 +145,30 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	echo ""
 	echo ""
-	echo "==============================================================================="
-	echo "                          Aucun redémarrage nécessaire                         "
-	echo "==============================================================================="
-	echo ""
 	if [[ -d "/etc/boinc-client" ]]; then
-		echo ""
-		echo ""
 		echo "==============================================================================="
 		echo "                          Redémarrage du cluster Boinc                         "
 		echo "==============================================================================="
 		echo ""
 		echo "$ sudo systemctl start boinc-client"
 		sudo systemctl start boinc-client
+		sleep 1
+		echo ""
+		echo ""
 		echo ""
 	fi
+	echo "###############################################################################"
+	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
+	echo "###############################################################################"
+	echo ""
 else
 	echo "$var"
 	echo ""
 	echo ""
 	echo ""
-	echo "==============================================================================="
-	echo "                          Redémarrage du Raspberry Pi                          "
-	echo "==============================================================================="
+	echo "###############################################################################"
+	echo "#                         Redémarrage du Raspberry Pi                         #"
+	echo "###############################################################################"
 	echo ""
 	sleep 1
 	sudo reboot
