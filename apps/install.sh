@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.0.1b4                    #"
+echo "#                     Pi-Hole Host Project Updater 6.0.1b5                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -41,6 +41,8 @@ echo -n "Système         : "; uname -sr
 echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
+echo -n "Nom d'hôte      : "; hostname
+echo ""
 var3=$(uptime -s)
 var4=$(uptime -p)
 echo -n "Démarré depuis  : " && echo "$var3 - $var4"
@@ -66,8 +68,9 @@ echo ""
 echo ""
 echo ""
 if [[ -d "/etc/boinc-client" ]]; then
+	var=$(hostname)
 	echo "==============================================================================="
-	echo "                         Mise en pause du cluster Boinc                        "
+	echo "                Arrêt du serveur \"$var\" du cluster Boinc                "
 	echo "==============================================================================="
 	echo ""
 	echo "$ sudo systemctl stop boinc-client"
