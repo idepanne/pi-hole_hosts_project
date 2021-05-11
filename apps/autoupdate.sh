@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.0.1                     #"
+echo "#                     Pi-Hole Host Project Updater 6.0.1b2                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -54,9 +54,6 @@ echo "Synchronisation de l'horloge :"
 sudo systemctl daemon-reload
 timedatectl timesync-status && timedatectl
 echo ""
-echo "$ sudo systemctl stop boinc-client"
-sudo systemctl stop boinc-client
-echo ""
 echo ""
 echo ""
 echo "==============================================================================="
@@ -80,6 +77,18 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo ""
+	if [[ -d "/etc/boinc-client" ]]; then
+		echo "==============================================================================="
+		echo "                         Mise en pause du cluster Boinc                        "
+		echo "==============================================================================="
+		echo ""
+		echo "$ sudo systemctl stop boinc-client"
+		sudo systemctl stop boinc-client
+		echo ""
+		echo ""
+		echo ""
+	else
+	fi
 	if [[ -f "/home/pi/beta" ]]; then
 		echo "==============================================================================="
 		echo "                   Sélection du canal de mises à jour : Beta                   "
@@ -130,6 +139,16 @@ else
 	echo "Nouveau crontab :"
 	crontab -l
 	echo ""
-	echo "$ sudo systemctl start boinc-client"
-	sudo systemctl start boinc-client
+	if [[ -d "/etc/boinc-client" ]]; then
+		echo ""
+		echo ""
+		echo "==============================================================================="
+		echo "                          Redémarrage du cluster Boinc                         "
+		echo "==============================================================================="
+		echo ""
+		echo "$ sudo systemctl start boinc-client"
+		sudo systemctl start boinc-client
+		echo ""
+	else
+	fi
 fi

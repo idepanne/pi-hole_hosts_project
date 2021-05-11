@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.0.1                     #"
+echo "#                     Pi-Hole Host Project Updater 6.0.1b2                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -55,9 +55,6 @@ echo "Synchronisation de l'horloge :"
 sudo systemctl daemon-reload
 timedatectl timesync-status && timedatectl
 echo ""
-echo "$ sudo systemctl stop boinc-client"
-sudo systemctl stop boinc-client
-echo ""
 echo ""
 echo ""
 echo "==============================================================================="
@@ -68,6 +65,18 @@ netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uni
 echo ""
 echo ""
 echo ""
+if [[ -d "/etc/boinc-client" ]]; then
+	echo "==============================================================================="
+	echo "                         Mise en pause du cluster Boinc                        "
+	echo "==============================================================================="
+	echo ""
+	echo "$ sudo systemctl stop boinc-client"
+	sudo systemctl stop boinc-client
+	echo ""
+	echo ""
+	echo ""
+else
+fi
 echo "==============================================================================="
 echo "                            Mise à jour du firmware                            "
 echo "==============================================================================="
