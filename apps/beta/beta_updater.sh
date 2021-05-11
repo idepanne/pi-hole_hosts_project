@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.1b7
+# Pi-Hole Host Project Updater 6.0.1b8
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -145,7 +145,7 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	echo ""
 	echo ""
-	if [[ -d "/etc/boinc-client" ]]; then
+	if [[ -d "/etc/boinc-client2" ]]; then
 		var=$(hostname)
 		echo "==============================================================================="
 		echo "             Redémarrage du serveur \"$var\" du cluster Boinc             "
