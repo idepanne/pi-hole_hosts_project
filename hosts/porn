@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 07/05/2021 - 13h05
+# Last update : 11/05/2021 - 15h30
 
 # 2
 0.0.0.0 2beeg.me
@@ -77,6 +77,9 @@
 0.0.0.0 www.couplesamateur.fr
 0.0.0.0 cuntempire.com
 0.0.0.0 www.cuntempire.com
+0.0.0.0 cuties4you.com
+0.0.0.0 www.cuties4you.com
+0.0.0.0 ymjkm.cuties4you.com
 
 # D
 0.0.0.0 dagbladet.no
@@ -368,6 +371,11 @@
 0.0.0.0 www.singeporno.com
 0.0.0.0 sharingmywife.pro
 0.0.0.0 www.sharingmywife.pro
+0.0.0.0 shewantyou.com
+0.0.0.0 www.shewantyou.com
+0.0.0.0 ymjkm.shewantyou.com
+
+
 0.0.0.0 sleazyneasy.com
 0.0.0.0 fr.sleazyneasy.com
 0.0.0.0 www.sleazyneasy.com
