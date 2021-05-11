@@ -145,7 +145,7 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	echo ""
 	echo ""
-	if [[ -d "/etc/boinc-client2" ]]; then
+	if [[ -d "/etc/boinc-client" ]]; then
 		var=$(hostname)
 		echo "==============================================================================="
 		echo "             Redémarrage du serveur \"$var\" du cluster Boinc             "
