@@ -116,12 +116,12 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "$ sudo mv *updater.sh *updater_old.sh"
 		sudo mv *updater.sh *updater_old.sh
 		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release_updater.sh > release_updater.sh"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release_updater.sh > release_updater.sh
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh
 		echo ""
-		echo "$ sudo chmod +x release_updater.sh"
-		sudo chmod +x release_updater.sh
-		./release_updater.sh
+		echo "$ sudo chmod +x updater.sh"
+		sudo chmod +x updater.sh
+		./updater.sh
 	fi
 else
 	echo "Connexion Internet : Echec"
