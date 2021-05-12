@@ -158,8 +158,8 @@ echo ""
 echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 sudo rm -rv /etc/fail2ban/jail.local
 echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/jail.local > jail.local"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/jail.local > jail.local
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
 echo ""
 echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
 sudo mv jail.local /etc/fail2ban/jail.local
@@ -204,9 +204,6 @@ cd
 echo "$ sudo rm -rv *_old.sh"
 sudo rm -rv *_old.sh
 echo ""
-echo "$ sudo rm -rv test*.sh"
-sudo rm -rv test*.sh
-echo ""
 echo "$ cd log && find test*.log -exec rm -rv {} \;"
 cd log && find test*.log -exec rm -rv {} \;
 cd
@@ -218,7 +215,9 @@ echo ""
 echo ""
 echo ""
 echo "###############################################################################"
+echo "#                                                                             #"
 echo "#                         Redémarrage du Raspberry Pi                         #"
+echo "#                                                                             #"
 echo "###############################################################################"
 sleep 1
 sudo reboot

@@ -99,29 +99,29 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "   • Sélection du canal de mises à jour : Beta"
 		echo "==============================================================================="
 		echo ""
-		echo "$ sudo mv updater.sh updater_old.sh"
-		sudo mv updater.sh updater_old.sh
+		echo "$ sudo mv *updater.sh *updater_old.sh"
+		sudo mv *updater.sh *updater_old.sh
 		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater.sh > updater.sh"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/beta_updater.sh > updater.sh
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta_updater.sh > beta_updater.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta_updater.sh > beta_updater.sh
 		echo ""
-		echo "$ sudo chmod +x updater.sh"
-		sudo chmod +x updater.sh
-		./updater.sh
+		echo "$ sudo chmod +x beta_updater.sh"
+		sudo chmod +x beta_updater.sh
+		./beta_updater.sh
 	else
 		echo "==============================================================================="
 		echo "   • Sélection du canal de mises à jour : Release"
 		echo "==============================================================================="
 		echo ""
-		echo "$ sudo mv updater.sh updater_old.sh"
-		sudo mv updater.sh updater_old.sh
+		echo "$ sudo mv *updater.sh *updater_old.sh"
+		sudo mv *updater.sh *updater_old.sh
 		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater.sh > updater.sh"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/release_updater.sh > updater.sh
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release_updater.sh > release_updater.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release_updater.sh > release_updater.sh
 		echo ""
-		echo "$ sudo chmod +x updater.sh"
-		sudo chmod +x updater.sh
-		./updater.sh
+		echo "$ sudo chmod +x release_updater.sh"
+		sudo chmod +x release_updater.sh
+		./release_updater.sh
 	fi
 else
 	echo "Connexion Internet : Echec"
