@@ -159,7 +159,9 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 		echo ""
 	fi
 	echo "###############################################################################"
+	echo "#                                                                             #"
 	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
+	echo "#                                                                             #"
 	echo "###############################################################################"
 	echo ""
 else
@@ -168,7 +170,9 @@ else
 	echo ""
 	echo ""
 	echo "###############################################################################"
+	echo "#                                                                             #"
 	echo "#                         Redémarrage du Raspberry Pi                         #"
+	echo "#                                                                             #"
 	echo "###############################################################################"
 	echo ""
 	sleep 1
