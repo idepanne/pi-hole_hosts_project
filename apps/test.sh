@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "==============================================================================="
-echo "    A propos de ce Raspberry Pi"
+echo "   • A propos de ce Raspberry Pi"
 echo "==============================================================================="
 echo ""
 cat /proc/cpuinfo | grep Model

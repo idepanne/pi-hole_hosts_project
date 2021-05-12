@@ -12,7 +12,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "    A propos de ce Raspberry Pi"
+echo "   • A propos de ce Raspberry Pi"
 echo "==============================================================================="
 echo ""
 cat /proc/cpuinfo | grep Model
@@ -59,7 +59,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "    Vérification des connexions SSH actives"
+echo "   • Vérification des connexions SSH actives"
 echo "==============================================================================="
 echo ""
 netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
@@ -67,7 +67,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "    Test de la connexion Internet"
+echo "   • Test de la connexion Internet"
 echo "==============================================================================="
 echo ""
 var=$(ping -c 3 raw.githubusercontent.com)
@@ -82,7 +82,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		var=$(hostname)
 		echo "==============================================================================="
-		echo "    Arrêt du noeud \"$var\" dans le cluster Boinc"
+		echo "   • Arrêt du noeud \"$var\" dans le cluster Boinc"
 		echo "==============================================================================="
 		echo ""
 		echo "$ sudo systemctl stop boinc-client"
@@ -96,7 +96,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	fi
 	if [[ -f "/home/pi/beta" ]]; then
 		echo "==============================================================================="
-		echo "    Sélection du canal de mises à jour : Beta"
+		echo "   • Sélection du canal de mises à jour : Beta"
 		echo "==============================================================================="
 		echo ""
 		echo "$ sudo mv updater.sh updater_old.sh"
@@ -110,7 +110,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		./updater.sh
 	else
 		echo "==============================================================================="
-		echo "    Sélection du canal de mises à jour : Release"
+		echo "   • Sélection du canal de mises à jour : Release"
 		echo "==============================================================================="
 		echo ""
 		echo "$ sudo mv updater.sh updater_old.sh"
@@ -132,7 +132,7 @@ else
 	echo ""
 	echo ""
 	echo "==============================================================================="
-	echo "    Mise à jour du crontab"
+	echo "   • Mise à jour du crontab"
 	echo "==============================================================================="
 	echo ""
 	echo "Ancien crontab :"
@@ -149,7 +149,7 @@ else
 		echo ""
 		var=$(hostname)
 		echo "==============================================================================="
-		echo "    Redémarrage du noeud \"$var\" dans le cluster Boinc"
+		echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
 		echo "==============================================================================="
 		echo ""
 		echo "$ sudo systemctl start boinc-client"
