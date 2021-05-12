@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.1b8
+# Pi-Hole Host Project Updater 6.0.2b1
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -9,7 +9,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "                        Mises à jour de Raspberry Pi OS                        "
+echo "    Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
 echo ""
 echo "$ sudo apt-get update"
@@ -27,7 +27,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "                           Mises à jour des logiciels                          "
+echo "    Mises à jour des logiciels"
 echo "==============================================================================="
 echo ""
 echo "-> autoupdate.sh :              [INSTALLÉ]"
@@ -82,7 +82,7 @@ if [[ -d "/etc/pihole" ]]; then
 		echo ""
 	else
 		echo ""
-		#sudo pihole -g
+		sudo pihole -g
 	fi
 else
 	echo "-> Pi-hole :            [NON INSTALLÉ]"
@@ -91,7 +91,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "                             Mise à jour du crontab                            "
+echo "    Mise à jour du crontab"
 echo "==============================================================================="
 echo ""
 echo "Ancien crontab :"
@@ -106,7 +106,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "                           Nettoyage et optimisation                           "
+echo "    Nettoyage et optimisation"
 echo "==============================================================================="
 echo ""
 echo "$ sudo apt-get autoremove -y"
@@ -136,7 +136,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "                          Validation des mises à jour                          "
+echo "    Validation des mises à jour"
 echo "==============================================================================="
 echo ""
 var=$(sudo checkrestart)
@@ -148,7 +148,7 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	if [[ -d "/etc/boinc-client" ]]; then
 		var=$(hostname)
 		echo "==============================================================================="
-		echo "             Redémarrage du serveur \"$var\" du cluster Boinc             "
+		echo "    Redémarrage du noeud \"$var\" dans le cluster Boinc"
 		echo "==============================================================================="
 		echo ""
 		echo "$ sudo systemctl start boinc-client"
@@ -159,7 +159,7 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 		echo ""
 	fi
 	echo "###############################################################################"
-	echo "                 Aucun redémarrage du Raspberry Pi nécessaire                  "
+	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
 	echo "###############################################################################"
 	echo ""
 else
@@ -168,7 +168,7 @@ else
 	echo ""
 	echo ""
 	echo "###############################################################################"
-	echo "                          Redémarrage du Raspberry Pi                          "
+	echo "#                         Redémarrage du Raspberry Pi                         #"
 	echo "###############################################################################"
 	echo ""
 	sleep 1
