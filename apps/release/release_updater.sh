@@ -1,6 +1,6 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater 6.0.2
-# release_updater.sh
+# updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 # idepanne67@gmail.com
@@ -49,13 +49,8 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 	sudo rm -rv /etc/fail2ban/jail.local
 	echo ""
-	if [[ -f "/home/pi/beta" ]]; then
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/jail.local > jail.local"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta/jail.local > jail.local
-	else
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/jail.local > jail.local"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/release/jail.local > jail.local
-	fi
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
 	echo ""
 	echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
 	sudo mv jail.local /etc/fail2ban/jail.local
@@ -121,9 +116,6 @@ echo ""
 cd
 echo "$ sudo rm -rv *_old.sh"
 sudo rm -rv *_old.sh
-echo ""
-echo "$ sudo rm -rv test*.sh"
-sudo rm -rv test*.sh
 echo ""
 echo "$ cd log && find test*.log -exec rm -rv {} \;"
 cd log && find test*.log -exec rm -rv {} \;
