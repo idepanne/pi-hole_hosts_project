@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 11/05/2021 - 15h30
+# Last update : 20/05/2021 - 18h15
 
 # 2
 0.0.0.0 2beeg.me
@@ -220,6 +220,9 @@
 0.0.0.0 www.lesvideosdecul.com
 0.0.0.0 lofihentai.com
 0.0.0.0 www.lofihentai.com
+0.0.0.0 lxax.com
+0.0.0.0 www.lxax.com
+0.0.0.0 fr.lxax.com
 
 # M
 0.0.0.0 madnessporn.com
@@ -374,15 +377,15 @@
 0.0.0.0 shewantyou.com
 0.0.0.0 www.shewantyou.com
 0.0.0.0 ymjkm.shewantyou.com
-
-
 0.0.0.0 sleazyneasy.com
 0.0.0.0 fr.sleazyneasy.com
 0.0.0.0 www.sleazyneasy.com
-0.0.0.0 spankbang.fun
-0.0.0.0 www.spankbang.fun
+0.0.0.0 softcorehdtube.com
+0.0.0.0 www.softcorehdtube.com
 0.0.0.0 soiree-insolite-gangbangs.com
 0.0.0.0 www.soiree-insolite-gangbangs.com
+0.0.0.0 spankbang.fun
+0.0.0.0 www.spankbang.fun
 
 # T
 0.0.0.0 thetranny.com
@@ -612,6 +615,9 @@
 0.0.0.0 www.xv-horezeedipaif.com
 0.0.0.0 xvds.tv
 0.0.0.0 www.xvds.tv
+0.0.0.0 xvix.eu
+0.0.0.0 www.xvix.eu
+0.0.0.0 fr.xvix.eu
 0.0.0.0 xxvideosporns.com
 0.0.0.0 www.xxvideosporns.com
 0.0.0.0 xvidio.mobi
