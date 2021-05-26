@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.0.2                     #"
+echo "#                      Pi-Hole Host Project Updater 6.0.3                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -99,22 +99,22 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo "   • Sélection du canal de mises à jour : Beta"
 		echo "==============================================================================="
 		echo ""
-		echo "$ sudo mv *updater.sh *updater_old.sh"
-		sudo mv *updater.sh *updater_old.sh
+		echo "$ sudo mv updater.sh updater_old.sh"
+		sudo mv updater.sh updater_old.sh
 		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta_updater.sh > beta_updater.sh"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta_updater.sh > beta_updater.sh
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta_updater.sh > updater.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta_updater.sh > updater.sh
 		echo ""
-		echo "$ sudo chmod +x beta_updater.sh"
-		sudo chmod +x beta_updater.sh
-		./beta_updater.sh
+		echo "$ sudo chmod +x updater.sh"
+		sudo chmod +x updater.sh
+		./updater.sh
 	else
 		echo "==============================================================================="
 		echo "   • Sélection du canal de mises à jour : Release"
 		echo "==============================================================================="
 		echo ""
-		echo "$ sudo mv *updater.sh *updater_old.sh"
-		sudo mv *updater.sh *updater_old.sh
+		echo "$ sudo mv updater.sh updater_old.sh"
+		sudo mv updater.sh updater_old.sh
 		echo ""
 		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh"
 		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh
