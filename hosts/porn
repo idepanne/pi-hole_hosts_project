@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 20/05/2021 - 18h15
+# Last update : 27/05/2021 - 01h50
 
 # 2
 0.0.0.0 2beeg.me
@@ -49,6 +49,10 @@
 # C
 0.0.0.0 casting-porno.info
 0.0.0.0 www.casting-porno.info
+0.0.0.0 celebritysex.co
+0.0.0.0 www.celebritysex.co
+0.0.0.0 celebritysex.com
+0.0.0.0 www.celebritysex.com
 0.0.0.0 chinaporn.com
 0.0.0.0 www.chinaporn.com
 0.0.0.0 chinaporn0.com
@@ -124,6 +128,8 @@
 0.0.0.0 www.gangbangshards.com
 0.0.0.0 gangbangparis.com
 0.0.0.0 www.gangbangparis.com
+0.0.0.0 gauleporno.xxx
+0.0.0.0 www.gauleporno.xxx
 0.0.0.0 gaygangrape.com
 0.0.0.0 www.gaygangrape.com
 0.0.0.0 gekso.xyz
@@ -146,6 +152,8 @@
 0.0.0.0 www.hdvideosporn.com
 0.0.0.0 hdvideosporn.net
 0.0.0.0 www.hdvideosporn.net
+0.0.0.0 hdxnxxvideo.net
+0.0.0.0 www.hdxnxxvideo.net
 0.0.0.0 hentaicomics.pro
 0.0.0.0 www.hentaicomics.pro
 0.0.0.0 heureporno.com
@@ -257,6 +265,8 @@
 # O
 0.0.0.0 onlyindianporn.tv
 0.0.0.0 www.onlyindianporn.tv
+0.0.0.0 onlyindianporn.me
+0.0.0.0 www.onlyindianporn.me
 0.0.0.0 openxh.com
 0.0.0.0 www.openxh.com
 0.0.0.0 fr.openxh.com
@@ -287,6 +297,10 @@
 0.0.0.0 openxh9.com
 0.0.0.0 www.openxh9.com
 0.0.0.0 fr.openxh9.com
+0.0.0.0 optima-system.com
+0.0.0.0 www.optima-system.com
+0.0.0.0 oyoh.com
+0.0.0.0 www.oyoh.com
 0.0.0.0 ozeex.com
 0.0.0.0 www.ozeex.com
 
@@ -314,6 +328,8 @@
 0.0.0.0 pornheed.com
 0.0.0.0 www.pornheed.com
 0.0.0.0 fr.pornheed.com
+0.0.0.0 pornhere.net
+0.0.0.0 www.pornhere.net
 0.0.0.0 pornica.fr
 0.0.0.0 www.pornica.fr
 0.0.0.0 porno18.site
@@ -338,10 +354,14 @@
 0.0.0.0 www.pornowatch.net
 0.0.0.0 pornoxxx.fr
 0.0.0.0 www.pornoxxx.fr
+0.0.0.0 porntot.com
+0.0.0.0 www.porntot.com
 0.0.0.0 preggoporn.tv
 0.0.0.0 www.preggoporn.tv
 0.0.0.0 protrain-china.com
 0.0.0.0 www.protrain-china.com
+0.0.0.0 pussyboy.net
+0.0.0.0 www.pussyboy.net
 
 # Q
 0.0.0.0 qoqh.com
@@ -359,6 +379,48 @@
 0.0.0.0 www.reclaimedvoices.org
 0.0.0.0 redwap.xyz
 0.0.0.0 www.redwap.xyz
+0.0.0.0 redwap0.xyz
+0.0.0.0 www.redwap0.xyz
+0.0.0.0 redwap1.xyz
+0.0.0.0 www.redwap1.xyz
+0.0.0.0 redwap2.xyz
+0.0.0.0 www.redwap2.xyz
+0.0.0.0 redwap3.xyz
+0.0.0.0 www.redwap3.xyz
+0.0.0.0 redwap4.xyz
+0.0.0.0 www.redwap4.xyz
+0.0.0.0 redwap5.xyz
+0.0.0.0 www.redwap5.xyz
+0.0.0.0 redwap6.xyz
+0.0.0.0 www.redwap6.xyz
+0.0.0.0 redwap7.xyz
+0.0.0.0 www.redwap7.xyz
+0.0.0.0 redwap8.xyz
+0.0.0.0 www.redwap8.xyz
+0.0.0.0 redwap9.xyz
+0.0.0.0 www.redwap9.xyz
+0.0.0.0 redwap.com
+0.0.0.0 www.redwap.com
+0.0.0.0 redwap0.com
+0.0.0.0 www.redwap0.com
+0.0.0.0 redwap1.com
+0.0.0.0 www.redwap1.com
+0.0.0.0 redwap2.com
+0.0.0.0 www.redwap2.com
+0.0.0.0 redwap3.com
+0.0.0.0 www.redwap3.com
+0.0.0.0 redwap4.com
+0.0.0.0 www.redwap4.com
+0.0.0.0 redwap5.com
+0.0.0.0 www.redwap5.com
+0.0.0.0 redwap6.com
+0.0.0.0 www.redwap6.com
+0.0.0.0 redwap7.com
+0.0.0.0 www.redwap7.com
+0.0.0.0 redwap8.com
+0.0.0.0 www.redwap8.com
+0.0.0.0 redwap9.com
+0.0.0.0 www.redwap9.com
 
 # S
 0.0.0.0 sex.com
@@ -398,6 +460,8 @@
 0.0.0.0 www.trannylime.com
 0.0.0.0 transtube.net
 0.0.0.0 www.transtube.net
+0.0.0.0 trueanal.com
+0.0.0.0 www.trueanal.com
 0.0.0.0 tspornotube.com
 0.0.0.0 en.tspornotube.com
 0.0.0.0 www.tspornotube.com
@@ -436,6 +500,8 @@
 # X
 0.0.0.0 xfantazy.monster
 0.0.0.0 www.xfantazy.monster
+0.0.0.0 xfemaledom.com
+0.0.0.0 www.xfemaledom.com
 0.0.0.0 xhamster1.desi
 0.0.0.0 www.xhamster1.desi
 0.0.0.0 fr.xhamster1.desi
@@ -615,6 +681,8 @@
 0.0.0.0 www.xv-horezeedipaif.com
 0.0.0.0 xvds.tv
 0.0.0.0 www.xvds.tv
+0.0.0.0 xvideo-xxx.com
+0.0.0.0 www.xvideo-xxx.com
 0.0.0.0 xvix.eu
 0.0.0.0 www.xvix.eu
 0.0.0.0 fr.xvix.eu
@@ -624,6 +692,8 @@
 0.0.0.0 www.xvidio.mobi
 0.0.0.0 xxxbule.com
 0.0.0.0 www.xxxbule.com
+0.0.0.0 xxxdl.net
+0.0.0.0 www.xxxdl.net
 0.0.0.0 xxxlucah.com
 0.0.0.0 www.xxxlucah.com
 0.0.0.0 xxxhdvideo.mobi
