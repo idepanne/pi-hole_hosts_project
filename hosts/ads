@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/ads
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 11/05/2021 - 15h30
+# Last update : 30/05/2021 - 11h15
 
 # A
 0.0.0.0 ampproject.org
