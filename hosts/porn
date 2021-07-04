@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 02/06/2021 - 19h35
+# Last update : 04/07/2021 - 11h30
 
 # 1
 0.0.0.0 18tube.sex
@@ -122,6 +122,8 @@
 0.0.0.0 erog.fr
 0.0.0.0 www.erog.fr
 0.0.0.0 pluralite.erog.fr
+0.0.0.0 evexxx.com
+0.0.0.0 www.evexxx.com
 
 # F
 0.0.0.0 femme-offerte.com
@@ -553,6 +555,8 @@
 0.0.0.0 fr.vidmo.org
 0.0.0.0 villageporno.com
 0.0.0.0 www.villageporno.com
+0.0.0.0 vrpornlinks.net
+0.0.0.0 www.vrpornlinks.net
 
 # W
 0.0.0.0 xnxx.wapka.cc
@@ -562,6 +566,9 @@
 0.0.0.0 www.wifeandstrangers.com
 0.0.0.0 wifefuckstranger.com
 0.0.0.0 www.wifefuckstranger.com
+0.0.0.0 wishluckme.net
+0.0.0.0 www.wishluckme.net
+0.0.0.0 mwnxg.wishluckme.net
 0.0.0.0 wonporn.com
 0.0.0.0 www.wonporn.com
 0.0.0.0 pic.wonporn.com
@@ -577,6 +584,8 @@
 0.0.0.0 www.xfantazy.monster
 0.0.0.0 xfemaledom.com
 0.0.0.0 www.xfemaledom.com
+0.0.0.0 fr.amp.xhamster.one
+0.0.0.0 www.fr.amp.xhamster.one
 0.0.0.0 xhamster1.desi
 0.0.0.0 www.xhamster1.desi
 0.0.0.0 fr.xhamster1.desi
