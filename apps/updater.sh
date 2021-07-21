@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.1.0b1
+# Pi-Hole Host Project Updater 6.0.3
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -127,40 +127,40 @@ cd
 echo ""
 echo ""
 echo ""
-# echo "==============================================================================="
-# echo "   • Validation des mises à jour"
-# echo "==============================================================================="
-# echo ""
-# var=$(sudo checkrestart)
-# if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
-# 	echo "$var"
-# 	echo ""
-# 	echo ""
-# 	echo ""
-# 	if [[ -d "/etc/boinc-client" ]]; then
-# 		var=$(hostname)
-# 		echo "==============================================================================="
-# 		echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
-# 		echo "==============================================================================="
-# 		echo ""
-# 		echo "$ sudo systemctl start boinc-client"
-# 		sudo systemctl start boinc-client
-# 		sleep 1
-# 		echo ""
-# 		echo ""
-# 		echo ""
-# 	fi
-# 	echo "###############################################################################"
-# 	echo "#                                                                             #"
-# 	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
-# 	echo "#                                                                             #"
-# 	echo "###############################################################################"
-# 	echo ""
-# else
-# 	echo "$var"
-# 	echo ""
-# 	echo ""
-# 	echo ""
+echo "==============================================================================="
+echo "   • Validation des mises à jour"
+echo "==============================================================================="
+echo ""
+var=$(sudo checkrestart)
+if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
+ 	echo "$var"
+ 	echo ""
+ 	echo ""
+ 	echo ""
+ 	if [[ -d "/etc/boinc-client" ]]; then
+ 		var=$(hostname)
+ 		echo "==============================================================================="
+ 		echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
+ 		echo "==============================================================================="
+ 		echo ""
+ 		echo "$ sudo systemctl start boinc-client"
+ 		sudo systemctl start boinc-client
+ 		sleep 1
+ 		echo ""
+ 		echo ""
+ 		echo ""
+ 	fi
+ 	echo "###############################################################################"
+ 	echo "#                                                                             #"
+ 	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
+ 	echo "#                                                                             #"
+ 	echo "###############################################################################"
+ 	echo ""
+else
+ 	echo "$var"
+ 	echo ""
+ 	echo ""
+ 	echo ""
 	echo "###############################################################################"
 	echo "#                                                                             #"
 	echo "#                         Redémarrage du Raspberry Pi                         #"
@@ -169,4 +169,4 @@ echo ""
 	echo ""
 	sleep 1
 	sudo reboot
-# fi
+fi
