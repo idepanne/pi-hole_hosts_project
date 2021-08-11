@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.4b1
+# Pi-Hole Host Project Updater 6.0.5b1
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -156,6 +156,7 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo "#                                                                             #"
 	echo "###############################################################################"
 	echo ""
+        sleep 1
 else
 	echo "$var"
 	echo ""
