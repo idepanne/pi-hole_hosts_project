@@ -92,7 +92,11 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+if [[ -d "/etc/boinc-client" ]]; then
+	crontab <<<"30 2 * * * sudo systemctl stop boinc-client"; (crontab -l; echo "0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1")
+else
+	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+fi
 sudo /etc/init.d/cron restart
 echo ""
 echo "Nouveau crontab :"
