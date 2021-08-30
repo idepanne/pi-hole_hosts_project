@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 11/08/2021 - 23h20
+# Last update : 30/08/2021 - 02h30
 
 # 1
 0.0.0.0 18tube.sex
@@ -67,6 +67,8 @@
 0.0.0.0 www.celebritysex.co
 0.0.0.0 celebritysex.com
 0.0.0.0 www.celebritysex.com
+0.0.0.0 cherryhub.net
+0.0.0.0 www.cherryhub.net
 0.0.0.0 chinaporn.com
 0.0.0.0 www.chinaporn.com
 0.0.0.0 chinaporn0.com
@@ -104,6 +106,8 @@
 # D
 0.0.0.0 dagbladet.no
 0.0.0.0 www.dagbladet.no
+0.0.0.0 dankwank.net
+0.0.0.0 www.dankwank.net
 0.0.0.0 derrierelerideau.com
 0.0.0.0 www.derrierelerideau.com
 0.0.0.0 desitelugusex.com
@@ -114,6 +118,8 @@
 0.0.0.0 www.donmature.com
 
 # E
+0.0.0.0 eastwesthapkido.com
+0.0.0.0 www.eastwesthapkido.com
 0.0.0.0 echangiste.tv
 0.0.0.0 www.echangiste.tv
 0.0.0.0 eporner.com
@@ -132,6 +138,8 @@
 0.0.0.0 www.filmsexeporno.com
 0.0.0.0 filmsxenfrancais.com
 0.0.0.0 www.filmsxenfrancais.com
+0.0.0.0 filmsdesexe.pro
+0.0.0.0 www.filmsdesexe.pro
 0.0.0.0 fisting-blog.org
 0.0.0.0 www.fisting-blog.org
 0.0.0.0 fisting-videos.org
@@ -146,6 +154,8 @@
 0.0.0.0 www.freexxxporn.org
 0.0.0.0 fuqqt.com
 0.0.0.0 www.fuqqt.com
+0.0.0.0 fxporn.ninja
+0.0.0.0 www.fxporn.ninja
 
 # G
 0.0.0.0 gang-bangs.org
@@ -279,10 +289,14 @@
 0.0.0.0 www.momzr.com
 0.0.0.0 mondesensuel.fr
 0.0.0.0 www.mondesensuel.fr
+0.0.0.0 mouthporn.net
+0.0.0.0 www.mouthporn.net
 0.0.0.0 mumu-net.com
 0.0.0.0 www.mumu-net.com
 0.0.0.0 mycumx.com
 0.0.0.0 www.mycumx.com
+0.0.0.0 myxclip.com
+0.0.0.0 www.myxclip.com
 
 # N
 0.0.0.0 noirporno.com
@@ -384,6 +398,8 @@
 0.0.0.0 www.pornosuivre.com 
 0.0.0.0 pornsun.cc
 0.0.0.0 www.pornsun.cc
+0.0.0.0 porntommy.com
+0.0.0.0 www.porntommy.com
 0.0.0.0 pornotumblr.com
 0.0.0.0 www.pornotumblr.com
 0.0.0.0 pornvideoshd.net
@@ -463,6 +479,8 @@
 0.0.0.0 www.redwap9.com
 
 # S
+0.0.0.0 severeporn.com
+0.0.0.0 www.severeporn.com
 0.0.0.0 sex.com
 0.0.0.0 www.sex.com
 0.0.0.0 fr.sex.com
@@ -586,6 +604,8 @@
 0.0.0.0 www.xfemaledom.com
 0.0.0.0 fr.amp.xhamster.one
 0.0.0.0 www.fr.amp.xhamster.one
+0.0.0.0 fr.amp.xhamster.com
+0.0.0.0 www.fr.amp.xhamster.com
 0.0.0.0 xhamster1.desi
 0.0.0.0 www.xhamster1.desi
 0.0.0.0 fr.xhamster1.desi
@@ -755,6 +775,8 @@
 0.0.0.0 www.xnxx.es
 0.0.0.0 xxnx.mobi
 0.0.0.0 www.xxnx.mobi
+0.0.0.0 xnxx-sex-videos.com
+0.0.0.0 www.xnxx-sex-videos.com
 0.0.0.0 xnxx4porn.com
 0.0.0.0 www.xnxx4porn.com
 0.0.0.0 xnxxbest.pro
@@ -767,6 +789,10 @@
 0.0.0.0 www.xvds.tv
 0.0.0.0 xvideo-xxx.com
 0.0.0.0 www.xvideo-xxx.com
+0.0.0.0 fr.xvideos.la
+0.0.0.0 www.fr.xvideos.la
+0.0.0.0 en.xvideoshq.org
+0.0.0.0 www.en.xvideoshq.org
 0.0.0.0 xvix.eu
 0.0.0.0 www.xvix.eu
 0.0.0.0 fr.xvix.eu
@@ -774,6 +800,8 @@
 0.0.0.0 www.xxvideosporns.com
 0.0.0.0 xvidio.mobi
 0.0.0.0 www.xvidio.mobi
+0.0.0.0 xxb.mobi
+0.0.0.0 www.xxb.mobi
 0.0.0.0 xxx-hunt.com
 0.0.0.0 www.xxx-hunt.com
 0.0.0.0 fisting.xxx-hunt.com
@@ -795,6 +823,8 @@
 0.0.0.0 www.yespornplease.vg
 0.0.0.0 yourporn.network
 0.0.0.0 www.yourporn.network
+0.0.0.0 you-porn.net
+0.0.0.0 www.you-porn.net
 
 # Z
 0.0.0.0 zigtube.com
