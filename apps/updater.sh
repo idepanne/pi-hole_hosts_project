@@ -143,19 +143,19 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	echo ""
 	echo ""
-	--if [[ -d "/etc/boinc-client" ]]; then
-	--	var=$(hostname)
-	--	echo "==============================================================================="
-	--	echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
-	--	echo "==============================================================================="
-	--	echo ""
-	--	echo "$ sudo systemctl start boinc-client"
-	--	sudo systemctl start boinc-client
-	--	sleep 1
-	--	echo ""
-	--	echo ""
-	--	echo ""
-	--fi
+	#if [[ -d "/etc/boinc-client" ]]; then
+	#	var=$(hostname)
+	#	echo "==============================================================================="
+	#	echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
+	#	echo "==============================================================================="
+	#	echo ""
+	#	echo "$ sudo systemctl start boinc-client"
+	#	sudo systemctl start boinc-client
+	#	sleep 1
+	#	echo ""
+	#	echo ""
+	#	echo ""
+	#fi
 	echo "###############################################################################"
 	echo "#                                                                             #"
 	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"

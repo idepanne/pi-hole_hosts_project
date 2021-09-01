@@ -78,22 +78,22 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "Connexion Internet : OK"
 	echo ""
 	echo ""
-	--if [[ -d "/etc/boinc-client" ]]; then
-	-- 	echo ""
-	-- 	var=$(hostname)
-	-- 	echo "==============================================================================="
-	--	echo "   • Arrêt du noeud \"$var\" dans le cluster Boinc"
-	-- 	echo "==============================================================================="
-	-- 	echo ""
-	--	echo "$ sudo systemctl stop boinc-client"
-	-- 	sudo systemctl stop boinc-client
-	-- 	sleep 1
-	--	echo ""
-	--	echo ""
-	--	echo ""
-	--else
+	#if [[ -d "/etc/boinc-client" ]]; then
+	# 	echo ""
+	# 	var=$(hostname)
+	# 	echo "==============================================================================="
+	#	echo "   • Arrêt du noeud \"$var\" dans le cluster Boinc"
+	# 	echo "==============================================================================="
+	# 	echo ""
+	#	echo "$ sudo systemctl stop boinc-client"
+	# 	sudo systemctl stop boinc-client
+	# 	sleep 1
+	#	echo ""
+	#	echo ""
+	#	echo ""
+	#else
 		echo ""
-	--fi
+	#fi
 	if [[ -f "/home/pi/beta" ]]; then
 		echo "==============================================================================="
 		echo "   • Sélection du canal de mises à jour : Beta"
@@ -150,17 +150,17 @@ else
 	echo "Nouveau crontab :"
 	crontab -l
 	echo ""
-	--if [[ -d "/etc/boinc-client" ]]; then
-	--	echo ""
-	--	echo ""
-	--	var=$(hostname)
-	--	echo "==============================================================================="
-	--	echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
-	--	echo "==============================================================================="
-	--	echo ""
-	--	echo "$ sudo systemctl start boinc-client"
-	--	sudo systemctl start boinc-client
-	--	sleep 1
-	--	echo ""
-	--fi
+	#if [[ -d "/etc/boinc-client" ]]; then
+	#	echo ""
+	#	echo ""
+	#	var=$(hostname)
+	#	echo "==============================================================================="
+	#	echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
+	#	echo "==============================================================================="
+	#	echo ""
+	#	echo "$ sudo systemctl start boinc-client"
+	#	sudo systemctl start boinc-client
+	#	sleep 1
+	#	echo ""
+	#fi
 fi
