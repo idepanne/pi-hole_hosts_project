@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.0.4
+# Pi-Hole Host Project Updater 6.1.0
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -92,7 +92,13 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+if [[ -d "/etc/boinc-client" ]]; then
+	crontab <<<"30 2 * * * sudo systemctl stop boinc-client
+0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * sudo systemctl start boinc-client"
+else
+	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+fi
 sudo /etc/init.d/cron restart
 echo ""
 echo "Nouveau crontab :"
@@ -137,19 +143,19 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	echo ""
 	echo ""
-	if [[ -d "/etc/boinc-client" ]]; then
-		var=$(hostname)
-		echo "==============================================================================="
-		echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
-		echo "==============================================================================="
-		echo ""
-		echo "$ sudo systemctl start boinc-client"
-		sudo systemctl start boinc-client
-		sleep 1
-		echo ""
-		echo ""
-		echo ""
-	fi
+	--if [[ -d "/etc/boinc-client" ]]; then
+	--	var=$(hostname)
+	--	echo "==============================================================================="
+	--	echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
+	--	echo "==============================================================================="
+	--	echo ""
+	--	echo "$ sudo systemctl start boinc-client"
+	--	sudo systemctl start boinc-client
+	--	sleep 1
+	--	echo ""
+	--	echo ""
+	--	echo ""
+	--fi
 	echo "###############################################################################"
 	echo "#                                                                             #"
 	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"

@@ -2,7 +2,7 @@
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.0.4                     #"
+echo "#                      Pi-Hole Host Project Updater 6.1.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -14,8 +14,8 @@ echo ""
 echo "==============================================================================="
 echo "   • A propos de ce Raspberry Pi"
 echo "==============================================================================="
---echo ""
---cat /proc/cpuinfo | grep Model
+echo ""
+cat /proc/cpuinfo | grep Model
 echo ""
 cat /proc/cpuinfo | grep Serial
 echo ""
@@ -78,22 +78,22 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo "Connexion Internet : OK"
 	echo ""
 	echo ""
-	if [[ -d "/etc/boinc-client" ]]; then
+	--if [[ -d "/etc/boinc-client" ]]; then
+	-- 	echo ""
+	-- 	var=$(hostname)
+	-- 	echo "==============================================================================="
+	--	echo "   • Arrêt du noeud \"$var\" dans le cluster Boinc"
+	-- 	echo "==============================================================================="
+	-- 	echo ""
+	--	echo "$ sudo systemctl stop boinc-client"
+	-- 	sudo systemctl stop boinc-client
+	-- 	sleep 1
+	--	echo ""
+	--	echo ""
+	--	echo ""
+	--else
 		echo ""
-		var=$(hostname)
-		echo "==============================================================================="
-		echo "   • Arrêt du noeud \"$var\" dans le cluster Boinc"
-		echo "==============================================================================="
-		echo ""
-		echo "$ sudo systemctl stop boinc-client"
-		sudo systemctl stop boinc-client
-		sleep 1
-		echo ""
-		echo ""
-		echo ""
-	else
-		echo ""
-	fi
+	--fi
 	if [[ -f "/home/pi/beta" ]]; then
 		echo "==============================================================================="
 		echo "   • Sélection du canal de mises à jour : Beta"
@@ -138,23 +138,29 @@ else
 	echo "Ancien crontab :"
 	crontab -l
 	echo ""
-	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	if [[ -d "/etc/boinc-client" ]]; then
+		crontab <<<"30 2 * * * sudo systemctl stop boinc-client
+0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * sudo systemctl start boinc-client"
+	else
+		crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	fi
 	sudo /etc/init.d/cron restart
 	echo ""
 	echo "Nouveau crontab :"
 	crontab -l
 	echo ""
-	if [[ -d "/etc/boinc-client" ]]; then
-		echo ""
-		echo ""
-		var=$(hostname)
-		echo "==============================================================================="
-		echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
-		echo "==============================================================================="
-		echo ""
-		echo "$ sudo systemctl start boinc-client"
-		sudo systemctl start boinc-client
-		sleep 1
-		echo ""
-	fi
+	--if [[ -d "/etc/boinc-client" ]]; then
+	--	echo ""
+	--	echo ""
+	--	var=$(hostname)
+	--	echo "==============================================================================="
+	--	echo "   • Redémarrage du noeud \"$var\" dans le cluster Boinc"
+	--	echo "==============================================================================="
+	--	echo ""
+	--	echo "$ sudo systemctl start boinc-client"
+	--	sudo systemctl start boinc-client
+	--	sleep 1
+	--	echo ""
+	--fi
 fi
