@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.0.4                     #"
+echo "#                      Pi-Hole Host Project Updater 6.1.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -179,7 +179,13 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+if [[ -d "/etc/boinc-client" ]]; then
+	crontab <<<"0 2 * * * sudo systemctl stop boinc-client
+	0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+	0 4 * * * sudo systemctl start boinc-client"
+else
+	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+fi
 sudo /etc/init.d/cron restart
 echo ""
 echo "Nouveau crontab :"
