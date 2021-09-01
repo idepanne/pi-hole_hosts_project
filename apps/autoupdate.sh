@@ -15,7 +15,7 @@ echo "==========================================================================
 echo "   • A propos de ce Raspberry Pi"
 echo "==============================================================================="
 echo ""
-cat /proc/cpuinfo | grep Model
+--cat /proc/cpuinfo | grep Model
 echo ""
 cat /proc/cpuinfo | grep Serial
 echo ""
