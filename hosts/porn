@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 30/08/2021 - 02h30
+# Last update : 09/09/2021 - 23h40
 
 # 1
 0.0.0.0 18tube.sex
@@ -262,6 +262,8 @@
 # L
 0.0.0.0 lavoixdux.com
 0.0.0.0 www.lavoixdux.com
+0.0.0.0 lecoinporno.fr
+0.0.0.0 www.lecoinporno.fr
 0.0.0.0 legrivois.org
 0.0.0.0 www.legrivois.org
 0.0.0.0 lhentai.org
