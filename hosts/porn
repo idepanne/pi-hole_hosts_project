@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 09/09/2021 - 23h40
+# Last update : 20/09/2021 - 16h40
 
 # 1
 0.0.0.0 18tube.sex
@@ -186,6 +186,8 @@
 0.0.0.0 hayhd.net
 0.0.0.0 www.hayhd.net
 0.0.0.0 sex.hayhd.net
+0.0.0.0 hdporno.sk
+0.0.0.0 www.hdporno.sk
 0.0.0.0 hdvideosporn.com
 0.0.0.0 www.hdvideosporn.com
 0.0.0.0 hdvideosporn.net
@@ -377,6 +379,8 @@
 0.0.0.0 www.pornano.com
 0.0.0.0 pornaph.com
 0.0.0.0 www.pornaph.com
+0.0.0.0 pornez.net
+0.0.0.0 www.pornez.net
 0.0.0.0 pornhat.club
 0.0.0.0 www.pornhat.club
 0.0.0.0 pornheed.com
@@ -492,6 +496,8 @@
 0.0.0.0 www.sexvid.porn
 0.0.0.0 sikwap.mobi
 0.0.0.0 www.sikwap.mobi
+0.0.0.0 simpasian.net
+0.0.0.0 www.simpasian.net
 0.0.0.0 singeporno.com
 0.0.0.0 www.singeporno.com
 0.0.0.0 sharingmywife.pro
@@ -793,6 +799,15 @@
 0.0.0.0 www.xvideo-xxx.com
 0.0.0.0 fr.xvideos.la
 0.0.0.0 www.fr.xvideos.la
+0.0.0.0 www.xvideos.la
+0.0.0.0 xvideos4.sxx.mx
+0.0.0.0 www.xvideos4.sxx.mx
+0.0.0.0 fr.xvideo.mx
+0.0.0.0 www.fr.xvideo.mx
+0.0.0.0 www.xvideo.mx
+0.0.0.0 xvideos2.mx
+0.0.0.0 fr.xvideos2.mx
+0.0.0.0 www.xvideos2.mx
 0.0.0.0 en.xvideoshq.org
 0.0.0.0 www.en.xvideoshq.org
 0.0.0.0 xvix.eu
