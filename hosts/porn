@@ -4,7 +4,7 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/porn
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 21/09/2021 - 02h42
+# Last update : 04/10/2021 - 02h17
 
 # 1
 0.0.0.0 18tube.sex
@@ -539,6 +539,8 @@
 0.0.0.0 www.spankwire9.com
 
 # T
+0.0.0.0 theartofblowjob.com
+0.0.0.0 www.theartofblowjob.com
 0.0.0.0 the-getyourlady1.com
 0.0.0.0 www.the-getyourlady1.com
 0.0.0.0 thetranny.com
@@ -569,6 +571,8 @@
 0.0.0.0 universe-ofdatings.com
 0.0.0.0 www.universe-ofdatings.com
 0.0.0.0 b.universe-ofdatings.com
+0.0.0.0 upornia.tube
+0.0.0.0 www.upornia.tube
 
 # V
 0.0.0.0 video-creampie.com
