@@ -6,28 +6,6 @@
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
 # Last update : 20/10/2021 - 22h35
 
-# SafeSearch
-216.239.38.120 google.com
-216.239.38.120 www.google.com
-216.239.38.120 google.fr
-216.239.38.120 www.google.fr
-216.239.38.120 google.de
-216.239.38.120 www.google.de
-216.239.38.120 google.es
-216.239.38.120 www.google.es
-216.239.38.120 google.it
-216.239.38.120 www.google.it
-strict.bing.com bing.com
-strict.bing.com www.bing.com
-safe.duckduckgo.com duckduckgo.com
-safe.duckduckgo.com www.duckduckgo.com
-restrict.youtube.com youtube.com
-restrict.youtube.com www.youtube.com
-restrict.youtube.com m.youtube.com
-restrict.youtube.com youtubei.googleapis.com
-restrict.youtube.com youtube.googleapis.com
-restrict.youtube.com www.youtube-nocookie.com
-
 # 1
 0.0.0.0 18tube.sex
 0.0.0.0 www.18tube.sex
