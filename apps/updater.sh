@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.1.1
+# Pi-Hole Host Project Updater 6.1.2
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -11,6 +11,9 @@ echo ""
 echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
+echo ""
+echo "$ sudo apt-get clean all"
+sudo apt-get clean all
 echo ""
 echo "$ sudo apt-get update"
 sudo apt-get update
