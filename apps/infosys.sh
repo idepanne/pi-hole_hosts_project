@@ -1,4 +1,10 @@
 #!/bin/bash
+# Pi-Hole Host Project Updater 6.2.0
+# updater.sh
+# © 2020-2021 iDépanne – L'expert informatique
+# https://fb.me/idepanne/
+# idepanne67@gmail.com
+cd
 echo "==============================================================================="
 echo "   • A propos de ce Raspberry Pi"
 echo "==============================================================================="
@@ -10,6 +16,7 @@ echo ""
 var1=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g')
 var2=$(lscpu | grep "Vendor ID:" | sed -r 's/Vendor ID:\s{1,}//g')
 echo -n "Processeur      : " && echo "$var2 $var1"
+echo -n "Fréquence       : " && echo "$(sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq)"
 echo ""
 cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
 cpuTemp1=$(($cpuTemp0/1000))
