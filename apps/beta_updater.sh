@@ -95,7 +95,6 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-
 var1=$(cat /proc/cpuinfo | grep Model)
 if [[ $var1 == *"Pi 400"* ]]; then
 	crontab <<<"30 7 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"

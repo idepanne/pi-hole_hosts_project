@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.1.2
+# Pi-Hole Host Project Updater 6.2.0
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -95,12 +95,17 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
+var1=$(cat /proc/cpuinfo | grep Model)
+if [[ $var1 == *"Pi 400"* ]]; then
+	crontab <<<"30 7 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+else
 if [[ -d "/etc/boinc-client" ]]; then
 	crontab <<<"0 3 * * * sudo systemctl stop boinc-client
 0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 15 3 * * * sudo systemctl start boinc-client"
 else
 	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+fi
 fi
 sudo /etc/init.d/cron restart
 echo ""

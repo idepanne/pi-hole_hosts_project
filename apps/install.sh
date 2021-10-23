@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.1.2                     #"
+echo "#                      Pi-Hole Host Project Updater 6.2.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -23,6 +23,7 @@ echo ""
 var1=$(lscpu | grep "Model name:" | sed -r 's/Model name:\s{1,}//g')
 var2=$(lscpu | grep "Vendor ID:" | sed -r 's/Vendor ID:\s{1,}//g')
 echo -n "Processeur      : " && echo "$var2 $var1"
+echo -n "Fréquence       : " && echo "$(sudo cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq)"
 echo ""
 cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
 cpuTemp1=$(($cpuTemp0/1000))
@@ -182,12 +183,17 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
+var1=$(cat /proc/cpuinfo | grep Model)
+if [[ $var1 == *"Pi 400"* ]]; then
+	crontab <<<"30 7 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+else
 if [[ -d "/etc/boinc-client" ]]; then
 	crontab <<<"0 3 * * * sudo systemctl stop boinc-client
 0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 15 3 * * * sudo systemctl start boinc-client"
 else
 	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+fi
 fi
 sudo /etc/init.d/cron restart
 echo ""
