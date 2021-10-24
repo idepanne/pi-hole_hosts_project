@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.2.0                     #"
+echo "#                      Pi-Hole Host Project Updater 6.2.1                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -173,6 +173,12 @@ sudo service fail2ban restart
 echo ""
 echo "$ sudo systemctl --no-pager status fail2ban"
 sudo systemctl --no-pager status fail2ban
+echo ""
+var1=$(cat /proc/cpuinfo | grep Model)
+if [[ $var1 == *"Pi 400"* ]]; then
+	echo "$ sudo apt-get install libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr"
+	sudo apt-get install libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr
+fi
 echo ""
 echo ""
 echo ""
