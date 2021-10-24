@@ -218,8 +218,8 @@ echo ""
 echo "$ sudo apt-get autoclean -y"
 sudo apt-get autoclean -y
 echo ""
-echo "$ sudo apt-get clean -y"
-sudo apt-get clean -y
+echo "$ sudo apt-get clean all"
+sudo apt-get clean all
 echo ""
 cd
 echo "$ sudo rm -rv *_old.sh"

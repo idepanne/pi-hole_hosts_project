@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.2.0
+# Pi-Hole Host Project Updater 6.2.1
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -124,8 +124,8 @@ echo ""
 echo "$ sudo apt-get autoclean -y"
 sudo apt-get autoclean -y
 echo ""
-echo "$ sudo apt-get clean -y"
-sudo apt-get clean -y
+echo "$ sudo apt-get clean all"
+sudo apt-get clean all
 echo ""
 cd
 echo "$ sudo rm -rv *_old.sh"
@@ -157,7 +157,7 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo "#                                                                             #"
 	echo "###############################################################################"
 	echo ""
-        sleep 1
+	sleep 1
 else
 	echo "$var"
 	echo ""
