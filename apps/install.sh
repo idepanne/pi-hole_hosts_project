@@ -176,13 +176,21 @@ sudo systemctl --no-pager status fail2ban
 echo ""
 var1=$(cat /proc/cpuinfo | grep Model)
 if [[ $var1 == *"Pi 400"* ]]; then
+	echo ""
+	echo ""
+	echo "==============================================================================="
+	echo "   • Installation des logiciels prérequis pour le Raspberry Pi 400"
+	echo "==============================================================================="
+	echo ""
 	echo "$ sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style*"
 	sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style*
 	echo ""
 	echo "$ sudo apt-get install -yf gparted"
 	sudo apt-get install -yf gparted
+	echo ""
+	echo "$ sudo apt-get install -yf hardinfo"
+	sudo apt-get install -yf hardinfo
 fi
-echo ""
 echo ""
 echo ""
 echo "==============================================================================="
