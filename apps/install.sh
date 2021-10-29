@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.2.2                     #"
+echo "#                      Pi-Hole Host Project Updater 6.2.3                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -135,8 +135,26 @@ echo ""
 echo "$ mkdir log"
 mkdir log
 echo ""
-echo "$ sudo rm -rv *.sh"
-sudo rm -rv *.sh
+echo "$ sudo rm -rv beta_updater.sh"
+sudo rm -rv beta_updater.sh
+echo ""
+echo "$ sudo rm -rv autoupdate.sh"
+sudo rm -rv autoupdate.sh
+echo ""
+echo "$ sudo rm -rv infosys.sh"
+sudo rm -rv infosys.sh
+echo ""
+echo "$ sudo rm -rv install.sh"
+sudo rm -rv install.sh
+echo ""
+echo "$ sudo rm -rv jail.local"
+sudo rm -rv jail.local
+echo ""
+echo "$ sudo rm -rv updater.sh"
+sudo rm -rv updater.sh
+echo ""
+echo "$ sudo rm -rv test.sh"
+sudo rm -rv test.sh
 echo ""
 echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
@@ -152,6 +170,9 @@ sudo apt-get install -yf debian-goodies
 echo ""
 echo "$ sudo apt-get install -yf iftop"
 sudo apt-get install -yf iftop
+echo ""
+echo "$ sudo apt-get install -yf rclone"
+sudo apt-get install -yf rclone
 echo ""
 echo "$ sudo apt-get install -yf ca-certificates git binutils"
 sudo apt-get install -yf ca-certificates git binutils

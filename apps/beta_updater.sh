@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 6.2.2b1
+# Pi-Hole Host Project Updater 6.2.3b1
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -97,14 +97,15 @@ crontab -l
 echo ""
 var1=$(cat /proc/cpuinfo | grep Model)
 if [[ $var1 == *"Pi 400"* ]]; then
-	crontab <<<"30 7 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+crontab <<<"30 7 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+0 11 * * * /home/pi/backup.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_backup.log 2>&1"
 else
 if [[ -d "/etc/boinc-client" ]]; then
-	crontab <<<"0 3 * * * sudo systemctl stop boinc-client
+crontab <<<"0 3 * * * sudo systemctl stop boinc-client
 0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 15 3 * * * sudo systemctl start boinc-client"
 else
-	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 fi
 fi
 sudo /etc/init.d/cron restart
