@@ -170,7 +170,7 @@ echo "==========================================================================
 echo "   • Installation des logiciels prérequis"
 echo "==============================================================================="
 echo ""
-cd ~
+cd ~/Apps
 echo "$ sudo rm -rv beta_updater.sh"
 sudo rm -rv beta_updater.sh
 echo ""
@@ -192,7 +192,6 @@ echo ""
 echo "$ sudo rm -rv test.sh"
 sudo rm -rv test.sh
 echo ""
-cd ~/Apps
 echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
 echo ""
