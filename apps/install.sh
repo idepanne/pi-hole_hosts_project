@@ -137,8 +137,8 @@ echo "N = non"
 while true; do
 	read -p " " yn
 	case $yn in
-        [Yy]* ) echo " " > /home/pi/beta 2>&1; echo "Canal Beta activé"; break;;
-        [Nn]* ) rm beta; echo "Canal Beta désactivé"; exit;;
+        [Yy]* ) echo " " > /home/pi/Apps/beta 2>&1; echo "Canal Beta activé"; break;;
+        [Nn]* ) rm /home/pi/Apps/beta; echo "Canal Beta désactivé"; exit;;
         * ) echo "Répondez par Y ou N";;
 	esac
 done
@@ -260,14 +260,16 @@ crontab -l
 echo ""
 var1=$(cat /proc/cpuinfo | grep Model)
 if [[ $var1 == *"Pi 400"* ]]; then
-	crontab <<<"30 7 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	crontab <<<"30 7 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+0 8 * * * /home/pi/Apps/backup.sh"
 else
 if [[ -d "/etc/boinc-client" ]]; then
 	crontab <<<"0 3 * * * sudo systemctl stop boinc-client
-0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+10 3 * * * /home/pi/Apps/backup.sh
 15 3 * * * sudo systemctl start boinc-client"
 else
-	crontab <<<"0 3 * * * /home/pi/autoupdate.sh > /home/pi/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 fi
 fi
 sudo /etc/init.d/cron restart
@@ -294,12 +296,12 @@ cd ~/Apps
 echo "$ sudo rm -rv *_old.sh"
 sudo rm -rv *_old.sh
 echo ""
-echo "$ cd ~/log && find test*.log -exec rm -rv {} \;"
-cd ~/log && find test*.log -exec rm -rv {} \;
+echo "$ cd ~/Apps/log && find test*.log -exec rm -rv {} \;"
+cd ~/Apps/log && find test*.log -exec rm -rv {} \;
 cd ~/Apps
 echo ""
-echo "$ cd ~/log && find *.log -mtime +31 -exec rm -rv {} \;"
-cd ~/log && find *.log -mtime +31 -exec rm -rv {} \;
+echo "$ cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;"
+cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;
 cd
 echo ""
 echo ""
