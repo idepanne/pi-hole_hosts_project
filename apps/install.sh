@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.2.3                     #"
+echo "#                      Pi-Hole Host Project Updater 6.3.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -108,6 +108,26 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
+echo "   • Création des dossiers"
+echo "==============================================================================="
+echo ""
+cd ~
+echo "$ mkdir Apps"
+mkdir Apps
+echo ""
+if [[ -d "/home/pi/log" ]]; then
+	echo "sudo mv /home/pi/log /home/pi/Apps/log"
+	sudo mv /home/pi/log /home/pi/Apps/log
+	cd ~/Apps
+else
+	cd ~/Apps
+	echo "$ mkdir log"
+mkdir log
+fi
+echo ""
+echo ""
+echo ""
+echo "==============================================================================="
 echo "   • Sélection du canal de mises à jour"
 echo "==============================================================================="
 echo ""
@@ -115,12 +135,12 @@ echo "Souhaitez-vous activer le canal de mises à jour Beta ?"
 echo "Y = oui"
 echo "N = non"
 while true; do
-    read -p " " yn
-    case $yn in
+	read -p " " yn
+	case $yn in
         [Yy]* ) echo " " > /home/pi/beta 2>&1; echo "Canal Beta activé"; break;;
         [Nn]* ) rm beta; echo "Canal Beta désactivé"; exit;;
         * ) echo "Répondez par Y ou N";;
-    esac
+	esac
 done
 echo ""
 echo ""
@@ -150,9 +170,7 @@ echo "==========================================================================
 echo "   • Installation des logiciels prérequis"
 echo "==============================================================================="
 echo ""
-echo "$ mkdir log"
-mkdir log
-echo ""
+cd ~
 echo "$ sudo rm -rv beta_updater.sh"
 sudo rm -rv beta_updater.sh
 echo ""
@@ -174,6 +192,7 @@ echo ""
 echo "$ sudo rm -rv test.sh"
 sudo rm -rv test.sh
 echo ""
+cd ~/Apps
 echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
 echo ""
@@ -271,16 +290,16 @@ echo ""
 echo "$ sudo apt-get clean all"
 sudo apt-get clean all
 echo ""
-cd
+cd ~/Apps
 echo "$ sudo rm -rv *_old.sh"
 sudo rm -rv *_old.sh
 echo ""
-echo "$ cd log && find test*.log -exec rm -rv {} \;"
-cd log && find test*.log -exec rm -rv {} \;
-cd
+echo "$ cd ~/log && find test*.log -exec rm -rv {} \;"
+cd ~/log && find test*.log -exec rm -rv {} \;
+cd ~/Apps
 echo ""
-echo "$ cd log && find *.log -mtime +31 -exec rm -rv {} \;"
-cd log && find *.log -mtime +31 -exec rm -rv {} \;
+echo "$ cd ~/log && find *.log -mtime +31 -exec rm -rv {} \;"
+cd ~/log && find *.log -mtime +31 -exec rm -rv {} \;
 cd
 echo ""
 echo ""
