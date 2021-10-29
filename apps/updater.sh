@@ -98,15 +98,16 @@ crontab -l
 echo ""
 var1=$(cat /proc/cpuinfo | grep Model)
 if [[ $var1 == *"Pi 400"* ]]; then
-crontab <<<"30 7 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+	crontab <<<"30 7 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 0 8 * * * /home/pi/Apps/backup.sh"
 else
 if [[ -d "/etc/boinc-client" ]]; then
-crontab <<<"0 3 * * * sudo systemctl stop boinc-client
+	crontab <<<"0 3 * * * sudo systemctl stop boinc-client
 0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+10 3 * * * /home/pi/Apps/backup.sh
 15 3 * * * sudo systemctl start boinc-client"
 else
-crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 fi
 fi
 sudo /etc/init.d/cron restart
