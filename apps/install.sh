@@ -134,6 +134,7 @@ echo ""
 echo "Souhaitez-vous activer le canal de mises à jour Beta ?"
 echo "Y = oui"
 echo "N = non"
+echo ""
 while true; do
 	read -p " " yn
 	case $yn in
@@ -175,7 +176,7 @@ echo "$ sudo rm -rv install.sh"
 sudo rm -rv install.sh
 echo ""
 
-### A supprimer ###
+##### A supprimer dans la prochaine mise à jour #####
 echo "$ sudo rm -rv beta_updater.sh"
 sudo rm -rv beta_updater.sh
 echo ""
@@ -194,7 +195,7 @@ echo ""
 echo "$ sudo rm -rv test.sh"
 sudo rm -rv test.sh
 echo ""
-###################
+#####################################################
 
 cd ~/Apps
 echo "$ sudo rm -rv beta_updater.sh"
