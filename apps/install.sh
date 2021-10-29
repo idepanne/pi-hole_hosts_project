@@ -111,19 +111,34 @@ echo "==========================================================================
 echo "   • Création des dossiers"
 echo "==============================================================================="
 echo ""
-cd ~
+cd
 echo "$ mkdir Apps"
 mkdir Apps
 echo ""
+
+#################### A supprimer ####################
+echo "sudo mv /home/pi/backup.sh /home/pi/Apps/backup.sh"
+sudo mv /home/pi/backup.sh /home/pi/Apps/backup.sh
+cd ~/Apps
+echo "$ sudo chmod +x backup.sh"
+sudo chmod +x backup.sh
+cd
 if [[ -d "/home/pi/log" ]]; then
 	echo "sudo mv /home/pi/log /home/pi/Apps/log"
 	sudo mv /home/pi/log /home/pi/Apps/log
+	echo ""
 	cd ~/Apps
 else
-	cd ~/Apps
-	echo "$ mkdir log"
+#####################################################
+
+cd ~/Apps
+echo "$ mkdir log"
 mkdir log
+
+#################### A supprimer ####################
 fi
+#####################################################
+
 echo ""
 echo ""
 echo ""
@@ -157,7 +172,7 @@ echo "$ sudo rm -rv install.sh"
 sudo rm -rv install.sh
 echo ""
 
-##### A supprimer dans la prochaine mise à jour #####
+#################### A supprimer ####################
 echo "$ sudo rm -rv beta"
 sudo rm -rv beta
 echo ""
