@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 6.3.0                     #"
+echo "#                     Pi-Hole Host Project Updater 6.3.0.1                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -136,10 +136,11 @@ echo "Y = oui"
 echo "N = non"
 echo ""
 while true; do
+	echo ""
 	read -p " " yn
 	case $yn in
         [Yy]* ) echo " " > /home/pi/Apps/beta 2>&1; echo "Canal Beta activé"; break;;
-        [Nn]* ) rm /home/pi/Apps/beta; echo "Canal Beta désactivé"; exit;;
+        [Nn]* ) rm /home/pi/Apps/beta; echo "Canal Beta désactivé"; break;;
         * ) echo "Répondez par Y ou N";;
 	esac
 done
