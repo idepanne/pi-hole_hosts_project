@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 6.3.0.1                    #"
+echo "#                      Pi-Hole Host Project Updater 6.3.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -128,26 +128,6 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Sélection du canal de mises à jour"
-echo "==============================================================================="
-echo ""
-echo "Souhaitez-vous activer le canal de mises à jour Beta ?"
-echo "Y = oui"
-echo "N = non"
-echo ""
-while true; do
-	echo ""
-	read -p " " yn
-	case $yn in
-        [Yy]* ) echo " " > /home/pi/Apps/beta 2>&1; echo "Canal Beta activé"; break;;
-        [Nn]* ) rm /home/pi/Apps/beta; echo "Canal Beta désactivé"; break;;
-        * ) echo "Répondez par Y ou N";;
-	esac
-done
-echo ""
-echo ""
-echo ""
-echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
 echo ""
@@ -178,6 +158,9 @@ sudo rm -rv install.sh
 echo ""
 
 ##### A supprimer dans la prochaine mise à jour #####
+echo "$ sudo rm -rv beta"
+sudo rm -rv beta
+echo ""
 echo "$ sudo rm -rv beta_updater.sh"
 sudo rm -rv beta_updater.sh
 echo ""
