@@ -108,6 +108,24 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
+echo "   • Sélection du canal de mises à jour"
+echo "==============================================================================="
+echo ""
+echo "Souhaitez-vous activer le canal de mises à jour Beta ?"
+echo "Y = oui"
+echo "N = non"
+while true; do
+    read -p " " yn
+    case $yn in
+        [Yy]* ) echo " " > /home/pi/beta 2>&1; echo "Canal Beta activé"; break;;
+        [Nn]* ) rm beta; echo "Canal Beta désactivé"; exit;;
+        * ) echo "Répondez par Y ou N";;
+    esac
+done
+echo ""
+echo ""
+echo ""
+echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
 echo ""
