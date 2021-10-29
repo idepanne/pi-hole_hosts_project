@@ -170,7 +170,12 @@ echo "==========================================================================
 echo "   • Installation des logiciels prérequis"
 echo "==============================================================================="
 echo ""
-cd ~/Apps
+cd ~
+echo "$ sudo rm -rv install.sh"
+sudo rm -rv install.sh
+echo ""
+
+### A supprimer ###
 echo "$ sudo rm -rv beta_updater.sh"
 sudo rm -rv beta_updater.sh
 echo ""
@@ -180,8 +185,26 @@ echo ""
 echo "$ sudo rm -rv infosys.sh"
 sudo rm -rv infosys.sh
 echo ""
-echo "$ sudo rm -rv install.sh"
-sudo rm -rv install.sh
+echo "$ sudo rm -rv jail.local"
+sudo rm -rv jail.local
+echo ""
+echo "$ sudo rm -rv updater.sh"
+sudo rm -rv updater.sh
+echo ""
+echo "$ sudo rm -rv test.sh"
+sudo rm -rv test.sh
+echo ""
+###################
+
+cd ~/Apps
+echo "$ sudo rm -rv beta_updater.sh"
+sudo rm -rv beta_updater.sh
+echo ""
+echo "$ sudo rm -rv autoupdate.sh"
+sudo rm -rv autoupdate.sh
+echo ""
+echo "$ sudo rm -rv infosys.sh"
+sudo rm -rv infosys.sh
 echo ""
 echo "$ sudo rm -rv jail.local"
 sudo rm -rv jail.local
