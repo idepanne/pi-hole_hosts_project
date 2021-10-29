@@ -1,5 +1,5 @@
 #!/bin/bash
-cd
+cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
 echo "#                      Pi-Hole Host Project Updater 6.2.3                     #"
@@ -80,7 +80,7 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo ""
-	if [[ -f "/home/pi/beta" ]]; then
+	if [[ -f "/home/pi/Apps/beta" ]]; then
 		echo "==============================================================================="
 		echo "   • Canal de mises à jour : Beta"
 		echo "==============================================================================="
