@@ -4,10 +4,10 @@
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 # idepanne67@gmail.com
+echo ""
+echo ""
+echo ""
 cd ~/Apps
-echo ""
-echo ""
-echo ""
 echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
@@ -33,7 +33,6 @@ echo "==========================================================================
 echo "   • Mises à jour des logiciels"
 echo "==============================================================================="
 echo ""
-cd ~/Apps
 echo "-> autoupdate.sh :              [INSTALLÉ]"
 echo ""
 echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
@@ -89,6 +88,28 @@ fi
 echo ""
 echo ""
 echo ""
+if [[ -d "/etc/boinc-client" ]]; then
+	echo "-> BOINC :            [INSTALLÉ]"
+	echo ""
+	echo "$ sudo systemctl stop boinc-client"
+	sudo systemctl stop boinc-client
+	sleep 1
+	echo ""
+	echo "sudo apt-get install -yf boinc-client*"
+	sudo apt-get install -yf boinc-client*
+	echo ""
+	echo "$ sudo systemctl start boinc-client"
+	sudo systemctl start boinc-client
+	sleep 1
+	echo ""
+	echo "sudo systemctl --no-pager status boinc-client"
+	sudo systemctl --no-pager status boinc-client
+else
+	echo "-> BOINC :            [NON INSTALLÉ]"
+fi
+echo ""
+echo ""
+echo ""
 echo "==============================================================================="
 echo "   • Mise à jour du crontab"
 echo "==============================================================================="
@@ -101,11 +122,9 @@ if [[ $var1 == *"Pi 400"* ]]; then
 	crontab <<<"30 7 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 0 8 * * * /home/pi/Apps/backup.sh"
 else
-if [[ -d "/etc/boinc-client" ]]; then
-	crontab <<<"0 3 * * * sudo systemctl stop boinc-client
-0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-10 3 * * * /home/pi/Apps/backup.sh
-15 3 * * * sudo systemctl start boinc-client"
+if [[ -f "/home/pi/Apps/backup.sh" ]]; then
+	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * /home/pi/Apps/backup.sh"
 else
 	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 fi
@@ -136,7 +155,6 @@ sudo rm -rv *_old.sh
 echo ""
 echo "$ cd ~/Apps/log && find test*.log -exec rm -rv {} \;"
 cd ~/Apps/log && find test*.log -exec rm -rv {} \;
-cd ~/Apps
 echo ""
 echo "$ cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;"
 cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;

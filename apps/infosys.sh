@@ -53,5 +53,4 @@ timedatectl timesync-status && timedatectl
 echo ""
 echo "==============================================================================="
 cd
-echo "$ sudo rm -rv infosys.sh"
-sudo rm -rv infosys.sh
+sudo rm infosys.sh

@@ -71,7 +71,7 @@ echo ""
 if [[ -d "/etc/boinc-client" ]]; then
 	var=$(hostname)
 	echo "==============================================================================="
-	echo "   • Arrêt du noeud \"$var\" du cluster Boinc"
+	echo "   • Arrêt du node \"$var\" dans le cluster BOINC"
 	echo "==============================================================================="
 	echo ""
 	echo "$ sudo systemctl stop boinc-client"
@@ -117,11 +117,6 @@ mkdir Apps
 echo ""
 
 #################### A supprimer ####################
-echo "sudo mv /home/pi/backup.sh /home/pi/Apps/backup.sh"
-sudo mv /home/pi/backup.sh /home/pi/Apps/backup.sh
-cd ~/Apps
-echo "$ sudo chmod +x backup.sh"
-sudo chmod +x backup.sh
 cd
 if [[ -d "/home/pi/log" ]]; then
 	echo "sudo mv /home/pi/log /home/pi/Apps/log"
@@ -167,7 +162,7 @@ echo "==========================================================================
 echo "   • Installation des logiciels prérequis"
 echo "==============================================================================="
 echo ""
-cd ~
+cd
 echo "$ sudo rm -rv install.sh"
 sudo rm -rv install.sh
 echo ""
@@ -270,6 +265,7 @@ if [[ $var1 == *"Pi 400"* ]]; then
 	echo ""
 	echo "$ sudo apt-get install -yf hardinfo"
 	sudo apt-get install -yf hardinfo
+	echo ""
 fi
 echo ""
 echo ""
@@ -285,11 +281,9 @@ if [[ $var1 == *"Pi 400"* ]]; then
 	crontab <<<"30 7 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 0 8 * * * /home/pi/Apps/backup.sh"
 else
-if [[ -d "/etc/boinc-client" ]]; then
-	crontab <<<"0 3 * * * sudo systemctl stop boinc-client
-0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-10 3 * * * /home/pi/Apps/backup.sh
-15 3 * * * sudo systemctl start boinc-client"
+if [[ -f "/home/pi/Apps/backup.sh" ]]; then
+	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * /home/pi/Apps/backup.sh"
 else
 	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 fi
@@ -320,11 +314,10 @@ sudo rm -rv *_old.sh
 echo ""
 echo "$ cd ~/Apps/log && find test*.log -exec rm -rv {} \;"
 cd ~/Apps/log && find test*.log -exec rm -rv {} \;
-cd ~/Apps
 echo ""
 echo "$ cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;"
 cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;
-cd
+cd ~/Apps
 echo ""
 echo ""
 echo ""
