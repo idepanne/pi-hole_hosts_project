@@ -89,7 +89,7 @@ echo ""
 echo ""
 echo ""
 if [[ -d "/etc/boinc-client" ]]; then
-	echo "-> BOINC :            [INSTALLÉ]"
+	echo "-> Boinc :            [INSTALLÉ]"
 	echo ""
 	echo "$ sudo systemctl stop boinc-client"
 	sudo systemctl stop boinc-client
@@ -105,7 +105,7 @@ if [[ -d "/etc/boinc-client" ]]; then
 	echo "sudo systemctl --no-pager status boinc-client"
 	sudo systemctl --no-pager status boinc-client
 else
-	echo "-> BOINC :            [NON INSTALLÉ]"
+	echo "-> Boinc :            [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
