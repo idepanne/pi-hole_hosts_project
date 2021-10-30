@@ -33,7 +33,7 @@ echo "==========================================================================
 echo "   • Mises à jour des logiciels"
 echo "==============================================================================="
 echo ""
-echo "-> autoupdate.sh :              [INSTALLÉ]"
+echo "-> autoupdate.sh :           [INSTALLÉ]"
 echo ""
 echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
@@ -47,7 +47,7 @@ echo ""
 echo ""
 echo ""
 if [[ -d "/etc/fail2ban" ]]; then
-	echo "-> Fail2ban :           [INSTALLÉ]"
+	echo "-> Fail2ban :                [INSTALLÉ]"
 	echo ""
 	echo "$ sudo rm -rv /etc/fail2ban/jail.local"
 	sudo rm -rv /etc/fail2ban/jail.local
@@ -64,13 +64,13 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo systemctl --no-pager status fail2ban"
 	sudo systemctl --no-pager status fail2ban
 else
-	echo "-> Fail2ban :           [NON INSTALLÉ]"
+	echo "-> Fail2ban :                [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
 echo ""
 if [[ -d "/etc/pihole" ]]; then
-	echo "-> Pi-hole :            [INSTALLÉ]"
+	echo "-> Pi-hole :                 [INSTALLÉ]"
 	echo ""
 	sudo pihole -v
 	echo ""
@@ -83,13 +83,13 @@ if [[ -d "/etc/pihole" ]]; then
 		sudo pihole -g
 	fi
 else
-	echo "-> Pi-hole :            [NON INSTALLÉ]"
+	echo "-> Pi-hole :                 [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
 echo ""
 if [[ -d "/etc/boinc-client" ]]; then
-	echo "-> Boinc :            [INSTALLÉ]"
+	echo "-> Boinc :                   [INSTALLÉ]"
 	echo ""
 	echo "$ sudo systemctl stop boinc-client"
 	sudo systemctl stop boinc-client
@@ -105,7 +105,7 @@ if [[ -d "/etc/boinc-client" ]]; then
 	echo "sudo systemctl --no-pager status boinc-client"
 	sudo systemctl --no-pager status boinc-client
 else
-	echo "-> Boinc :            [NON INSTALLÉ]"
+	echo "-> Boinc :                   [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
