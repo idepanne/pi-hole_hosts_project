@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b3                    #"
+echo "#                      Pi-Hole Host Project Updater 7.0.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -12,7 +12,6 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
-
 ###### Définition des variables ######
 var0=$(cat /proc/cpuinfo | grep Hardware | cut -c12-)
 if [[ $var0 == *"BCM"* ]]; then
@@ -36,7 +35,6 @@ fi
 var13=$(uptime -s)
 var14=$(uptime -p)
 ######################################
-
 echo "==============================================================================="
 echo "   • A propos de ce Raspberry Pi"
 echo "==============================================================================="
@@ -51,7 +49,6 @@ echo -n "Fréquences      : "; echo "Min $var4 MHz - Cur $var5 MHz - Max $var6 M
 echo -n "Voltage         : "; echo "$var7"
 echo -n "Température     : "; echo "$(vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*')°C"
 echo ""
-
 echo -n "GPU RAM         : " && echo "$(vcgencmd get_mem gpu)" | cut -c5-
 echo -n "GPU fréquences  : "; echo "$var9 MHz"
 echo -n "Codec H264      : " && echo "$(vcgencmd codec_enabled H264)" | cut -c6-
@@ -62,7 +59,6 @@ echo ""
 echo -n "EEPROM          : "
 sudo rpi-eeprom-update
 echo ""
-
 echo -n "Système         : "; echo "$var10 $var12"
 echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
