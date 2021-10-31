@@ -1,9 +1,9 @@
 #!/bin/bash
 clear
-cd ~/Apps
+cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b2                    #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b3                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -12,11 +12,6 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
-echo "==============================================================================="
-echo "   • A propos de ce Raspberry Pi"
-echo "==============================================================================="
-echo ""
-
 
 ###### Définition des variables ######
 var0=$(cat /proc/cpuinfo | grep Hardware | cut -c12-)
@@ -42,7 +37,10 @@ var13=$(uptime -s)
 var14=$(uptime -p)
 ######################################
 
-
+echo "==============================================================================="
+echo "   • A propos de ce Raspberry Pi"
+echo "==============================================================================="
+echo ""
 cat /proc/cpuinfo | grep Model
 echo ""
 cat /proc/cpuinfo | grep Serial
