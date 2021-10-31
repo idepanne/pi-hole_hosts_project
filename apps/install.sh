@@ -266,6 +266,9 @@ if [[ $var1 == *"Pi 400"* ]]; then
 	echo "$ sudo apt-get install -yf hardinfo"
 	sudo apt-get install -yf hardinfo
 	echo ""
+	echo "$ sudo apt-get install -yf filezilla"
+	sudo apt-get install -yf filezilla
+	echo ""
 fi
 echo ""
 echo ""
