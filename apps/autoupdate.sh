@@ -47,7 +47,7 @@ cat /proc/cpuinfo | grep Model
 echo ""
 cat /proc/cpuinfo | grep Serial
 echo ""
-echo -n "SoC             : " && echo "$var2 $var1 (Rev. $var3)"
+echo -n "SoC             : " && echo "$var2 $var1 (Rev $var3)"
 echo -n "Processeur      : " && echo "$var5 $var4"
 echo -n "Nb de coeurs    : " && echo "$var6"
 echo -n "Fréquences      : "; echo "Min $var7 MHz - Cur $var8 MHz - Max $var9 MHz"
