@@ -24,7 +24,7 @@ var7=$(vcgencmd measure_volts core | cut -c6-)
 var8=$(vcgencmd get_config int | egrep "(gpu_freq)" | cut -c10-)
 var9=$(echo $var8 | rev | cut -c9- | rev)
 var10=$(uname -sr)
-var11=$(lscpu | grep "Architecture:" | cut -c22-)
+var11=$(uname -m)
 if [[ $var11 == *"aarch64"* ]]; then
 	var12="(64 bits)"
 else
@@ -50,14 +50,15 @@ echo ""
 echo -n "GPU RAM         : " && echo "$(vcgencmd get_mem gpu)" | cut -c5-
 echo -n "GPU fréquences  : "; echo "$var9 MHz"
 echo -n "Codec H264      : " && echo "$(vcgencmd codec_enabled H264)" | cut -c6-
+echo -n "Codec H265      : " && echo "$(vcgencmd codec_enabled H265)" | cut -c6-
+echo ""
+echo -n "Système         : "; echo "$var10 $var12"
 echo ""
 echo -n "Firmware        : "
-/opt/vc/bin/vcgencmd version
+uname -v
 echo ""
 echo -n "EEPROM          : "
 sudo rpi-eeprom-update
-echo ""
-echo -n "Système         : "; echo "$var10 $var12"
 echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
