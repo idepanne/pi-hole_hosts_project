@@ -117,10 +117,8 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-var1=$(cat /proc/cpuinfo | grep Model)
-if [[ $var1 == *"Pi 400"* ]]; then
-	crontab <<<"30 7 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-0 8 * * * /home/pi/Apps/backup.sh"
+if [[ $var19 == *"Pi 400"* ]]; then
+	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 else
 if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
@@ -149,7 +147,9 @@ echo ""
 echo "$ sudo apt-get clean all"
 sudo apt-get clean all
 echo ""
+echo "$ cd ~/Apps"
 cd ~/Apps
+echo ""
 echo "$ sudo rm -rv *_old.sh"
 sudo rm -rv *_old.sh
 echo ""
@@ -158,7 +158,17 @@ cd ~/Apps/log && find test*.log -exec rm -rv {} \;
 echo ""
 echo "$ cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;"
 cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;
-cd ~/Apps
+echo ""
+if [[ -f "/home/pi/.local/share/Trash/" ]]; then
+echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
+sudo rm -rfv ~/.local/share/Trash/files/*
+echo ""
+echo "$ sudo rm -rfv ~/.local/share/Trash/expunged/*"
+sudo rm -rfv ~/.local/share/Trash/expunged/*
+echo ""
+echo "sudo rm -rfv ~/.local/share/Trash/info/*"
+sudo rm -rfv ~/.local/share/Trash/info/*
+fi
 echo ""
 echo ""
 echo ""
