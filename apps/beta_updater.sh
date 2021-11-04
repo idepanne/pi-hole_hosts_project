@@ -120,7 +120,7 @@ echo ""
 if [[ $var19 == *"Pi 400"* ]]; then
 	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 else
-if [[ -f "/home/pi/Apps/backup.sh" ]]; then
+if [[ -d "/etc/boinc-client" ]]; then
 	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * /home/pi/Apps/backup.sh"
 else
