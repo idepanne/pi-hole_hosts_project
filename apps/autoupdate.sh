@@ -144,28 +144,27 @@ else
 	echo ""
 	echo ""
 	echo ""
-	echo "==============================================================================="
-	echo "   • Mise à jour du crontab"
-	echo "==============================================================================="
-	echo ""
-	echo "Ancien crontab :"
-	crontab -l
-	echo ""
-	var1=$(cat /proc/cpuinfo | grep Model)
-	if [[ $var1 == *"Pi 400"* ]]; then
-		crontab <<<"30 7 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-0 8 * * * /home/pi/Apps/backup.sh"
-	else
-	if [[ -f "/home/pi/Apps/backup.sh" ]]; then
-		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+echo "==============================================================================="
+echo "   • Mise à jour du crontab"
+echo "==============================================================================="
+echo ""
+echo "Ancien crontab :"
+crontab -l
+echo ""
+var19=$(cat /proc/cpuinfo | grep Model)
+if [[ $var19 == *"Pi 400"* ]]; then
+	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+else
+if [[ -d "/etc/boinc-client" ]]; then
+	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * /home/pi/Apps/backup.sh"
-	else
-		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
-	fi
-	fi
-	sudo /etc/init.d/cron restart
-	echo ""
-	echo "Nouveau crontab :"
-	crontab -l
-	echo ""
+else
+	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+fi
+fi
+sudo /etc/init.d/cron restart
+echo ""
+echo "Nouveau crontab :"
+crontab -l
+echo ""
 fi
