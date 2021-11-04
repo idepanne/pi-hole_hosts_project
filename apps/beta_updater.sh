@@ -159,14 +159,14 @@ echo ""
 echo "$ cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;"
 cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;
 echo ""
-if [[ -f "/home/pi/.local/share/Trash/" ]]; then
+if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
 sudo rm -rfv ~/.local/share/Trash/files/*
 echo ""
 echo "$ sudo rm -rfv ~/.local/share/Trash/expunged/*"
 sudo rm -rfv ~/.local/share/Trash/expunged/*
 echo ""
-echo "sudo rm -rfv ~/.local/share/Trash/info/*"
+echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 sudo rm -rfv ~/.local/share/Trash/info/*
 fi
 echo ""
