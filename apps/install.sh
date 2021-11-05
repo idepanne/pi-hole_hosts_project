@@ -264,8 +264,8 @@ if [[ $var19 == *"Pi 400"* ]]; then
 	echo "   • Installation des logiciels prérequis pour le Raspberry Pi 400"
 	echo "==============================================================================="
 	echo ""
-	echo "$ sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style*"
-	sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style*
+	echo "$ sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver"
+	sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver
 	echo ""
 	echo "$ sudo apt-get install -yf gparted"
 	sudo apt-get install -yf gparted
