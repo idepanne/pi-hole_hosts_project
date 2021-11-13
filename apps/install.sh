@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b25                   #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b26                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -287,6 +287,7 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
+var21=$(cat /proc/cpuinfo | grep Model)
 if [[ $var21 == *"Pi 400"* ]]; then
 	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 else
