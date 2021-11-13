@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b27                   #"
+echo "#                      Pi-Hole Host Project Updater 7.0.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -159,8 +159,8 @@ echo ""
 echo "$ sudo apt-get clean all"
 sudo apt-get clean all
 echo ""
-echo "$ sudo apt-get update"
-sudo apt-get update
+echo "$ sudo apt-get update --fix-missing"
+sudo apt-get update --fix-missing
 echo ""
 echo "$ sudo apt-get upgrade -y"
 sudo apt-get upgrade -y
@@ -209,23 +209,6 @@ sudo rm -rv autoupdate.sh
 echo ""
 echo "$ sudo rm -rv updater.sh"
 sudo rm -rv updater.sh
-
-
-######################################################################################
-# A supprimer
-echo ""
-echo "Suppression du logiciel fail2ban"
-echo ""
-sudo apt-get remove -yf fail2ban*
-echo ""
-sudo rm -rv /run/fail2ban
-echo ""
-sudo rm -rv /etc/fail2ban
-echo ""
-sudo rm -rv /var/lib/fail2ban
-######################################################################################
-
-
 echo ""
 echo ""
 echo ""

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 7.0.0b27
+# Pi-Hole Host Project Updater 7.0.0
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -11,9 +11,6 @@ cd ~/Apps
 echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
-echo ""
-echo "$ sudo apt-get clean all"
-sudo apt-get clean all
 echo ""
 echo "$ sudo apt-get update"
 sudo apt-get update
@@ -149,23 +146,6 @@ echo ""
 echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 sudo rm -rfv ~/.local/share/Trash/info/*
 fi
-
-
-######################################################################################
-# A supprimer
-echo ""
-echo "Suppression du logiciel fail2ban"
-echo ""
-sudo apt-get remove -yf fail2ban*
-echo ""
-sudo rm -rv /run/fail2ban
-echo ""
-sudo rm -rv /etc/fail2ban
-echo ""
-sudo rm -rv /var/lib/fail2ban
-######################################################################################
-
-
 echo ""
 echo ""
 echo ""
