@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 7.0.0
+# Pi-Hole Host Project Updater 7.0.0b20
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -43,29 +43,6 @@ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/maste
 echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
-echo ""
-echo ""
-echo ""
-if [[ -d "/etc/fail2ban" ]]; then
-	echo "-> Fail2ban :                [INSTALLÉ]"
-	echo ""
-	echo "$ sudo rm -rv /etc/fail2ban/jail.local"
-	sudo rm -rv /etc/fail2ban/jail.local
-	echo ""
-	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
-	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
-	echo ""
-	echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
-	sudo mv jail.local /etc/fail2ban/jail.local
-	echo ""
-	echo "$ sudo service fail2ban restart"
-	sudo service fail2ban restart
-	echo ""
-	echo "$ sudo systemctl --no-pager status fail2ban"
-	sudo systemctl --no-pager status fail2ban
-else
-	echo "-> Fail2ban :                [NON INSTALLÉ]"
-fi
 echo ""
 echo ""
 echo ""
@@ -170,6 +147,20 @@ echo ""
 echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 sudo rm -rfv ~/.local/share/Trash/info/*
 fi
+
+
+**************************************************************************************
+# A supprimer
+echo ""
+echo "$ sudo rm -rv jail.local"
+sudo rm -rv jail.local
+echo ""
+echo ""
+echo "$ sudo apt-get remove -yf fail2ban*"
+sudo apt-get remove -yf fail2ban*
+**************************************************************************************
+
+
 echo ""
 echo ""
 echo ""

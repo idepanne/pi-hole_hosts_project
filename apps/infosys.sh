@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.0                     #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b20                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -19,9 +19,15 @@ if [[ $var1 == *"BCM"* ]]; then
 	var2="Broadcom"
 fi
 var3=$(cat /proc/cpuinfo | grep Revision | cut -c12-)
-var4=$(lscpu | grep "Model name:" | cut -c22-)
-var5=$(lscpu | grep "Vendor ID:" | cut -c22-)
-var6=$(lscpu | grep "CPU(s):" | cut -c22-)
+
+
+
+var4=$(lscpu | grep "Model name:" | cut -c34-)
+var5=$(lscpu | grep "Vendor ID:" | cut -c34-)
+var6=$(lscpu | grep "CPU(s):" | cut -c34-)
+
+
+
 var7=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq | rev | cut -c4- | rev)
 var8=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq | rev | cut -c4- | rev)
 var9=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq | rev | cut -c4- | rev)
@@ -39,6 +45,18 @@ var16=$(uptime -s)
 var17=$(uptime -p)
 var18=$(hostname)
 var19=$(cat /proc/cpuinfo | grep Model)
+
+
+var21=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14-)
+var22=$(echo $var21 | rev | cut -c3- | rev)
+var23=$(uname -m)
+if [[ $var23 == *"aarch64"* ]]; then
+	var24="- 64 bits)"
+else
+	var24="- 32 bits)"
+fi
+
+
 ######################################
 
 echo "==============================================================================="
@@ -61,7 +79,8 @@ echo -n "GPU fréquences  : "; echo "$var12 MHz"
 echo -n "Codec H264      : " && echo "$(vcgencmd codec_enabled H264)" | cut -c6-
 echo -n "Codec H265      : " && echo "$(vcgencmd codec_enabled H265)" | cut -c6-
 echo ""
-echo -n "Système         : "; echo "$var13 $var15"
+#echo -n "Système         : "; echo "$var13 $var15"
+echo -n "Système         : "; echo "$var22 $var24"
 echo ""
 echo -n "Firmware        : "
 uname -v

@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.0                     #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b20                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -19,9 +19,9 @@ if [[ $var1 == *"BCM"* ]]; then
 	var2="Broadcom"
 fi
 var3=$(cat /proc/cpuinfo | grep Revision | cut -c12-)
-var4=$(lscpu | grep "Model name:" | cut -c22-)
-var5=$(lscpu | grep "Vendor ID:" | cut -c22-)
-var6=$(lscpu | grep "CPU(s):" | cut -c22-)
+var4=$(lscpu | grep "Model name:" | cut -c34-)
+var5=$(lscpu | grep "Vendor ID:" | cut -c34-)
+var6=$(lscpu | grep "CPU(s):" | cut -c34-)
 var7=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq | rev | cut -c4- | rev)
 var8=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq | rev | cut -c4- | rev)
 var9=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq | rev | cut -c4- | rev)
@@ -206,11 +206,22 @@ echo ""
 echo "$ sudo rm -rv autoupdate.sh"
 sudo rm -rv autoupdate.sh
 echo ""
+echo "$ sudo rm -rv updater.sh"
+sudo rm -rv updater.sh
+
+
+**************************************************************************************
+# A supprimer
+echo ""
 echo "$ sudo rm -rv jail.local"
 sudo rm -rv jail.local
 echo ""
-echo "$ sudo rm -rv updater.sh"
-sudo rm -rv updater.sh
+echo ""
+echo "$ sudo apt-get remove -yf fail2ban*"
+sudo apt-get remove -yf fail2ban*
+**************************************************************************************
+
+
 echo ""
 echo ""
 echo ""
@@ -239,24 +250,6 @@ echo ""
 echo "$ sudo apt-get install -yf ca-certificates git binutils"
 sudo apt-get install -yf ca-certificates git binutils
 echo ""
-echo "$ sudo apt-get install -yf fail2ban"
-sudo apt-get install -yf fail2ban
-echo ""
-echo "$ sudo rm -rv /etc/fail2ban/jail.local"
-sudo rm -rv /etc/fail2ban/jail.local
-echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
-echo ""
-echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
-sudo mv jail.local /etc/fail2ban/jail.local
-echo ""
-echo "$ sudo service fail2ban restart"
-sudo service fail2ban restart
-echo ""
-echo "$ sudo systemctl --no-pager status fail2ban"
-sudo systemctl --no-pager status fail2ban
-echo ""
 if [[ $var19 == *"Pi 400"* ]]; then
 	echo ""
 	echo ""
@@ -275,6 +268,9 @@ if [[ $var19 == *"Pi 400"* ]]; then
 	echo ""
 	echo "$ sudo apt-get install -yf filezilla"
 	sudo apt-get install -yf filezilla
+	echo ""
+	echo "$ sudo apt-get install -yf chromium-browser chromium-browser-l10n"
+	sudo apt-get install -yf chromium-browser chromium-browser-l10n
 	echo ""
 fi
 echo ""

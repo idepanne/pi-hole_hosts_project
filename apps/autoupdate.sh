@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.0                     #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b20                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -17,9 +17,9 @@ if [[ $var1 == *"BCM"* ]]; then
 	var2="Broadcom"
 fi
 var3=$(cat /proc/cpuinfo | grep Revision | cut -c12-)
-var4=$(lscpu | grep "Model name:" | cut -c22-)
-var5=$(lscpu | grep "Vendor ID:" | cut -c22-)
-var6=$(lscpu | grep "CPU(s):" | cut -c22-)
+var4=$(lscpu | grep "Model name:" | cut -c34-)
+var5=$(lscpu | grep "Vendor ID:" | cut -c34-)
+var6=$(lscpu | grep "CPU(s):" | cut -c34-)
 var7=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq | rev | cut -c4- | rev)
 var8=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq | rev | cut -c4- | rev)
 var9=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq | rev | cut -c4- | rev)
