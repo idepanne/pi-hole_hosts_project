@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b26                   #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b27                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -26,7 +26,7 @@ var9=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq | rev | cut -c4
 var10=$(vcgencmd measure_volts core | cut -c6-)
 var11=$(vcgencmd get_config int | egrep "(gpu_freq)" | cut -c10-)
 var12=$(echo $var11 | rev | cut -c9- | rev)
-var13=$(uname -sr)
+var13=$(uname -srv)
 var14=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14-)
 var15=$(echo $var14 | rev | cut -c3- | rev)
 var16=$(uname -m)
@@ -63,8 +63,7 @@ echo -n "Codec H265      : " && echo "$(vcgencmd codec_enabled H265)" | cut -c6-
 echo ""
 echo -n "Système         : "; echo "$var15 $var17"
 echo ""
-echo -n "Firmware        : "
-uname -v
+echo -n "Firmware        : "; echo "$var13"
 echo ""
 echo -n "EEPROM          : "
 sudo rpi-eeprom-update
