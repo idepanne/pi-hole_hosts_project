@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b21                   #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b22                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -19,15 +19,9 @@ if [[ $var1 == *"BCM"* ]]; then
 	var2="Broadcom"
 fi
 var3=$(cat /proc/cpuinfo | grep Revision | cut -c12-)
-
-
-
 var4=$(lscpu | grep "Model name:" | cut -c34-)
 var5=$(lscpu | grep "Vendor ID:" | cut -c34-)
 var6=$(lscpu | grep "CPU(s):" | cut -c34-)
-
-
-
 var7=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq | rev | cut -c4- | rev)
 var8=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq | rev | cut -c4- | rev)
 var9=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq | rev | cut -c4- | rev)
@@ -35,28 +29,18 @@ var10=$(vcgencmd measure_volts core | cut -c6-)
 var11=$(vcgencmd get_config int | egrep "(gpu_freq)" | cut -c10-)
 var12=$(echo $var11 | rev | cut -c9- | rev)
 var13=$(uname -sr)
-var14=$(uname -m)
-if [[ $var14 == *"aarch64"* ]]; then
-	var15="(64 bits)"
+var14=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14-)
+var15=$(echo $var21 | rev | cut -c3- | rev)
+var16=$(uname -m)
+if [[ $var16 == *"aarch64"* ]]; then
+	var17="- 64 bits)"
 else
-	var15="(32 bits)"
+	var17="- 32 bits)"
 fi
-var16=$(uptime -s)
-var17=$(uptime -p)
-var18=$(hostname)
-var19=$(cat /proc/cpuinfo | grep Model)
-
-
-var21=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14-)
-var22=$(echo $var21 | rev | cut -c3- | rev)
-var23=$(uname -m)
-if [[ $var23 == *"aarch64"* ]]; then
-	var24="- 64 bits)"
-else
-	var24="- 32 bits)"
-fi
-
-
+var18=$(uptime -s)
+var19=$(uptime -p)
+var20=$(hostname)
+var21=$(cat /proc/cpuinfo | grep Model)
 ######################################
 
 echo "==============================================================================="
@@ -79,8 +63,7 @@ echo -n "GPU fréquences  : "; echo "$var12 MHz"
 echo -n "Codec H264      : " && echo "$(vcgencmd codec_enabled H264)" | cut -c6-
 echo -n "Codec H265      : " && echo "$(vcgencmd codec_enabled H265)" | cut -c6-
 echo ""
-#echo -n "Système         : "; echo "$var13 $var15"
-echo -n "Système         : "; echo "$var22 $var24"
+echo -n "Système         : "; echo "$var15 $var17"
 echo ""
 echo -n "Firmware        : "
 uname -v
@@ -92,7 +75,7 @@ echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
 echo -n "Nom d'hôte      : "; hostname
 echo ""
-echo -n "Démarré depuis  : " && echo "$var16 - $var17"
+echo -n "Démarré depuis  : " && echo "$var18 - $var19"
 echo ""
 echo "Stockage        : "
 df -h
