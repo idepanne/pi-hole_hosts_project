@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b20                   #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b21                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -210,16 +210,19 @@ echo "$ sudo rm -rv updater.sh"
 sudo rm -rv updater.sh
 
 
-**************************************************************************************
+######################################################################################
 # A supprimer
 echo ""
-echo "$ sudo rm -rv jail.local"
-sudo rm -rv jail.local
+echo "Suppression du logiciel "fail2ban"
 echo ""
-echo ""
-echo "$ sudo apt-get remove -yf fail2ban*"
 sudo apt-get remove -yf fail2ban*
-**************************************************************************************
+echo ""
+sudo rm -rv /run/fail2ban
+echo ""
+sudo rm -rv /etc/fail2ban
+echo ""
+sudo rm -rv /var/lib/fail2ban
+######################################################################################
 
 
 echo ""

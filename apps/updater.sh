@@ -149,16 +149,19 @@ sudo rm -rfv ~/.local/share/Trash/info/*
 fi
 
 
-**************************************************************************************
+######################################################################################
 # A supprimer
 echo ""
-echo "$ sudo rm -rv jail.local"
-sudo rm -rv jail.local
+echo "Suppression du logiciel "fail2ban"
 echo ""
-echo ""
-echo "$ sudo apt-get remove -yf fail2ban*"
 sudo apt-get remove -yf fail2ban*
-**************************************************************************************
+echo ""
+sudo rm -rv /run/fail2ban
+echo ""
+sudo rm -rv /etc/fail2ban
+echo ""
+sudo rm -rv /var/lib/fail2ban
+######################################################################################
 
 
 echo ""
