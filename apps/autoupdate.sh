@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b23                   #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b24                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -31,9 +31,9 @@ var14=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14-)
 var15=$(echo $var14 | rev | cut -c3- | rev)
 var16=$(uname -m)
 if [[ $var16 == *"aarch64"* ]]; then
-	var17="- 64 bits)"
+	var17="• 64 bits)"
 else
-	var17="- 32 bits)"
+	var17="• 32 bits)"
 fi
 var18=$(uptime -s)
 var19=$(uptime -p)

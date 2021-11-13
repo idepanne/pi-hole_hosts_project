@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 7.0.0b23
+# Pi-Hole Host Project Updater 7.0.0b24
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -151,7 +151,7 @@ fi
 ######################################################################################
 # A supprimer
 echo ""
-echo "Suppression du logiciel "fail2ban"
+echo "Suppression du logiciel fail2ban"
 echo ""
 sudo apt-get remove -yf fail2ban*
 echo ""
