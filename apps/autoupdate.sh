@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b24                   #"
+echo "#                     Pi-Hole Host Project Updater 7.0.0b25                   #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"

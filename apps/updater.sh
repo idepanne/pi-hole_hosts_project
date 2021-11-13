@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 7.0.0b24
+# Pi-Hole Host Project Updater 7.0.0b25
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -90,6 +90,8 @@ echo ""
 echo "==============================================================================="
 echo "   • Mise à jour du crontab"
 echo "==============================================================================="
+echo ""
+echo $var21
 echo ""
 echo "Ancien crontab :"
 crontab -l
