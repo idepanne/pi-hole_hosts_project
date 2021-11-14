@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.0b29                   #"
+echo "#                      Pi-Hole Host Project Updater 7.0.0                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -213,9 +213,6 @@ echo ""
 echo "$ sudo rm -rv updater.sh"
 sudo rm -rv updater.sh
 echo ""
-echo "$ sudo rm -rv jail.local"
-sudo rm -rv jail.local
-echo ""
 echo ""
 echo ""
 echo "==============================================================================="
@@ -242,24 +239,6 @@ sudo apt-get install -yf rclone
 echo ""
 echo "$ sudo apt-get install -yf ca-certificates git binutils"
 sudo apt-get install -yf ca-certificates git binutils
-echo ""
-echo "$ sudo apt-get install -yf fail2ban"
-sudo apt-get install -yf fail2ban
-echo ""
-echo "$ sudo rm -rv /etc/fail2ban/jail.local"
-sudo rm -rv /etc/fail2ban/jail.local
-echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
-echo ""
-echo "$ sudo mv jail.local /etc/fail2ban/jail.local"
-sudo mv jail.local /etc/fail2ban/jail.local
-echo ""
-echo "$ sudo service fail2ban restart"
-sudo service fail2ban restart
-echo ""
-echo "$ sudo systemctl --no-pager status fail2ban"
-sudo systemctl --no-pager status fail2ban
 echo ""
 if [[ $var21 == *"Pi 400"* ]]; then
 	echo ""
