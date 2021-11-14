@@ -162,9 +162,6 @@ echo ""
 echo "$ sudo apt-get update --fix-missing"
 sudo apt-get update --fix-missing
 echo ""
-echo "$ sudo apt-get update"
-sudo apt-get update
-echo ""
 echo "$ sudo apt-get upgrade -y"
 sudo apt-get upgrade -y
 echo ""
