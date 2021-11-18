@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.0                     #"
+echo "#                      Pi-Hole Host Project Updater 7.0.1                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -12,6 +12,7 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
+
 
 ###### Définition des variables ######
 var1=$(cat /proc/cpuinfo | grep Hardware | cut -c12-)
@@ -39,9 +40,9 @@ else
 fi
 var18=$(uptime -s)
 var19=$(uptime -p)
-var20=$(hostname)
-var21=$(cat /proc/cpuinfo | grep Model)
+var20=$(cat /proc/cpuinfo | grep Model)
 ######################################
+
 
 echo "==============================================================================="
 echo "   • A propos de ce Raspberry Pi"

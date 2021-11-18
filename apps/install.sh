@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.0                     #"
+echo "#                      Pi-Hole Host Project Updater 7.0.1                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -12,6 +12,7 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
+
 
 ###### Définition des variables ######
 var1=$(cat /proc/cpuinfo | grep Hardware | cut -c12-)
@@ -39,9 +40,9 @@ else
 fi
 var18=$(uptime -s)
 var19=$(uptime -p)
-var20=$(hostname)
-var21=$(cat /proc/cpuinfo | grep Model)
+var20=$(cat /proc/cpuinfo | grep Model)
 ######################################
+
 
 echo "==============================================================================="
 echo "   • A propos de ce Raspberry Pi"
@@ -96,18 +97,6 @@ netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uni
 echo ""
 echo ""
 echo ""
-if [[ -d "/etc/boinc-client" ]]; then
-	echo "==============================================================================="
-	echo "   • Arrêt du node \"$var20\" dans le cluster BOINC"
-	echo "==============================================================================="
-	echo ""
-	echo "$ sudo systemctl stop boinc-client"
-	sudo systemctl stop boinc-client
-	sleep 1
-	echo ""
-	echo ""
-	echo ""
-fi
 echo "==============================================================================="
 echo "   • Mise à jour du firmware"
 echo "==============================================================================="
@@ -269,11 +258,11 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-var21=$(cat /proc/cpuinfo | grep Model)
-if [[ $var21 == *"Pi 400"* ]]; then
+var20=$(cat /proc/cpuinfo | grep Model)
+if [[ $var20 == *"Pi 400"* ]]; then
 	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 else
-if [[ -d "/etc/boinc-client" ]]; then
+if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * /home/pi/Apps/backup.sh"
 else

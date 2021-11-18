@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 7.0.1b1
+# Pi-Hole Host Project Updater 7.0.2b1
 # beta_updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -66,13 +66,11 @@ echo "==========================================================================
 echo "   • Mise à jour du crontab"
 echo "==============================================================================="
 echo ""
-echo $var21
-echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-var21=$(cat /proc/cpuinfo | grep Model)
-if [[ $var21 == *"Pi 400"* ]]; then
+var20=$(cat /proc/cpuinfo | grep Model)
+if [[ $var20 == *"Pi 400"* ]]; then
 	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 else
 if [[ -f "/home/pi/Apps/backup.sh" ]]; then

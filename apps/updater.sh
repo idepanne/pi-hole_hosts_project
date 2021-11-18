@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 7.0.0
+# Pi-Hole Host Project Updater 7.0.1
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -62,42 +62,18 @@ fi
 echo ""
 echo ""
 echo ""
-if [[ -d "/etc/boinc-client" ]]; then
-	echo "-> Boinc :                   [INSTALLÉ]"
-	echo ""
-	echo "$ sudo systemctl stop boinc-client"
-	sudo systemctl stop boinc-client
-	sleep 1
-	echo ""
-	echo "sudo apt-get install -yf boinc-client*"
-	sudo apt-get install -yf boinc-client*
-	echo ""
-	echo "$ sudo systemctl start boinc-client"
-	sudo systemctl start boinc-client
-	sleep 1
-	echo ""
-	echo "sudo systemctl --no-pager status boinc-client"
-	sudo systemctl --no-pager status boinc-client
-else
-	echo "-> Boinc :                   [NON INSTALLÉ]"
-fi
-echo ""
-echo ""
-echo ""
 echo "==============================================================================="
 echo "   • Mise à jour du crontab"
 echo "==============================================================================="
 echo ""
-echo $var21
-echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-var21=$(cat /proc/cpuinfo | grep Model)
-if [[ $var21 == *"Pi 400"* ]]; then
+var20=$(cat /proc/cpuinfo | grep Model)
+if [[ $var20 == *"Pi 400"* ]]; then
 	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 else
-if [[ -d "/etc/boinc-client" ]]; then
+if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * /home/pi/Apps/backup.sh"
 else
