@@ -62,28 +62,6 @@ fi
 echo ""
 echo ""
 echo ""
-if [[ -d "/etc/boinc-client" ]]; then
-	echo "-> Boinc :                   [INSTALLÉ]"
-	echo ""
-	echo "$ sudo systemctl stop boinc-client"
-	sudo systemctl stop boinc-client
-	sleep 1
-	echo ""
-	echo "sudo apt-get install -yf boinc-client*"
-	sudo apt-get install -yf boinc-client*
-	echo ""
-	echo "$ sudo systemctl start boinc-client"
-	sudo systemctl start boinc-client
-	sleep 1
-	echo ""
-	echo "sudo systemctl --no-pager status boinc-client"
-	sudo systemctl --no-pager status boinc-client
-else
-	echo "-> Boinc :                   [NON INSTALLÉ]"
-fi
-echo ""
-echo ""
-echo ""
 echo "==============================================================================="
 echo "   • Mise à jour du crontab"
 echo "==============================================================================="
@@ -97,7 +75,7 @@ var21=$(cat /proc/cpuinfo | grep Model)
 if [[ $var21 == *"Pi 400"* ]]; then
 	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 else
-if [[ -d "/etc/boinc-client" ]]; then
+if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * /home/pi/Apps/backup.sh"
 else
