@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.1                     #"
+echo "#                      Pi-Hole Host Project Updater 7.0.2                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -40,7 +40,7 @@ else
 fi
 var18=$(uptime -s)
 var19=$(uptime -p)
-var20=$(cat /proc/cpuinfo | grep Model)
+var20=$(ls /usr/bin/*session)
 ######################################
 
 
@@ -70,6 +70,12 @@ echo -n "Firmware        : "; echo "$var13"
 echo ""
 echo -n "EEPROM          : "
 sudo rpi-eeprom-update
+echo ""
+if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
+echo "Interface       : Graphique (GUI)
+else
+echo "Interface       : Lignes de commandes (CLI)
+fi
 echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""

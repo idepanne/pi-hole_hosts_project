@@ -71,6 +71,12 @@ echo ""
 echo -n "EEPROM          : "
 sudo rpi-eeprom-update
 echo ""
+if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
+echo "Interface       : Graphique (GUI)
+else
+echo "Interface       : Lignes de commandes (CLI)
+fi
+echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
 echo -n "Nom d'hôte      : "; hostname
