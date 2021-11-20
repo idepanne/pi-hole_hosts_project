@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.1                     #"
+echo "#                      Pi-Hole Host Project Updater 7.0.2                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -40,7 +40,7 @@ else
 fi
 var18=$(uptime -s)
 var19=$(uptime -p)
-var20=$(cat /proc/cpuinfo | grep Model)
+var20=$(ls /usr/bin/*session)
 ######################################
 
 
@@ -202,7 +202,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Installation des logiciels prérequis"
+echo "   • Installation des logiciels prérequis pour Raspberry Pi OS (CLI)"
 echo "==============================================================================="
 echo ""
 echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
@@ -226,11 +226,11 @@ echo ""
 echo "$ sudo apt-get install -yf ca-certificates git binutils"
 sudo apt-get install -yf ca-certificates git binutils
 echo ""
-if [[ $var21 == *"Pi 400"* ]]; then
+if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
 	echo ""
 	echo ""
 	echo "==============================================================================="
-	echo "   • Installation des logiciels prérequis pour le Raspberry Pi 400"
+	echo "   • Installation des logiciels prérequis pour Raspberry Pi OS (GUI)"
 	echo "==============================================================================="
 	echo ""
 	echo "$ sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver"
@@ -248,6 +248,9 @@ if [[ $var21 == *"Pi 400"* ]]; then
 	echo "$ sudo apt-get install -yf chromium-browser chromium-browser-l10n"
 	sudo apt-get install -yf chromium-browser chromium-browser-l10n
 	echo ""
+	echo "$ sudo apt-get install -yf rpi-imager"
+	sudo apt-get install -yf rpi-imager
+	echo ""
 fi
 echo ""
 echo ""
@@ -258,8 +261,8 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-var20=$(cat /proc/cpuinfo | grep Model)
-if [[ $var20 == *"Pi 400"* ]]; then
+var20=$(ls /usr/bin/*session)
+if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
 	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 else
 if [[ -f "/home/pi/Apps/backup.sh" ]]; then
