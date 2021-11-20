@@ -34,9 +34,9 @@ var14=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14-)
 var15=$(echo $var14 | rev | cut -c3- | rev)
 var16=$(uname -m)
 if [[ $var16 == *"aarch64"* ]]; then
-	var17="• 64 bits)"
+	var17="- 64 bits)"
 else
-	var17="• 32 bits)"
+	var17="- 32 bits)"
 fi
 var18=$(uptime -s)
 var19=$(uptime -p)
