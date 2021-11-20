@@ -34,9 +34,9 @@ var14=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14-)
 var15=$(echo $var14 | rev | cut -c3- | rev)
 var16=$(uname -m)
 if [[ $var16 == *"aarch64"* ]]; then
-	var17="• 64 bits)"
+	var17="- 64 bits)"
 else
-	var17="• 32 bits)"
+	var17="- 32 bits)"
 fi
 var18=$(uptime -s)
 var19=$(uptime -p)
@@ -65,17 +65,16 @@ echo -n "Codec H264      : " && echo "$(vcgencmd codec_enabled H264)" | cut -c6-
 echo -n "Codec H265      : " && echo "$(vcgencmd codec_enabled H265)" | cut -c6-
 echo ""
 echo -n "Système         : "; echo "$var15 $var17"
+if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
+echo "Interface       : Graphique (GUI)"
+else
+echo "Interface       : Lignes de commandes (CLI)"
+fi
 echo ""
 echo -n "Firmware        : "; echo "$var13"
 echo ""
 echo -n "EEPROM          : "
 sudo rpi-eeprom-update
-echo ""
-if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
-echo "Interface       : Graphique (GUI)
-else
-echo "Interface       : Lignes de commandes (CLI)
-fi
 echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""

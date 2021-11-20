@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.1                     #"
+echo "#                      Pi-Hole Host Project Updater 7.0.2                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -32,13 +32,13 @@ var14=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14-)
 var15=$(echo $var14 | rev | cut -c3- | rev)
 var16=$(uname -m)
 if [[ $var16 == *"aarch64"* ]]; then
-	var17="• 64 bits)"
+	var17="- 64 bits)"
 else
-	var17="• 32 bits)"
+	var17="- 32 bits)"
 fi
 var18=$(uptime -s)
 var19=$(uptime -p)
-var20=$(cat /proc/cpuinfo | grep Model)
+var20=$(ls /usr/bin/*session)
 ######################################
 
 
@@ -63,6 +63,11 @@ echo -n "Codec H264      : " && echo "$(vcgencmd codec_enabled H264)" | cut -c6-
 echo -n "Codec H265      : " && echo "$(vcgencmd codec_enabled H265)" | cut -c6-
 echo ""
 echo -n "Système         : "; echo "$var15 $var17"
+if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
+echo "Interface       : Graphique (GUI)"
+else
+echo "Interface       : Lignes de commandes (CLI)"
+fi
 echo ""
 echo -n "Firmware        : "; echo "$var13"
 echo ""
@@ -153,8 +158,8 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-var20=$(cat /proc/cpuinfo | grep Model)
-if [[ $var20 == *"Pi 400"* ]]; then
+var20=$(ls /usr/bin/*session)
+if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
 	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 else
 if [[ -f "/home/pi/Apps/backup.sh" ]]; then
