@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.2                     #"
+echo "#                      Pi-Hole Host Project Updater 7.0.3                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -160,7 +160,8 @@ crontab -l
 echo ""
 var20=$(ls /usr/bin/*session)
 if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
-	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 8 * * * /home/pi/Apps/backup.sh"
 else
 if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
