@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.3                     #"
+echo "#                      Pi-Hole Host Project Updater 7.0.4                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -150,9 +150,6 @@ echo "==========================================================================
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
 echo ""
-echo "$ sudo apt-get clean all"
-sudo apt-get clean all
-echo ""
 echo "$ sudo apt-get update --fix-missing"
 sudo apt-get update --fix-missing
 echo ""
@@ -289,6 +286,10 @@ echo "==========================================================================
 echo "   • Nettoyage et optimisation"
 echo "==============================================================================="
 echo ""
+echo "Avant nettoyage :"
+echo "$ sudo du -h /var/cache/apt/"
+sudo du -h /var/cache/apt/
+echo ""
 echo "$ sudo apt-get autoremove -y"
 sudo apt-get autoremove -y
 echo ""
@@ -320,6 +321,10 @@ echo ""
 echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 sudo rm -rfv ~/.local/share/Trash/info/*
 fi
+echo ""
+echo "Après nettoyage :"
+echo "$ sudo du -h /var/cache/apt/"
+sudo du -h /var/cache/apt/
 echo ""
 echo ""
 echo ""
