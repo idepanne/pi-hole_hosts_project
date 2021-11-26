@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 7.0.3
+# Pi-Hole Host Project Updater 7.0.4
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -92,6 +92,10 @@ echo "==========================================================================
 echo "   • Nettoyage et optimisation"
 echo "==============================================================================="
 echo ""
+echo "Avant nettoyage :"
+echo "$ sudo du -h /var/cache/apt/"
+sudo du -h /var/cache/apt/
+echo ""
 echo "$ sudo apt-get autoremove -y"
 sudo apt-get autoremove -y
 echo ""
@@ -123,6 +127,10 @@ echo ""
 echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 sudo rm -rfv ~/.local/share/Trash/info/*
 fi
+echo ""
+echo "Après nettoyage :"
+echo "$ sudo du -h /var/cache/apt/"
+sudo du -h /var/cache/apt/
 echo ""
 echo ""
 echo ""
