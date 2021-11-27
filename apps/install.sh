@@ -320,8 +320,8 @@ sudo rm -rfv ~/.local/share/Trash/expunged/*
 echo ""
 echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 sudo rm -rfv ~/.local/share/Trash/info/*
-fi
 echo ""
+fi
 echo "Après nettoyage :"
 echo "$ sudo du -h /var/cache/apt/"
 sudo du -h /var/cache/apt/
