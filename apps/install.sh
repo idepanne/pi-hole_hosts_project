@@ -232,17 +232,20 @@ if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-me
 	echo "$ sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver"
 	sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver
 	echo ""
+	echo "$ sudo apt-get install -yf chromium-browser chromium-browser-l10n"
+	sudo apt-get install -yf chromium-browser chromium-browser-l10n
+	echo ""
+	echo "$ sudo apt-get install -yf filezilla"
+	sudo apt-get install -yf filezilla
+	echo ""
 	echo "$ sudo apt-get install -yf gparted"
 	sudo apt-get install -yf gparted
 	echo ""
 	echo "$ sudo apt-get install -yf hardinfo"
 	sudo apt-get install -yf hardinfo
 	echo ""
-	echo "$ sudo apt-get install -yf filezilla"
-	sudo apt-get install -yf filezilla
-	echo ""
-	echo "$ sudo apt-get install -yf chromium-browser chromium-browser-l10n"
-	sudo apt-get install -yf chromium-browser chromium-browser-l10n
+	echo "$ sudo apt-get install -yf baobab"
+	sudo apt-get install -yf baobab
 	echo ""
 	echo "$ sudo apt-get install -yf rpi-imager"
 	sudo apt-get install -yf rpi-imager
