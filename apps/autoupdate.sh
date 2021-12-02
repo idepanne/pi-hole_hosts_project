@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.4                     #"
+echo "#                     Pi-Hole Host Project Updater 7.0.5b1                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -127,7 +127,6 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		echo "$ sudo chmod +x updater.sh"
 		sudo chmod +x updater.sh
-		./updater.sh
 	else
 		echo "==============================================================================="
 		echo "   • Canal de mises à jour : Release"
@@ -141,8 +140,19 @@ if [[ "$var" =~ "0% packet loss" ]]; then
 		echo ""
 		echo "$ sudo chmod +x updater.sh"
 		sudo chmod +x updater.sh
-		./updater.sh
 	fi
+	if [[ -d "/etc/pihole" ]]; then
+		echo ""
+		echo ""
+		echo ""
+		echo "==============================================================================="
+		echo "   • Test de débit Internet"
+		echo "==============================================================================="
+		echo ""
+		speedtest-cli
+		echo ""
+	fi
+	./updater.sh
 else
 	echo "Connexion Internet : Echec"
 	echo ""

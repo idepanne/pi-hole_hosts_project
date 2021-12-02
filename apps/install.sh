@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.4                     #"
+echo "#                     Pi-Hole Host Project Updater 7.0.5b1                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -207,6 +207,9 @@ echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
+echo "$ sudo apt-get install -yf ca-certificates git binutils"
+sudo apt-get install -yf ca-certificates git binutils
+echo ""
 echo "$ sudo apt-get install -yf dnsutils"
 sudo apt-get install -yf dnsutils
 echo ""
@@ -219,8 +222,8 @@ echo ""
 echo "$ sudo apt-get install -yf rclone"
 sudo apt-get install -yf rclone
 echo ""
-echo "$ sudo apt-get install -yf ca-certificates git binutils"
-sudo apt-get install -yf ca-certificates git binutils
+echo "$ sudo apt-get install -yf speedtest-cli"
+sudo apt-get install -yf speedtest-cli
 echo ""
 if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
 	echo ""
@@ -251,6 +254,14 @@ if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-me
 	sudo apt-get install -yf rpi-imager
 	echo ""
 fi
+echo ""
+echo ""
+echo "==============================================================================="
+echo "   • Test de débit Internet"
+echo "==============================================================================="
+echo ""
+speedtest-cli
+echo ""
 echo ""
 echo ""
 echo "==============================================================================="
