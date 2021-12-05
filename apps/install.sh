@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.6b2                    #"
+echo "#                     Pi-Hole Host Project Updater 7.0.6b3                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -260,7 +260,7 @@ echo "==========================================================================
 echo "   • Test de débit Internet"
 echo "==============================================================================="
 echo ""
-echo "-> Pour que les résultats soient cohérent, aucun autre appareil du réseau ne doit télécharger des données pendant le test !"
+echo "-> Pour que les résultats soient cohérents, aucun autre appareil du réseau ne doit télécharger des données pendant le test."
 echo ""
 speedtest-cli
 echo ""
