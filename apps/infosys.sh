@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.0.6b1                    #"
+echo "#                     Pi-Hole Host Project Updater 7.0.6b2                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -41,7 +41,6 @@ fi
 var18=$(uptime -s)
 var19=$(uptime -p)
 var20=$(ls /usr/bin/*session)
-var21=$(ping -c 3 1.1.1.1)
 ######################################
 
 
