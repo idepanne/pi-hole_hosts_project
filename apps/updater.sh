@@ -59,12 +59,14 @@ if [[ -d "/etc/pihole" ]]; then
 	echo "Nouveau crontab :"
 	crontab -l
 	echo ""
+	echo ""
+	echo ""
 else
 	echo "-> Pi-hole :                 [NON INSTALLÉ]"
+	echo ""
+	echo ""
+	echo ""
 fi
-echo ""
-echo ""
-echo ""
 echo "==============================================================================="
 echo "   • Nettoyage"
 echo "==============================================================================="
