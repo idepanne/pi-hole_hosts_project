@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.0.0b4                    #"
+echo "#                     Pi-Hole Host Project Updater 8.0.0b5                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -146,12 +146,22 @@ else
 		if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 			crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * /home/pi/Apps/backup.sh"
-	else
-		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+		else
+			crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+		fi
+		sudo /etc/init.d/cron restart
+		echo ""
+		echo "Nouveau crontab :"
+		crontab -l
+		echo ""
 	fi
-	sudo /etc/init.d/cron restart
-	echo ""
-	echo "Nouveau crontab :"
-	crontab -l
-	echo ""
 fi
+echo ""
+echo ""
+echo "###############################################################################"
+echo "#                                                                             #"
+echo "#                    Mise à jour du Raspberry Pi terminée                     #"
+echo "#                                                                             #"
+echo "###############################################################################"
+echo ""
+sleep 1
