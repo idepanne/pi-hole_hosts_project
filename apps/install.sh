@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.0.0b2                    #"
+echo "#                     Pi-Hole Host Project Updater 8.0.0b3                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -156,27 +156,29 @@ echo ""
 echo "$ sudo rm -rv test.sh"
 sudo rm -rv test.sh
 echo ""
-echo "cd ~/Apps"
-cd ~/Apps
-echo ""
-echo "$ sudo rm -rv install.sh"
-sudo rm -rv install.sh
-echo ""
-echo "$ sudo rm -rv infosys.sh"
-sudo rm -rv infosys.sh
-echo ""
-echo "$ sudo rm -rv test.sh"
-sudo rm -rv test.sh
-echo ""
-echo "$ sudo rm -rv beta_updater.sh"
-sudo rm -rv beta_updater.sh
-echo ""
-echo "$ sudo rm -rv autoupdate.sh"
-sudo rm -rv autoupdate.sh
-echo ""
-echo "$ sudo rm -rv updater.sh"
-sudo rm -rv updater.sh
-echo ""
+if [[ -d "/home/pi/Apps" ]]; then
+	echo "$ cd Apps"
+	cd Apps
+	echo ""
+	echo "$ sudo rm -rv install.sh"
+	sudo rm -rv install.sh
+	echo ""
+	echo "$ sudo rm -rv infosys.sh"
+	sudo rm -rv infosys.sh
+	echo ""
+	echo "$ sudo rm -rv test.sh"
+	sudo rm -rv test.sh
+	echo ""
+	echo "$ sudo rm -rv beta_updater.sh"
+	sudo rm -rv beta_updater.sh
+	echo ""
+	echo "$ sudo rm -rv autoupdate.sh"
+	sudo rm -rv autoupdate.sh
+	echo ""
+	echo "$ sudo rm -rv updater.sh"
+	sudo rm -rv updater.sh
+	echo ""
+fi
 echo ""
 echo ""
 echo "==============================================================================="
