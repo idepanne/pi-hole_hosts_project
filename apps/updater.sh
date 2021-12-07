@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 7.0.6
+# Pi-Hole Host Project Updater 7.1.0b1
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -8,18 +8,22 @@ echo ""
 echo ""
 echo ""
 cd ~/Apps
-echo "==============================================================================="
-echo "   • Mises à jour de Raspberry Pi OS"
-echo "==============================================================================="
-echo ""
-echo "$ sudo apt-get update"
-sudo apt-get update
-echo ""
-echo "$ sudo apt-get upgrade -y"
-sudo apt-get upgrade -y
-echo ""
-echo ""
-echo ""
+
+#######################################################################################
+#echo "==============================================================================="
+#echo "   • Mises à jour de Raspberry Pi OS"
+#echo "==============================================================================="
+#echo ""
+#echo "$ sudo apt-get update"
+#sudo apt-get update
+#echo ""
+#echo "$ sudo apt-get upgrade -y"
+#sudo apt-get upgrade -y
+#echo ""
+#echo ""
+#echo ""
+######################################################################################
+
 echo "==============================================================================="
 echo "   • Mises à jour des logiciels"
 echo "==============================================================================="
@@ -83,21 +87,25 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Nettoyage et optimisation"
+echo "   • Nettoyage"
 echo "==============================================================================="
 echo ""
-echo "Avant nettoyage :"
-sudo du -h /var/cache/apt/
-echo ""
-echo "$ sudo apt-get autoremove -y"
-sudo apt-get autoremove -y
-echo ""
-echo "$ sudo apt-get autoclean -y"
-sudo apt-get autoclean -y
-echo ""
-echo "$ sudo apt-get clean all"
-sudo apt-get clean all
-echo ""
+
+######################################################################################
+#echo "Avant nettoyage :"
+#sudo du -h /var/cache/apt/
+#echo ""
+#echo "$ sudo apt-get autoremove -y"
+#sudo apt-get autoremove -y
+#echo ""
+#echo "$ sudo apt-get autoclean -y"
+#sudo apt-get autoclean -y
+#echo ""
+#echo "$ sudo apt-get clean all"
+#sudo apt-get clean all
+#echo ""
+######################################################################################
+
 echo "$ cd ~/Apps"
 cd ~/Apps
 echo ""
@@ -121,39 +129,42 @@ echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 sudo rm -rfv ~/.local/share/Trash/info/*
 echo ""
 fi
-echo "Après nettoyage :"
-sudo du -h /var/cache/apt/
-echo ""
-echo ""
-echo ""
-echo "==============================================================================="
-echo "   • Validation des mises à jour"
-echo "==============================================================================="
-echo ""
-var=$(sudo checkrestart)
-if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
-	echo "$var"
-	echo ""
-	echo ""
-	echo ""
-	echo "###############################################################################"
-	echo "#                                                                             #"
-	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
-	echo "#                                                                             #"
-	echo "###############################################################################"
-	echo ""
-	sleep 1
-else
-	echo "$var"
-	echo ""
-	echo ""
-	echo ""
-	echo "###############################################################################"
-	echo "#                                                                             #"
-	echo "#                         Redémarrage du Raspberry Pi                         #"
-	echo "#                                                                             #"
-	echo "###############################################################################"
-	echo ""
-	sleep 1
-	sudo reboot
-fi
+
+######################################################################################
+#echo "Après nettoyage :"
+#sudo du -h /var/cache/apt/
+#echo ""
+#echo ""
+#echo ""
+#echo "==============================================================================="
+#echo "   • Validation des mises à jour"
+#echo "==============================================================================="
+#echo ""
+#var=$(sudo checkrestart)
+#if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
+#	echo "$var"
+#	echo ""
+#	echo ""
+#	echo ""
+#	echo "###############################################################################"
+#	echo "#                                                                             #"
+#	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
+#	echo "#                                                                             #"
+#	echo "###############################################################################"
+#	echo ""
+#	sleep 1
+#else
+#	echo "$var"
+#	echo ""
+#	echo ""
+#	echo ""
+#	echo "###############################################################################"
+#	echo "#                                                                             #"
+#	echo "#                         Redémarrage du Raspberry Pi                         #"
+#	echo "#                                                                             #"
+#	echo "###############################################################################"
+#	echo ""
+#	sleep 1
+#	sudo reboot
+#fi
+######################################################################################
