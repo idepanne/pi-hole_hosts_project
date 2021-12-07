@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.0.0b3                    #"
+echo "#                     Pi-Hole Host Project Updater 8.0.0b4                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -126,20 +126,6 @@ if [[ "$var21" =~ "0% packet loss" ]]; then
 	echo ""
 	echo "$ sudo chmod +x updater.sh"
 	sudo chmod +x updater.sh
-	fi
-	if [[ -d "/etc/pihole" ]]; then
-		echo ""
-		echo ""
-		echo ""
-		echo "==============================================================================="
-		echo "   • Test de débit Internet"
-		echo "==============================================================================="
-		echo ""
-		echo "-> Pour que les résultats soient cohérents, aucun autre appareil du réseau ne doit télécharger des données pendant le test."
-		echo ""
-		speedtest-cli
-		echo ""
-	fi
 	./updater.sh
 else
 	echo "Connexion Internet : Echec"
@@ -147,19 +133,19 @@ else
 	echo ""
 	echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
 	echo ""
-if [[ -d "/etc/pihole" ]]; then
-	echo ""
-	echo ""
-	echo "==============================================================================="
-	echo "   • Mise à jour du crontab"
-	echo "==============================================================================="
-	echo ""
-	echo "Ancien crontab :"
-	crontab -l
-	echo ""
-	if [[ -f "/home/pi/Apps/backup.sh" ]]; then
-		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-		30 3 * * * /home/pi/Apps/backup.sh"
+	if [[ -d "/etc/pihole" ]]; then
+		echo ""
+		echo ""
+		echo "==============================================================================="
+		echo "   • Mise à jour du crontab"
+		echo "==============================================================================="
+		echo ""
+		echo "Ancien crontab :"
+		crontab -l
+		echo ""
+		if [[ -f "/home/pi/Apps/backup.sh" ]]; then
+			crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * /home/pi/Apps/backup.sh"
 	else
 		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	fi

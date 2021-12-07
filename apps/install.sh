@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.0.0b3                    #"
+echo "#                     Pi-Hole Host Project Updater 8.0.0b4                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -144,7 +144,7 @@ echo "==========================================================================
 echo "   • Nettoyage"
 echo "==============================================================================="
 echo ""
-echo "cd"
+echo "$ cd"
 cd
 echo ""
 echo "$ sudo rm -rv install.sh"
@@ -200,9 +200,6 @@ echo ""
 echo "$ sudo apt-get install -yf rclone"
 sudo apt-get install -yf rclone
 echo ""
-echo "$ sudo apt-get install -yf speedtest-cli"
-sudo apt-get install -yf speedtest-cli
-echo ""
 if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
 	echo ""
 	echo ""
@@ -232,16 +229,6 @@ if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-me
 	sudo apt-get install -yf rpi-imager
 	echo ""
 fi
-echo ""
-echo ""
-echo "==============================================================================="
-echo "   • Test de débit Internet"
-echo "==============================================================================="
-echo ""
-echo "-> Pour que les résultats soient cohérents, aucun autre appareil du réseau ne doit télécharger des données pendant le test."
-echo ""
-speedtest-cli
-echo ""
 echo ""
 echo ""
 if [[ -d "/etc/pihole" ]]; then
