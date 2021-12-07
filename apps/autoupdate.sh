@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 7.0.6                     #"
+echo "#                     Pi-Hole Host Project Updater 8.0.0b1                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -114,32 +114,18 @@ if [[ "$var21" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo ""
-	if [[ -f "/home/pi/Apps/beta" ]]; then
-		echo "==============================================================================="
-		echo "   • Canal de mises à jour : Beta"
-		echo "==============================================================================="
-		echo ""
-		echo "$ sudo mv updater.sh updater_old.sh"
-		sudo mv updater.sh updater_old.sh
-		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta_updater.sh > updater.sh"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/beta_updater.sh > updater.sh
-		echo ""
-		echo "$ sudo chmod +x updater.sh"
-		sudo chmod +x updater.sh
-	else
-		echo "==============================================================================="
-		echo "   • Canal de mises à jour : Release"
-		echo "==============================================================================="
-		echo ""
-		echo "$ sudo mv updater.sh updater_old.sh"
-		sudo mv updater.sh updater_old.sh
-		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh
-		echo ""
-		echo "$ sudo chmod +x updater.sh"
-		sudo chmod +x updater.sh
+	echo "==============================================================================="
+	echo "   • Mise à jour de updater.sh"
+	echo "==============================================================================="
+	echo ""
+	echo "$ sudo mv updater.sh updater_old.sh"
+	sudo mv updater.sh updater_old.sh
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh
+	echo ""
+	echo "$ sudo chmod +x updater.sh"
+	sudo chmod +x updater.sh
 	fi
 	if [[ -d "/etc/pihole" ]]; then
 		echo ""
@@ -149,7 +135,7 @@ if [[ "$var21" =~ "0% packet loss" ]]; then
 		echo "   • Test de débit Internet"
 		echo "==============================================================================="
 		echo ""
-		echo "-> Pour que les résultats soient cohérent, aucun autre appareil du réseau ne doit télécharger des données pendant le test !"
+		echo "-> Pour que les résultats soient cohérents, aucun autre appareil du réseau ne doit télécharger des données pendant le test."
 		echo ""
 		speedtest-cli
 		echo ""
@@ -161,30 +147,25 @@ else
 	echo ""
 	echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
 	echo ""
+if [[ -d "/etc/pihole" ]]; then
 	echo ""
 	echo ""
-echo "==============================================================================="
-echo "   • Mise à jour du crontab"
-echo "==============================================================================="
-echo ""
-echo "Ancien crontab :"
-crontab -l
-echo ""
-var20=$(ls /usr/bin/*session)
-if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
-	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 8 * * * /home/pi/Apps/backup.sh"
-else
-if [[ -f "/home/pi/Apps/backup.sh" ]]; then
-	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 3 * * * /home/pi/Apps/backup.sh"
-else
-	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
-fi
-fi
-sudo /etc/init.d/cron restart
-echo ""
-echo "Nouveau crontab :"
-crontab -l
-echo ""
+	echo "==============================================================================="
+	echo "   • Mise à jour du crontab"
+	echo "==============================================================================="
+	echo ""
+	echo "Ancien crontab :"
+	crontab -l
+	echo ""
+	if [[ -f "/home/pi/Apps/backup.sh" ]]; then
+		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+		30 3 * * * /home/pi/Apps/backup.sh"
+	else
+		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	fi
+	sudo /etc/init.d/cron restart
+	echo ""
+	echo "Nouveau crontab :"
+	crontab -l
+	echo ""
 fi

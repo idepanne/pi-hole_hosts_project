@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 7.1.0b1                    #"
+echo "#                     Pi-Hole Host Project Updater 8.0.0b1                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -201,12 +201,6 @@ echo "==========================================================================
 echo "   • Installation des logiciels prérequis pour Raspberry Pi OS (CLI)"
 echo "==============================================================================="
 echo ""
-echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
-echo ""
-echo "$ sudo chmod +x autoupdate.sh"
-sudo chmod +x autoupdate.sh
-echo ""
 echo "$ sudo apt-get install -yf ca-certificates git binutils"
 sudo apt-get install -yf ca-certificates git binutils
 echo ""
@@ -266,32 +260,40 @@ speedtest-cli
 echo ""
 echo ""
 echo ""
-echo "==============================================================================="
-echo "   • Mise à jour du crontab"
-echo "==============================================================================="
-echo ""
-echo "Ancien crontab :"
-crontab -l
-echo ""
-var20=$(ls /usr/bin/*session)
-if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
-	crontab <<<"0 8 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 8 * * * /home/pi/Apps/backup.sh"
-else
-if [[ -f "/home/pi/Apps/backup.sh" ]]; then
-	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 3 * * * /home/pi/Apps/backup.sh"
-else
-	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+if [[ -d "/etc/pihole" ]]; then
+	echo "==============================================================================="
+	echo "   • Installation de autoupdate.sh"
+	echo "==============================================================================="
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
+	echo ""
+	echo "$ sudo chmod +x autoupdate.sh"
+	sudo chmod +x autoupdate.sh
+	echo ""
+	echo ""
+	echo ""
+	echo "==============================================================================="
+	echo "   • Mise à jour du crontab"
+	echo "==============================================================================="
+	echo ""
+	echo "Ancien crontab :"
+	crontab -l
+	echo ""
+	if [[ -f "/home/pi/Apps/backup.sh" ]]; then
+		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+		30 3 * * * /home/pi/Apps/backup.sh"
+	else
+		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+	fi
+	sudo /etc/init.d/cron restart
+	echo ""
+	echo "Nouveau crontab :"
+	crontab -l
+	echo ""
+	echo ""
+	echo ""
 fi
-fi
-sudo /etc/init.d/cron restart
-echo ""
-echo "Nouveau crontab :"
-crontab -l
-echo ""
-echo ""
-echo ""
 echo "==============================================================================="
 echo "   • Nettoyage et optimisation"
 echo "==============================================================================="
