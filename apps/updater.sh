@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.0.0b1
+# Pi-Hole Host Project Updater 8.0.0b2
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -50,7 +50,7 @@ if [[ -d "/etc/pihole" ]]; then
 	echo ""
 	if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-		30 3 * * * /home/pi/Apps/backup.sh"
+30 3 * * * /home/pi/Apps/backup.sh"
 	else
 		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	fi
@@ -69,26 +69,33 @@ echo "==========================================================================
 echo "   • Nettoyage"
 echo "==============================================================================="
 echo ""
-echo "$ cd ~/Apps"
-cd ~/Apps
-echo ""
-echo "$ sudo rm -rv *_old.sh"
-sudo rm -rv *_old.sh
-echo ""
-echo "$ cd ~/Apps/log && find test*.log -exec rm -rv {} \;"
-cd ~/Apps/log && find test*.log -exec rm -rv {} \;
-echo ""
-echo "$ cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;"
-cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;
-echo ""
+if [[ -d "/home/pi/Apps" ]]; then
+	echo "$ cd ~/Apps"
+	cd ~/Apps
+	echo ""
+	echo "$ sudo rm -rv *_old.sh"
+	sudo rm -rv *_old.sh
+	echo ""
+	if [[ -d "/home/pi/Apps/log" ]]; then
+		echo "$ cd ~/Apps/log"
+		cd ~/Apps/log
+		echo ""
+		echo "$ find test*.log -exec rm -rv {} \;"
+		find test*.log -exec rm -rv {} \;
+		echo ""
+		echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
+		find *.log -mtime +31 -exec rm -rv {} \;
+		echo ""
+	fi
+fi
 if [[ -d "/home/pi/.local/share/Trash/" ]]; then
-echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
-sudo rm -rfv ~/.local/share/Trash/files/*
-echo ""
-echo "$ sudo rm -rfv ~/.local/share/Trash/expunged/*"
-sudo rm -rfv ~/.local/share/Trash/expunged/*
-echo ""
-echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
-sudo rm -rfv ~/.local/share/Trash/info/*
-echo ""
+	echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
+	sudo rm -rfv ~/.local/share/Trash/files/*
+	echo ""
+	echo "$ sudo rm -rfv ~/.local/share/Trash/expunged/*"
+	sudo rm -rfv ~/.local/share/Trash/expunged/*
+	echo ""
+	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
+	sudo rm -rfv ~/.local/share/Trash/info/*
+	echo ""
 fi

@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.0.0b1                    #"
+echo "#                     Pi-Hole Host Project Updater 8.0.0b2                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -129,24 +129,6 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Création des dossiers"
-echo "==============================================================================="
-echo ""
-echo "$ cd"
-cd
-echo ""
-echo "$ mkdir Apps"
-mkdir Apps
-echo ""
-echo "cd ~/Apps"
-cd ~/Apps
-echo ""
-echo "$ mkdir log"
-mkdir log
-echo ""
-echo ""
-echo ""
-echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
 echo ""
@@ -262,6 +244,20 @@ echo ""
 echo ""
 if [[ -d "/etc/pihole" ]]; then
 	echo "==============================================================================="
+	echo "   • Création des dossiers"
+	echo "==============================================================================="
+	echo ""
+	cd
+	echo "$ mkdir Apps"
+	mkdir Apps
+	echo ""
+	cd ~/Apps
+	echo "$ mkdir log"
+	mkdir log
+	echo ""
+	echo ""
+	echo ""
+	echo "==============================================================================="
 	echo "   • Installation de autoupdate.sh"
 	echo "==============================================================================="
 	echo ""
@@ -282,7 +278,7 @@ if [[ -d "/etc/pihole" ]]; then
 	echo ""
 	if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-		30 3 * * * /home/pi/Apps/backup.sh"
+30 3 * * * /home/pi/Apps/backup.sh"
 	else
 		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
 	fi
@@ -310,28 +306,35 @@ echo ""
 echo "$ sudo apt-get clean all"
 sudo apt-get clean all
 echo ""
-echo "$ cd ~/Apps"
-cd ~/Apps
-echo ""
-echo "$ sudo rm -rv *_old.sh"
-sudo rm -rv *_old.sh
-echo ""
-echo "$ cd ~/Apps/log && find test*.log -exec rm -rv {} \;"
-cd ~/Apps/log && find test*.log -exec rm -rv {} \;
-echo ""
-echo "$ cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;"
-cd ~/Apps/log && find *.log -mtime +31 -exec rm -rv {} \;
-echo ""
+if [[ -d "/home/pi/Apps" ]]; then
+	echo "$ cd ~/Apps"
+	cd ~/Apps
+	echo ""
+	echo "$ sudo rm -rv *_old.sh"
+	sudo rm -rv *_old.sh
+	echo ""
+	if [[ -d "/home/pi/Apps/log" ]]; then
+		echo "$ cd ~/Apps/log"
+		cd ~/Apps/log
+		echo ""
+		echo "$ find test*.log -exec rm -rv {} \;"
+		find test*.log -exec rm -rv {} \;
+		echo ""
+		echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
+		find *.log -mtime +31 -exec rm -rv {} \;
+		echo ""
+	fi
+fi
 if [[ -d "/home/pi/.local/share/Trash/" ]]; then
-echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
-sudo rm -rfv ~/.local/share/Trash/files/*
-echo ""
-echo "$ sudo rm -rfv ~/.local/share/Trash/expunged/*"
-sudo rm -rfv ~/.local/share/Trash/expunged/*
-echo ""
-echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
-sudo rm -rfv ~/.local/share/Trash/info/*
-echo ""
+	echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
+	sudo rm -rfv ~/.local/share/Trash/files/*
+	echo ""
+	echo "$ sudo rm -rfv ~/.local/share/Trash/expunged/*"
+	sudo rm -rfv ~/.local/share/Trash/expunged/*
+	echo ""
+	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
+	sudo rm -rfv ~/.local/share/Trash/info/*
+	echo ""
 fi
 echo "Après nettoyage :"
 sudo du -h /var/cache/apt/
