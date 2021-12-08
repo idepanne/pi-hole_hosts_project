@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.0.0                     #"
+echo "#                      Pi-Hole Host Project Updater 8.0.1                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -92,6 +92,8 @@ echo "Synchronisation de l'horloge :"
 sudo systemctl daemon-reload
 timedatectl timesync-status && timedatectl
 echo ""
+echo "Schéma du Raspberry Pi :"
+pinout
 echo "==============================================================================="
 cd
 sudo rm infosys.sh
