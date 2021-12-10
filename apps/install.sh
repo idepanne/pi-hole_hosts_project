@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.0.1                     #"
+echo "#                     Pi-Hole Host Project Updater 8.0.2b1                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -327,13 +327,48 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 fi
 echo "Après nettoyage :"
 sudo du -h /var/cache/apt/
+#echo ""
+#echo ""
+#echo ""
+#echo "###############################################################################"
+#echo "#                                                                             #"
+#echo "#                         Redémarrage du Raspberry Pi                         #"
+#echo "#                                                                             #"
+#echo "###############################################################################"
+#sleep 1
+#sudo reboot
+
 echo ""
 echo ""
 echo ""
-echo "###############################################################################"
-echo "#                                                                             #"
-echo "#                         Redémarrage du Raspberry Pi                         #"
-echo "#                                                                             #"
-echo "###############################################################################"
-sleep 1
-sudo reboot
+echo "==============================================================================="
+echo "   • Validation des mises à jour"
+echo "==============================================================================="
+echo ""
+var=$(sudo checkrestart)
+if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
+	echo "$var"
+	echo ""
+	echo ""
+	echo ""
+	echo "###############################################################################"
+	echo "#                                                                             #"
+	echo "#                Aucun redémarrage du Raspberry Pi nécessaire                 #"
+	echo "#                                                                             #"
+	echo "###############################################################################"
+	echo ""
+	sleep 1
+else
+	echo "$var"
+	echo ""
+	echo ""
+	echo ""
+	echo "###############################################################################"
+	echo "#                                                                             #"
+	echo "#                         Redémarrage du Raspberry Pi                         #"
+	echo "#                                                                             #"
+	echo "###############################################################################"
+	echo ""
+	sleep 1
+	sudo reboot
+fi
