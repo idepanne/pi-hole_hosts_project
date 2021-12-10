@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.0.2b1                    #"
+echo "#                     Pi-Hole Host Project Updater 8.0.2b2                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -141,7 +141,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Nettoyage"
+echo "   • Préparation de la mise à jour"
 echo "==============================================================================="
 echo ""
 echo "$ cd"
@@ -182,7 +182,7 @@ fi
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Installation des logiciels prérequis pour Raspberry Pi OS (CLI)"
+echo "   • Installation des logiciels pour Raspberry Pi OS (CLI)"
 echo "==============================================================================="
 echo ""
 echo "$ sudo apt-get install -yf ca-certificates git binutils"
@@ -204,7 +204,7 @@ if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-me
 	echo ""
 	echo ""
 	echo "==============================================================================="
-	echo "   • Installation des logiciels prérequis pour Raspberry Pi OS (GUI)"
+	echo "   • Installation des logiciels pour Raspberry Pi OS (GUI)"
 	echo "==============================================================================="
 	echo ""
 	echo "$ sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver"
@@ -224,6 +224,9 @@ if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-me
 	echo ""
 	echo "$ sudo apt-get install -yf baobab"
 	sudo apt-get install -yf baobab
+	echo ""
+	echo "$ sudo apt-get install hplip cups system-config-printer simple-scan"
+	sudo apt-get install hplip cups system-config-printer simple-scan
 	echo ""
 	echo "$ sudo apt-get install -yf rpi-imager"
 	sudo apt-get install -yf rpi-imager
@@ -285,6 +288,9 @@ echo "==========================================================================
 echo ""
 echo "Avant nettoyage :"
 sudo du -h /var/cache/apt/
+if [[ -d "/home/pi/.local/share/Trash/" ]]; then
+	sudo du -h /home/pi/.local/share/Trash/
+fi
 echo ""
 echo "$ sudo apt-get autoremove -y"
 sudo apt-get autoremove -y
@@ -327,17 +333,9 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 fi
 echo "Après nettoyage :"
 sudo du -h /var/cache/apt/
-#echo ""
-#echo ""
-#echo ""
-#echo "###############################################################################"
-#echo "#                                                                             #"
-#echo "#                         Redémarrage du Raspberry Pi                         #"
-#echo "#                                                                             #"
-#echo "###############################################################################"
-#sleep 1
-#sudo reboot
-
+if [[ -d "/home/pi/.local/share/Trash/" ]]; then
+	sudo du -h /home/pi/.local/share/Trash/
+fi
 echo ""
 echo ""
 echo ""
