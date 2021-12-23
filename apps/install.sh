@@ -200,9 +200,8 @@ echo ""
 echo "$ sudo apt-get install -yf curl"
 sudo apt-get install -yf curl
 echo ""
-echo "curl https://rclone.org/install.sh | sudo bash"
+echo "$ curl https://rclone.org/install.sh | sudo bash"
 curl https://rclone.org/install.sh | sudo bash
-echo ""
 rclone version
 echo ""
 if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
