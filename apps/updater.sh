@@ -1,9 +1,21 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.0.2
+# Pi-Hole Host Project Updater 8.0.3
 # updater.sh
 # © 2020-2021 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 # idepanne67@gmail.com
+echo ""
+echo ""
+echo ""
+echo "==============================================================================="
+echo "   • Mises à jour de Raspberry Pi OS"
+echo "==============================================================================="
+echo ""
+echo "$ sudo apt-get update"
+sudo apt-get update
+echo ""
+echo "$ sudo apt-get upgrade -y"
+sudo apt-get upgrade -y
 echo ""
 echo ""
 echo ""

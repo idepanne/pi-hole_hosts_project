@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.0.2                     #"
+echo "#                      Pi-Hole Host Project Updater 8.0.3                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -197,8 +197,13 @@ echo ""
 echo "$ sudo apt-get install -yf iftop"
 sudo apt-get install -yf iftop
 echo ""
-echo "$ sudo apt-get install -yf rclone"
-sudo apt-get install -yf rclone
+echo "$ sudo apt-get install -yf curl"
+sudo apt-get install -yf curl
+echo ""
+echo "curl https://rclone.org/install.sh | sudo bash"
+curl https://rclone.org/install.sh | sudo bash
+echo ""
+rclone version
 echo ""
 if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
 	echo ""
