@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.0.3                     #"
+echo "#                      Pi-Hole Host Project Updater 8.0.4                     #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -231,6 +231,14 @@ if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-me
 	echo ""
 	echo "$ sudo apt-get install hplip cups system-config-printer simple-scan"
 	sudo apt-get install hplip cups system-config-printer simple-scan
+	echo ""
+	echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
+	wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+	echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
+	sudo apt-get update
+	sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev
+	sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
+	sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so	
 	echo ""
 	echo "$ sudo apt-get install -yf rpi-imager"
 	sudo apt-get install -yf rpi-imager
