@@ -14,8 +14,8 @@ echo ""
 echo ""
 sudo apt update && sudo apt install -y neofetch*
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/neofetch/config.conf > config.conf
-rm -rv ~/.config/neofetch/config.conf
-mv config.conf ~/.config/neofetch/config.conf
+sudo rm ~/.config/neofetch/config.conf
+sudo mv config.conf ~/.config/neofetch/config.conf
 
 var0=$(hostnamectl | grep "Operating System")
 
@@ -50,7 +50,7 @@ var19=$(uptime -p)
 var20=$(ls /usr/bin/*session)
 ######################################
 
-
+echo ""
 echo "==============================================================================="
 echo "   • A propos de ce Raspberry Pi"
 echo "==============================================================================="
