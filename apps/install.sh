@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.1.0b1                    #"
+echo "#                     Pi-Hole Host Project Updater 8.1.0b2                    #"
 echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -13,8 +13,6 @@ echo ""
 echo ""
 echo ""
 cd && wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
-echo ""
-echo ""
 echo ""
 echo "==============================================================================="
 echo "   • Vérification des connexions SSH actives"
