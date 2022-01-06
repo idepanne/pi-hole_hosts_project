@@ -14,6 +14,7 @@ echo ""
 echo ""
 sudo apt update && sudo apt install -y neofetch*
 wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/neofetch/config.conf > config.conf
+rm -rv ~/.config/neofetch/config.conf
 mv config.conf ~/.config/neofetch/config.conf
 
 var0=$(hostnamectl | grep "Operating System")
