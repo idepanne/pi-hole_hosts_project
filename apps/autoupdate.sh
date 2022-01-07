@@ -11,7 +11,7 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
-cd && wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
+cd && wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys2.sh > infosys2.sh && sudo chmod +x infosys2.sh && ./infosys2.sh
 echo ""
 cd ~/Apps
 echo "==============================================================================="

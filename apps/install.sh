@@ -73,6 +73,9 @@ echo ""
 echo "$ sudo rm -rv infosys.sh"
 sudo rm -rv infosys.sh
 echo ""
+echo "$ sudo rm -rv infosys2.sh"
+sudo rm -rv infosys2.sh
+echo ""
 echo "$ sudo rm -rv test.sh"
 sudo rm -rv test.sh
 echo ""
@@ -85,6 +88,9 @@ if [[ -d "/home/pi/Apps" ]]; then
 	echo ""
 	echo "$ sudo rm -rv infosys.sh"
 	sudo rm -rv infosys.sh
+    echo ""
+    echo "$ sudo rm -rv infosys2.sh"
+    sudo rm -rv infosys2.sh
 	echo ""
 	echo "$ sudo rm -rv test.sh"
 	sudo rm -rv test.sh
