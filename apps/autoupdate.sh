@@ -1,5 +1,5 @@
 #!/bin/bash
-cd Apps
+cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
 echo "#                      Pi-Hole Host Project Updater 8.1.0                     #"
@@ -11,7 +11,7 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
-cd && wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys2.sh > infosys2.sh && sudo chmod +x infosys2.sh && ./infosys2.sh
+wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys2.sh > infosys2.sh && sudo chmod +x infosys2.sh && ./infosys2.sh
 echo ""
 echo ""
 echo ""

@@ -12,7 +12,7 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
-cd && wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
+wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
 echo ""
 echo "==============================================================================="
 echo "   • Vérification des connexions SSH actives"
@@ -81,7 +81,7 @@ sudo rm -rv test.sh
 echo ""
 if [[ -d "/home/pi/Apps" ]]; then
 	echo "$ cd Apps"
-	cd Apps
+	cd ~/Apps
 	echo ""
 	echo "$ sudo rm -rv install.sh"
 	sudo rm -rv install.sh
