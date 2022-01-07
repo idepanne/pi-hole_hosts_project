@@ -14,6 +14,7 @@ echo ""
 echo ""
 wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
 echo ""
+echo ""
 echo "==============================================================================="
 echo "   • Vérification des connexions SSH actives"
 echo "==============================================================================="
