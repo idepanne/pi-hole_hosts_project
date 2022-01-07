@@ -1,7 +1,7 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.0.4
+# Pi-Hole Host Project Updater 8.1.0
 # updater.sh
-# © 2020-2021 iDépanne – L'expert informatique
+# © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 # idepanne67@gmail.com
 echo ""

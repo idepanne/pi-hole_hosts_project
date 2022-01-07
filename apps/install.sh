@@ -3,8 +3,8 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.1.0b3                    #"
-echo "#                 © 2020-2021 iDépanne – L'expert informatique                #"
+echo "#                      Pi-Hole Host Project Updater 8.1.0                     #"
+echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
 echo "#                                                                             #"
