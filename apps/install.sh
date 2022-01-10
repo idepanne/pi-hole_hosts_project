@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.1.0                     #"
+echo "#                      Pi-Hole Host Project Updater 8.1.1                     #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -131,7 +131,8 @@ echo "$ curl https://rclone.org/install.sh | sudo bash"
 curl https://rclone.org/install.sh | sudo bash
 rclone version
 echo ""
-if [[ $var20 == *"lxsession"* || $var1 == *"openbox"*  || $var1 == *"pipewire-media"* ]]; then
+var20=$(ls /usr/bin/*session)
+if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
 	echo ""
 	echo ""
 	echo "==============================================================================="
@@ -231,8 +232,8 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	sudo du -h /home/pi/.local/share/Trash/
 fi
 echo ""
-echo "$ sudo apt-get autoremove -y"
-sudo apt-get autoremove -y
+echo "$ sudo apt-get autoremove --purge -y"
+sudo apt-get autoremove --purge -y
 echo ""
 echo "$ sudo apt-get autoclean -y"
 sudo apt-get autoclean -y
@@ -282,9 +283,9 @@ echo "==========================================================================
 echo "   • Validation des mises à jour"
 echo "==============================================================================="
 echo ""
-var=$(sudo checkrestart)
-if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
-	echo "$var"
+var21=$(sudo checkrestart)
+if [ "$var21" = "Found 0 processes using old versions of upgraded files" ]; then
+	echo "$var21"
 	echo ""
 	echo ""
 	echo ""
@@ -296,7 +297,7 @@ if [ "$var" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	sleep 1
 else
-	echo "$var"
+	echo "$var21"
 	echo ""
 	echo ""
 	echo ""
