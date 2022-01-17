@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.1.1                     #"
+echo "#                      Pi-Hole Host Project Updater 8.1.2                     #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -53,8 +53,8 @@ echo "==========================================================================
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
 echo ""
-echo "$ sudo apt-get update --fix-missing"
-sudo apt-get update --fix-missing
+echo "$ sudo apt-get update --fix-missing -y"
+sudo apt-get update --fix-missing -y
 echo ""
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
@@ -112,20 +112,20 @@ echo "==========================================================================
 echo "   • Installation des logiciels pour Raspberry Pi OS (CLI)"
 echo "==============================================================================="
 echo ""
-echo "$ sudo apt-get install -yf ca-certificates git binutils"
-sudo apt-get install -yf ca-certificates git binutils
+echo "$ sudo apt-get install -y ca-certificates git binutils"
+sudo apt-get install -y ca-certificates git binutils
 echo ""
-echo "$ sudo apt-get install -yf dnsutils"
-sudo apt-get install -yf dnsutils
+echo "$ sudo apt-get install -y dnsutils"
+sudo apt-get install -y dnsutils
 echo ""
-echo "$ sudo apt-get install -yf debian-goodies"
-sudo apt-get install -yf debian-goodies
+echo "$ sudo apt-get install -y debian-goodies"
+sudo apt-get install -y debian-goodies
 echo ""
-echo "$ sudo apt-get install -yf iftop"
-sudo apt-get install -yf iftop
+echo "$ sudo apt-get install -y iftop"
+sudo apt-get install -y iftop
 echo ""
-echo "$ sudo apt-get install -yf curl"
-sudo apt-get install -yf curl
+echo "$ sudo apt-get install -y curl"
+sudo apt-get install -y curl
 echo ""
 echo "$ curl https://rclone.org/install.sh | sudo bash"
 curl https://rclone.org/install.sh | sudo bash
@@ -139,26 +139,26 @@ if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-
 	echo "   • Installation des logiciels pour Raspberry Pi OS (GUI)"
 	echo "==============================================================================="
 	echo ""
-	echo "$ sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver"
-	sudo apt-get install -yf libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver
+	echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver"
+	sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver
 	echo ""
-	echo "$ sudo apt-get install -yf chromium-browser chromium-browser-l10n"
-	sudo apt-get install -yf chromium-browser chromium-browser-l10n
+	echo "$ sudo apt-get install -y chromium-browser chromium-browser-l10n"
+	sudo apt-get install -y chromium-browser chromium-browser-l10n
 	echo ""
-	echo "$ sudo apt-get install -yf filezilla"
-	sudo apt-get install -yf filezilla
+	echo "$ sudo apt-get install -y filezilla"
+	sudo apt-get install -y filezilla
 	echo ""
-	echo "$ sudo apt-get install -yf gparted"
-	sudo apt-get install -yf gparted
+	echo "$ sudo apt-get install -y gparted"
+	sudo apt-get install -y gparted
 	echo ""
-	echo "$ sudo apt-get install -yf hardinfo"
-	sudo apt-get install -yf hardinfo
+	echo "$ sudo apt-get install -y hardinfo"
+	sudo apt-get install -y hardinfo
 	echo ""
-	echo "$ sudo apt-get install -yf baobab"
-	sudo apt-get install -yf baobab
+	echo "$ sudo apt-get install -y baobab"
+	sudo apt-get install -y baobab
 	echo ""
-	echo "$ sudo apt-get install hplip cups system-config-printer simple-scan"
-	sudo apt-get install hplip cups system-config-printer simple-scan
+	echo "$ sudo apt-get install -y hplip cups system-config-printer simple-scan"
+	sudo apt-get install -y hplip cups system-config-printer simple-scan
 	echo ""
 	echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
 	wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
@@ -168,8 +168,8 @@ if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-
 	sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
 	sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so	
 	echo ""
-	echo "$ sudo apt-get install -yf rpi-imager"
-	sudo apt-get install -yf rpi-imager
+	echo "$ sudo apt-get install -y rpi-imager"
+	sudo apt-get install -y rpi-imager
 	echo ""
 fi
 echo ""
@@ -232,8 +232,11 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	sudo du -h /home/pi/.local/share/Trash/
 fi
 echo ""
-echo "$ sudo apt-get autoremove --purge -y"
-sudo apt-get autoremove --purge -y
+echo "$ sudo apt-get autopurge -y"
+sudo apt-get autopurge -y
+echo ""
+echo "$ sudo apt-get autoremove -y"
+sudo apt-get autoremove -y
 echo ""
 echo "$ sudo apt-get autoclean -y"
 sudo apt-get autoclean -y
