@@ -2,7 +2,8 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.1.3                     #"
+echo "#                     Pi-Hole Host Project Updater 8.1.3b2                    #"
+echo "#                                autoupdate.sh                                #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -11,28 +12,28 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
-wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys2.sh > infosys2.sh && sudo chmod +x infosys2.sh && ./infosys2.sh
-echo ""
-echo ""
-echo ""
-echo "==============================================================================="
-echo "   • Vérification des connexions SSH actives"
-echo "==============================================================================="
-echo ""
-netstat -tn 2>/dev/null | grep :22 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
-echo ""
-echo ""
-echo ""
 echo "==============================================================================="
 echo "   • Test de la connexion Internet"
 echo "==============================================================================="
 echo ""
-var21=$(ping -c 3 1.1.1.1)
-echo "$var21"
+var0=$(ping -c 3 1.1.1.1)
+echo "$var0"
 echo ""
 echo ""
-if [[ "$var21" =~ "0% packet loss" ]]; then
+if [[ "$var0" =~ "0% packet loss" ]]; then
 	echo "Connexion Internet : OK"
+	echo ""
+	echo ""
+	echo ""
+    wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys-rpi.sh > infosys-rpi.sh && sudo chmod +x infosys-rpi.sh && ./infosys-rpi.sh
+    echo ""
+    echo ""
+    echo ""
+    echo "==============================================================================="
+    echo "   • Vérification des connexions SSH actives"
+    echo "==============================================================================="
+    echo ""
+    netstat -t
 	echo ""
 	echo ""
 	echo ""
