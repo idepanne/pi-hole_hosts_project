@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.1.3b3                    #"
+echo "#                     Pi-Hole Host Project Updater 8.1.3b4                    #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -13,6 +13,9 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
+var0=$(hostnamectl | grep "Operating System")
+if [[ $var0 == *"Raspbian"* ]]; then
+
 wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
 echo ""
 echo ""
@@ -317,4 +320,7 @@ else
 	echo ""
 	sleep 1
 	sudo reboot
+fi
+else
+echo "Ce programme d'installation n'est compatible qu'avec les Raspberry Pi. Il ne peut pas être utilisé sur une autre distribution Linux."
 fi
