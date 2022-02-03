@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.1.3b6                    #"
+echo "#                      Pi-Hole Host Project Updater 8.1.3                     #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -324,6 +324,7 @@ fi
 else
 echo "Ce programme d'installation n'est compatible qu'avec les Raspberry Pi."
 echo "Il ne peut pas être utilisé sur une autre distribution Linux."
+echo ""
 echo ""
 cd
 sudo rm install.sh
