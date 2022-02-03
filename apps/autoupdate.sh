@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.1.3b4                    #"
+echo "#                     Pi-Hole Host Project Updater 8.1.3b5                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -12,6 +12,9 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
+var0=$(hostnamectl | grep "Operating System")
+if [[ $var0 == *"Raspbian"* ]]; then
+
 echo "==============================================================================="
 echo "   • Test de la connexion Internet"
 echo "==============================================================================="
@@ -88,3 +91,10 @@ echo "#                                                                         
 echo "###############################################################################"
 echo ""
 sleep 1
+else
+echo "Ce programme d'installation n'est compatible qu'avec les Raspberry Pi."
+echo "Il ne peut pas être utilisé sur une autre distribution Linux."
+cd
+sudo rm autoupdate.sh
+sudo rm updater.sh
+fi
