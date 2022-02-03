@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.1.2                     #"
+echo "#                      Pi-Hole Host Project Updater 8.1.3                     #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
 echo "#                            idepanne67@gmail.com                             #"
@@ -52,9 +52,6 @@ echo ""
 echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
-echo ""
-echo "$ sudo apt-get update --fix-missing -y"
-sudo apt-get update --fix-missing -y
 echo ""
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
@@ -243,6 +240,9 @@ sudo apt-get autoclean -y
 echo ""
 echo "$ sudo apt-get clean all"
 sudo apt-get clean all
+echo ""
+echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
+sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
 echo ""
 if [[ -d "/home/pi/Apps" ]]; then
 	echo "$ cd ~/Apps"
