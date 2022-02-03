@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.1.3b2                    #"
+echo "#                     Pi-Hole Host Project Updater 8.1.3b3                    #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -18,10 +18,10 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Vérification des connexions SSH actives"
+echo "   • Vérification des connexions actives"
 echo "==============================================================================="
 echo ""
-netstat -t
+netstat -t | grep 'ESTABLISHED'
 echo ""
 echo ""
 echo ""
