@@ -4,7 +4,8 @@
 # https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/hosts/ads
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 03/02/2022 - 21h00
+# Last update : 07/02/2022 - 01h00
+
 
 # 1
 0.0.0.0 1001tracklists.com
