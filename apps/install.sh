@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.1.4                     #"
+echo "#                     Pi-Hole Host Project Updater 8.1.5b1                    #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -91,9 +91,9 @@ if [[ -d "/home/pi/Apps" ]]; then
 	echo ""
 	echo "$ sudo rm -rv infosys.sh"
 	sudo rm -rv infosys.sh
-    echo ""
-    echo "$ sudo rm -rv infosys2.sh"
-    sudo rm -rv infosys2.sh
+	echo ""
+	echo "$ sudo rm -rv infosys2.sh"
+	sudo rm -rv infosys2.sh
 	echo ""
 	echo "$ sudo rm -rv test.sh"
 	sudo rm -rv test.sh
@@ -294,9 +294,9 @@ echo "==========================================================================
 echo "   • Validation des mises à jour"
 echo "==============================================================================="
 echo ""
-var21=$(sudo checkrestart)
-if [ "$var21" = "Found 0 processes using old versions of upgraded files" ]; then
-	echo "$var21"
+var100=$(sudo checkrestart)
+if [ "$var100" = "Found 0 processes using old versions of upgraded files" ]; then
+	echo "$var100"
 	echo ""
 	echo ""
 	echo ""
@@ -308,7 +308,7 @@ if [ "$var21" = "Found 0 processes using old versions of upgraded files" ]; then
 	echo ""
 	sleep 1
 else
-	echo "$var21"
+	echo "$var100"
 	echo ""
 	echo ""
 	echo ""

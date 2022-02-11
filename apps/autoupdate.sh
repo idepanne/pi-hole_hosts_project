@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.1.4                     #"
+echo "#                     Pi-Hole Host Project Updater 8.1.5b1                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -28,15 +28,15 @@ if [[ "$var0" =~ "0% packet loss" ]]; then
 	echo ""
 	echo ""
 	echo ""
-    wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys-rpi.sh > infosys-rpi.sh && sudo chmod +x infosys-rpi.sh && ./infosys-rpi.sh
-    echo ""
-    echo ""
-    echo ""
-    echo "==============================================================================="
-    echo "   • Vérification des connexions actives"
-    echo "==============================================================================="
-    echo ""
-    netstat -t | grep 'ESTABLISHED'
+	wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys-rpi.sh > infosys-rpi.sh && sudo chmod +x infosys-rpi.sh && ./infosys-rpi.sh
+	echo ""
+	echo ""
+	echo ""
+	echo "==============================================================================="
+	echo "   • Vérification des connexions actives"
+	echo "==============================================================================="
+	echo ""
+	netstat -t | grep 'ESTABLISHED'
 	echo ""
 	echo ""
 	echo ""
