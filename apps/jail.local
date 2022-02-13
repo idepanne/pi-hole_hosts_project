@@ -89,7 +89,7 @@ before = paths-debian.conf
 # "ignoreip" can be a list of IP addresses, CIDR masks or DNS hosts. Fail2ban
 # will not ban a host which matches an address in this list. Several addresses
 # can be defined using space (and/or comma) separator.
-#ignoreip = 127.0.0.1/8 ::1
+ignoreip = 127.0.0.1/8 ::1
 
 # External command that will take an tagged arguments to ignore, e.g. <ip>,
 # and return true if the IP is to be ignored. False otherwise.
@@ -279,7 +279,8 @@ action = %(action_)s
 #mode   = normal
 enabled   = true
 filter    = sshd
-port      = ssh
+# port      = ssh
+port      = 65432
 banaction = iptables-multiport
 bantime   = 86400
 findtime  = 86400
@@ -290,14 +291,16 @@ backend   = %(sshd_backend)s
 
 [dropbear]
 
-port     = ssh
+# port      = ssh
+port      = 65432
 logpath  = %(dropbear_log)s
 backend  = %(dropbear_backend)s
 
 
 [selinux-ssh]
 
-port     = ssh
+# port      = ssh
+port      = 65432
 logpath  = %(auditd_log)s
 
 
