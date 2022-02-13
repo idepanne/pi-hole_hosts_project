@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.2.0b3                    #"
+echo "#                     Pi-Hole Host Project Updater 8.2.0b4                    #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -123,9 +123,9 @@ rclone version
 echo ""
 echo "$ sudo apt-get install -y fail2ban"
 sudo apt-get install -y fail2ban
-sudo mv /etc/fail2ban/jail.conf /etc/fail2ban/jail.conf.bak
-wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.conf
-sudo mv jail.conf /etc/fail2ban/jail.conf
+sudo mv /etc/fail2ban/jail.local /etc/fail2ban/jail.local.bak
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.local > jail.local
+sudo mv jail.local /etc/fail2ban/jail.local
 sudo systemctl enable fail2ban
 sudo service fail2ban restart
 sudo systemctl --no-pager status fail2ban
