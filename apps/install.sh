@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.1.5                     #"
+echo "#                     Pi-Hole Host Project Updater 8.2.0b1                    #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -114,24 +114,20 @@ echo "==========================================================================
 echo "   • Installation des logiciels pour Raspberry Pi OS (CLI)"
 echo "==============================================================================="
 echo ""
-echo "$ sudo apt-get install -y ca-certificates git binutils"
-sudo apt-get install -y ca-certificates git binutils
-echo ""
-echo "$ sudo apt-get install -y dnsutils"
-sudo apt-get install -y dnsutils
-echo ""
-echo "$ sudo apt-get install -y debian-goodies"
-sudo apt-get install -y debian-goodies
-echo ""
-echo "$ sudo apt-get install -y iftop"
-sudo apt-get install -y iftop
-echo ""
-echo "$ sudo apt-get install -y curl"
-sudo apt-get install -y curl
+echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop curl"
+sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop curl
 echo ""
 echo "$ curl https://rclone.org/install.sh | sudo bash"
 curl https://rclone.org/install.sh | sudo bash
 rclone version
+echo ""
+echo "$ sudo apt-get install -y fail2ban"
+sudo apt-get install -y fail2ban
+sudo mv /etc/fail2ban/jail.local /etc/fail2ban/jail.local.bak
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/jail.local > jail.local
+sudo mv jail.local /etc/fail2ban/jail.local
+sudo service fail2ban restart
+sudo systemctl --no-pager status fail2ban
 echo ""
 var20=$(ls /usr/bin/*session)
 if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
@@ -141,29 +137,8 @@ if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-
 	echo "   • Installation des logiciels pour Raspberry Pi OS (GUI)"
 	echo "==============================================================================="
 	echo ""
-	echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver"
-	sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver
-	echo ""
-	echo "$ sudo apt-get install -y chromium-browser chromium-browser-l10n"
-	sudo apt-get install -y chromium-browser chromium-browser-l10n
-	echo ""
-	echo "$ sudo apt-get install -y filezilla"
-	sudo apt-get install -y filezilla
-	echo ""
-	echo "$ sudo apt-get install -y gparted"
-	sudo apt-get install -y gparted
-	echo ""
-	echo "$ sudo apt-get install -y hardinfo"
-	sudo apt-get install -y hardinfo
-	echo ""
-	echo "$ sudo apt-get install -y baobab"
-	sudo apt-get install -y baobab
-	echo ""
-	echo "$ sudo apt-get install -y stacer"
-	sudo apt-get install -y stacer
-	echo ""
-	echo "$ sudo apt-get install -y hplip cups system-config-printer simple-scan"
-	sudo apt-get install -y hplip cups system-config-printer simple-scan
+	echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab stacer hplip cups system-config-printer simple-scan rpi-imager"
+	sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab stacer hplip cups system-config-printer simple-scan rpi-imager
 	echo ""
 	echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
 	wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
@@ -172,9 +147,6 @@ if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-
 	sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev
 	sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
 	sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so	
-	echo ""
-	echo "$ sudo apt-get install -y rpi-imager"
-	sudo apt-get install -y rpi-imager
 	echo ""
 fi
 echo ""
@@ -251,6 +223,8 @@ sudo apt-get clean all
 echo ""
 echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
 sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
+# echo ""
+# sudo rm -rv /etc/fail2ban/jail.local.bak
 echo ""
 if [[ -d "/home/pi/Apps" ]]; then
 	echo "$ cd ~/Apps"
