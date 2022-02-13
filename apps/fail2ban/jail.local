@@ -98,11 +98,11 @@ ignoreip = 127.0.0.1/8 ::1
 ignorecommand =
 
 # "bantime" is the number of seconds that a host is banned.
-bantime  = 3600
+bantime  = 10m
 
 # A host is banned if it has generated "maxretry" during the last "findtime"
 # seconds.
-findtime  = 3600
+findtime  = 10m
 
 # "maxretry" is the number of failures before a host get banned.
 maxretry = 5
@@ -277,30 +277,24 @@ action = %(action_)s
 # normal (default), ddos, extra or aggressive (combines all).
 # See "tests/files/logs/sshd" or "filter.d/sshd.conf" for usage example and details.
 #mode   = normal
-enabled   = true
-filter    = sshd
-# port      = ssh
-port      = 65432
-banaction = iptables-multiport
-bantime   = 86400
-findtime  = 86400
-maxretry  = 5
-logpath   = %(sshd_log)s
-backend   = %(sshd_backend)s
+#port    = ssh
+port    = 65432
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
 
 
 [dropbear]
 
-# port      = ssh
-port      = 65432
+#port    = ssh
+port    = 65432
 logpath  = %(dropbear_log)s
 backend  = %(dropbear_backend)s
 
 
 [selinux-ssh]
 
-# port      = ssh
-port      = 65432
+#port    = ssh
+port    = 65432
 logpath  = %(auditd_log)s
 
 
@@ -317,8 +311,6 @@ logpath  = %(apache_error_log)s
 [apache-badbots]
 # Ban hosts which agent identifies spammer robots crawling the web
 # for email addresses. The mail outputs are buffered.
-enable   = true
-filter   = apache-badbots
 port     = http,https
 logpath  = %(apache_access_log)s
 bantime  = 48h
@@ -989,4 +981,3 @@ banaction = %(banaction_allports)s
 [monitorix]
 port	= 8080
 logpath = /var/log/monitorix-httpd
-
