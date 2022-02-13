@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.2.0b4                    #"
+echo "#                     Pi-Hole Host Project Updater 8.2.0b5                    #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -225,7 +225,6 @@ echo ""
 echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
 sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
 echo ""
-sudo rm -rv /etc/fail2ban/jail.local
 sudo rm -rv /etc/fail2ban/jail.local.bak
 echo ""
 if [[ -d "/home/pi/Apps" ]]; then

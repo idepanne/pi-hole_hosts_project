@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.0b1
+# Pi-Hole Host Project Updater 8.2.0b5
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -93,8 +93,8 @@ fi
 echo "==============================================================================="
 echo "   • Nettoyage"
 echo "==============================================================================="
-# echo ""
-# sudo rm -rv /etc/fail2ban/jail.local.bak
+echo ""
+sudo rm -rv /etc/fail2ban/jail.local.bak
 echo ""
 if [[ -d "/home/pi/Apps" ]]; then
 	echo "$ cd ~/Apps"
