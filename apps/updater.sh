@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.0b6
+# Pi-Hole Host Project Updater 8.2.0b7
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -31,20 +31,6 @@ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/maste
 echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
-echo ""
-echo ""
-echo ""
-if [[ -d "/etc/fail2ban" ]]; then
-	echo "-> Fail2ban :                [INSTALLÉ]"
-	echo ""
-    sudo mv /etc/fail2ban/jail.local /etc/fail2ban/jail.local.bak
-    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.local > jail.local
-    sudo mv jail.local /etc/fail2ban/jail.local
-    sudo service fail2ban restart
-    sudo systemctl --no-pager status fail2ban
-else
-	echo "-> Fail2ban :                [NON INSTALLÉ]"
-fi
 echo ""
 echo ""
 echo ""
@@ -93,8 +79,6 @@ fi
 echo "==============================================================================="
 echo "   • Nettoyage"
 echo "==============================================================================="
-echo ""
-sudo rm -rv /etc/fail2ban/jail.local.bak
 echo ""
 if [[ -d "/home/pi/Apps" ]]; then
 	echo "$ cd ~/Apps"
