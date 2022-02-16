@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.2.1b4                    #"
+echo "#                     Pi-Hole Host Project Updater 8.2.1b5                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -22,7 +22,42 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
     echo "$var0"
     echo ""
     echo ""
-    if [[ "$var0" =~ "0% packet loss" ]]; then
+    if [[ "$var0" = "0 received" ]]; then
+    	echo "Connexion Internet : Echec"
+    	echo ""
+    	echo ""
+    	echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
+    	echo ""
+        var20=$(ls /usr/bin/*session)
+        if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
+            sleep
+        else
+        	if [[ -d "/home/pi/Apps" ]]; then
+        		echo ""
+    	    	echo ""
+    		    echo "==============================================================================="
+    		    echo "   • Mise à jour du crontab"
+    		    echo "==============================================================================="
+    		    echo ""
+    		    echo "Ancien crontab :"
+    		    crontab -l
+    		    echo ""
+    		    if [[ -f "/home/pi/Apps/backup.sh" ]]; then
+    		    	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * /home/pi/Apps/backup.sh
+0 4 * * 0 sudo reboot >/dev/null 2>&1"
+    		    else
+    		    	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+0 4 * * 0 sudo reboot >/dev/null 2>&1"
+    		    fi
+    		    sudo /etc/init.d/cron restart
+    		    echo ""
+    		    echo "Nouveau crontab :"
+    		    crontab -l
+    		    echo ""
+    	    fi
+        fi
+    else
     	echo "Connexion Internet : OK"
     	echo ""
     	echo ""
@@ -52,41 +87,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
     	echo "$ sudo chmod +x updater.sh"
     	sudo chmod +x updater.sh
     	./updater.sh
-    else
-    	echo "Connexion Internet : Echec"
-    	echo ""
-    	echo ""
-    	echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
-    	echo ""
-        var20=$(ls /usr/bin/*session)
-        if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
-            sleep 1
-        else
-        	if [[ -d "/home/pi/Apps" ]]; then
-        		echo ""
-    	    	echo ""
-    		    echo "==============================================================================="
-    		    echo "   • Mise à jour du crontab"
-    		    echo "==============================================================================="
-    		    echo ""
-    		    echo "Ancien crontab :"
-    		    crontab -l
-    		    echo ""
-    		    if [[ -f "/home/pi/Apps/backup.sh" ]]; then
-    		    	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 3 * * * /home/pi/Apps/backup.sh
-0 4 * * 0 sudo reboot >/dev/null 2>&1"
-    		    else
-    		    	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-0 4 * * 0 sudo reboot >/dev/null 2>&1"
-    		    fi
-    		    sudo /etc/init.d/cron restart
-    		    echo ""
-    		    echo "Nouveau crontab :"
-    		    crontab -l
-    		    echo ""
-    	    fi
-        fi
     fi
     echo ""
     echo ""
