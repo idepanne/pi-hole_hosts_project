@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.2.1b5                    #"
+echo "#                     Pi-Hole Host Project Updater 8.2.1b6                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -18,11 +18,40 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
     echo "   • Test de la connexion Internet"
     echo "==============================================================================="
     echo ""
-    var0=$(ping -c 3 1.2.3.4)
-    echo "$var0"
+    echo "$ ping -c 3 1.1.1.1"
     echo ""
     echo ""
-    if [[ "$var0" = "0 received" ]]; then
+    if ping -c 3 1.1.1.1 &> /dev/null; then
+    	echo "Connexion Internet : OK"
+    	echo ""
+    	echo ""
+    	echo ""
+    	wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys-rpi.sh > infosys-rpi.sh && sudo chmod +x infosys-rpi.sh && ./infosys-rpi.sh
+    	echo ""
+    	echo ""
+    	echo ""
+    	echo "==============================================================================="
+    	echo "   • Vérification des connexions actives"
+    	echo "==============================================================================="
+    	echo ""
+    	netstat -t | grep 'ESTABLISHED'
+    	echo ""
+    	echo ""
+    	echo ""
+    	echo "==============================================================================="
+    	echo "   • Mise à jour de updater.sh"
+    	echo "==============================================================================="
+    	echo ""
+    	echo "$ sudo mv updater.sh updater_old.sh"
+    	sudo mv updater.sh updater_old.sh
+    	echo ""
+    	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh"
+    	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh
+    	echo ""
+    	echo "$ sudo chmod +x updater.sh"
+    	sudo chmod +x updater.sh
+    	./updater.sh
+    else
     	echo "Connexion Internet : Echec"
     	echo ""
     	echo ""
@@ -57,36 +86,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
     		    echo ""
     	    fi
         fi
-    else
-    	echo "Connexion Internet : OK"
-    	echo ""
-    	echo ""
-    	echo ""
-    	wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys-rpi.sh > infosys-rpi.sh && sudo chmod +x infosys-rpi.sh && ./infosys-rpi.sh
-    	echo ""
-    	echo ""
-    	echo ""
-    	echo "==============================================================================="
-    	echo "   • Vérification des connexions actives"
-    	echo "==============================================================================="
-    	echo ""
-    	netstat -t | grep 'ESTABLISHED'
-    	echo ""
-    	echo ""
-    	echo ""
-    	echo "==============================================================================="
-    	echo "   • Mise à jour de updater.sh"
-    	echo "==============================================================================="
-    	echo ""
-    	echo "$ sudo mv updater.sh updater_old.sh"
-    	sudo mv updater.sh updater_old.sh
-    	echo ""
-    	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh"
-    	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh
-    	echo ""
-    	echo "$ sudo chmod +x updater.sh"
-    	sudo chmod +x updater.sh
-    	./updater.sh
     fi
     echo ""
     echo ""
