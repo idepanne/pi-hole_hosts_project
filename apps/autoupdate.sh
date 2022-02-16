@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                      Pi-Hole Host Project Updater 8.2.0                     #"
+echo "#                     Pi-Hole Host Project Updater 8.2.1b2                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -71,9 +71,11 @@ else
 		echo ""
 		if [[ -f "/home/pi/Apps/backup.sh" ]]; then
 			crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 3 * * * /home/pi/Apps/backup.sh"
+30 3 * * * /home/pi/Apps/backup.sh
+0 4 * * 0 sudo reboot >/dev/null 2>&1"
 		else
-			crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
+			crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+0 4 * * 0 sudo reboot >/dev/null 2>&1"
 		fi
 		sudo /etc/init.d/cron restart
 		echo ""

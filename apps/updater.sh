@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.0
+# Pi-Hole Host Project Updater 8.2.1b2
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -47,35 +47,34 @@ if [[ -d "/etc/pihole" ]]; then
 		echo ""
 		sudo pihole -g
 	fi
-	echo ""
-	echo ""
-	echo ""
-	echo "==============================================================================="
-	echo "   • Mise à jour du crontab"
-	echo "==============================================================================="
-	echo ""
-	echo "Ancien crontab :"
-	crontab -l
-	echo ""
-	if [[ -f "/home/pi/Apps/backup.sh" ]]; then
-		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 3 * * * /home/pi/Apps/backup.sh"
-	else
-		crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1"
-	fi
-	sudo /etc/init.d/cron restart
-	echo ""
-	echo "Nouveau crontab :"
-	crontab -l
-	echo ""
-	echo ""
-	echo ""
 else
 	echo "-> Pi-hole :                 [NON INSTALLÉ]"
 	echo ""
 	echo ""
 	echo ""
 fi
+echo "==============================================================================="
+echo "   • Mise à jour du crontab"
+echo "==============================================================================="
+echo ""
+echo "Ancien crontab :"
+crontab -l
+echo ""
+if [[ -f "/home/pi/Apps/backup.sh" ]]; then
+	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * /home/pi/Apps/backup.sh
+0 4 * * 0 sudo reboot >/dev/null 2>&1"
+else
+	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+0 4 * * 0 sudo reboot >/dev/null 2>&1"
+fi
+sudo /etc/init.d/cron restart
+echo ""
+echo "Nouveau crontab :"
+crontab -l
+echo ""
+echo ""
+echo ""
 echo "==============================================================================="
 echo "   • Nettoyage"
 echo "==============================================================================="
