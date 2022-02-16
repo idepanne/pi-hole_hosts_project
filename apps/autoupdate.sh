@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.2.1b3                    #"
+echo "#                     Pi-Hole Host Project Updater 8.2.1b4                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -18,7 +18,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
     echo "   • Test de la connexion Internet"
     echo "==============================================================================="
     echo ""
-    var0=$(ping -c 3 1.1.1.5)
+    var0=$(ping -c 3 1.2.3.4)
     echo "$var0"
     echo ""
     echo ""
