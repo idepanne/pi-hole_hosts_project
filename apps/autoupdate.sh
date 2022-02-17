@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.2.1b9                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b10                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -54,13 +54,13 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
     	echo ""
     	echo ""
     	echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
-    	echo ""
         var20=$(ls /usr/bin/*session)
         if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
             sleep
         else
         	if [[ -d "/home/pi/Apps" ]]; then
         		echo ""
+    	    	echo ""
     	    	echo ""
     		    echo "==============================================================================="
     		    echo "   • Mise à jour du crontab"
@@ -81,10 +81,10 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
     		    echo ""
     		    echo "Nouveau crontab :"
     		    crontab -l
-    		    echo ""
     	    fi
         fi
     fi
+    echo ""
     echo ""
     echo ""
     echo "###############################################################################"

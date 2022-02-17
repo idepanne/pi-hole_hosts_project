@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                     Pi-Hole Host Project Updater 8.2.1b9                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b10                    #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -121,10 +121,10 @@ echo "$ curl https://rclone.org/install.sh | sudo bash"
 curl https://rclone.org/install.sh | sudo bash
 rclone version
 echo ""
+echo ""
+echo ""
 var20=$(ls /usr/bin/*session)
 if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
-	echo ""
-	echo ""
 	echo "==============================================================================="
 	echo "   • Installation des logiciels (GUI)"
 	echo "==============================================================================="
@@ -138,11 +138,8 @@ if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-
 	sudo apt-get update
 	sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev
 	sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
-	sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so	
-	echo ""
+	sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so
 else
-    echo ""
-    echo ""
     if [[ -d "/home/pi/Apps" ]]; then
     	echo "==============================================================================="
 	    echo "   • Création des dossiers"
@@ -189,9 +186,9 @@ else
 	    echo ""
 	    echo "Nouveau crontab :"
 	    crontab -l
-	    echo ""
     fi
 fi
+echo ""
 echo ""
 echo ""
 echo "==============================================================================="
@@ -235,7 +232,7 @@ if [[ -d "/home/pi/Apps" ]]; then
 		echo ""
 		echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
 		find *.log -mtime +31 -exec rm -rv {} \;
-		echo ""
+        echo ""
 	fi
 fi
 if [[ -d "/home/pi/.local/share/Trash/" ]]; then
@@ -247,7 +244,7 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	echo ""
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
-	echo ""
+    echo ""
 fi
 echo "Après nettoyage :"
 sudo du -h /var/cache/apt/

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.1b9
+# Pi-Hole Host Project Updater 8.2.1b10
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -7,11 +7,13 @@
 echo ""
 echo ""
 echo ""
-echo "$ sudo systemctl stop boinc-client"
-sudo systemctl stop boinc-client
-echo ""
-echo ""
-echo ""
+if [[ -d "/etc/boinc-client" ]]; then
+    echo "$ sudo systemctl stop boinc-client"
+    sudo systemctl stop boinc-client
+    echo ""
+    echo ""
+    echo ""
+fi
 echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
 echo "==============================================================================="
@@ -54,10 +56,10 @@ if [[ -d "/etc/pihole" ]]; then
 	fi
 else
 	echo "-> Pi-hole :                 [NON INSTALLÉ]"
-	echo ""
-	echo ""
-	echo ""
 fi
+echo ""
+echo ""
+echo ""
 echo "==============================================================================="
 echo "   • Mise à jour du crontab"
 echo "==============================================================================="
@@ -100,10 +102,10 @@ if [[ -d "/home/pi/Apps" ]]; then
 		echo ""
 		echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
 		find *.log -mtime +31 -exec rm -rv {} \;
-		echo ""
 	fi
 fi
 if [[ -d "/home/pi/.local/share/Trash/" ]]; then
+	echo ""
 	echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
 	sudo rm -rfv ~/.local/share/Trash/files/*
 	echo ""
@@ -112,9 +114,11 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	echo ""
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
-	echo ""
 fi
 echo ""
 echo ""
-echo "$ sudo systemctl start boinc-client"
-sudo systemctl start boinc-client
+echo ""
+if [[ -d "/etc/boinc-client" ]]; then
+    echo "$ sudo systemctl start boinc-client"
+    sudo systemctl start boinc-client
+fi
