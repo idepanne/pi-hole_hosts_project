@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.1b12
+# Pi-Hole Host Project Updater 8.2.1b13
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -116,10 +116,10 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
 fi
-echo ""
-echo ""
-echo ""
 if [[ -d "/etc/boinc-client" ]]; then
+    echo ""
+    echo ""
+    echo ""
     echo "$ sudo systemctl start boinc-client"
     sudo systemctl start boinc-client
 fi
