@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.1b15
+# Pi-Hole Host Project Updater 8.2.1b16
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -125,7 +125,7 @@ if [[ -d "/etc/boinc-client" ]]; then
     echo ""
     echo ""
     echo "==============================================================================="
-    echo "   • Démarrage du client BOINC"
+    echo "   • Redémarrage du client BOINC"
     echo "==============================================================================="
     echo ""
     echo "$ sudo systemctl start boinc-client"
