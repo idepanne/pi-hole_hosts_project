@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b10                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b11                    #"
 echo "#                                  install.sh                                 #"
 echo "#                 © 2020-2022 iDépanne – L'expert informatique                #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -17,8 +17,6 @@ var0=$(cat /proc/cpuinfo | grep Model)
 if [[ $var0 == *"Raspberry Pi"* ]]; then
 
 wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
-echo ""
-echo ""
 echo ""
 echo "==============================================================================="
 echo "   • Vérification des connexions actives"
