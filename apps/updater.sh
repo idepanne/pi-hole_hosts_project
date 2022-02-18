@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.1b17
+# Pi-Hole Host Project Updater 8.2.1b18
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -9,15 +9,15 @@ echo ""
 echo ""
 echo ""
 if [[ -d "/etc/boinc-client" ]]; then
-    echo "==============================================================================="
-    echo "   • Arrêt du client BOINC"
-    echo "==============================================================================="
-    echo ""
-    echo "$ sudo systemctl stop boinc-client"
-    sudo systemctl stop boinc-client
-    echo ""
-    echo ""
-    echo ""
+	echo "==============================================================================="
+	echo "   • Arrêt du client BOINC"
+	echo "==============================================================================="
+	echo ""
+	echo "$ sudo systemctl stop boinc-client"
+	sudo systemctl stop boinc-client
+	echo ""
+	echo ""
+	echo ""
 fi
 echo "==============================================================================="
 echo "   • Mises à jour de Raspberry Pi OS"
@@ -33,7 +33,7 @@ echo "==========================================================================
 echo "   • Mises à jour des logiciels"
 echo "==============================================================================="
 echo ""
-echo "-> autoupdate.sh :           [INSTALLÉ]"
+echo "-> autoupdate.sh :              [INSTALLÉ]"
 echo ""
 echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
@@ -47,7 +47,7 @@ echo ""
 echo ""
 echo ""
 if [[ -d "/etc/pihole" ]]; then
-	echo "-> Pi-hole :                 [INSTALLÉ]"
+	echo "-> Pi-hole :                    [INSTALLÉ]"
 	echo ""
 	sudo pihole -v
 	echo ""
@@ -60,7 +60,7 @@ if [[ -d "/etc/pihole" ]]; then
 		sudo pihole -g
 	fi
 else
-	echo "-> Pi-hole :                 [NON INSTALLÉ]"
+	echo "-> Pi-hole :                    [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
@@ -121,13 +121,13 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	sudo rm -rfv ~/.local/share/Trash/info/*
 fi
 if [[ -d "/etc/boinc-client" ]]; then
-    echo ""
-    echo ""
-    echo ""
-    echo "==============================================================================="
-    echo "   • Redémarrage du client BOINC"
-    echo "==============================================================================="
-    echo ""
-    echo "$ sudo systemctl start boinc-client"
-    sudo systemctl start boinc-client
+	echo ""
+	echo ""
+	echo ""
+	echo "==============================================================================="
+	echo "   • Redémarrage du client BOINC"
+	echo "==============================================================================="
+	echo ""
+	echo "$ sudo systemctl start boinc-client"
+	sudo systemctl start boinc-client
 fi
