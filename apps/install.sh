@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b21                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b22                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -93,8 +93,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	else
 		echo "$ mkdir log"
 		mkdir log
+		echo ""
 	fi
-	echo ""
 	echo "$ sudo rm -rv install.sh"
 	sudo rm -rv install.sh
 	echo ""
