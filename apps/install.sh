@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b19                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b20                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -87,8 +87,12 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ cd ~/Apps"
 	cd ~/Apps
 	echo ""
-	echo "$ mkdir log"
-	mkdir log
+	var20=$(ls /usr/bin/*session)
+	if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
+	else
+		echo "$ mkdir log"
+		mkdir log
+	fi
 	echo ""
 	echo "$ sudo rm -rv install.sh"
 	sudo rm -rv install.sh
