@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b18                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b19                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -84,8 +84,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ mkdir Apps"
 	mkdir Apps
 	echo ""
-	echo "$ cd Apps"
-	cd Apps
+	echo "$ cd ~/Apps"
+	cd ~/Apps
 	echo ""
 	echo "$ mkdir log"
 	mkdir log
@@ -150,11 +150,17 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "   • Installation de autoupdate.sh"
 		echo "==============================================================================="
 		echo ""
+		echo "$ cd ~/Apps"
+		cd ~/Apps
+		echo ""
 		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
 		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
 		echo ""
 		echo "$ sudo chmod +x autoupdate.sh"
 		sudo chmod +x autoupdate.sh
+		echo ""
+		echo "$ cd"
+		cd
 		echo ""
 		echo ""
 		echo ""
@@ -190,6 +196,9 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 		sudo du -h /home/pi/.local/share/Trash/
 	fi
+	echo ""
+	echo "$ cd"
+	cd
 	echo ""
 	echo "$ sudo apt-get autopurge -y"
 	sudo apt-get autopurge -y
