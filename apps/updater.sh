@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.1b23
+# Pi-Hole Host Project Updater 8.2.1b24
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -40,9 +40,10 @@ if [[ -d "/etc/pihole" ]]; then
 	echo ""
 	sudo pihole -v
 	echo ""
-	var=$(sudo pihole -up)
-	echo "$var"
-	if [[ "$var" =~ "update available" ]]; then
+
+	echo "$var50"
+	sleep 10
+	if [[ "$var50" =~ "update available" ]]; then
 		echo ""
 	else
 		echo ""

@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b23                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b24                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -13,7 +13,13 @@ echo "##########################################################################
 echo ""
 echo ""
 echo ""
+
+###### Définition des variables ######
 var0=$(cat /proc/cpuinfo | grep Model)
+var20=$(ls /usr/bin/*session)
+var100=$(sudo checkrestart)
+######################################
+
 if [[ $var0 == *"Raspberry Pi"* ]]; then
 
 	wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
@@ -87,7 +93,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ cd ~/Apps"
 	cd ~/Apps
 	echo ""
-	var20=$(ls /usr/bin/*session)
 	if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
 		sleep 1
 	else
@@ -134,7 +139,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo ""
 	echo ""
 	echo ""
-	var20=$(ls /usr/bin/*session)
 	if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
 		echo "==============================================================================="
 		echo "   • Installation des logiciels (GUI)"
@@ -262,7 +266,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "   • Validation des mises à jour"
 	echo "==============================================================================="
 	echo ""
-	var100=$(sudo checkrestart)
 	if [ "$var100" = "Found 0 processes using old versions of upgraded files" ]; then
 		echo "$var100"
 		echo ""
