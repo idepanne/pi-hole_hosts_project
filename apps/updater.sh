@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.1b22
+# Pi-Hole Host Project Updater 8.2.1b23
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -8,29 +8,18 @@
 echo ""
 echo ""
 echo ""
-if [[ -d "/etc/boinc-client" ]]; then
-	echo "==============================================================================="
-	echo "   • Arrêt du client BOINC"
-	echo "==============================================================================="
-	echo ""
-	echo "$ sudo systemctl stop boinc-client"
-	sudo systemctl stop boinc-client
-	echo ""
-	echo ""
-	echo ""
-fi
 echo "==============================================================================="
-echo "   • Mises à jour de Raspberry Pi OS"
+echo "   • Mise à jour de Raspberry Pi OS"
 echo "==============================================================================="
 echo ""
-echo "$ sudo apt-get upgrade -y"
-sudo apt-get upgrade -y
+echo "$ sudo apt-get full-upgrade -y"
+sudo apt-get full-upgrade -y
 echo ""
 echo ""
 echo ""
 cd ~/Apps
 echo "==============================================================================="
-echo "   • Mises à jour des logiciels"
+echo "   • Mise à jour des logiciels"
 echo "==============================================================================="
 echo ""
 echo "-> autoupdate.sh :              [INSTALLÉ]"
@@ -66,7 +55,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Mise à jour du crontab"
+echo "   • Configuration du crontab"
 echo "==============================================================================="
 echo ""
 echo "Ancien crontab :"
@@ -88,7 +77,7 @@ echo ""
 echo ""
 echo ""
 echo "==============================================================================="
-echo "   • Nettoyage"
+echo "   • Nettoyage et optimisation"
 echo "==============================================================================="
 echo ""
 if [[ -d "/home/pi/Apps" ]]; then
@@ -119,15 +108,4 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	echo ""
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
-fi
-if [[ -d "/etc/boinc-client" ]]; then
-	echo ""
-	echo ""
-	echo ""
-	echo "==============================================================================="
-	echo "   • Redémarrage du client BOINC"
-	echo "==============================================================================="
-	echo ""
-	echo "$ sudo systemctl start boinc-client"
-	sudo systemctl start boinc-client
 fi

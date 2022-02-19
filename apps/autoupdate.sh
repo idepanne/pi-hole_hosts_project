@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b22                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b23                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -61,7 +61,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 				echo ""
 				echo ""
 				echo "==============================================================================="
-				echo "   • Mise à jour du crontab"
+				echo "   • Configuration du crontab"
 				echo "==============================================================================="
 				echo ""
 				echo "Ancien crontab :"
