@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b24                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b25                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"

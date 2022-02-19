@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b24                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b25                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -44,6 +44,9 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	sudo mv rpi-update /usr/local/bin/rpi-update
 	echo "$ sudo chmod +x /usr/local/bin/rpi-update"
 	sudo chmod +x /usr/local/bin/rpi-update
+	echo ""
+	echo "Version actuelle :"
+	uname -srv
 	echo ""
 	echo "$ sudo rpi-update"
 	sudo rpi-update
