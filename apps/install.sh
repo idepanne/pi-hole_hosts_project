@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b25                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b26                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -109,8 +109,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ sudo rm -rv infosys.sh"
 	sudo rm -rv infosys.sh
 	echo ""
-	echo "$ sudo rm -rv infosys2.sh"
-	sudo rm -rv infosys2.sh
+	echo "$ sudo rm -rv infosys-rpi.sh"
+	sudo rm -rv infosys-rpi.sh
 	echo ""
 	echo "$ sudo rm -rv test.sh"
 	sudo rm -rv test.sh
