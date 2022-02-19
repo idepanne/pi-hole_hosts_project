@@ -2,7 +2,7 @@
 cd ~/Apps
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b27                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b28                    #"
 echo "#                                autoupdate.sh                                #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -16,7 +16,6 @@ echo ""
 ###### Définition des variables ######
 var0=$(cat /proc/cpuinfo | grep Model)
 var20=$(ls /usr/bin/*session)
-var50=$(sudo pihole -up)
 ######################################
 
 if [[ $var0 == *"Raspberry Pi"* ]]; then
