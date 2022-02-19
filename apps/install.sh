@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b28                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b29                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -17,7 +17,6 @@ echo ""
 ###### Définition des variables ######
 var0=$(cat /proc/cpuinfo | grep Model)
 var20=$(ls /usr/bin/*session)
-var100=$(sudo checkrestart)
 ######################################
 
 if [[ $var0 == *"Raspberry Pi"* ]]; then
@@ -269,6 +268,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "   • Validation des mises à jour"
 	echo "==============================================================================="
 	echo ""
+	var100=$(sudo checkrestart)
 	if [ "$var100" = "Found 0 processes using old versions of upgraded files" ]; then
 		echo "$var100"
 		echo ""
