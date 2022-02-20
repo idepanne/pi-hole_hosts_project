@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.1b29                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.1b30                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -146,8 +146,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "   • Installation des logiciels (GUI)"
 		echo "==============================================================================="
 		echo ""
-		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab stacer hplip cups system-config-printer simple-scan rpi-imager"
-		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab stacer hplip cups system-config-printer simple-scan rpi-imager
+		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab stacer hplip cups system-config-printer simple-scan rpi-imager vlc inkscape gimp scribus"
+		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab stacer hplip cups system-config-printer simple-scan rpi-imager vlc inkscape gimp scribus
 		echo ""
 		echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
 		wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
