@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.2b2
+# Pi-Hole Host Project Updater 8.2.2b3
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -21,8 +21,8 @@ echo ""
 echo "$ sudo systemctl enable fail2ban"
 sudo systemctl enable fail2ban
 echo ""
-echo "$ sudo systemctl status fail2ban"
-sudo systemctl status fail2ban
+echo "$ sudo systemctl --no-pager status fail2ban"
+sudo systemctl --no-pager status fail2ban
 echo ""
 echo "$ sudo iptables -L -n"
 sudo iptables -L -n
@@ -45,6 +45,32 @@ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/maste
 echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
+echo ""
+echo ""
+echo ""
+if [[ -d "/etc/fail2ban" ]]; then
+	echo "-> Fail2ban :                   [INSTALLÉ]"
+	echo ""
+	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
+	sudo rm -rv /etc/fail2ban/jail.conf
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf
+	echo ""
+	echo "$ sudo mv jail.conf /etc/fail2ban/jail.conf"
+	sudo mv jail.conf /etc/fail2ban/jail.conf
+	echo ""
+	echo "$ sudo service fail2ban restart"
+	sudo service fail2ban restart
+	echo ""
+	echo "$ sudo systemctl --no-pager status fail2ban"
+	sudo systemctl --no-pager status fail2ban
+    echo ""
+    echo "$ sudo iptables -L -n"
+    sudo iptables -L -n
+else
+	echo "-> Fail2ban :                   [NON INSTALLÉ]"
+fi
 echo ""
 echo ""
 echo ""
