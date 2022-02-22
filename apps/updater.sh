@@ -60,6 +60,9 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo mv jail.conf /etc/fail2ban/jail.conf"
 	sudo mv jail.conf /etc/fail2ban/jail.conf
 	echo ""
+	echo "$ sudo chown root:root /etc/fail2ban/jail.conf"
+	sudo chown root:root /etc/fail2ban/jail.conf
+	echo ""
 	echo "$ sudo service fail2ban restart"
 	sudo service fail2ban restart
 	echo ""
