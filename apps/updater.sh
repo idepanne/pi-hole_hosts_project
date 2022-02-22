@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.2b4
+# Pi-Hole Host Project Updater 8.2.2b5
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -20,13 +20,6 @@ sudo apt-get install -y fail2ban iptables
 echo ""
 echo "$ sudo systemctl enable fail2ban"
 sudo systemctl enable fail2ban
-echo ""
-echo "$ sudo systemctl --no-pager status fail2ban"
-sudo systemctl --no-pager status fail2ban
-echo ""
-echo "$ sudo iptables -L -n"
-sudo iptables -L -n
-echo ""
 echo ""
 echo ""
 echo ""
