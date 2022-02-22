@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.2b1
+# Pi-Hole Host Project Updater 8.2.2b2
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -26,6 +26,7 @@ sudo systemctl status fail2ban
 echo ""
 echo "$ sudo iptables -L -n"
 sudo iptables -L -n
+echo ""
 echo ""
 echo ""
 echo ""
@@ -122,3 +123,5 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
 fi
+sleep 1
+sudo reboot
