@@ -66,9 +66,11 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo ""
 	echo "$ sudo systemctl --no-pager status fail2ban"
 	sudo systemctl --no-pager status fail2ban
-    echo ""
-    echo "$ sudo iptables -L -n"
-    sudo iptables -L -n
+	echo ""
+	sleep 1
+	echo ""
+	echo "$ sudo iptables -L -n"
+	sudo iptables -L -n
 else
 	echo "-> Fail2ban :                   [NON INSTALLÉ]"
 fi
