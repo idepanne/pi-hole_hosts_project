@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.2b8                     #"
+echo "#                    Pi-Hole Host Project Updater 8.2.2b13                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -142,13 +142,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
 	sudo rm -rv /etc/fail2ban/jail.conf
 	echo ""
-	if [[ -d "/etc/pihole" ]]; then
-    	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf"
-	    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf
-	else
-	    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_sshd.conf > jail.conf"
-	    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_sshd.conf > jail.conf
-	fi
+    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf"
+    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf
 	echo ""
 	echo "$ sudo mv jail.conf /etc/fail2ban/jail.conf"
 	sudo mv jail.conf /etc/fail2ban/jail.conf
@@ -159,11 +154,11 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ sudo service fail2ban restart"
 	sudo service fail2ban restart
 	echo ""
+	sleep 2
 	echo "$ sudo systemctl --no-pager status fail2ban"
 	sudo systemctl --no-pager status fail2ban
 	echo ""
-	sleep 1
-	echo ""
+	sleep 2
 	echo "$ sudo iptables -L -n"
 	sudo iptables -L -n
 	echo ""
