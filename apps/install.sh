@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.2b5                     #"
+echo "#                    Pi-Hole Host Project Updater 8.2.2b8                     #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -132,12 +132,40 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "   • Installation des logiciels (CLI)"
 	echo "==============================================================================="
 	echo ""
-	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl"
-	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl
+	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables"
+	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables
 	echo ""
 	echo "$ curl https://rclone.org/install.sh | sudo bash"
 	curl https://rclone.org/install.sh | sudo bash
 	rclone version
+	echo ""
+	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
+	sudo rm -rv /etc/fail2ban/jail.conf
+	echo ""
+	if [[ -d "/etc/pihole" ]]; then
+    	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf"
+	    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf
+	else
+	    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_sshd.conf > jail.conf"
+	    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_sshd.conf > jail.conf
+	fi
+	echo ""
+	echo "$ sudo mv jail.conf /etc/fail2ban/jail.conf"
+	sudo mv jail.conf /etc/fail2ban/jail.conf
+	echo ""
+	echo "$ sudo chown root:root /etc/fail2ban/jail.conf"
+	sudo chown root:root /etc/fail2ban/jail.conf
+	echo ""
+	echo "$ sudo service fail2ban restart"
+	sudo service fail2ban restart
+	echo ""
+	echo "$ sudo systemctl --no-pager status fail2ban"
+	sudo systemctl --no-pager status fail2ban
+	echo ""
+	sleep 1
+	echo ""
+	echo "$ sudo iptables -L -n"
+	sudo iptables -L -n
 	echo ""
 	echo ""
 	echo ""
