@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.2b11
+# Pi-Hole Host Project Updater 8.2.2b12
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -53,11 +53,11 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo service fail2ban restart"
 	sudo service fail2ban restart
 	echo ""
-	sleep 1
+	sleep 2
 	echo "$ sudo systemctl --no-pager status fail2ban"
 	sudo systemctl --no-pager status fail2ban
 	echo ""
-	sleep 1
+	sleep 2
 	echo "$ sudo iptables -L -n"
 	sudo iptables -L -n
 else
