@@ -1,14 +1,12 @@
 #!/bin/bash
 cd ~/Apps
-echo "###############################################################################"
-echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.2b14                    #"
-echo "#                                autoupdate.sh                                #"
-echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
-echo "#                           https://fb.me/idepanne/                           #"
-echo "#                            idepanne67@gmail.com                             #"
-echo "#                                                                             #"
-echo "###############################################################################"
+echo "+=============================================================================+"
+echo "|                    Pi-Hole Host Project Updater 8.2.2b15                    |"
+echo "|                                autoupdate.sh                                |"
+echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
+echo "|                           https://fb.me/idepanne/                           |"
+echo "|                            idepanne67@gmail.com                             |"
+echo "+=============================================================================+"
 echo ""
 echo ""
 echo ""
@@ -19,9 +17,9 @@ var20=$(ls /usr/bin/*session)
 ######################################
 
 if [[ $var0 == *"Raspberry Pi"* ]]; then
-	echo "==============================================================================="
-	echo "   • Test de la connexion Internet"
-	echo "==============================================================================="
+	echo "+=============================================================================+"
+	echo "|  • Test de la connexion Internet                                            |"
+	echo "+=============================================================================+"
 	echo ""
 	echo ""
 	if ping -c 3 1.1.1.1 &> /dev/null; then
@@ -31,17 +29,17 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo ""
 		wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys-rpi.sh > infosys-rpi.sh && sudo chmod +x infosys-rpi.sh && ./infosys-rpi.sh
 		echo ""
-		echo "==============================================================================="
-		echo "   • Vérification des connexions actives"
-		echo "==============================================================================="
+		echo "+=============================================================================+"
+		echo "|  • Vérification des connexions actives                                      |"
+		echo "+=============================================================================+"
 		echo ""
 		netstat -t | grep 'ESTABLISHED'
 		echo ""
 		echo ""
 		echo ""
-		echo "==============================================================================="
-		echo "   • Mise à jour de updater.sh"
-		echo "==============================================================================="
+		echo "+=============================================================================+"
+		echo "|  • Mise à jour de updater.sh                                                |"
+		echo "+=============================================================================+"
 		echo ""
 		echo "$ sudo mv updater.sh updater_old.sh"
 		sudo mv updater.sh updater_old.sh
@@ -64,9 +62,9 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 				echo ""
 				echo ""
 				echo ""
-				echo "==============================================================================="
-				echo "   • Configuration du crontab"
-				echo "==============================================================================="
+				echo "+=============================================================================+"
+				echo "|  • Configuration du crontab                                                 |"
+				echo "+=============================================================================+"
 				echo ""
 				echo "Ancien crontab :"
 				crontab -l
@@ -89,11 +87,9 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo ""
 	echo ""
 	echo ""
-	echo "###############################################################################"
-	echo "#                                                                             #"
-	echo "#                    Mise à jour du Raspberry Pi terminée                     #"
-	echo "#                                                                             #"
-	echo "###############################################################################"
+	echo "+=============================================================================+"
+	echo "|                    Mise à jour du Raspberry Pi terminée                     |"
+	echo "+=============================================================================+"
 	echo ""
 	sleep 1
 else
