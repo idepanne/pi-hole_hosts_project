@@ -3,7 +3,7 @@ clear
 cd
 echo "###############################################################################"
 echo "#                                                                             #"
-echo "#                    Pi-Hole Host Project Updater 8.2.2b13                    #"
+echo "#                    Pi-Hole Host Project Updater 8.2.2b14                    #"
 echo "#                                 install.sh                                  #"
 echo "#                © 2020-2022 iDépanne – L'expert informatique                 #"
 echo "#                           https://fb.me/idepanne/                           #"
@@ -154,11 +154,11 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ sudo service fail2ban restart"
 	sudo service fail2ban restart
 	echo ""
-	sleep 2
+	sleep 3
 	echo "$ sudo systemctl --no-pager status fail2ban"
 	sudo systemctl --no-pager status fail2ban
 	echo ""
-	sleep 2
+	sleep 3
 	echo "$ sudo iptables -L -n"
 	sudo iptables -L -n
 	echo ""
