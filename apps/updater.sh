@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.2b8
+# Pi-Hole Host Project Updater 8.2.2b9
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -14,12 +14,6 @@ echo "==========================================================================
 echo ""
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
-echo ""
-echo "$ sudo apt-get install -y fail2ban iptables"
-sudo apt-get install -y fail2ban iptables
-echo ""
-echo "$ sudo systemctl enable fail2ban"
-sudo systemctl enable fail2ban
 echo ""
 echo ""
 echo ""
@@ -47,13 +41,13 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
 	sudo rm -rv /etc/fail2ban/jail.conf
 	echo ""
-	if [[ -d "/etc/pihole" ]]; then
-    	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf"
-	    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf
-	else
-	    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_sshd.conf > jail.conf"
-	    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_sshd.conf > jail.conf
-	fi
+	#if [[ -d "/etc/pihole" ]]; then
+    #	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf"
+    #   wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf
+	#else
+	    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf"
+	    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf
+	#fi
 	echo ""
 	echo "$ sudo mv jail.conf /etc/fail2ban/jail.conf"
 	sudo mv jail.conf /etc/fail2ban/jail.conf
@@ -152,5 +146,3 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
 fi
-sleep 1
-#sudo reboot
