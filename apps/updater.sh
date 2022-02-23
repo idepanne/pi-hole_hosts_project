@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pi-Hole Host Project Updater 8.2.2b10
+# Pi-Hole Host Project Updater 8.2.2b11
 # updater.sh
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
@@ -41,13 +41,8 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
 	sudo rm -rv /etc/fail2ban/jail.conf
 	echo ""
-	#if [[ -d "/etc/pihole" ]]; then
-    #	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf"
-    #   wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail_lighttpd.conf > jail.conf
-	#else
-	    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf"
-	    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf
-	#fi
+    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf"
+    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf
 	echo ""
 	echo "$ sudo mv jail.conf /etc/fail2ban/jail.conf"
 	sudo mv jail.conf /etc/fail2ban/jail.conf
@@ -59,12 +54,10 @@ if [[ -d "/etc/fail2ban" ]]; then
 	sudo service fail2ban restart
 	echo ""
 	sleep 1
-	echo ""
 	echo "$ sudo systemctl --no-pager status fail2ban"
 	sudo systemctl --no-pager status fail2ban
 	echo ""
 	sleep 1
-	echo ""
 	echo "$ sudo iptables -L -n"
 	sudo iptables -L -n
 else
