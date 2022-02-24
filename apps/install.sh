@@ -2,8 +2,9 @@
 clear
 cd
 echo "+=============================================================================+"
-echo "|                    Pi-Hole Host Project Updater 8.2.2b15                    |"
+echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
+echo "|                                    [837]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                           https://fb.me/idepanne/                           |"
 echo "|                            idepanne67@gmail.com                             |"
