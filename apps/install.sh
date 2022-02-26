@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [840]                                    |"
+echo "|                                   [ 841 ]                                   |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                           https://fb.me/idepanne/                           |"
 echo "|                            idepanne67@gmail.com                             |"
@@ -229,6 +229,9 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 		sudo du -h /home/pi/.local/share/Trash/
 	fi
+	if [[ -d "/home/pi/.cache/thumbnails/" ]]; then
+		sudo du -h /home/pi/.cache/thumbnails/
+	fi
 	echo ""
 	echo "$ cd"
 	cd
@@ -287,6 +290,9 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	sudo du -h /var/cache/apt/
 	if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 		sudo du -h /home/pi/.local/share/Trash/
+	fi
+	if [[ -d "/home/pi/.cache/thumbnails/" ]]; then
+		sudo du -h /home/pi/.cache/thumbnails/
 	fi
 	echo ""
 	echo ""
