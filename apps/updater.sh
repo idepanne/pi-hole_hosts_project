@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [839]
+# [840]
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 # idepanne67@gmail.com
@@ -141,4 +141,9 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	echo ""
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
+fi
+if [[ -d "/home/pi/.cache/thumbnails/" ]]; then
+	echo "$ sudo rm -rfv ~/.cache/thumbnails/*"
+	sudo rm -rfv ~/.cache/thumbnails/*
+	echo ""
 fi
