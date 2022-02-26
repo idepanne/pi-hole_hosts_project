@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [842]                                    |"
+echo "|                                    [843]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                           https://fb.me/idepanne/                           |"
 echo "|                            idepanne67@gmail.com                             |"
@@ -325,8 +325,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		sudo reboot
 	fi
 else
-	echo "Ce programme d'installation n'est compatible qu'avec les Raspberry Pi."
-	echo "Il ne peut pas être utilisé sur une autre distribution Linux."
+	echo "Ce programme d'installation ne fonctionne que sur les Raspberry Pi."
+	echo "Il n'est pas compatible avec les autres distributions Linux."
 	echo ""
 	echo ""
 	cd
