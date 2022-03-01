@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [843]                                    |"
+echo "|                                    [844]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                           https://fb.me/idepanne/                           |"
 echo "|                            idepanne67@gmail.com                             |"
@@ -160,6 +160,12 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	sleep 3
 	echo "$ sudo iptables -L -n"
 	sudo iptables -L -n
+	echo ""
+	echo "$ sudo fail2ban-client status recidive"
+	sudo fail2ban-client status recidive
+	echo ""
+	echo "$ sudo fail2ban-client status sshd"
+	sudo fail2ban-client status sshd
 	echo ""
 	echo ""
 	echo ""
