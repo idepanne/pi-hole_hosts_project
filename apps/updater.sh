@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [844]
+# [845]
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 # idepanne67@gmail.com
@@ -61,9 +61,6 @@ if [[ -d "/etc/fail2ban" ]]; then
 	sleep 3
 	echo "$ sudo iptables -L -n"
 	sudo iptables -L -n
-	echo ""
-	echo "$ sudo fail2ban-client status recidive"
-	sudo fail2ban-client status recidive
 	echo ""
 	echo "$ sudo fail2ban-client status sshd"
 	sudo fail2ban-client status sshd
