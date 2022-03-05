@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [846]
+# [847]
 # © 2020-2022 iDépanne – L'expert informatique
 # https://fb.me/idepanne/
 # idepanne67@gmail.com
@@ -126,9 +126,6 @@ if [[ -d "/home/pi/Apps" ]]; then
 	if [[ -d "/home/pi/Apps/log" ]]; then
 		echo "$ cd ~/Apps/log"
 		cd ~/Apps/log
-		echo ""
-		echo "$ find test*.log -exec rm -rv {} \;"
-		find test*.log -exec rm -rv {} \;
 		echo ""
 		echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
 		find *.log -mtime +31 -exec rm -rv {} \;

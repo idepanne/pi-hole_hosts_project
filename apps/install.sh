@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [846]                                    |"
+echo "|                                    [847]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                           https://fb.me/idepanne/                           |"
 echo "|                            idepanne67@gmail.com                             |"
@@ -85,9 +85,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ sudo rm -rv infosys-rpi.sh"
 	sudo rm -rv infosys-rpi.sh
 	echo ""
-	echo "$ sudo rm -rv test.sh"
-	sudo rm -rv test.sh
-	echo ""
 	echo "$ mkdir Apps"
 	mkdir Apps
 	echo ""
@@ -109,12 +106,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo ""
 	echo "$ sudo rm -rv infosys-rpi.sh"
 	sudo rm -rv infosys-rpi.sh
-	echo ""
-	echo "$ sudo rm -rv test.sh"
-	sudo rm -rv test.sh
-	echo ""
-	echo "$ sudo rm -rv beta_updater.sh"
-	sudo rm -rv beta_updater.sh
 	echo ""
 	echo "$ sudo rm -rv autoupdate.sh"
 	sudo rm -rv autoupdate.sh
@@ -264,9 +255,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		if [[ -d "/home/pi/Apps/log" ]]; then
 			echo "$ cd ~/Apps/log"
 			cd ~/Apps/log
-			echo ""
-			echo "$ find test*.log -exec rm -rv {} \;"
-			find test*.log -exec rm -rv {} \;
 			echo ""
 			echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
 			find *.log -mtime +31 -exec rm -rv {} \;
