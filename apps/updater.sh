@@ -1,9 +1,8 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [847]
+# [848]
 # © 2020-2022 iDépanne – L'expert informatique
-# https://fb.me/idepanne/
 # idepanne67@gmail.com
 
 echo ""
@@ -33,6 +32,8 @@ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/maste
 echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
+echo ""
+echo "-> autoupdate.sh :              [MIS À JOUR]"
 echo ""
 echo ""
 echo ""
@@ -64,6 +65,8 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo ""
 	echo "$ sudo fail2ban-client status sshd"
 	sudo fail2ban-client status sshd
+	echo ""
+	echo "-> Fail2ban :                   [MIS À JOUR]"
 else
 	echo "-> Fail2ban :                   [NON INSTALLÉ]"
 fi
@@ -84,6 +87,7 @@ if [[ -d "/etc/pihole" ]]; then
 		sudo pihole -g
 		echo ""
 	fi
+	echo "-> Pi-hole :                    [MIS À JOUR]"
 else
 	echo "-> Pi-hole :                    [NON INSTALLÉ]"
 	echo ""
