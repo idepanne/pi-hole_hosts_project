@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [848]
+# [849]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -22,7 +22,7 @@ echo "+=========================================================================
 echo "|  • Mise à jour des logiciels                                                |"
 echo "+=============================================================================+"
 echo ""
-echo "-> autoupdate.sh :              [INSTALLÉ]"
+echo "1. autoupdate.sh :              [INSTALLÉ]"
 echo ""
 echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
@@ -33,12 +33,12 @@ echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
-echo "-> autoupdate.sh :              [MIS À JOUR]"
+echo "1. autoupdate.sh :              [MIS À JOUR]"
 echo ""
 echo ""
 echo ""
 if [[ -d "/etc/fail2ban" ]]; then
-	echo "-> Fail2ban :                   [INSTALLÉ]"
+	echo "2. Fail2ban :                   [INSTALLÉ]"
 	echo ""
 	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
 	sudo rm -rv /etc/fail2ban/jail.conf
@@ -66,15 +66,15 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo fail2ban-client status sshd"
 	sudo fail2ban-client status sshd
 	echo ""
-	echo "-> Fail2ban :                   [MIS À JOUR]"
+	echo "2. Fail2ban :                   [MIS À JOUR]"
 else
-	echo "-> Fail2ban :                   [NON INSTALLÉ]"
+	echo "2. Fail2ban :                   [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
 echo ""
 if [[ -d "/etc/pihole" ]]; then
-	echo "-> Pi-hole :                    [INSTALLÉ]"
+	echo "3. Pi-hole :                    [INSTALLÉ]"
 	echo ""
 	sudo pihole -v
 	echo ""
@@ -87,9 +87,9 @@ if [[ -d "/etc/pihole" ]]; then
 		sudo pihole -g
 		echo ""
 	fi
-	echo "-> Pi-hole :                    [MIS À JOUR]"
+	echo "3. Pi-hole :                    [MIS À JOUR]"
 else
-	echo "-> Pi-hole :                    [NON INSTALLÉ]"
+	echo "3. Pi-hole :                    [NON INSTALLÉ]"
 	echo ""
 fi
 echo ""
