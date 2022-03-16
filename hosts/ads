@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 10/03/2022 - 12h55
+# Last update : 16/03/2022 - 12h37
 
 
 # 1
@@ -11,6 +11,8 @@
 0.0.0.0 www.1001tracklists.com
 
 # A
+0.0.0.0 actirise.com
+0.0.0.0 www.actirise.com
 0.0.0.0 adjust.com
 0.0.0.0 www.adjust.com
 0.0.0.0 app.adjust.com
@@ -49,6 +51,10 @@
 0.0.0.0 www.ezoic.co
 
 # F
+0.0.0.0 flashb.com
+0.0.0.0 www.flashb.com
+0.0.0.0 flashb.id
+0.0.0.0 www.flashb.id
 
 # G
 0.0.0.0 geekbuying.com
