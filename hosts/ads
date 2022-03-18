@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 16/03/2022 - 12h37
+# Last update : 18/03/2022 - 22h30
 
 
 # 1
@@ -38,6 +38,8 @@
 0.0.0.0 www.cambrianswap.com
 
 # D
+0.0.0.0 directrelief.org
+0.0.0.0 www.directrelief.org
 0.0.0.0 doublepimp.com
 0.0.0.0 www.doublepimp.com
 0.0.0.0 engine.phn.doublepimp.com
@@ -47,6 +49,9 @@
 0.0.0.0 www.epostglobalshipping.com
 0.0.0.0 etoro.com
 0.0.0.0 www.etoro.com
+0.0.0.0 ezodn.com
+0.0.0.0 go.ezodn.com
+0.0.0.0 www.ezodn.com
 0.0.0.0 ezoic.com
 0.0.0.0 www.ezoic.co
 
