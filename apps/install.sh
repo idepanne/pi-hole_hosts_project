@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [851]                                    |"
+echo "|                                    [852]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -123,8 +123,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "|  • Installation des logiciels (CLI)                                         |"
 	echo "+=============================================================================+"
 	echo ""
-	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables"
-	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables
+	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi"
+	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi
 	echo ""
 	echo "$ curl https://rclone.org/install.sh | sudo bash"
 	curl https://rclone.org/install.sh | sudo bash
