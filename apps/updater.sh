@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [853]
+# [854]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -43,8 +43,8 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
 	sudo rm -rv /etc/fail2ban/jail.conf
 	echo ""
-    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf"
-    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/jail.conf > jail.conf
 	echo ""
 	echo "$ sudo mv jail.conf /etc/fail2ban/jail.conf"
 	sudo mv jail.conf /etc/fail2ban/jail.conf
@@ -78,7 +78,7 @@ if [[ -d "/etc/pihole" ]]; then
 	echo ""
 	sudo pihole -v
 	echo ""
-    var50=$(sudo pihole -up)
+	var50=$(sudo pihole -up)
 	echo "$var50"
 	if [[ "$var50" =~ "update available" ]]; then
 		echo ""
