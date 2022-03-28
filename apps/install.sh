@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [855]                                    |"
+echo "|                                    [856]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -302,7 +302,6 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "+=============================================================================+"
 		echo "|                Aucun redémarrage du Raspberry Pi nécessaire                 |"
 		echo "+=============================================================================+"
-		echo ""
 		sleep 1
 	else
 		echo "$var100"
@@ -312,14 +311,12 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "+=============================================================================+"
 		echo "|                         Redémarrage du Raspberry Pi                         |"
 		echo "+=============================================================================+"
-		echo ""
 		sleep 1
 		sudo reboot
 	fi
 else
 	echo "Ce programme d'installation ne fonctionne que sur les Raspberry Pi."
 	echo "Il n'est pas compatible avec les autres distributions Linux."
-	echo ""
 	echo ""
 	cd
 	sudo rm install.sh

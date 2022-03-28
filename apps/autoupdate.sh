@@ -3,7 +3,7 @@ cd ~/Apps
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                    [855]                                    |"
+echo "|                                    [856]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -94,12 +94,10 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "+=============================================================================+"
 	echo "|                    Mise à jour du Raspberry Pi terminée                     |"
 	echo "+=============================================================================+"
-	echo ""
 	sleep 1
 else
 	echo "Ce programme d'installation ne fonctionne que sur les Raspberry Pi."
 	echo "Il n'est pas compatible avec les autres distributions Linux."
-	echo ""
 	echo ""
 	cd
 	sudo rm autoupdate.sh

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [855]
+# [856]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -90,8 +90,8 @@ if [[ -d "/etc/pihole" ]]; then
 	echo "3. Pi-hole :                    [MIS À JOUR]"
 else
 	echo "3. Pi-hole :                    [NON INSTALLÉ]"
-	echo ""
 fi
+echo ""
 echo ""
 echo ""
 echo "+=============================================================================+"
