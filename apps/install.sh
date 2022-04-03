@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [858]                                    |"
+echo "|                                    [859]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -123,7 +123,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "|  • Installation des logiciels (CLI)                                         |"
 	echo "+=============================================================================+"
 	echo ""
-	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi"
+	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi speedtest-cli"
 	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi speedtest-cli
 	echo ""
 	echo "$ curl https://rclone.org/install.sh | sudo bash"
@@ -163,7 +163,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "|  • Installation des logiciels (GUI)                                         |"
 		echo "+=============================================================================+"
 		echo ""
-		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc terminator"
+		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc terminator breeze-cursor-theme"
 		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc terminator breeze-cursor-theme
 		echo ""
 		echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
