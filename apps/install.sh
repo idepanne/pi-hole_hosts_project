@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [856]                                    |"
+echo "|                                    [857]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -45,7 +45,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "Version actuelle :"
 	uname -srv
 	echo ""
-	echo "y = Normal | N = LTS"
+	echo "Y = Version de test | N = Version de production"
 	echo ""
 	echo "$ sudo rpi-update"
 	sudo rpi-update
@@ -124,7 +124,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "+=============================================================================+"
 	echo ""
 	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi"
-	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi
+	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi speedtest-cli
 	echo ""
 	echo "$ curl https://rclone.org/install.sh | sudo bash"
 	curl https://rclone.org/install.sh | sudo bash
@@ -164,7 +164,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "+=============================================================================+"
 		echo ""
 		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc terminator"
-		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc terminator
+		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc terminator breeze-cursor-theme
 		echo ""
 		echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
 		wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
@@ -315,7 +315,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		sudo reboot
 	fi
 else
-	echo "Ce programme d'installation ne fonctionne que sur les Raspberry Pi."
+	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS."
 	echo "Il n'est pas compatible avec les autres distributions Linux."
 	echo ""
 	cd
