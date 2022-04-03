@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [857]                                    |"
+echo "|                                    [858]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -45,7 +45,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "Version actuelle :"
 	uname -srv
 	echo ""
-	echo "Y = Version de test | N = Version de production"
+	echo "y = Version de test | N = Version de production"
 	echo ""
 	echo "$ sudo rpi-update"
 	sudo rpi-update
