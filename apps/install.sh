@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                    [862]                                    |"
+echo "|                                    [863]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -123,8 +123,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "|  • Installation des logiciels (CLI)                                         |"
 	echo "+=============================================================================+"
 	echo ""
-	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi speedtest-cli"
-	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi speedtest-cli
+	echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi speedtest-cli userconf-pi"
+	sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables inxi speedtest-cli userconf-pi
 	echo ""
 	echo "$ curl https://rclone.org/install.sh | sudo bash"
 	curl https://rclone.org/install.sh | sudo bash
@@ -163,8 +163,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "|  • Installation des logiciels (GUI)                                         |"
 		echo "+=============================================================================+"
 		echo ""
-		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc terminator meld gnome-system-monitor"
-		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc terminator meld gnome-system-monitor
+		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor"
+		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor
 		echo ""
 		echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
 		wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
@@ -199,12 +199,12 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "Ancien crontab :"
 		crontab -l
 		echo ""
-		if [[ -f "/home/pi/Apps/backup.sh" ]]; then
-			crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 3 * * * /home/pi/Apps/backup.sh
+		if [[ -f "~/Apps/backup.sh" ]]; then
+			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * ~/Apps/backup.sh
 0 4 * * 1-5 sudo reboot"
 		else
-			crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 0 4 * * 1-5 sudo reboot"
 		fi
 		sudo /etc/init.d/cron restart
@@ -221,11 +221,11 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo ""
 	echo "Avant nettoyage :"
 	sudo du -h /var/cache/apt/
-	if [[ -d "/home/pi/.local/share/Trash/" ]]; then
-		sudo du -h /home/pi/.local/share/Trash/
+	if [[ -d "~/.local/share/Trash/" ]]; then
+		sudo du -h ~/.local/share/Trash/
 	fi
-	if [[ -d "/home/pi/.cache/thumbnails/" ]]; then
-		sudo du -h /home/pi/.cache/thumbnails/
+	if [[ -d "~/.cache/thumbnails/" ]]; then
+		sudo du -h ~/.cache/thumbnails/
 	fi
 	echo ""
 	echo "$ cd"
@@ -246,14 +246,14 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
 	sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
 	echo ""
-	if [[ -d "/home/pi/Apps" ]]; then
+	if [[ -d "~/Apps" ]]; then
 		echo "$ cd ~/Apps"
 		cd ~/Apps
 		echo ""
 		echo "$ sudo rm -rv *_old.sh"
 		sudo rm -rv *_old.sh
 		echo ""
-		if [[ -d "/home/pi/Apps/log" ]]; then
+		if [[ -d "~/Apps/log" ]]; then
 			echo "$ cd ~/Apps/log"
 			cd ~/Apps/log
 			echo ""
@@ -262,7 +262,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 			echo ""
 		fi
 	fi
-	if [[ -d "/home/pi/.local/share/Trash/" ]]; then
+	if [[ -d "~/.local/share/Trash/" ]]; then
 		echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
 		sudo rm -rfv ~/.local/share/Trash/files/*
 		echo ""
@@ -273,18 +273,18 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		sudo rm -rfv ~/.local/share/Trash/info/*
 		echo ""
 	fi
-	if [[ -d "/home/pi/.cache/thumbnails/" ]]; then
+	if [[ -d "~/.cache/thumbnails/" ]]; then
 		echo "$ sudo rm -rfv ~/.cache/thumbnails/*"
 		sudo rm -rfv ~/.cache/thumbnails/*
 		echo ""
 	fi
 	echo "Après nettoyage :"
 	sudo du -h /var/cache/apt/
-	if [[ -d "/home/pi/.local/share/Trash/" ]]; then
-		sudo du -h /home/pi/.local/share/Trash/
+	if [[ -d "~/.local/share/Trash/" ]]; then
+		sudo du -h ~/.local/share/Trash/
 	fi
-	if [[ -d "/home/pi/.cache/thumbnails/" ]]; then
-		sudo du -h /home/pi/.cache/thumbnails/
+	if [[ -d "~/.cache/thumbnails/" ]]; then
+		sudo du -h ~/.cache/thumbnails/
 	fi
 	echo ""
 	echo ""
