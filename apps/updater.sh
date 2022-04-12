@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1068]
+# [1069]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -90,6 +90,19 @@ if [[ -d "/etc/pihole" ]]; then
 	echo "3. Pi-hole :                    [MIS À JOUR]"
 else
 	echo "3. Pi-hole :                    [NON INSTALLÉ]"
+fi
+echo ""
+echo ""
+echo ""
+cd
+if [[ -f "Apps/backup.sh" ]]; then
+	echo "4. backup.sh :                  [INSTALLÉ]"
+	echo ""
+	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd
+	echo ""
+	echo "4. backup.sh :                  [MIS À JOUR]"
+else
+	echo "4. backup.sh :                  [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
