@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [862]
+# [1064]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -101,12 +101,12 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-if [[ -f "/home/pi/Apps/backup.sh" ]]; then
-	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-30 3 * * * /home/pi/Apps/backup.sh
+if [[ -f "~/Apps/backup.sh" ]]; then
+	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+30 3 * * * ~/Apps/backup.sh
 0 4 * * 1-5 sudo reboot"
 else
-	crontab <<<"0 3 * * * /home/pi/Apps/autoupdate.sh > /home/pi/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 0 4 * * 1-5 sudo reboot"
 fi
 sudo /etc/init.d/cron restart
@@ -120,14 +120,14 @@ echo "+=========================================================================
 echo "|  • Nettoyage et optimisation                                                |"
 echo "+=============================================================================+"
 echo ""
-if [[ -d "/home/pi/Apps" ]]; then
+if [[ -d "~/Apps" ]]; then
 	echo "$ cd ~/Apps"
 	cd ~/Apps
 	echo ""
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
 	echo ""
-	if [[ -d "/home/pi/Apps/log" ]]; then
+	if [[ -d "~/Apps/log" ]]; then
 		echo "$ cd ~/Apps/log"
 		cd ~/Apps/log
 		echo ""
@@ -135,7 +135,7 @@ if [[ -d "/home/pi/Apps" ]]; then
 		find *.log -mtime +31 -exec rm -rv {} \;
 	fi
 fi
-if [[ -d "/home/pi/.local/share/Trash/" ]]; then
+if [[ -d "~/.local/share/Trash/" ]]; then
 	echo ""
 	echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
 	sudo rm -rfv ~/.local/share/Trash/files/*
@@ -146,7 +146,7 @@ if [[ -d "/home/pi/.local/share/Trash/" ]]; then
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
 fi
-if [[ -d "/home/pi/.cache/thumbnails/" ]]; then
+if [[ -d "~/.cache/thumbnails/" ]]; then
 	echo "$ sudo rm -rfv ~/.cache/thumbnails/*"
 	sudo rm -rfv ~/.cache/thumbnails/*
 	echo ""
