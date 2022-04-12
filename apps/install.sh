@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1065]                                    |"
+echo "|                                   [1066]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -163,16 +163,16 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "|  • Installation des logiciels (GUI)                                         |"
 		echo "+=============================================================================+"
 		echo ""
-		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor libraspberrypi0"
-		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor libraspberrypi0
-		#echo ""
-		#echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
-		#wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
-		#echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
-		#sudo apt-get update
-		#sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev
-		#sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
-		#sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so
+		echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor"
+		sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor
+		echo ""
+		echo "$ sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev"
+		wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+		echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
+		sudo apt-get update
+		sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev
+		sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
+		sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so
 	else
 		echo "+=============================================================================+"
 		echo "|  • Installation de autoupdate.sh                                            |"
@@ -219,12 +219,13 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "|  • Nettoyage et optimisation                                                |"
 	echo "+=============================================================================+"
 	echo ""
+	cd
 	echo "Avant nettoyage :"
 	sudo du -h /var/cache/apt/
-	if [[ -d "~/.local/share/Trash/" ]]; then
+	if [[ -d ".local/share/Trash/" ]]; then
 		sudo du -h ~/.local/share/Trash/
 	fi
-	if [[ -d "~/.cache/thumbnails/" ]]; then
+	if [[ -d ".cache/thumbnails/" ]]; then
 		sudo du -h ~/.cache/thumbnails/
 	fi
 	echo ""
@@ -246,14 +247,16 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 	echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
 	sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
 	echo ""
-	if [[ -d "~/Apps" ]]; then
+	cd
+	if [[ -d "Apps" ]]; then
 		echo "$ cd ~/Apps"
 		cd ~/Apps
 		echo ""
 		echo "$ sudo rm -rv *_old.sh"
 		sudo rm -rv *_old.sh
 		echo ""
-		if [[ -d "~/Apps/log" ]]; then
+		cd
+		if [[ -d "Apps/log" ]]; then
 			echo "$ cd ~/Apps/log"
 			cd ~/Apps/log
 			echo ""
@@ -262,7 +265,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 			echo ""
 		fi
 	fi
-	if [[ -d "~/.local/share/Trash/" ]]; then
+	cd
+	if [[ -d ".local/share/Trash/" ]]; then
 		echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
 		sudo rm -rfv ~/.local/share/Trash/files/*
 		echo ""
@@ -273,17 +277,19 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		sudo rm -rfv ~/.local/share/Trash/info/*
 		echo ""
 	fi
-	if [[ -d "~/.cache/thumbnails/" ]]; then
+	cd
+	if [[ -d ".cache/thumbnails/" ]]; then
 		echo "$ sudo rm -rfv ~/.cache/thumbnails/*"
 		sudo rm -rfv ~/.cache/thumbnails/*
 		echo ""
 	fi
+	cd
 	echo "Après nettoyage :"
 	sudo du -h /var/cache/apt/
-	if [[ -d "~/.local/share/Trash/" ]]; then
+	if [[ -d ".local/share/Trash/" ]]; then
 		sudo du -h ~/.local/share/Trash/
 	fi
-	if [[ -d "~/.cache/thumbnails/" ]]; then
+	if [[ -d ".cache/thumbnails/" ]]; then
 		sudo du -h ~/.cache/thumbnails/
 	fi
 	echo ""
