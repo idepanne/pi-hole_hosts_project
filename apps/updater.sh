@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1067]
+# [1068]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -101,7 +101,8 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-if [[ -f "~/Apps/backup.sh" ]]; then
+cd
+if [[ -f "Apps/backup.sh" ]]; then
 	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
 0 4 * * 1-5 sudo reboot"

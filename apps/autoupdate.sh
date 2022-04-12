@@ -3,7 +3,7 @@ cd ~/Apps
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1067]                                    |"
+echo "|                                   [1068]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -62,7 +62,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
 			sleep
 		else
-			if [[ -d "~/Apps" ]]; then
+			cd
+			if [[ -d "Apps" ]]; then
 				echo ""
 				echo ""
 				echo ""
@@ -73,7 +74,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 				echo "Ancien crontab :"
 				crontab -l
 				echo ""
-				if [[ -f "~/Apps/backup.sh" ]]; then
+				if [[ -f "Apps/backup.sh" ]]; then
 					crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
 0 4 * * 1-5 sudo reboot"
