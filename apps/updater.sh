@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1064]
+# [1067]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -120,23 +120,54 @@ echo "+=========================================================================
 echo "|  • Nettoyage et optimisation                                                |"
 echo "+=============================================================================+"
 echo ""
-if [[ -d "~/Apps" ]]; then
+cd
+echo "Avant nettoyage :"
+sudo du -h /var/cache/apt/
+if [[ -d ".local/share/Trash/" ]]; then
+	sudo du -h ~/.local/share/Trash/
+fi
+if [[ -d ".cache/thumbnails/" ]]; then
+	sudo du -h ~/.cache/thumbnails/
+fi
+echo ""
+echo "$ cd"
+cd
+echo ""
+echo "$ sudo apt-get autopurge -y"
+sudo apt-get autopurge -y
+echo ""
+echo "$ sudo apt-get autoremove -y"
+sudo apt-get autoremove -y
+echo ""
+echo "$ sudo apt-get autoclean -y"
+sudo apt-get autoclean -y
+echo ""
+echo "$ sudo apt-get clean all"
+sudo apt-get clean all
+echo ""
+echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
+sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
+echo ""
+cd
+if [[ -d "Apps" ]]; then
 	echo "$ cd ~/Apps"
 	cd ~/Apps
 	echo ""
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
 	echo ""
-	if [[ -d "~/Apps/log" ]]; then
+	cd
+	if [[ -d "Apps/log" ]]; then
 		echo "$ cd ~/Apps/log"
 		cd ~/Apps/log
 		echo ""
 		echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
 		find *.log -mtime +31 -exec rm -rv {} \;
+		echo ""
 	fi
 fi
-if [[ -d "~/.local/share/Trash/" ]]; then
-	echo ""
+cd
+if [[ -d ".local/share/Trash/" ]]; then
 	echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
 	sudo rm -rfv ~/.local/share/Trash/files/*
 	echo ""
@@ -145,9 +176,20 @@ if [[ -d "~/.local/share/Trash/" ]]; then
 	echo ""
 	echo "$ sudo rm -rfv ~/.local/share/Trash/info/*"
 	sudo rm -rfv ~/.local/share/Trash/info/*
+	echo ""
 fi
-if [[ -d "~/.cache/thumbnails/" ]]; then
+cd
+if [[ -d ".cache/thumbnails/" ]]; then
 	echo "$ sudo rm -rfv ~/.cache/thumbnails/*"
 	sudo rm -rfv ~/.cache/thumbnails/*
 	echo ""
+fi
+cd
+echo "Après nettoyage :"
+sudo du -h /var/cache/apt/
+if [[ -d ".local/share/Trash/" ]]; then
+	sudo du -h ~/.local/share/Trash/
+fi
+if [[ -d ".cache/thumbnails/" ]]; then
+	sudo du -h ~/.cache/thumbnails/
 fi
