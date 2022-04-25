@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1073]                                    |"
+echo "|                                   [1074]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -18,7 +18,7 @@ var0=$(cat /proc/cpuinfo | grep Model)
 var20=$(ls /usr/bin/*session)
 ######################################
 
-if [[ $varsys == *"MANJARO"* ]]; then
+if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* ]]; then
 	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS."
 	echo "Il n'est pas compatible avec Manjaro Linux."
 	echo ""
