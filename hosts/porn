@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 10/03/2022 - 12h55
+# Last update : 01/05/2022 - 23h24
 
 
 # 1
@@ -25,6 +25,10 @@
 0.0.0.0 www.4crot.com
 0.0.0.0 4khdteen.com
 0.0.0.0 www.4khdteen.com
+
+# 8
+0.0.0.0 82xnxx.com
+0.0.0.0 www.82xnxx.com
 
 # A
 0.0.0.0 adameteve.fr
@@ -609,6 +613,8 @@
 0.0.0.0 www.thetranny.com
 0.0.0.0 toomics.com
 0.0.0.0 www.toomics.com
+0.0.0.0 topfreshporn.com
+0.0.0.0 www.topfreshporn.com
 0.0.0.0 toucheporno.com
 0.0.0.0 www.toucheporno.com
 0.0.0.0 trannylime.com
@@ -851,6 +857,8 @@
 0.0.0.0 xhamster50.com
 0.0.0.0 www.xhamster50.com
 0.0.0.0 fr.xhamster50.com
+0.0.0.0 xjona.com
+0.0.0.0 www.xjona.com
 0.0.0.0 xnxx.es
 0.0.0.0 www.xnxx.es
 0.0.0.0 xxnx.mobi
@@ -932,3 +940,5 @@
 0.0.0.0 www.zigtube.com
 0.0.0.0 ztube.org
 0.0.0.0 www.ztube.org
+0.0.0.0 zxctube.com
+0.0.0.0 www.zxctube.com

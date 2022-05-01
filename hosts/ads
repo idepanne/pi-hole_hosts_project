@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 18/03/2022 - 22h30
+# Last update : 01/05/2022 - 23h30
 
 
 # 1
@@ -45,6 +45,8 @@
 0.0.0.0 engine.phn.doublepimp.com
 
 # E
+0.0.0.0 edgar2al2larngpoer.com
+0.0.0.0 www.edgar2al2larngpoer.com
 0.0.0.0 epostglobalshipping.com
 0.0.0.0 www.epostglobalshipping.com
 0.0.0.0 etoro.com
