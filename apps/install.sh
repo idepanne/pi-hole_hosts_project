@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1078]                                    |"
+echo "|                                   [1079]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -174,7 +174,7 @@ else
 			echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor"
 			sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor
 			
-			#####
+			####################################################################################################
 			# Fonction désactivée, car AnyDesk ne fonctionne pas sur Raspberry Pi OS (64 bits)
 			#
 			# echo ""
@@ -185,7 +185,7 @@ else
 			# sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev
 			# sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
 			# sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so
-			#####
+			####################################################################################################
 			
 		else
 			echo "+=============================================================================+"
@@ -216,10 +216,10 @@ else
 			if [[ -f "Apps/backup.sh" ]]; then
 				crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
-0 4 * * 1-5 sudo reboot"
+0 4 * * 0 sudo reboot"
 			else
 				crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-0 4 * * 1-5 sudo reboot"
+0 4 * * 0 sudo reboot"
 			fi
 			sudo /etc/init.d/cron restart
 			echo ""
