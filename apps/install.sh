@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1081]                                    |"
+echo "|                                   [1084]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -53,7 +53,7 @@ else
 		echo "Version actuelle :"
 		uname -srv
 		echo ""
-		echo "y = Version de test | N = Version de production"
+		echo "y = Version de test | N = Version stable"
 		echo ""
 		echo "$ sudo rpi-update"
 		sudo rpi-update
@@ -174,7 +174,7 @@ else
 			echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor"
 			sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan gimagereader tesseract-ocr-fra hunspell-fr rpi-imager vlc meld gnome-system-monitor
 			
-			####################################################################################################
+			#####################################################################################################
 			# Fonction désactivée, car AnyDesk ne fonctionne pas sur Raspberry Pi OS (64 bits)
 			#
 			# echo ""
@@ -185,7 +185,7 @@ else
 			# sudo apt-get install -y anydesk libraspberrypi0 libgles-dev libegl-dev
 			# sudo ln -s /usr/lib/arm-linux-gnueabihf/libGLESv2.so /usr/lib/libbrcmGLESv2.so
 			# sudo ln -s /usr/lib/arm-linux-gnueabihf/libEGL.so /usr/lib/libbrcmEGL.so
-			####################################################################################################
+			#####################################################################################################
 			
 		else
 			echo "+=============================================================================+"
