@@ -3,7 +3,7 @@ cd ~/Apps
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1084]                                    |"
+echo "|                                   [1085]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -67,7 +67,7 @@ else
 			echo ""
 			echo ""
 			echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
-			if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
+			if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"*  || $var20 == *"xfce"*  || $var20 == *"gnome"*  || $var20 == *"kde"* ]]; then
 				sleep
 			else
 				cd

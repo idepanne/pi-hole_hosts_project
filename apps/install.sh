@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1084]                                    |"
+echo "|                                   [1085]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -100,7 +100,7 @@ else
 		echo "$ cd ~/Apps"
 		cd ~/Apps
 		echo ""
-		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
+		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"*  || $var20 == *"xfce"*  || $var20 == *"gnome"*  || $var20 == *"kde"* ]]; then
 			sleep 1
 		else
 			echo "$ mkdir log"
@@ -166,7 +166,7 @@ else
 		echo ""
 		echo ""
 		echo ""
-		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"* ]]; then
+		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"*  || $var20 == *"pipewire-media"*  || $var20 == *"xfce"*  || $var20 == *"gnome"*  || $var20 == *"kde"* ]]; then
 			echo "+=============================================================================+"
 			echo "|  • Installation des logiciels (GUI)                                         |"
 			echo "+=============================================================================+"
