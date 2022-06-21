@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1089]
+# [1090]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -14,11 +14,6 @@ echo "+=========================================================================
 echo ""
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
-
-### A supprimer...
-sudo apt-get install -y speedometer
-###
-
 echo ""
 echo ""
 echo ""
