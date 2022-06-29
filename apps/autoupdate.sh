@@ -3,7 +3,7 @@ cd ~/Apps
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1090]                                    |"
+echo "|                                   [1093]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -85,10 +85,10 @@ else
 					if [[ -f "Apps/backup.sh" ]]; then
 						crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
-0 4 * * 0 sudo reboot"
+0 4 * * 1 sudo reboot"
 					else
 						crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-0 4 * * 0 sudo reboot"
+0 4 * * 1 sudo reboot"
 					fi
 					sudo /etc/init.d/cron restart
 					echo ""
