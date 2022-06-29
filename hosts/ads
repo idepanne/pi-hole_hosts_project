@@ -3,157 +3,192 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 02/06/2022 - 16h15
+# Last update : 29/06/2022 - 10h07
 
 
 # 1
-0.0.0.0 1001tracklists.com
-0.0.0.0 www.1001tracklists.com
+1001tracklists.com
+www.1001tracklists.com
+
 
 # A
-0.0.0.0 actirise.com
-0.0.0.0 www.actirise.com
-0.0.0.0 adjust.com
-0.0.0.0 www.adjust.com
-0.0.0.0 app.adjust.com
-0.0.0.0 ampproject.org
-0.0.0.0 www.ampproject.org
-0.0.0.0 cdn.ampproject.org
-0.0.0.0 aservium.com
-0.0.0.0 www.aservium.com
-0.0.0.0 azureedge.net
-0.0.0.0 www.azureedge.net
-0.0.0.0 cdn-stamped-io.azureedge.net
+actirise.com
+www.actirise.com
+adjust.com
+www.adjust.com
+app.adjust.com
+ampproject.org
+www.ampproject.org
+cdn.ampproject.org
+aservium.com
+www.aservium.com
+azureedge.net
+www.azureedge.net
+cdn-stamped-io.azureedge.net
+
 
 # B
-0.0.0.0 boohoo.com
-0.0.0.0 www.boohoo.com
-0.0.0.0 bootstrapcdn.com
-0.0.0.0 www.bootstrapcdn.com
-0.0.0.0 maxcdn.bootstrapcdn.com
-0.0.0.0 netdna.bootstrapcdn.com
+boohoo.com
+www.boohoo.com
+bootstrapcdn.com
+www.bootstrapcdn.com
+maxcdn.bootstrapcdn.com
+netdna.bootstrapcdn.com
+
 
 # C
-0.0.0.0 cambrianswap.com
-0.0.0.0 www.cambrianswap.com
+cambrianswap.com
+www.cambrianswap.com
+cookieless-data.com
+js.cookieless-data.com
+www.cookieless-data.com
+
 
 # D
-0.0.0.0 directrelief.org
-0.0.0.0 www.directrelief.org
-0.0.0.0 doublepimp.com
-0.0.0.0 www.doublepimp.com
-0.0.0.0 engine.phn.doublepimp.com
+directrelief.org
+www.directrelief.org
+doublepimp.com
+www.doublepimp.com
+engine.phn.doublepimp.com
+
 
 # E
-0.0.0.0 edgar2al2larngpoer.com
-0.0.0.0 www.edgar2al2larngpoer.com
-0.0.0.0 epostglobalshipping.com
-0.0.0.0 www.epostglobalshipping.com
-0.0.0.0 etoro.com
-0.0.0.0 www.etoro.com
-0.0.0.0 ezodn.com
-0.0.0.0 go.ezodn.com
-0.0.0.0 www.ezodn.com
-0.0.0.0 ezoic.com
-0.0.0.0 www.ezoic.co
+edgar2al2larngpoer.com
+www.edgar2al2larngpoer.com
+epostglobalshipping.com
+www.epostglobalshipping.com
+etoro.com
+www.etoro.com
+ezodn.com
+go.ezodn.com
+www.ezodn.com
+ezoic.com
+www.ezoic.co
+
 
 # F
-0.0.0.0 flashb.com
-0.0.0.0 www.flashb.com
-0.0.0.0 flashb.id
-0.0.0.0 www.flashb.id
+flashb.com
+www.flashb.com
+flashb.id
+www.flashb.id
+
 
 # G
-0.0.0.0 geekbuying.com
-0.0.0.0 www.geekbuying.com
-0.0.0.0 promotion.geekbuying.com
-0.0.0.0 content2.geekbuying.com
-0.0.0.0 content1.geekbuying.com
-0.0.0.0 affiliate.geekbuying.com
-0.0.0.0 getalltraffic.com
-0.0.0.0 www.getalltraffic.com
-0.0.0.0 getaprizefree.com
-0.0.0.0 www.getaprizefree.com
+geekbuying.com
+www.geekbuying.com
+promotion.geekbuying.com
+content2.geekbuying.com
+content1.geekbuying.com
+affiliate.geekbuying.com
+getalltraffic.com
+www.getalltraffic.com
+getaprizefree.com
+www.getaprizefree.com
+googletagmanager.com
+www.googletagmanager.com
+
 
 # H
 
+
 # I
-0.0.0.0 indiegogo.com
-0.0.0.0 www.indiegogo.com
+indiegogo.com
+www.indiegogo.com
+
 
 # J
-0.0.0.0 judge.me
-0.0.0.0 www.judge.me
-0.0.0.0 cdn.judge.me
+judge.me
+www.judge.me
+cdn.judge.me
+
 
 # K
 
+
 # L
 
+
 # M
-0.0.0.0 magiks.fr
-0.0.0.0 www.magiks.fr
+magiks.fr
+www.magiks.fr
+
 
 # N
-0.0.0.0 newrelic.com
-0.0.0.0 www.newrelic.com
+newrelic.com
+www.newrelic.com
+
 
 # O
-0.0.0.0 optnx.com
-0.0.0.0 www.optnx.com
-0.0.0.0 s.optnx.com
+opti-digital.com
+www.opti-digital.com
+scripts.opti-digital.com
+optnx.com
+www.optnx.com
+s.optnx.com
+
 
 # P
-0.0.0.0 plan-eco-energie.fr
-0.0.0.0 www.plan-eco-energie.fr
+plan-eco-energie.fr
+www.plan-eco-energie.fr
+
 
 # Q
-0.0.0.0 qetail.com
-0.0.0.0 www.qetail.com
+qetail.com
+www.qetail.com
+
 
 # R
-0.0.0.0 realsrv.com
-0.0.0.0 www.realsrv.com
-0.0.0.0 syndication.realsrv.com
-0.0.0.0 rocketmediaservice.com
-0.0.0.0 www.rocketmediaservice.com
+realsrv.com
+www.realsrv.com
+syndication.realsrv.com
+rocketmediaservice.com
+www.rocketmediaservice.com
+
 
 # S
-0.0.0.0 seedtag.com
-0.0.0.0 www.seedtag.com
-0.0.0.0 s.seedtag.com
-0.0.0.0 showheroes.com
-0.0.0.0 www.showheroes.com
-0.0.0.0 video-library.showheroes.com
-0.0.0.0 static.showheroes.com
-0.0.0.0 receiver-hetzner.showheroes.com
-0.0.0.0 smarthomebeginner.com
-0.0.0.0 www.smarthomebeginner.com
-0.0.0.0 snapdeal.com
-0.0.0.0 www.snapdeal.com
-0.0.0.0 superboxmall.com
-0.0.0.0 www.superboxmall.com
-0.0.0.0 superboxtvstore.com
-0.0.0.0 www.superboxtvstore.com
+seedtag.com
+www.seedtag.com
+s.seedtag.com
+showheroes.com
+www.showheroes.com
+video-library.showheroes.com
+static.showheroes.com
+receiver-hetzner.showheroes.com
+smarthomebeginner.com
+www.smarthomebeginner.com
+snapdeal.com
+www.snapdeal.com
+superboxmall.com
+www.superboxmall.com
+superboxtvstore.com
+www.superboxtvstore.com
+
 
 # T
-0.0.0.0 teads.com
-0.0.0.0 www.teads.com
-0.0.0.0 hp.teads.com
+teads.com
+www.teads.com
+hp.teads.com
+syndication.twitter.com
+
 
 # U
 
+
 # V
+
 
 # W
 
+
 # X
 
+
 # Y
-0.0.0.0 youronlinechoices.com
-0.0.0.0 www.youronlinechoices.com
+youronlinechoices.com
+www.youronlinechoices.com
+
 
 # Z
-0.0.0.0 zemanta.com
-0.0.0.0 www.zemanta.com
-0.0.0.0 r1-euc1.zemanta.com
+zemanta.com
+www.zemanta.com
+r1-euc1.zemanta.com
