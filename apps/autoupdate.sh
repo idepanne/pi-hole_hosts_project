@@ -3,7 +3,7 @@ cd ~/Apps
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1097]                                    |"
+echo "|                                   [1098]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -104,7 +104,6 @@ else
 		echo "|                    Mise à jour du Raspberry Pi terminée                     |"
 		echo "+=============================================================================+"
 		sleep 1
-        #sudo reboot
 	else
 		echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS."
 		echo "Il n'est pas compatible avec $varsys."

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1097]
+# [1098]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -11,9 +11,6 @@ echo ""
 echo "+=============================================================================+"
 echo "|  • Mise à jour de Raspberry Pi OS                                           |"
 echo "+=============================================================================+"
-echo ""
-echo "$ sudo apt list --upgradable"
-sudo apt list --upgradable
 echo ""
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
@@ -121,10 +118,10 @@ cd
 if [[ -f "Apps/backup.sh" ]]; then
 	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
-0 4 * * 1 sudo reboot"
+0 4 * * * sudo reboot"
 else
 	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
-0 4 * * 1 sudo reboot"
+0 4 * * * sudo reboot"
 fi
 sudo /etc/init.d/cron restart
 echo ""
