@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 05/07/2022 - 00h30
+# Last update : 18/07/2022 - 11h45
 
 
 # 1
@@ -17,11 +17,17 @@ www.actirise.com
 adjust.com
 www.adjust.com
 app.adjust.com
+admarvel.com
+adsbynimbus.com
+www.adsbynimbus.com
+www.admarvel.com
 ampproject.org
 www.ampproject.org
 cdn.ampproject.org
 aservium.com
 www.aservium.com
+aufr67i8sten.com
+www.aufr67i8sten.com
 azureedge.net
 www.azureedge.net
 cdn-stamped-io.azureedge.net
