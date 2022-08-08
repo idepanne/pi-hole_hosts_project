@@ -3,12 +3,18 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 03/08/2022 - 02h10
+# Last update : 08/08/2022 - 22h30
 
 
 # 1
 1001tracklists.com
 www.1001tracklists.com
+
+
+# 4
+4dex.io
+www.4dex.io
+script.4dex.io
 
 
 # A
@@ -17,10 +23,16 @@ www.actirise.com
 adjust.com
 www.adjust.com
 app.adjust.com
-admarvel.com
+adnxs.com
+www.adnxs.com
+ib.adnxs.com
 adsbynimbus.com
 www.adsbynimbus.com
+admarvel.com
 www.admarvel.com
+amazon-adsystem.com
+www.amazon-adsystem.com
+c.amazon-adsystem.com
 ampproject.org
 www.ampproject.org
 cdn.ampproject.org
@@ -121,6 +133,9 @@ cdn.judge.me
 # M
 magiks.fr
 www.magiks.fr
+media.net
+www.media.net
+hbx.media.net
 
 
 # N
@@ -138,8 +153,14 @@ s.optnx.com
 
 
 # P
+​pbstck.com
+​www.pbstck.com
+​boot.pbstck.com
 plan-eco-energie.fr
 www.plan-eco-energie.fr
+privacy-center.org
+www.privacy-center.org
+api.privacy-center.org
 
 
 # Q
@@ -151,11 +172,17 @@ www.qetail.com
 realsrv.com
 www.realsrv.com
 syndication.realsrv.com
+richaudience.com
+www.richaudience.com
+shb.richaudience.com
 rocketmediaservice.com
 www.rocketmediaservice.com
 
 
 # S
+s-onetag.com
+www.s-onetag.com
+get.s-onetag.com
 seedtag.com
 www.seedtag.com
 s.seedtag.com
@@ -164,8 +191,14 @@ www.showheroes.com
 video-library.showheroes.com
 static.showheroes.com
 receiver-hetzner.showheroes.com
+smartadserver.com
+www.smartadserver.com
+prg.smartadserver.com
 smarthomebeginner.com
 www.smarthomebeginner.com
+smilewanted.com
+www.smilewanted.com
+prebid.smilewanted.com
 snapdeal.com
 www.snapdeal.com
 superboxmall.com
@@ -175,18 +208,33 @@ www.superboxtvstore.com
 
 
 # T
+taboola.com
+cdn.taboola.com
+www.taboola.com
 teads.com
 www.teads.com
 hp.teads.com
+teads.tv
+www.teads.tv
+a.teads.tv
 trustedcpmrevenue.com
 www.trustedcpmrevenue.com
 syndication.twitter.com
 
 
 # U
+ultimedia.com
+www.ultimedia.com
+dig.ultimedia.com
+unblockia.com
+www.unblockia.com
+cdn.unblockia.com
 
 
 # V
+videostep.com
+www.videostep.com
+bid5.videostep.com
 
 
 # W
