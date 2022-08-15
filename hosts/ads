@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 08/08/2022 - 22h30
+# Last update : 15/08/2022 - 23h30
 
 
 # 1
@@ -172,6 +172,8 @@ www.qetail.com
 realsrv.com
 www.realsrv.com
 syndication.realsrv.com
+redirectingat.com
+www.redirectingat.com
 richaudience.com
 www.richaudience.com
 shb.richaudience.com
