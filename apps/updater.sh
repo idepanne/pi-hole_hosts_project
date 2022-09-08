@@ -1,10 +1,19 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1120]
+# [1121]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
+echo ""
+echo ""
+echo ""
+echo "+=============================================================================+"
+echo "|  • Suppression des logiciels obsolètes                                      |"
+echo "+=============================================================================+"
+echo ""
+echo "$ sudo apt-get purge -y speedtest-cli"
+sudo apt-get purge -y speedtest-cli
 echo ""
 echo ""
 echo ""

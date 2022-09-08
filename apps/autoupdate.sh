@@ -3,7 +3,7 @@ cd ~/Apps
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1120]                                    |"
+echo "|                                   [1121]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -12,12 +12,18 @@ echo ""
 echo ""
 
 ###### Définition des variables ######
-varsys=$(cat /etc/os-release | grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
+varsys=$(< /etc/os-release grep PRETTY_NAME)
+if [[ $varsys == *"EndeavourOS"* ]]; then
+    varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c13-)
+else
+    varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
+fi
+
 var0=$(cat /proc/cpuinfo | grep Model)
 var20=$(ls /usr/bin/*session)
 ######################################
 
-if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* ]]; then
+if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* || $varsys == *"EndeavourOS"* ]]; then
 	echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS."
 	echo "Il n'est pas compatible avec $varsys."
 	echo ""
