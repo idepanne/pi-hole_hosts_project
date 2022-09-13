@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1121]
+# [1122]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -12,8 +12,13 @@ echo "+=========================================================================
 echo "|  • Suppression des logiciels obsolètes                                      |"
 echo "+=============================================================================+"
 echo ""
-echo "$ sudo apt-get purge -y speedtest-cli"
-sudo apt-get purge -y speedtest-cli
+var60=$(sudo apt-get purge -y speedtest-cli)
+if [[ "$var60" =~ "n'est pas installé, et ne peut donc être supprimé" ]]; then
+	echo "Aucun logiciel obsolète à supprimer."
+else
+	echo "$ sudo apt-get purge -y speedtest-cli" 
+	echo "$var60"
+fi
 echo ""
 echo ""
 echo ""

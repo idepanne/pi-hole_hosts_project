@@ -3,7 +3,7 @@ cd ~/Apps
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1121]                                    |"
+echo "|                                   [1122]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -14,9 +14,9 @@ echo ""
 ###### Définition des variables ######
 varsys=$(< /etc/os-release grep PRETTY_NAME)
 if [[ $varsys == *"EndeavourOS"* ]]; then
-    varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c13-)
+	varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c13-)
 else
-    varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
+	varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
 fi
 
 var0=$(cat /proc/cpuinfo | grep Model)
