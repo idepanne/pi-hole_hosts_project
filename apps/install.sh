@@ -4,7 +4,7 @@ cd
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1123]                                    |"
+echo "|                                   [1125]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -172,52 +172,43 @@ else
 		echo ""
 		echo ""
 		echo ""
-		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"* || $var20 == *"pipewire-media"* || $var20 == *"xfce"* || $var20 == *"gnome"* || $var20 == *"kde"* || $var20 == *"cinnamon"* || $var20 == *"mate"* ]]; then
-			echo "+=============================================================================+"
-			echo "|  • Installation des logiciels (GUI)                                         |"
-			echo "+=============================================================================+"
-			echo ""
-			echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan hunspell-fr rpi-imager vlc meld gnome-system-monitor"
-			sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan hunspell-fr rpi-imager vlc meld gnome-system-monitor
-		else
-			echo "+=============================================================================+"
-			echo "|  • Installation de autoupdate.sh                                            |"
-			echo "+=============================================================================+"
-			echo ""
-			echo "$ cd ~/Apps"
-			cd ~/Apps
-			echo ""
-			echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
-			wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
-			echo ""
-			echo "$ sudo chmod +x autoupdate.sh"
-			sudo chmod +x autoupdate.sh
-			echo ""
-			echo "$ cd"
-			cd
-			echo ""
-			echo ""
-			echo ""
-			echo "+=============================================================================+"
-			echo "|  • Configuration du crontab                                                 |"
-			echo "+=============================================================================+"
-			echo ""
-			echo "Ancien crontab :"
-			crontab -l
-			echo ""
-			if [[ -f "Apps/backup.sh" ]]; then
-				crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+		echo "+=============================================================================+"
+		echo "|  • Installation de autoupdate.sh                                            |"
+		echo "+=============================================================================+"
+		echo ""
+		echo "$ cd ~/Apps"
+		cd ~/Apps
+		echo ""
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
+		echo ""
+		echo "$ sudo chmod +x autoupdate.sh"
+		sudo chmod +x autoupdate.sh
+		echo ""
+		echo "$ cd"
+		cd
+		echo ""
+		echo ""
+		echo ""
+		echo "+=============================================================================+"
+		echo "|  • Configuration du crontab                                                 |"
+		echo "+=============================================================================+"
+		echo ""
+		echo "Ancien crontab :"
+		crontab -l
+		echo ""
+		if [[ -f "Apps/backup.sh" ]]; then
+			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
 0 4 * * 1 sudo reboot"
-			else
-				crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+		else
+			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
 0 4 * * 1 sudo reboot"
-			fi
-			sudo /etc/init.d/cron restart
-			echo ""
-			echo "Nouveau crontab :"
-			crontab -l
 		fi
+		sudo /etc/init.d/cron restart
+		echo ""
+		echo "Nouveau crontab :"
+		crontab -l
 		echo ""
 		echo ""
 		echo ""
