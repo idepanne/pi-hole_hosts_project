@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 29/09/2022 - 14h00
+# Last update : 03/10/2022 - 02h56
 
 
 # 1
@@ -40,6 +40,11 @@ aservium.com
 www.aservium.com
 aufr67i8sten.com
 www.aufr67i8sten.com
+axeptio.eu
+www.axeptio.eu
+axept.io
+static.axept.io
+www.axept.io
 azureedge.net
 www.azureedge.net
 cdn-stamped-io.azureedge.net
