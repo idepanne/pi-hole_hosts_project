@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1130]
+# [1131]
 # © 2020-2022 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -31,7 +31,7 @@ sudo apt-get full-upgrade -y
 echo ""
 echo ""
 echo ""
-cd ~/Apps
+cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|  • Mise à jour des logiciels                                                |"
 echo "+=============================================================================+"
@@ -108,11 +108,11 @@ fi
 echo ""
 echo ""
 echo ""
-cd
+cd || return
 if [[ -f "Apps/backup.sh" ]]; then
 	echo "4. backup.sh :                  [INSTALLÉ]"
 	echo ""
-	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd
+	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd || return
 	echo ""
 	echo "4. backup.sh :                  [MIS À JOUR]"
 else
@@ -128,13 +128,13 @@ echo ""
 echo "Ancien crontab :"
 crontab -l
 echo ""
-cd
+cd || return
 if [[ -f "Apps/backup.sh" ]]; then
-	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+    crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
 0 4 * * 1 sudo reboot"
 else
-	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+    crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 0 4 * * 1 sudo reboot"
 fi
 sudo /etc/init.d/cron restart
@@ -148,7 +148,7 @@ echo "+=========================================================================
 echo "|  • Nettoyage et optimisation                                                |"
 echo "+=============================================================================+"
 echo ""
-cd
+cd || return
 echo "Avant nettoyage :"
 sudo du -h /var/cache/apt/
 if [[ -d ".local/share/Trash/" ]]; then
@@ -158,8 +158,8 @@ if [[ -d ".cache/thumbnails/" ]]; then
 	sudo du -h ~/.cache/thumbnails/
 fi
 echo ""
-echo "$ cd"
-cd
+echo "$ cd || return"
+cd || return
 echo ""
 echo "$ sudo apt-get autopurge -y"
 sudo apt-get autopurge -y
@@ -176,25 +176,25 @@ echo ""
 echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
 sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
 echo ""
-cd
+cd || return
 if [[ -d "Apps" ]]; then
-	echo "$ cd ~/Apps"
-	cd ~/Apps
+	echo "$ cd ~/Apps || return"
+	cd ~/Apps || return
 	echo ""
 	echo "$ sudo rm -rv *_old.sh"
 	sudo rm -rv *_old.sh
 	echo ""
-	cd
+	cd || return
 	if [[ -d "Apps/log" ]]; then
-		echo "$ cd ~/Apps/log"
-		cd ~/Apps/log
+		echo "$ cd ~/Apps/log || return"
+		cd ~/Apps/log || return
 		echo ""
 		echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
 		find *.log -mtime +31 -exec rm -rv {} \;
 		echo ""
 	fi
 fi
-cd
+cd || return
 if [[ -d ".local/share/Trash/" ]]; then
 	echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
 	sudo rm -rfv ~/.local/share/Trash/files/*
@@ -206,13 +206,13 @@ if [[ -d ".local/share/Trash/" ]]; then
 	sudo rm -rfv ~/.local/share/Trash/info/*
 	echo ""
 fi
-cd
+cd || return
 if [[ -d ".cache/thumbnails/" ]]; then
 	echo "$ sudo rm -rfv ~/.cache/thumbnails/*"
 	sudo rm -rfv ~/.cache/thumbnails/*
 	echo ""
 fi
-cd
+cd || return
 echo "Après nettoyage :"
 sudo du -h /var/cache/apt/
 if [[ -d ".local/share/Trash/" ]]; then
