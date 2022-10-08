@@ -1,10 +1,10 @@
 #!/bin/bash
 clear
-cd
+cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1128]                                    |"
+echo "|                                   [1130]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -20,7 +20,7 @@ else
 	varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
 fi
 
-var0=$(cat /proc/cpuinfo | grep Model)
+var0=$(< /proc/cpuinfo grep Model)
 var20=$(ls /usr/bin/*session)
 ######################################
 
@@ -28,7 +28,7 @@ if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* || $varsys == *"Endeavour
 	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS."
 	echo "Il n'est pas compatible avec $varsys."
 	echo ""
-	cd
+    cd || return
 	sudo rm install.sh
 else
 	if [[ $var0 == *"Raspberry Pi"* ]]; then
@@ -88,8 +88,8 @@ else
 		echo "|  • Préparation de l'installation                                            |"
 		echo "+=============================================================================+"
 		echo ""
-		echo "$ cd"
-		cd
+		echo "$ cd || return"
+		cd || return
 		echo ""
 		echo "$ sudo rm -rv install.sh"
 		sudo rm -rv install.sh
@@ -103,8 +103,8 @@ else
 		echo "$ mkdir Apps"
 		mkdir Apps
 		echo ""
-		echo "$ cd ~/Apps"
-		cd ~/Apps
+		echo "$ cd ~/Apps || return"
+		cd ~/Apps || return
 		echo ""
 		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"* || $var20 == *"pipewire-media"* || $var20 == *"xfce"* || $var20 == *"gnome"* || $var20 == *"kde"* || $var20 == *"cinnamon"* || $var20 == *"mate"* ]]; then
 			sleep 1
@@ -128,13 +128,13 @@ else
 		echo "$ sudo rm -rv updater.sh"
 		sudo rm -rv updater.sh
 		echo ""
-		echo "$ cd"
-		cd
+		echo "$ cd || return"
+		cd || return
 		echo ""
 		echo ""
 		echo ""
 		echo "+=============================================================================+"
-		echo "|  • Installation des logiciels (CLI)                                         |"
+		echo "|  • Installation des logiciels requis                                        |"
 		echo "+=============================================================================+"
 		echo ""
 		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools"
@@ -176,8 +176,8 @@ else
 		echo "|  • Installation de autoupdate.sh                                            |"
 		echo "+=============================================================================+"
 		echo ""
-		echo "$ cd ~/Apps"
-		cd ~/Apps
+		echo "$ cd ~/Apps || return"
+		cd ~/Apps || return
 		echo ""
 		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh"
 		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/autoupdate.sh > autoupdate.sh
@@ -185,8 +185,8 @@ else
 		echo "$ sudo chmod +x autoupdate.sh"
 		sudo chmod +x autoupdate.sh
 		echo ""
-		echo "$ cd"
-		cd
+		echo "$ cd || return"
+		cd || return
 		echo ""
 		echo ""
 		echo ""
@@ -198,11 +198,13 @@ else
 		crontab -l
 		echo ""
 		if [[ -f "Apps/backup.sh" ]]; then
-			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+			#crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+            crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
 0 4 * * 1 sudo reboot"
 		else
-			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+			#crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/`date --date="+1day" +"%Y%m%d"`_autoupdate.log 2>&1
+            crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 0 4 * * 1 sudo reboot"
 		fi
 		sudo /etc/init.d/cron restart
@@ -216,7 +218,7 @@ else
 		echo "|  • Nettoyage et optimisation                                                |"
 		echo "+=============================================================================+"
 		echo ""
-		cd
+		cd || return
 		echo "Avant nettoyage :"
 		sudo du -h /var/cache/apt/
 		if [[ -d ".local/share/Trash/" ]]; then
@@ -226,8 +228,8 @@ else
 			sudo du -h ~/.cache/thumbnails/
 		fi
 		echo ""
-		echo "$ cd"
-		cd
+		echo "$ cd || return"
+		cd || return
 		echo ""
 		echo "$ sudo apt-get autopurge -y"
 		sudo apt-get autopurge -y
@@ -244,25 +246,25 @@ else
 		echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
 		sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
 		echo ""
-		cd
+		cd || return
 		if [[ -d "Apps" ]]; then
-			echo "$ cd ~/Apps"
-			cd ~/Apps
+			echo "$ cd ~/Apps || return"
+			cd ~/Apps || return
 			echo ""
 			echo "$ sudo rm -rv *_old.sh"
 			sudo rm -rv *_old.sh
 			echo ""
-			cd
+			cd || return
 			if [[ -d "Apps/log" ]]; then
-				echo "$ cd ~/Apps/log"
-				cd ~/Apps/log
+				echo "$ cd ~/Apps/log || return"
+				cd ~/Apps/log || return
 				echo ""
 				echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
 				find *.log -mtime +31 -exec rm -rv {} \;
 				echo ""
 			fi
 		fi
-		cd
+		cd || return
 		if [[ -d ".local/share/Trash/" ]]; then
 			echo "$ sudo rm -rfv ~/.local/share/Trash/files/*"
 			sudo rm -rfv ~/.local/share/Trash/files/*
@@ -274,13 +276,13 @@ else
 			sudo rm -rfv ~/.local/share/Trash/info/*
 			echo ""
 		fi
-		cd
+		cd || return
 		if [[ -d ".cache/thumbnails/" ]]; then
 			echo "$ sudo rm -rfv ~/.cache/thumbnails/*"
 			sudo rm -rfv ~/.cache/thumbnails/*
 			echo ""
 		fi
-		cd
+		cd || return
 		echo "Après nettoyage :"
 		sudo du -h /var/cache/apt/
 		if [[ -d ".local/share/Trash/" ]]; then
@@ -321,7 +323,7 @@ else
 		echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS."
 		echo "Il n'est pas compatible avec $varsys."
 		echo ""
-		cd
+		cd || return
 		sudo rm install.sh
 	fi
 fi
