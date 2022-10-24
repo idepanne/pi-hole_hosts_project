@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1131]                                    |"
+echo "|                                   [1132]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -134,7 +134,7 @@ else
 		echo ""
 		echo ""
 		echo "+=============================================================================+"
-		echo "|  • Installation des logiciels requis                                        |"
+		echo "|  • Installation des logiciels requis (CLI)                                  |"
 		echo "+=============================================================================+"
 		echo ""
 		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools"
@@ -169,6 +169,17 @@ else
 		echo ""
 		echo "$ sudo fail2ban-client status sshd"
 		sudo fail2ban-client status sshd
+		echo ""
+		echo ""
+		echo ""
+		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"* || $var20 == *"pipewire-media"* || $var20 == *"xfce"* || $var20 == *"gnome"* || $var20 == *"kde"* || $var20 == *"cinnamon"* || $var20 == *"mate"* ]]; then
+			echo "+=============================================================================+"
+			echo "|  • Installation des logiciels requis (GUI)                                  |"
+			echo "+=============================================================================+"
+			echo ""
+			echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan hunspell-fr rpi-imager vlc meld gnome-system-monitor"
+			sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan hunspell-fr rpi-imager vlc meld gnome-system-monitor
+		fi
 		echo ""
 		echo ""
 		echo ""
