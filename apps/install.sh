@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1132]                                    |"
+echo "|                                   [1133]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -179,10 +179,10 @@ else
 			echo ""
 			echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan hunspell-fr rpi-imager vlc meld gnome-system-monitor"
 			sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan hunspell-fr rpi-imager vlc meld gnome-system-monitor
+			echo ""
+			echo ""
+			echo ""
 		fi
-		echo ""
-		echo ""
-		echo ""
 		echo "+=============================================================================+"
 		echo "|  • Installation de autoupdate.sh                                            |"
 		echo "+=============================================================================+"
