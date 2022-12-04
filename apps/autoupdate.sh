@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1134]                                    |"
+echo "|                                   [1138]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -88,14 +88,14 @@ else
 					echo "Ancien crontab :"
 					crontab -l
 					echo ""
-                    if [[ -f "Apps/backup.sh" ]]; then
-                        crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
+					if [[ -f "Apps/backup.sh" ]]; then
+						crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
 0 4 * * 1 sudo reboot"
-		            else
-                        crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
+					else
+						crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 0 4 * * 1 sudo reboot"
-	            	fi
+					fi
 					sudo /etc/init.d/cron restart
 					echo ""
 					echo "Nouveau crontab :"

@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1134]                                    |"
+echo "|                                   [1138]                                    |"
 echo "|                © 2020-2022 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -28,7 +28,7 @@ if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* || $varsys == *"Endeavour
 	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS."
 	echo "Il n'est pas compatible avec $varsys."
 	echo ""
-    cd || return
+	cd || return
 	sudo rm install.sh
 else
 	if [[ $var0 == *"Raspberry Pi"* ]]; then
@@ -209,11 +209,11 @@ else
 		crontab -l
 		echo ""
 		if [[ -f "Apps/backup.sh" ]]; then
-            crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
+			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 30 3 * * * ~/Apps/backup.sh
 0 4 * * 1 sudo reboot"
 		else
-            crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
+			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 0 4 * * 1 sudo reboot"
 		fi
 		sudo /etc/init.d/cron restart
