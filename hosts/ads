@@ -3,135 +3,135 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 29/12/2022 - 17h00
+# Last update : 06/01/2023 - 16h08
 
 
 # 1
-1001tracklists.com
-www.1001tracklists.com
+0.0.0.0 1001tracklists.com
+0.0.0.0 www.1001tracklists.com
 
 
 # 4
-4dex.io
-www.4dex.io
-script.4dex.io
+0.0.0.0 4dex.io
+0.0.0.0 www.4dex.io
+0.0.0.0 script.4dex.io
 
 
 # A
-actirise.com
-www.actirise.com
-adjust.com
-www.adjust.com
-app.adjust.com
-adnxs.com
-www.adnxs.com
-ib.adnxs.com
-adsbynimbus.com
-www.adsbynimbus.com
-admarvel.com
-www.admarvel.com
-amazon-adsystem.com
-www.amazon-adsystem.com
-c.amazon-adsystem.com
-ampproject.org
-www.ampproject.org
-cdn.ampproject.org
-aservium.com
-www.aservium.com
-aso1.net
-www.aso1.net
-track.aso1.net
-aufr67i8sten.com
-www.aufr67i8sten.com
-axeptio.eu
-www.axeptio.eu
-axept.io
-static.axept.io
-www.axept.io
-azureedge.net
-www.azureedge.net
-cdn-stamped-io.azureedge.net
+0.0.0.0 actirise.com
+0.0.0.0 www.actirise.com
+0.0.0.0 adjust.com
+0.0.0.0 www.adjust.com
+0.0.0.0 app.adjust.com
+0.0.0.0 adnxs.com
+0.0.0.0 www.adnxs.com
+0.0.0.0 ib.adnxs.com
+0.0.0.0 adsbynimbus.com
+0.0.0.0 www.adsbynimbus.com
+0.0.0.0 admarvel.com
+0.0.0.0 www.admarvel.com
+0.0.0.0 amazon-adsystem.com
+0.0.0.0 www.amazon-adsystem.com
+0.0.0.0 c.amazon-adsystem.com
+0.0.0.0 ampproject.org
+0.0.0.0 www.ampproject.org
+0.0.0.0 cdn.ampproject.org
+0.0.0.0 aservium.com
+0.0.0.0 www.aservium.com
+0.0.0.0 aso1.net
+0.0.0.0 www.aso1.net
+0.0.0.0 track.aso1.net
+0.0.0.0 aufr67i8sten.com
+0.0.0.0 www.aufr67i8sten.com
+0.0.0.0 axeptio.eu
+0.0.0.0 www.axeptio.eu
+0.0.0.0 axept.io
+0.0.0.0 static.axept.io
+0.0.0.0 www.axept.io
+0.0.0.0 azureedge.net
+0.0.0.0 www.azureedge.net
+0.0.0.0 cdn-stamped-io.azureedge.net
 
 
 # B
-boohoo.com
-www.boohoo.com
-bootstrapcdn.com
-www.bootstrapcdn.com
-maxcdn.bootstrapcdn.com
-netdna.bootstrapcdn.com
+0.0.0.0 boohoo.com
+0.0.0.0 www.boohoo.com
+0.0.0.0 bootstrapcdn.com
+0.0.0.0 www.bootstrapcdn.com
+0.0.0.0 maxcdn.bootstrapcdn.com
+0.0.0.0 netdna.bootstrapcdn.com
 
 
 # C
-cambrianswap.com
-www.cambrianswap.com
-cookieless-data.com
-js.cookieless-data.com
-www.cookieless-data.com
+0.0.0.0 cambrianswap.com
+0.0.0.0 www.cambrianswap.com
+0.0.0.0 cookieless-data.com
+0.0.0.0 js.cookieless-data.com
+0.0.0.0 www.cookieless-data.com
 
 
 # D
-directrelief.org
-www.directrelief.org
-doublepimp.com
-www.doublepimp.com
-engine.phn.doublepimp.com
+0.0.0.0 directrelief.org
+0.0.0.0 www.directrelief.org
+0.0.0.0 doublepimp.com
+0.0.0.0 www.doublepimp.com
+0.0.0.0 engine.phn.doublepimp.com
 
 
 # E
-edgar2al2larngpoer.com
-www.edgar2al2larngpoer.com
-elasticbeanstalk.com
-www.elasticbeanstalk.com
-epostglobalshipping.com
-www.epostglobalshipping.com
-etoro.com
-www.etoro.com
-ezodn.com
-go.ezodn.com
-www.ezodn.com
-ezoic.com
-www.ezoic.co
+0.0.0.0 edgar2al2larngpoer.com
+0.0.0.0 www.edgar2al2larngpoer.com
+0.0.0.0 elasticbeanstalk.com
+0.0.0.0 www.elasticbeanstalk.com
+0.0.0.0 epostglobalshipping.com
+0.0.0.0 www.epostglobalshipping.com
+0.0.0.0 etoro.com
+0.0.0.0 www.etoro.com
+0.0.0.0 ezodn.com
+0.0.0.0 go.ezodn.com
+0.0.0.0 www.ezodn.com
+0.0.0.0 ezoic.com
+0.0.0.0 www.ezoic.co
 
 
 # F
-flashb.com
-www.flashb.com
-flashb.id
-www.flashb.id
+0.0.0.0 flashb.com
+0.0.0.0 www.flashb.com
+0.0.0.0 flashb.id
+0.0.0.0 www.flashb.id
 
 
 # G
-geekbuying.com
-www.geekbuying.com
-promotion.geekbuying.com
-content2.geekbuying.com
-content1.geekbuying.com
-affiliate.geekbuying.com
-getalltraffic.com
-www.getalltraffic.com
-getaprizefree.com
-www.getaprizefree.com
-googletagmanager.com
-www.googletagmanager.com
+0.0.0.0 geekbuying.com
+0.0.0.0 www.geekbuying.com
+0.0.0.0 promotion.geekbuying.com
+0.0.0.0 content2.geekbuying.com
+0.0.0.0 content1.geekbuying.com
+0.0.0.0 affiliate.geekbuying.com
+0.0.0.0 getalltraffic.com
+0.0.0.0 www.getalltraffic.com
+0.0.0.0 getaprizefree.com
+0.0.0.0 www.getaprizefree.com
+0.0.0.0 googletagmanager.com
+0.0.0.0 www.googletagmanager.com
 
 
 # H
-huuugecasino.com
-www.huuugecasino.com
+0.0.0.0 huuugecasino.com
+0.0.0.0 www.huuugecasino.com
 
 
 # I
-impactserving.com
-www.impactserving.com
-indiegogo.com
-www.indiegogo.com
+0.0.0.0 impactserving.com
+0.0.0.0 www.impactserving.com
+0.0.0.0 indiegogo.com
+0.0.0.0 www.indiegogo.com
 
 
 # J
-judge.me
-www.judge.me
-cdn.judge.me
+0.0.0.0 judge.me
+0.0.0.0 www.judge.me
+0.0.0.0 cdn.judge.me
 
 
 # K
@@ -141,128 +141,131 @@ cdn.judge.me
 
 
 # M
-magiks.fr
-www.magiks.fr
-media.net
-www.media.net
-hbx.media.net
+0.0.0.0 magiks.fr
+0.0.0.0 www.magiks.fr
+0.0.0.0 media.net
+0.0.0.0 www.media.net
+0.0.0.0 hbx.media.net
 
 
 # N
-newrelic.com
-www.newrelic.com
+0.0.0.0 newrelic.com
+0.0.0.0 www.newrelic.com
 
 
 # O
-opti-digital.com
-www.opti-digital.com
-scripts.opti-digital.com
-optnx.com
-www.optnx.com
-s.optnx.com
+0.0.0.0 opti-digital.com
+0.0.0.0 www.opti-digital.com
+0.0.0.0 scripts.opti-digital.com
+0.0.0.0 optnx.com
+0.0.0.0 www.optnx.com
+0.0.0.0 s.optnx.com
 
 
 # P
-pbstck.com
-www.pbstck.com
-boot.pbstck.com
-plan-eco-energie.fr
-www.plan-eco-energie.fr
-privacy-center.org
-www.privacy-center.org
-api.privacy-center.org
+0.0.0.0 pbstck.com
+0.0.0.0 www.pbstck.com
+0.0.0.0 boot.pbstck.com
+0.0.0.0 plan-eco-energie.fr
+0.0.0.0 www.plan-eco-energie.fr
+0.0.0.0 privacy-center.org
+0.0.0.0 www.privacy-center.org
+0.0.0.0 api.privacy-center.org
 
 
 # Q
-qetail.com
-www.qetail.com
+0.0.0.0 qetail.com
+0.0.0.0 www.qetail.com
 
 
 # R
-realsrv.com
-www.realsrv.com
-syndication.realsrv.com
-redirectingat.com
-www.redirectingat.com
-richaudience.com
-www.richaudience.com
-shb.richaudience.com
-rocketmediaservice.com
-www.rocketmediaservice.com
+0.0.0.0 rayjump.com
+0.0.0.0 www.rayjump.com
+0.0.0.0 analytics-ios.rayjump.com
+0.0.0.0 realsrv.com
+0.0.0.0 www.realsrv.com
+0.0.0.0 syndication.realsrv.com
+0.0.0.0 redirectingat.com
+0.0.0.0 www.redirectingat.com
+0.0.0.0 richaudience.com
+0.0.0.0 www.richaudience.com
+0.0.0.0 shb.richaudience.com
+0.0.0.0 rocketmediaservice.com
+0.0.0.0 www.rocketmediaservice.com
 
 
 # S
-s-onetag.com
-www.s-onetag.com
-get.s-onetag.com
-seedtag.com
-www.seedtag.com
-s.seedtag.com
-showheroes.com
-www.showheroes.com
-video-library.showheroes.com
-static.showheroes.com
-receiver-hetzner.showheroes.com
-smartadserver.com
-www.smartadserver.com
-prg.smartadserver.com
-smarthomebeginner.com
-www.smarthomebeginner.com
-smilewanted.com
-www.smilewanted.com
-prebid.smilewanted.com
-snapdeal.com
-www.snapdeal.com
-superboxmall.com
-www.superboxmall.com
-superboxtvstore.com
-www.superboxtvstore.com
+0.0.0.0 s-onetag.com
+0.0.0.0 www.s-onetag.com
+0.0.0.0 get.s-onetag.com
+0.0.0.0 seedtag.com
+0.0.0.0 www.seedtag.com
+0.0.0.0 s.seedtag.com
+0.0.0.0 showheroes.com
+0.0.0.0 www.showheroes.com
+0.0.0.0 video-library.showheroes.com
+0.0.0.0 static.showheroes.com
+0.0.0.0 receiver-hetzner.showheroes.com
+0.0.0.0 smartadserver.com
+0.0.0.0 www.smartadserver.com
+0.0.0.0 prg.smartadserver.com
+0.0.0.0 smarthomebeginner.com
+0.0.0.0 www.smarthomebeginner.com
+0.0.0.0 smilewanted.com
+0.0.0.0 www.smilewanted.com
+0.0.0.0 prebid.smilewanted.com
+0.0.0.0 snapdeal.com
+0.0.0.0 www.snapdeal.com
+0.0.0.0 superboxmall.com
+0.0.0.0 www.superboxmall.com
+0.0.0.0 superboxtvstore.com
+0.0.0.0 www.superboxtvstore.com
 
 
 # T
-taboola.com
-cdn.taboola.com
-www.taboola.com
-teads.com
-www.teads.com
-hp.teads.com
-teads.tv
-www.teads.tv
-a.teads.tv
-trustedcpmrevenue.com
-www.trustedcpmrevenue.com
-syndication.twitter.com
+0.0.0.0 taboola.com
+0.0.0.0 cdn.taboola.com
+0.0.0.0 www.taboola.com
+0.0.0.0 teads.com
+0.0.0.0 www.teads.com
+0.0.0.0 hp.teads.com
+0.0.0.0 teads.tv
+0.0.0.0 www.teads.tv
+0.0.0.0 a.teads.tv
+0.0.0.0 trustedcpmrevenue.com
+0.0.0.0 www.trustedcpmrevenue.com
+0.0.0.0 syndication.twitter.com
 
 
 # U
-ultimedia.com
-www.ultimedia.com
-dig.ultimedia.com
-unblockia.com
-www.unblockia.com
-cdn.unblockia.com
+0.0.0.0 ultimedia.com
+0.0.0.0 www.ultimedia.com
+0.0.0.0 dig.ultimedia.com
+0.0.0.0 unblockia.com
+0.0.0.0 www.unblockia.com
+0.0.0.0 cdn.unblockia.com
 
 
 # V
-videostep.com
-www.videostep.com
-bid5.videostep.com
+0.0.0.0 videostep.com
+0.0.0.0 www.videostep.com
+0.0.0.0 bid5.videostep.com
 
 
 # W
-weborama.fr
-www.weborama.fr
+0.0.0.0 weborama.fr
+0.0.0.0 www.weborama.fr
 
 
 # X
 
 
 # Y
-youronlinechoices.com
-www.youronlinechoices.com
+0.0.0.0 youronlinechoices.com
+0.0.0.0 www.youronlinechoices.com
 
 
 # Z
-zemanta.com
-www.zemanta.com
-r1-euc1.zemanta.com
+0.0.0.0 zemanta.com
+0.0.0.0 www.zemanta.com
+0.0.0.0 r1-euc1.zemanta.com
