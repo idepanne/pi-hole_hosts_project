@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 23/01/2023 - 15h30
+# Last update : 06/02/2023 - 22h50
 
 
 # 1
@@ -171,6 +171,8 @@ www.pbstck.com
 boot.pbstck.com
 plan-eco-energie.fr
 www.plan-eco-energie.fr
+potsaglu.net
+www.potsaglu.net
 privacy-center.org
 www.privacy-center.org
 api.privacy-center.org
