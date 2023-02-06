@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1143]                                    |"
+echo "|                                   [1146]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -13,18 +13,12 @@ echo ""
 echo ""
 
 ###### Définition des variables ######
-varsys=$(< /etc/os-release grep PRETTY_NAME)
-if [[ $varsys == *"EndeavourOS"* ]]; then
-	varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c13-)
-else
-	varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
-fi
-
+varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
 var0=$(< /proc/cpuinfo grep Model)
 var20=$(ls /usr/bin/*session)
 ######################################
 
-if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* || $varsys == *"EndeavourOS"* ]]; then
+if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* ]]; then
 	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS."
 	echo "Il n'est pas compatible avec $varsys."
 	echo ""
