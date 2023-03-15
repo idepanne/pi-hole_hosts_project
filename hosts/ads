@@ -3,7 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne67@gmail.com".
-# Last update : 07/03/2023 - 00h55
+# Last update : 15/03/2023 - 02h30
 
 
 # 1
@@ -87,6 +87,7 @@ epostglobalshipping.com
 www.epostglobalshipping.com
 etoro.com
 www.etoro.com
+go.etoro.com
 ezodn.com
 go.ezodn.com
 www.ezodn.com
@@ -146,6 +147,8 @@ www.magiks.fr
 media.net
 www.media.net
 hbx.media.net
+millionz.com
+www.millionz.com
 mobilityware.com
 www.mobilityware.com
 api.prod.mwx.ext.mobilityware.com
