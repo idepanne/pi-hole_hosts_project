@@ -1,10 +1,33 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1159]
+# [1161]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
+echo ""
+echo ""
+echo ""
+echo "+=============================================================================+"
+echo "|  • Installation des logiciels requis (CLI)                                  |"
+echo "+=============================================================================+"
+echo ""
+echo "$ sudo apt-get install -y ssmtp"
+sudo apt-get install -y ssmtp
+#echo ""
+#echo ""
+#echo ""
+#echo "+=============================================================================+"
+#echo "|  • Suppression des logiciels obsolètes                                      |"
+#echo "+=============================================================================+"
+#echo ""
+#var60=$(sudo apt-get purge -y speedtest-cli)
+#if [[ "$var60" =~ "n'est pas installé, et ne peut donc être supprimé" ]]; then
+#	echo "Aucun logiciel obsolète à supprimer."
+#else
+#	echo "$ sudo apt-get purge -y speedtest-cli" 
+#	echo "$var60"
+#fi
 echo ""
 echo ""
 echo ""
@@ -73,8 +96,30 @@ fi
 echo ""
 echo ""
 echo ""
+if [[ -d "/etc/ssmtp" ]]; then
+	echo "3. sSMTP :                   [INSTALLÉ]"
+	echo ""
+    echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
+    sudo rm -rv /etc/ssmtp/ssmtp.conf
+    echo ""
+    echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf"
+    wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf
+    echo ""
+    echo "$ sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf"
+    sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf
+    echo ""
+    echo "$ sudo chown root:root /etc/ssmtp/ssmtp.conf"
+    sudo chown root:root /etc/ssmtp/ssmtp.conf
+	echo ""
+	echo "3. sSMTP :                   [MIS À JOUR]"
+else
+	echo "3. sSMTP :                   [NON INSTALLÉ]"
+fi
+echo ""
+echo ""
+echo ""
 if [[ -d "/etc/pihole" ]]; then
-	echo "3. Pi-hole :                    [INSTALLÉ]"
+	echo "4. Pi-hole :                    [INSTALLÉ]"
 	echo ""
 	sudo pihole -v
 	echo ""
@@ -87,22 +132,22 @@ if [[ -d "/etc/pihole" ]]; then
 		sudo pihole -g
 		echo ""
 	fi
-	echo "3. Pi-hole :                    [MIS À JOUR]"
+	echo "4. Pi-hole :                    [MIS À JOUR]"
 else
-	echo "3. Pi-hole :                    [NON INSTALLÉ]"
+	echo "4. Pi-hole :                    [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
 echo ""
 cd || return
 if [[ -f "Apps/backup.sh" ]]; then
-	echo "4. backup.sh :                  [INSTALLÉ]"
+	echo "5. backup.sh :                  [INSTALLÉ]"
 	echo ""
 	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd || return
 	echo ""
-	echo "4. backup.sh :                  [MIS À JOUR]"
+	echo "5. backup.sh :                  [MIS À JOUR]"
 else
-	echo "4. backup.sh :                  [NON INSTALLÉ]"
+	echo "5. backup.sh :                  [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
@@ -117,11 +162,13 @@ echo ""
 cd || return
 if [[ -f "Apps/backup.sh" ]]; then
 	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
-30 3 * * * ~/Apps/backup.sh
-0 4 * * 1 sudo reboot"
+15 3 * * * ~/Apps/backup.sh
+25 3 * * 1 sudo reboot
+30 3 * * * cat ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date --date="+1day" +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
 else
 	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
-0 4 * * 1 sudo reboot"
+25 3 * * 1 sudo reboot
+30 3 * * * cat ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date --date="+1day" +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
 fi
 sudo /etc/init.d/cron restart
 echo ""
