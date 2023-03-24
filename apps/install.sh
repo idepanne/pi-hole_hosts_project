@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1152]                                    |"
+echo "|                                   [1159]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -131,8 +131,8 @@ else
 		echo "|  • Installation des logiciels requis (CLI)                                  |"
 		echo "+=============================================================================+"
 		echo ""
-		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools"
-		sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools
+		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools ssmtp"
+		sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools ssmtp
 		echo ""
 		echo "$ curl https://rclone.org/install.sh | sudo bash"
 		curl https://rclone.org/install.sh | sudo bash
@@ -163,6 +163,18 @@ else
 		echo ""
 		echo "$ sudo fail2ban-client status sshd"
 		sudo fail2ban-client status sshd
+		echo ""
+		echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
+		sudo rm -rv /etc/ssmtp/ssmtp.conf
+		echo ""
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf
+		echo ""
+		echo "$ sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf"
+		sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf
+		echo ""
+		echo "$ sudo chown root:root /etc/ssmtp/ssmtp.conf"
+		sudo chown root:root /etc/ssmtp/ssmtp.conf
 		echo ""
 		echo ""
 		echo ""
@@ -204,11 +216,13 @@ else
 		echo ""
 		if [[ -f "Apps/backup.sh" ]]; then
 			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
-30 3 * * * ~/Apps/backup.sh
-0 4 * * 1 sudo reboot"
+15 3 * * * ~/Apps/backup.sh
+25 3 * * 1 sudo reboot
+30 3 * * * cat ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date --date="+1day" +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
 		else
 			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
-0 4 * * 1 sudo reboot"
+25 3 * * 1 sudo reboot
+30 3 * * * cat ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date --date="+1day" +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
 		fi
 		sudo /etc/init.d/cron restart
 		echo ""
