@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1161]
+# [1162]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -12,8 +12,8 @@ echo "+=========================================================================
 echo "|  • Installation des logiciels requis (CLI)                                  |"
 echo "+=============================================================================+"
 echo ""
-echo "$ sudo apt-get install -y ssmtp"
-sudo apt-get install -y ssmtp
+echo "$ sudo apt-get install -y mailutils ssmtp"
+sudo apt-get install -y mailutils ssmtp
 #echo ""
 #echo ""
 #echo ""
