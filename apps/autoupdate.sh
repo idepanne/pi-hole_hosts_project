@@ -3,9 +3,9 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1167]                                    |"
+echo "|                                   [1169]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
-echo "|                            idepanne67@gmail.com                             |"
+echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
 echo ""
 echo ""
@@ -86,13 +86,13 @@ else
                         crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1
 15 3 * * * ~/Apps/backup.sh
 25 3 * * 0 sudo reboot
-30 3 * * * echo '~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.txt' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-31 3 * * * echo '~/Apps/log/$(date +"%Y%m%d")_autoupdate.log' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log idepanne.support.tech@free.fr"
+30 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.txt' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
+31 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log idepanne.support.tech@free.fr"
                     else
                         crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1
 25 3 * * 0 sudo reboot
-30 3 * * * echo '~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.txt' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-31 3 * * * echo '~/Apps/log/$(date +"%Y%m%d")_autoupdate.log' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log idepanne.support.tech@free.fr"
+30 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.txt' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
+31 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log idepanne.support.tech@free.fr"
                     fi
 					sudo /etc/init.d/cron restart
 					echo ""
