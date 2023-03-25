@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1162]
+# [1163]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -108,8 +108,8 @@ if [[ -d "/etc/ssmtp" ]]; then
     echo "$ sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf"
     sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf
     echo ""
-    echo "$ sudo chown root:root /etc/ssmtp/ssmtp.conf"
-    sudo chown root:root /etc/ssmtp/ssmtp.conf
+    echo "$ sudo chown root:mail /etc/ssmtp/ssmtp.conf"
+    sudo chown root:mail /etc/ssmtp/ssmtp.conf
 	echo ""
 	echo "3. sSMTP :                   [MIS À JOUR]"
 else
@@ -161,14 +161,14 @@ crontab -l
 echo ""
 cd || return
 if [[ -f "Apps/backup.sh" ]]; then
-	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
+    crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 15 3 * * * ~/Apps/backup.sh
 25 3 * * 1 sudo reboot
-30 3 * * * cat ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date --date="+1day" +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
+30 3 * * * cat ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
 else
-	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
+    crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 25 3 * * 1 sudo reboot
-30 3 * * * cat ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date --date="+1day" +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
+30 3 * * * cat ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
 fi
 sudo /etc/init.d/cron restart
 echo ""

@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1162]                                    |"
+echo "|                                   [1163]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -173,8 +173,8 @@ else
 		echo "$ sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf"
 		sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf
 		echo ""
-		echo "$ sudo chown root:root /etc/ssmtp/ssmtp.conf"
-		sudo chown root:root /etc/ssmtp/ssmtp.conf
+		echo "$ sudo chown root:mail /etc/ssmtp/ssmtp.conf"
+		sudo chown root:mail /etc/ssmtp/ssmtp.conf
 		echo ""
 		echo ""
 		echo ""
@@ -215,15 +215,15 @@ else
 		crontab -l
 		echo ""
 		if [[ -f "Apps/backup.sh" ]]; then
-			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
+            crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 15 3 * * * ~/Apps/backup.sh
 25 3 * * 1 sudo reboot
-30 3 * * * cat ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date --date="+1day" +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
-		else
-			crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
+30 3 * * * cat ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
+        else
+            crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log 2>&1
 25 3 * * 1 sudo reboot
-30 3 * * * cat ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date --date="+1day" +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
-		fi
+30 3 * * * cat ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' idepanne.support.tech@free.fr"
+        fi
 		sudo /etc/init.d/cron restart
 		echo ""
 		echo "Nouveau crontab :"
