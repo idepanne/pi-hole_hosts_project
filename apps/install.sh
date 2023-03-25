@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1164]                                    |"
+echo "|                                   [1165]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                            idepanne67@gmail.com                             |"
 echo "+=============================================================================+"
@@ -264,6 +264,9 @@ else
 		sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
 		echo ""
 		cd || return
+        echo "$ sudo rm -rv dead.letter"
+        sudo rm -rv dead.letter
+        echo ""
 		if [[ -d "Apps" ]]; then
 			echo "$ cd ~/Apps || return"
 			cd ~/Apps || return

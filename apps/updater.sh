@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1164]
+# [1165]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne67@gmail.com
 
@@ -210,6 +210,9 @@ echo "$ sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')"
 sudo apt-mark auto $(apt-mark showmanual | egrep 'linux-.*[0-9]')
 echo ""
 cd || return
+echo "$ sudo rm -rv dead.letter"
+sudo rm -rv dead.letter
+echo ""
 if [[ -d "Apps" ]]; then
 	echo "$ cd ~/Apps || return"
 	cd ~/Apps || return
