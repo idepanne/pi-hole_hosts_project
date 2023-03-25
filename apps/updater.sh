@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1169]
+# [1170]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -37,6 +37,10 @@ echo "+=========================================================================
 echo ""
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
+echo ""
+echo "$ curl https://rclone.org/install.sh | sudo bash"
+curl https://rclone.org/install.sh | sudo bash
+rclone version
 echo ""
 echo ""
 echo ""
