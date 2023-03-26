@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1170]
+# [1171]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -165,16 +165,14 @@ crontab -l
 echo ""
 cd || return
 if [[ -f "Apps/backup.sh" ]]; then
-    crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1
+	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1
 15 3 * * * ~/Apps/backup.sh
-25 3 * * 0 sudo reboot
-30 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.txt' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-31 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log idepanne.support.tech@free.fr"
+25 3 * * 1 sudo reboot
+30 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.txt' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr"
 else
-    crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1
-25 3 * * 0 sudo reboot
-30 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.txt' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-31 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.log' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.log idepanne.support.tech@free.fr"
+	crontab <<<"0 3 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1
+25 3 * * 1 sudo reboot
+30 3 * * * echo ' ' | mail -s '[$(hostname -s)] $(date +"%Y%m%d")_autoupdate.txt' -A ~/Apps/log/$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr"
 fi
 sudo /etc/init.d/cron restart
 echo ""
