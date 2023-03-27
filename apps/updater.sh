@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1176]
+# [1177]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -139,8 +139,11 @@ echo ""
 if [[ -d "/etc/ssmtp" ]]; then
 	echo "5. sSMTP :                   [INSTALLÉ]"
 	echo ""
-	echo "$ sudo rm -rv /etc/ssmtp/*"
-	sudo rm -rv /etc/ssmtp/*
+	echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
+	sudo rm -rv /etc/ssmtp/ssmtp.conf
+	echo ""
+	echo "$ sudo rm -rv /etc/ssmtp/revaliases"
+	sudo rm -rv /etc/ssmtp/revaliases
 	echo ""
 	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf"
 	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf
