@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1172]
+# [1174]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -100,8 +100,44 @@ fi
 echo ""
 echo ""
 echo ""
+if [[ -d "/etc/pihole" ]]; then
+	echo "3. Pi-hole :                    [INSTALLÉ]"
+	echo ""
+	sudo pihole -v
+	echo ""
+	var50=$(sudo pihole -up)
+	echo "$var50"
+	if [[ "$var50" =~ "update available" ]]; then
+		echo ""
+	else
+		echo ""
+		sudo pihole -g
+		echo ""
+	fi
+	echo "3. Pi-hole :                    [MIS À JOUR]"
+else
+	echo "3. Pi-hole :                    [NON INSTALLÉ]"
+fi
+echo ""
+echo ""
+echo ""
+cd || return
+if [[ -f "Apps/backup.sh" ]]; then
+	echo "4. backup.sh :                  [INSTALLÉ]"
+	echo ""
+	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd || return
+	echo ""
+	echo "4. backup.sh :                  [MIS À JOUR]"
+else
+	echo "4. backup.sh :                  [NON INSTALLÉ]"
+fi
+
+##### A ACTIVER UNIQUEMENT SI BESOIN DE METTRE LE MOT DE PASSE A JOUR
+echo ""
+echo ""
+echo ""
 if [[ -d "/etc/ssmtp" ]]; then
-	echo "3. sSMTP :                   [INSTALLÉ]"
+	echo "5. sSMTP :                   [INSTALLÉ]"
 	echo ""
     echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
     sudo rm -rv /etc/ssmtp/ssmtp.conf
@@ -115,44 +151,12 @@ if [[ -d "/etc/ssmtp" ]]; then
     echo "$ sudo chown root:mail /etc/ssmtp/ssmtp.conf"
     sudo chown root:mail /etc/ssmtp/ssmtp.conf
 	echo ""
-	echo "3. sSMTP :                   [MIS À JOUR]"
+	echo "5. sSMTP :                   [MIS À JOUR]"
 else
-	echo "3. sSMTP :                   [NON INSTALLÉ]"
+	echo "5. sSMTP :                   [NON INSTALLÉ]"
 fi
-echo ""
-echo ""
-echo ""
-if [[ -d "/etc/pihole" ]]; then
-	echo "4. Pi-hole :                    [INSTALLÉ]"
-	echo ""
-	sudo pihole -v
-	echo ""
-	var50=$(sudo pihole -up)
-	echo "$var50"
-	if [[ "$var50" =~ "update available" ]]; then
-		echo ""
-	else
-		echo ""
-		sudo pihole -g
-		echo ""
-	fi
-	echo "4. Pi-hole :                    [MIS À JOUR]"
-else
-	echo "4. Pi-hole :                    [NON INSTALLÉ]"
-fi
-echo ""
-echo ""
-echo ""
-cd || return
-if [[ -f "Apps/backup.sh" ]]; then
-	echo "5. backup.sh :                  [INSTALLÉ]"
-	echo ""
-	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd || return
-	echo ""
-	echo "5. backup.sh :                  [MIS À JOUR]"
-else
-	echo "5. backup.sh :                  [NON INSTALLÉ]"
-fi
+#####
+
 echo ""
 echo ""
 echo ""
