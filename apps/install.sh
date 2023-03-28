@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1189]                                    |"
+echo "|                                   [1190]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -190,8 +190,11 @@ else
         echo ""
         echo ""
         echo ""
-        sleep 3
-        echo "/!\ NE PAS OUBLIER D'AJOUTER LE MOT DE PASSE DU COMPTE E-MAIL DANS /etc/ssmtp/ssmtp.conf"
+        echo "****************************** /!\ IMPORTANT /!\ ******************************"
+        echo "*         Ne pas oublier d'ajouter le mode de passe du compte e-mail          *"
+        echo "*                   dans le fichier '/etc/ssmtp/ssmtp.conf'                   *"
+        echo "*******************************************************************************"
+        sleep 5
 		echo ""
 		echo ""
 		echo ""
