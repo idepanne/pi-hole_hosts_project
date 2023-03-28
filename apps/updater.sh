@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1191]
+# [1192]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -122,14 +122,15 @@ if [[ -f "Apps/backup.sh" ]]; then
 else
 	echo "4. backup.sh :                  [NON INSTALLÉ]"
 fi
+echo ""
+echo ""
+echo ""
+if [[ -d "/etc/ssmtp" ]]; then
+	echo "5. sSMTP :                      [INSTALLÉ]"
+	echo ""
 
 ##### A ACTIVER UNIQUEMENT SI BESOIN DE CHANGER LA CONFIGURATION DE SSMTP
-#echo ""
-#echo ""
-#echo ""
-#if [[ -d "/etc/ssmtp" ]]; then
-#	echo "5. sSMTP :                      [INSTALLÉ]"
-#	echo ""
+#
 #	echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
 #	sudo rm -rv /etc/ssmtp/ssmtp.conf
 #	echo ""
@@ -155,11 +156,13 @@ fi
 #	sudo chown root:mail /etc/ssmtp/revaliases
 #	echo ""
 #	echo "5. sSMTP :                      [MIS À JOUR]"
-#else
-#	echo "5. sSMTP :                      [NON INSTALLÉ]"
-#fi
+#
 #####
 
+	echo "5. sSMTP :                      [AUCUNE MISE À JOUR NÉCESSAIRE]"
+else
+	echo "5. sSMTP :                      [NON INSTALLÉ]"
+fi
 echo ""
 echo ""
 echo ""
