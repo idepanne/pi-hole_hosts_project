@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1197]
+# [1198]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -221,7 +221,7 @@ echo ""
 echo "$ sudo apt-get clean all"
 sudo apt-get clean all
 echo ""
-echo "$ sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')"
+echo '$ sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')'
 sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')
 echo ""
 cd || return

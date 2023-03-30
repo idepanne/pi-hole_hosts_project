@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1197]                                    |"
+echo "|                                   [1198]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -282,7 +282,7 @@ else
 		echo "$ sudo apt-get clean all"
 		sudo apt-get clean all
 		echo ""
-		echo "$ sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')"
+		echo '$ sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')'
         sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')
 		echo ""
 		cd || return
@@ -302,9 +302,9 @@ else
 				cd ~/Apps/log || return
 				echo ""
 				echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
-				find *.log -mtime +31 -exec rm -rv {} \;
-        		echo "$ find *.txt -mtime +31 -exec rm -rv {} \;"
-	        	find *.txt -mtime +31 -exec rm -rv {} \;
+                find *.log -mtime +31 -exec rm -rv {} \;
+                echo "$ find *.txt -mtime +31 -exec rm -rv {} \;"
+                find *.txt -mtime +31 -exec rm -rv {} \;
 				echo ""
 			fi
 		fi
