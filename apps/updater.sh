@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1198]
+# [1200]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -40,7 +40,7 @@ echo "+=========================================================================
 echo "|  • Mise à jour des logiciels                                                |"
 echo "+=============================================================================+"
 echo ""
-echo "1. autoupdate.sh :              [INSTALLÉ]"
+echo "1. autoupdate.sh :              [MISE À JOUR EN COURS]"
 echo ""
 echo "$ sudo mv autoupdate.sh autoupdate_old.sh"
 sudo mv autoupdate.sh autoupdate_old.sh
@@ -51,12 +51,10 @@ echo ""
 echo "$ sudo chmod +x autoupdate.sh"
 sudo chmod +x autoupdate.sh
 echo ""
-echo "1. autoupdate.sh :              [MIS À JOUR]"
-echo ""
 echo ""
 echo ""
 if [[ -d "/etc/fail2ban" ]]; then
-	echo "2. Fail2ban :                   [INSTALLÉ]"
+	echo "2. Fail2ban :                   [MISE À JOUR EN COURS]"
 	echo ""
 	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
 	sudo rm -rv /etc/fail2ban/jail.conf
@@ -83,8 +81,6 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo ""
 	echo "$ sudo fail2ban-client status sshd"
 	sudo fail2ban-client status sshd
-	echo ""
-	echo "2. Fail2ban :                   [MIS À JOUR]"
 else
 	echo "2. Fail2ban :                   [NON INSTALLÉ]"
 fi
@@ -92,7 +88,7 @@ echo ""
 echo ""
 echo ""
 if [[ -d "/etc/pihole" ]]; then
-	echo "3. Pi-hole :                    [INSTALLÉ]"
+	echo "3. Pi-hole :                    [MISE À JOUR EN COURS]"
 	echo ""
 	sudo pihole -v
 	echo ""
@@ -105,7 +101,6 @@ if [[ -d "/etc/pihole" ]]; then
 		sudo pihole -g
 		echo ""
 	fi
-	echo "3. Pi-hole :                    [MIS À JOUR]"
 else
 	echo "3. Pi-hole :                    [NON INSTALLÉ]"
 fi
@@ -114,11 +109,9 @@ echo ""
 echo ""
 cd || return
 if [[ -f "Apps/backup.sh" ]]; then
-	echo "4. backup.sh :                  [INSTALLÉ]"
+	echo "4. backup.sh :                  [MISE À JOUR EN COURS]"
 	echo ""
 	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd || return
-	echo ""
-	echo "4. backup.sh :                  [MIS À JOUR]"
 else
 	echo "4. backup.sh :                  [NON INSTALLÉ]"
 fi
@@ -129,35 +122,32 @@ echo ""
 ##### A ACTIVER UNIQUEMENT SI BESOIN DE CHANGER LA CONFIGURATION DE SSMTP
 #
 if [[ -d "/etc/ssmtp" ]]; then
-#	echo "5. sSMTP :                      [INSTALLÉ]"
-#	echo ""
-#	echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
-#	sudo rm -rv /etc/ssmtp/ssmtp.conf
-#	echo ""
-#	echo "$ sudo rm -rv /etc/ssmtp/revaliases"
-#	sudo rm -rv /etc/ssmtp/revaliases
-#	echo ""
-#	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf"
-#	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf
-#	echo ""
-#	echo "$ sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf"
-#	sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf
-#	echo ""
-#	echo "$ sudo chown root:mail /etc/ssmtp/ssmtp.conf"
-#	sudo chown root:mail /etc/ssmtp/ssmtp.conf
-#	echo ""
-#	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/revaliases > revaliases"
-#	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/revaliases > revaliases
-#	echo ""
-#	echo "$ sudo mv revaliases /etc/ssmtp/revaliases"
-#	sudo mv revaliases /etc/ssmtp/revaliases
-#	echo ""
-#	echo "$ sudo chown root:mail /etc/ssmtp/revaliases"
-#	sudo chown root:mail /etc/ssmtp/revaliases
-#	echo ""
-#	echo "5. sSMTP :                      [MIS À JOUR]"
-#
-	echo "5. sSMTP :                      [AUCUNE MISE À JOUR NÉCESSAIRE]"
+#	echo "5. sSMTP :                      [AUCUNE MISE À JOUR NÉCESSAIRE]"
+	echo "5. sSMTP :                      [MISE À JOUR EN COURS]"
+	echo ""
+	echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
+	sudo rm -rv /etc/ssmtp/ssmtp.conf
+	echo ""
+	echo "$ sudo rm -rv /etc/ssmtp/revaliases"
+	sudo rm -rv /etc/ssmtp/revaliases
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf
+	echo ""
+	echo "$ sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf"
+	sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf
+	echo ""
+	echo "$ sudo chown root:mail /etc/ssmtp/ssmtp.conf"
+	sudo chown root:mail /etc/ssmtp/ssmtp.conf
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/revaliases > revaliases"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/revaliases > revaliases
+	echo ""
+	echo "$ sudo mv revaliases /etc/ssmtp/revaliases"
+	sudo mv revaliases /etc/ssmtp/revaliases
+	echo ""
+	echo "$ sudo chown root:mail /etc/ssmtp/revaliases"
+	sudo chown root:mail /etc/ssmtp/revaliases
 else
 	echo "5. sSMTP :                      [NON INSTALLÉ]"
 fi

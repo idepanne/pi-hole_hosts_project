@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1198]                                    |"
+echo "|                                   [1200]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -49,8 +49,6 @@ else
 			echo "|  • Mise à jour de updater.sh                                                |"
 			echo "+=============================================================================+"
 			echo ""
-			echo "1. updater.sh :                 [INSTALLÉ]"
-			echo ""
 			echo "$ sudo mv updater.sh updater_old.sh"
 			sudo mv updater.sh updater_old.sh
 			echo ""
@@ -60,7 +58,6 @@ else
 			echo "$ sudo chmod +x updater.sh"
 			sudo chmod +x updater.sh
 			echo ""
-			echo "1. updater.sh :                 [MIS À JOUR]"
 			./updater.sh
 		else
 			echo "Connexion Internet : Echec"
