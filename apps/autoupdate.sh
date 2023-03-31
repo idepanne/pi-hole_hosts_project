@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1204]                                    |"
+echo "|                                   [1206]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -80,12 +80,9 @@ else
 					echo ""
 					if [[ -f "Apps/backup.sh" ]]; then
                         crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y") | autoupdate log' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr ; sleep 5 ; ~/Apps/backup.sh
-15 1 * * * echo ' ' | mail -s '$(hostname -s) | $(date +"%d/%m/%Y") | autoupdate log' -A ~/Apps/log/$(hostname -s)_$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-20 1 * * * ~/Apps/backup.sh
 30 1 * * 1 sudo reboot"
                     else
                         crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y") | autoupdate log' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-15 1 * * * echo ' ' | mail -s '$(hostname -s) | $(date +"%d/%m/%Y") | autoupdate log' -A ~/Apps/log/$(hostname -s)_$(date +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
 30 1 * * 1 sudo reboot"
                     fi
 					sudo /etc/init.d/cron restart
