@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1214]                                    |"
+echo "|                                   [1216]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -187,16 +187,16 @@ else
 		echo ""
 		echo "$ sudo chown root:mail /etc/ssmtp/revaliases"
 		sudo chown root:mail /etc/ssmtp/revaliases
-        echo ""
-        echo ""
-        echo ""
-        echo "****************************** /!\ IMPORTANT /!\ ******************************"
-        echo "*                                                                             *"
-        echo "*          Ne pas oublier d'ajouter le mot de passe du compte e-mail          *"
-        echo "*                   dans le fichier '/etc/ssmtp/ssmtp.conf'                   *"
-        echo "*                                                                             *"
-        echo "*******************************************************************************"
-        sleep 5
+		echo ""
+		echo ""
+		echo ""
+		echo "****************************** /!\ IMPORTANT /!\ ******************************"
+		echo "*                                                                             *"
+		echo "*          Ne pas oublier d'ajouter le mot de passe du compte e-mail          *"
+		echo "*                   dans le fichier '/etc/ssmtp/ssmtp.conf'                   *"
+		echo "*                                                                             *"
+		echo "*******************************************************************************"
+		sleep 5
 		echo ""
 		echo ""
 		echo ""
@@ -238,10 +238,10 @@ else
 		echo ""
 		if [[ -f "Apps/backup.sh" ]]; then
 			crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y")' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr ; sleep 5 ; ~/Apps/backup.sh >/dev/null 2>&1
-15 1 3 * * sudo reboot"
+15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 		else
 			crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y")' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-15 1 3 * * sudo reboot"
+15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 		fi
 		sudo /etc/init.d/cron restart
 		echo ""
@@ -280,12 +280,12 @@ else
 		sudo apt-get clean all
 		echo ""
 		echo '$ sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')'
-        sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')
+		sudo apt-mark auto $(apt-mark showmanual | grep -E 'linux-.*[0-9]')
 		echo ""
 		cd || return
-        echo "$ sudo rm -rv dead.letter"
-        sudo rm -rv dead.letter
-        echo ""
+		echo "$ sudo rm -rv dead.letter"
+		sudo rm -rv dead.letter
+		echo ""
 		if [[ -d "Apps" ]]; then
 			echo "$ cd ~/Apps || return"
 			cd ~/Apps || return
@@ -299,9 +299,9 @@ else
 				cd ~/Apps/log || return
 				echo ""
 				echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
-                find *.log -mtime +31 -exec rm -rv {} \;
-                echo "$ find *.txt -mtime +31 -exec rm -rv {} \;"
-                find *.txt -mtime +31 -exec rm -rv {} \;
+				find *.log -mtime +31 -exec rm -rv {} \;
+				echo "$ find *.txt -mtime +31 -exec rm -rv {} \;"
+				find *.txt -mtime +31 -exec rm -rv {} \;
 				echo ""
 			fi
 		fi
