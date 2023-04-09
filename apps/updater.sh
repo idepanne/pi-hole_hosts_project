@@ -166,11 +166,11 @@ crontab -l
 echo ""
 cd || return
 if [[ -f "Apps/backup.sh" ]]; then
-	crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y")' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr ; sleep 5 ; ~/Apps/backup.sh >/dev/null 2>&1
-15 1 3 * * sudo reboot"
+	crontab <<<"50 22 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y")' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr ; sleep 5 ; ~/Apps/backup.sh >/dev/null 2>&1
+55 22 * * 0,1,4 sudo reboot >/dev/null 2>&1"
 else
 	crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y")' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-15 1 3 * * sudo reboot"
+15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 fi
 sudo /etc/init.d/cron restart
 echo ""
