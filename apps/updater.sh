@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1217]
+# [1218]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -103,6 +103,7 @@ if [[ -d "/etc/pihole" ]]; then
 	fi
     echo ""
     timeout 1 pihole -c
+		echo ""
 else
 	echo "3. Pi-hole :                    [NON INSTALLÉ]"
 fi
@@ -117,7 +118,6 @@ if [[ -f "Apps/backup.sh" ]]; then
 else
 	echo "4. backup.sh :                  [NON INSTALLÉ]"
 fi
-echo ""
 echo ""
 echo ""
 
