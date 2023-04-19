@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1221]                                    |"
+echo "|                                   [1222]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -55,53 +55,15 @@ else
 			echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh"
 			wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/updater.sh > updater.sh
 			echo ""
-            if [[ -f "updater.sh" ]]; then
-    			echo "$ sudo chmod +x updater.sh"
-	    		sudo chmod +x updater.sh
-	    		./updater.sh
-            else
-                echo "Une erreur s'est produite !"
-    			echo ""
-	    		echo ""
-	    		echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
-	    		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"* || $var20 == *"pipewire-media"* || $var20 == *"xfce"* || $var20 == *"gnome"* || $var20 == *"kde"* || $var20 == *"cinnamon"* || $var20 == *"mate"* ]]; then
-	    			sleep
-	    		else
-	    			cd || return
-	    			if [[ -d "Apps" ]]; then
-	    				echo ""
-	    				echo ""
-	    				echo ""
-	    				echo "+=============================================================================+"
-	    				echo "|  • Configuration du crontab                                                 |"
-	    				echo "+=============================================================================+"
-	    				echo ""
-	    				echo "Ancien crontab :"
-	    				crontab -l
-	    				echo ""
-	    				if [[ -f "Apps/backup.sh" ]]; then
-	    					crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y")' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr ; sleep 5 ; ~/Apps/backup.sh >/dev/null 2>&1
-15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
-	    				else
-	    					crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s) | $(date --date="+1day" +"%d/%m/%Y")' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt idepanne.support.tech@free.fr
-15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
-	    				fi
-	    				sudo /etc/init.d/cron restart
-	    				echo ""
-	    				echo "Nouveau crontab :"
-	    				crontab -l
-                        echo ""
-                        echo "$ sudo rm -rv *_old.sh"
-                        sudo rm -rv *_old.sh
-                    fi
-                fi
-            fi
-        else
-            	echo "Connexion Internet : Echec"
-            	echo ""
-	        	echo ""
-        		echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
-        		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"* || $var20 == *"pipewire-media"* || $var20 == *"xfce"* || $var20 == *"gnome"* || $var20 == *"kde"* || $var20 == *"cinnamon"* || $var20 == *"mate"* ]]; then
+			echo "$ sudo chmod +x updater.sh"
+			sudo chmod +x updater.sh
+			./updater.sh
+		else
+			echo "Connexion Internet : Echec"
+			echo ""
+			echo ""
+			echo "*** Abandon des mises à jour | Nouvelle tentative dans 24h ***"
+			if [[ $var20 == *"lxsession"* || $var20 == *"openbox"* || $var20 == *"pipewire-media"* || $var20 == *"xfce"* || $var20 == *"gnome"* || $var20 == *"kde"* || $var20 == *"cinnamon"* || $var20 == *"mate"* ]]; then
 				sleep
 			else
 				cd || return
