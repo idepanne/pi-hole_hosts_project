@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1219]
+# [1220]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -101,8 +101,9 @@ if [[ -d "/etc/pihole" ]]; then
 		sudo pihole -g
 		echo ""
 	fi
-    echo ""
-    sudo timeout 1 pihole -c
+	echo ""
+	sudo timeout 1 pihole -c
+	echo "            ——————————————————————————————————————————————————————————"
 	echo ""
 else
 	echo "3. Pi-hole :                    [NON INSTALLÉ]"
