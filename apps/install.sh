@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1222]                                    |"
+echo "|                                   [1223]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -15,11 +15,10 @@ echo ""
 ###### Définition des variables ######
 varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
 var0=$(< /proc/cpuinfo grep Model)
-var20=$(ls /usr/bin/*session)
 ######################################
 
 if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* ]]; then
-	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS."
+	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS Lite."
 	echo "Il n'est pas compatible avec $varsys."
 	echo ""
 	cd || return
@@ -100,13 +99,9 @@ else
 		echo "$ cd ~/Apps || return"
 		cd ~/Apps || return
 		echo ""
-		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"* || $var20 == *"pipewire-media"* || $var20 == *"xfce"* || $var20 == *"gnome"* || $var20 == *"kde"* || $var20 == *"cinnamon"* || $var20 == *"mate"* ]]; then
-			sleep 1
-		else
-			echo "$ mkdir log"
-			mkdir log
-			echo ""
-		fi
+		echo "$ mkdir log"
+		mkdir log
+		echo ""
 		echo "$ sudo rm -rv install.sh"
 		sudo rm -rv install.sh
 		echo ""
@@ -128,7 +123,7 @@ else
 		echo ""
 		echo ""
 		echo "+=============================================================================+"
-		echo "|  • Installation des logiciels requis (CLI)                                  |"
+		echo "|  • Installation des logiciels requis                                        |"
 		echo "+=============================================================================+"
 		echo ""
 		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp"
@@ -200,17 +195,6 @@ else
 		echo ""
 		echo ""
 		echo ""
-		if [[ $var20 == *"lxsession"* || $var20 == *"openbox"* || $var20 == *"pipewire-media"* || $var20 == *"xfce"* || $var20 == *"gnome"* || $var20 == *"kde"* || $var20 == *"cinnamon"* || $var20 == *"mate"* ]]; then
-			echo "+=============================================================================+"
-			echo "|  • Installation des logiciels requis (GUI)                                  |"
-			echo "+=============================================================================+"
-			echo ""
-			echo "$ sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan hunspell-fr rpi-imager vlc meld gnome-system-monitor"
-			sudo apt-get install -y libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-style* libreoffice-nlpsolver libreoffice-gnome* chromium-browser chromium-browser-l10n filezilla gparted hardinfo baobab hplip cups system-config-printer simple-scan hunspell-fr rpi-imager vlc meld gnome-system-monitor
-			echo ""
-			echo ""
-			echo ""
-		fi
 		echo "+=============================================================================+"
 		echo "|  • Installation de autoupdate.sh                                            |"
 		echo "+=============================================================================+"
@@ -361,7 +345,7 @@ else
 			sudo reboot
 		fi
 	else
-		echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS."
+		echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS Lite."
 		echo "Il n'est pas compatible avec $varsys."
 		echo ""
 		cd || return
