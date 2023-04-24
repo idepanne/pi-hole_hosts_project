@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1225]
+# [1226]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -118,6 +118,7 @@ if [[ -f "Apps/backup.sh" ]]; then
 else
 	echo "4. backup.sh :                  [NON INSTALLÉ]"
 fi
+echo ""
 echo ""
 echo ""
 
