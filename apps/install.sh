@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1228]                                    |"
+echo "|                                   [1229]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -282,8 +282,6 @@ else
 				echo "$ cd ~/Apps/log || return"
 				cd ~/Apps/log || return
 				echo ""
-				echo "$ find *.log -mtime +31 -exec rm -rv {} \;"
-				find *.log -mtime +31 -exec rm -rv {} \;
 				echo "$ find *.txt -mtime +31 -exec rm -rv {} \;"
 				find *.txt -mtime +31 -exec rm -rv {} \;
 				echo ""
