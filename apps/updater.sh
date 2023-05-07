@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1239]
+# [1240]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -53,8 +53,21 @@ sudo chmod +x autoupdate.sh
 echo ""
 echo ""
 echo ""
+echo "2. resume.sh :                  [MISE À JOUR EN COURS]"
+echo ""
+echo "$ sudo mv resume.sh resume_old.sh"
+sudo mv resume.sh resume_old.sh
+echo ""
+echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/resume.sh > resume.sh"
+wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/resume.sh > resume.sh
+echo ""
+echo "$ sudo chmod +x resume.sh"
+sudo chmod +x resume.sh
+echo ""
+echo ""
+echo ""
 if [[ -d "/etc/fail2ban" ]]; then
-	echo "2. Fail2ban :                   [MISE À JOUR EN COURS]"
+	echo "3. Fail2ban :                   [MISE À JOUR EN COURS]"
 	echo ""
 	echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
 	sudo rm -rv /etc/fail2ban/jail.conf
@@ -82,13 +95,13 @@ if [[ -d "/etc/fail2ban" ]]; then
 	echo "$ sudo fail2ban-client status sshd"
 	sudo fail2ban-client status sshd
 else
-	echo "2. Fail2ban :                   [NON INSTALLÉ]"
+	echo "3. Fail2ban :                   [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
 echo ""
 if [[ -d "/etc/pihole" ]]; then
-	echo "3. Pi-hole :                    [MISE À JOUR EN COURS]"
+	echo "4. Pi-hole :                    [MISE À JOUR EN COURS]"
 	echo ""
 	sudo pihole -v
 	echo ""
@@ -105,18 +118,18 @@ if [[ -d "/etc/pihole" ]]; then
 	sudo timeout 1 pihole -c
 	echo ""
 else
-	echo "3. Pi-hole :                    [NON INSTALLÉ]"
+	echo "4. Pi-hole :                    [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
 echo ""
 cd || return
 if [[ -f "Apps/backup.sh" ]]; then
-	echo "4. backup.sh :                  [MISE À JOUR EN COURS]"
+	echo "5. backup.sh :                  [MISE À JOUR EN COURS]"
 	echo ""
 	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd || return
 else
-	echo "4. backup.sh :                  [NON INSTALLÉ]"
+	echo "5. backup.sh :                  [NON INSTALLÉ]"
 	echo ""
 fi
 echo ""
@@ -125,8 +138,8 @@ echo ""
 ##### A ACTIVER UNIQUEMENT SI BESOIN DE CHANGER LA CONFIGURATION DE SSMTP
 #
 if [[ -d "/etc/ssmtp" ]]; then
-	echo "5. sSMTP :                      [AUCUNE MISE À JOUR NÉCESSAIRE]"
-#	echo "5. sSMTP :                      [MISE À JOUR EN COURS]"
+	echo "6. sSMTP :                      [AUCUNE MISE À JOUR NÉCESSAIRE]"
+#	echo "6. sSMTP :                      [MISE À JOUR EN COURS]"
 #	echo ""
 #	echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
 #	sudo rm -rv /etc/ssmtp/ssmtp.conf
@@ -152,7 +165,7 @@ if [[ -d "/etc/ssmtp" ]]; then
 #	echo "$ sudo chown root:mail /etc/ssmtp/revaliases"
 #	sudo chown root:mail /etc/ssmtp/revaliases
 else
-	echo "5. sSMTP :                      [NON INSTALLÉ]"
+	echo "6. sSMTP :                      [NON INSTALLÉ]"
 fi
 #
 #####

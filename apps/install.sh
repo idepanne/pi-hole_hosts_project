@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1239]                                    |"
+echo "|                                   [1240]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -117,6 +117,9 @@ else
 		echo "$ sudo rm -rv updater.sh"
 		sudo rm -rv updater.sh
 		echo ""
+		echo "$ sudo rm -rv resume.sh"
+		sudo rm -rv resume.sh
+		echo ""
 		echo "$ cd || return"
 		cd || return
 		echo ""
@@ -207,6 +210,21 @@ else
 		echo ""
 		echo "$ sudo chmod +x autoupdate.sh"
 		sudo chmod +x autoupdate.sh
+		echo ""
+		echo ""
+		echo ""
+		echo "+=============================================================================+"
+		echo "|  • Installation de resume.sh                                                |"
+		echo "+=============================================================================+"
+		echo ""
+		echo "$ cd ~/Apps || return"
+		cd ~/Apps || return
+		echo ""
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/resume.sh > resume.sh"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/resume.sh > resume.sh
+		echo ""
+		echo "$ sudo chmod +x resume.sh"
+		sudo chmod +x resume.sh
 		echo ""
 		echo "$ cd || return"
 		cd || return
