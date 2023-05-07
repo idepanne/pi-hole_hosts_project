@@ -29,10 +29,8 @@ echo ""
 echo -n "Démarré depuis  : "; echo "$var18 - $var19"
 echo ""
 echo ""
-echo ""
 echo "$ sudo fail2ban-client status sshd"
 sudo fail2ban-client status sshd
-echo ""
 echo ""
 echo ""
 sudo timeout 1 pihole -c
