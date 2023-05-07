@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1234]                                    |"
+echo "|                                   [1235]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -33,6 +33,6 @@ echo "$ sudo fail2ban-client status sshd"
 sudo fail2ban-client status sshd
 echo ""
 echo ""
-var1=$(sudo timeout 1 pihole -c)
-sed -e '1d;2d;3d;4d;5d;6d' $var1
-echo "$var1"
+var1000=$(sudo timeout 1 pihole -c)
+sed -e '1d;2d;3d;4d' $var1000
+echo "$var1000"
