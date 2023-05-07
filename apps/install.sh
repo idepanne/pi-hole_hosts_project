@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1240]                                    |"
+echo "|                                   [1241]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -210,6 +210,9 @@ else
 		echo ""
 		echo "$ sudo chmod +x autoupdate.sh"
 		sudo chmod +x autoupdate.sh
+		echo ""
+		echo "$ cd || return"
+		cd || return
 		echo ""
 		echo ""
 		echo ""
