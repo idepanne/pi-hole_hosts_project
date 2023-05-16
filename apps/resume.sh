@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1244]                                    |"
+echo "|                                   [1245]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -29,9 +29,7 @@ echo ""
 echo -n "Démarré depuis  : "; echo "$var18 - $var19"
 echo ""
 echo ""
-echo ""
 sudo fail2ban-client status sshd
-echo ""
 echo ""
 echo ""
 sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,7d' ~/Apps/temp.txt
