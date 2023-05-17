@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1245]
+# [1246]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -115,7 +115,7 @@ if [[ -d "/etc/pihole" ]]; then
 		echo ""
 	fi
 	echo ""
-	sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,7d' ~/Apps/temp.txt
+	sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,8d' ~/Apps/temp.txt
     cat ~/Apps/temp.txt
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
 	echo ""
