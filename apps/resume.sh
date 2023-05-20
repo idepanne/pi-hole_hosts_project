@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1246]                                    |"
+echo "|                                   [1247]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -17,7 +17,7 @@ var19=$(uptime -p)
 ######################################
 
 echo "+=============================================================================+"
-echo "|  • Résumé de la mise à jour                                                 |"
+echo "|  • Résumé                                                                   |"
 echo "+=============================================================================+"
 echo ""
 echo -n "Nom d'hôte      : "; hostname -s
@@ -29,8 +29,12 @@ echo ""
 echo -n "Démarré depuis  : "; echo "$var18 - $var19"
 echo ""
 echo ""
+echo "Fail2ban :"
+echo ""
 sudo fail2ban-client status sshd
 echo ""
+echo ""
+echo "Pi-hole :"
 echo ""
 sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,8d' ~/Apps/temp.txt
 cat ~/Apps/temp.txt
