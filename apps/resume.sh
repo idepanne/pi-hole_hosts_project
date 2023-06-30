@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1252]                                    |"
+echo "|                                   [1253]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -14,7 +14,7 @@ echo ""
 ###### Définition des variables ######
 var18=$(uptime -s)
 var19=$(uptime -p)
-varmac=$(sudo inxi -n | cut -s -f 6-11 -d ':' | cut -c2-)
+varmac=$(sudo inxi -n | sudo cut -s -f 6-11 -d ':' | sudo cut -c2-)
 ######################################
 
 echo "+=============================================================================+"
@@ -25,7 +25,7 @@ echo -n "Nom d'hôte      : "; hostname -s
 echo ""
 echo -n "Température     : "; echo "$(vcgencmd measure_temp | grep -E -o '[0-9]*\.[0-9]*')°C"
 echo ""
-echo -n "Adresse MAC     : "; echo $varmac
+echo -n "Adresse MAC     : "; sudo echo $varmac
 echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
