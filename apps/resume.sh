@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1251]                                    |"
+echo "|                                   [1252]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -14,7 +14,7 @@ echo ""
 ###### Définition des variables ######
 var18=$(uptime -s)
 var19=$(uptime -p)
-varmac=$(inxi -n | cut -s -f 6-11 -d ':' | cut -c2-)
+varmac=$(sudo inxi -n | cut -s -f 6-11 -d ':' | cut -c2-)
 ######################################
 
 echo "+=============================================================================+"
