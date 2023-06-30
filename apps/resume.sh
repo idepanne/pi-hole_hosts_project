@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1250]                                    |"
+echo "|                                   [1251]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -44,4 +44,5 @@ if [[ -d "/etc/pihole" ]]; then
     cat ~/Apps/temp.txt
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
 else
+    echo >/dev/null 2>&1
 fi
