@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1255]                                    |"
+echo "|                                   [1256]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -27,6 +27,9 @@ echo ""
 echo -n "IPv4/IPv6       : "; hostname -I
 echo ""
 echo -n "Démarré depuis  : "; echo "$var18 - $var19"
+echo ""
+echo "Analyse du boot : "
+systemd-analyze
 echo ""
 echo ""
 echo "Fail2ban :"
