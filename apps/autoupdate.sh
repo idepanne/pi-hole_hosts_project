@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1258]                                    |"
+echo "|                                   [1259]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -29,7 +29,8 @@ else
 		echo "+=============================================================================+"
 		echo ""
 		echo ""
-		if ping -c 3 1.1.1.1 &> /dev/null; then
+		if ping -c 3 1.1.1.1; ping -c 3 1.0.0.1; then
+			echo ""
 			echo "Connexion Internet : OK"
 			echo ""
 			echo ""
@@ -58,6 +59,7 @@ else
 			sudo chmod +x updater.sh
 			./updater.sh
 		else
+			echo ""
 			echo "Connexion Internet : Echec"
 			echo ""
 			echo ""
