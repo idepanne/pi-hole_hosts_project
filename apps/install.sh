@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1267]                                    |"
+echo "|                                   [1271]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -128,8 +128,8 @@ else
 		echo "|  • Installation des logiciels requis                                        |"
 		echo "+=============================================================================+"
 		echo ""
-		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp rsyslog"
-		sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies iftop whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp rsyslog
+		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp rsyslog"
+		sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies whois traceroute curl fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp rsyslog
 		echo ""
 		echo "$ curl https://rclone.org/install.sh | sudo bash"
 		curl https://rclone.org/install.sh | sudo bash
