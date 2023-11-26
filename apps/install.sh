@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1266]                                    |"
+echo "|                                   [1267]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -172,20 +172,8 @@ else
 		echo "$ sudo fail2ban-client status sshd"
 		sudo fail2ban-client status sshd
 		echo ""
-		echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
-		sudo rm -rv /etc/ssmtp/ssmtp.conf
-    	echo ""
 		echo "$ sudo rm -rv /etc/ssmtp/revaliases"
 		sudo rm -rv /etc/ssmtp/revaliases
-		echo ""
-		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf"
-		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf
-		echo ""
-		echo "$ sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf"
-		sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf
-		echo ""
-		echo "$ sudo chown root:mail /etc/ssmtp/ssmtp.conf"
-		sudo chown root:mail /etc/ssmtp/ssmtp.conf
 		echo ""
 		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/revaliases > revaliases"
 		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/revaliases > revaliases
@@ -195,6 +183,18 @@ else
 		echo ""
 		echo "$ sudo chown root:mail /etc/ssmtp/revaliases"
 		sudo chown root:mail /etc/ssmtp/revaliases
+		echo ""
+		echo "$ sudo rm -rv /etc/ssmtp/ssmtp.conf"
+		sudo rm -rv /etc/ssmtp/ssmtp.conf
+		echo ""
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/ssmtp/ssmtp.conf > ssmtp.conf
+		echo ""
+		echo "$ sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf"
+		sudo mv ssmtp.conf /etc/ssmtp/ssmtp.conf
+		echo ""
+		echo "$ sudo chown root:mail /etc/ssmtp/ssmtp.conf"
+		sudo chown root:mail /etc/ssmtp/ssmtp.conf
 		echo ""
 		echo ""
 		echo ""
