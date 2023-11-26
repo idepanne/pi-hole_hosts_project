@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1264]                                    |"
+echo "|                                   [1265]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -134,6 +134,17 @@ else
 		echo "$ curl https://rclone.org/install.sh | sudo bash"
 		curl https://rclone.org/install.sh | sudo bash
 		rclone version
+		echo ""
+		FICHIER=/etc/fail2ban/jail.conf.bak
+		if [ -f "$FICHIER" ]; then
+			echo "Le fichier ($FICHIER) existe."
+		else
+			echo "Le fichier ($FICHIER) n'existe pas."
+			echo ""
+			echo "Sauvegarde du fichier de configuration"
+			echo "$ sudo cp -v /etc/fail2ban/jail.conf /etc/fail2ban/jail.conf.bak"
+			sudo cp -v /etc/fail2ban/jail.conf /etc/fail2ban/jail.conf.bak
+		fi
 		echo ""
 		echo "$ sudo rm -rv /etc/fail2ban/jail.conf"
 		sudo rm -rv /etc/fail2ban/jail.conf
