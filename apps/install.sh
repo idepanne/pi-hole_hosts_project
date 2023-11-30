@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1271]                                    |"
+echo "|                                   [1274]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -18,7 +18,7 @@ var0=$(< /proc/cpuinfo grep Model)
 ######################################
 
 if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* ]]; then
-	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS Lite."
+	echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS Lite (Debian 11 et 12)."
 	echo "Il n'est pas compatible avec $varsys."
 	echo ""
 	cd || return
@@ -374,7 +374,7 @@ else
 			sudo reboot
 		fi
 	else
-		echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS Lite."
+		echo "Ce programme d'installation ne fonctionne qu'avec Raspberry Pi OS Lite (Debian 11 et 12)."
 		echo "Il n'est pas compatible avec $varsys."
 		echo ""
 		cd || return
