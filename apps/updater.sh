@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1275]
+# [1277]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -9,12 +9,12 @@ echo ""
 echo ""
 echo ""
 echo "+=============================================================================+"
-echo "|  • Suppression des logiciels obsolètes                                      |"
+echo "|  • Désinstallation des logiciels obsolètes                                  |"
 echo "+=============================================================================+"
 echo ""
 var60=$(sudo apt-get purge -y iftop)
 if [[ "$var60" =~ "n'est pas installé, et ne peut donc être supprimé" ]]; then
-	echo "Aucun logiciel obsolète à supprimer."
+	echo "Aucun logiciel obsolète à désinstaller."
 else
 	echo "$ sudo apt-get purge -y iftop"
 	echo "$var60"
