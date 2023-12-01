@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1274]                                    |"
+echo "|                                   [1275]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -89,13 +89,16 @@ else
 				crontab -l
 			fi
 		fi
+
 		echo ""
 		echo ""
 		echo ""
 		echo "+=============================================================================+"
 		echo "|                    Mise à jour du Raspberry Pi terminée                     |"
 		echo "+=============================================================================+"
-		sleep 1
+        echo ""
+        sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt idepanne.support.tech@free.fr
+        sleep 1
 	else
 		echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS Lite."
 		echo "Il n'est pas compatible avec $varsys."
