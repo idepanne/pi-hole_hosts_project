@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1275]                                    |"
+echo "|                                   [1276]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -17,7 +17,7 @@ var0=$(< /proc/cpuinfo grep Model)
 ######################################
 
 if [[ $varsys == *"MANJARO"* || $varsys == *"Manjaro"* ]]; then
-	echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS Lite."
+	echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS Lite (Debian 11 et 12)."
 	echo "Il n'est pas compatible avec $varsys."
 	echo ""
 	cd || return
@@ -89,7 +89,6 @@ else
 				crontab -l
 			fi
 		fi
-
 		echo ""
 		echo ""
 		echo ""
@@ -97,10 +96,9 @@ else
 		echo "|                    Mise à jour du Raspberry Pi terminée                     |"
 		echo "+=============================================================================+"
         echo ""
-        sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt idepanne.support.tech@free.fr
-        sleep 1
+        sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s $(hostname -s) -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt idepanne.support.tech@free.fr
 	else
-		echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS Lite."
+		echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS Lite (Debian 11 et 12)."
 		echo "Il n'est pas compatible avec $varsys."
 		echo ""
 		cd || return
