@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1283]                                    |"
+echo "|                                   [1284]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -95,10 +95,8 @@ else
 		echo "+=============================================================================+"
 		echo "|                    Mise à jour du Raspberry Pi terminée                     |"
 		echo "+=============================================================================+"
-        echo ""
-        sleep 1
         ###### Envoi des fichiers logs à iDépanne pour supervision ######
-        mail -s $(hostname -s) -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt idepanne.support.tech@free.fr
+        echo ' ' | mail -s $(hostname -s) -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt idepanne.support.tech@free.fr
         #################################################################
 	else
 		echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS Lite (Debian 11 et 12)."
