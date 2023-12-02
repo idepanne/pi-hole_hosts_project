@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1280]                                    |"
+echo "|                                   [1281]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -77,7 +77,7 @@ else
 				crontab -l
 				echo ""
 				if [[ -f "Apps/backup.sh" ]]; then
-					crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; ~/Apps/backup.sh >/dev/null 2>&1
+					crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; ~/Apps/backup.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_backup.txt 2>&1
 15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 				else
 					crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1
@@ -96,7 +96,13 @@ else
 		echo "|                    Mise à jour du Raspberry Pi terminée                     |"
 		echo "+=============================================================================+"
         echo ""
-        sleep 3 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s $(hostname -s) -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt idepanne.support.tech@free.fr
+        ###### Envoi des fichiers logs à iDépanne pour supervision ######
+        if [[ -f "Apps/backup.sh" ]]; then
+            sleep 3 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s $(hostname -s) -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_backup.txt idepanne.support.tech@free.fr
+        else
+            sleep 3 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; echo ' ' | mail -s $(hostname -s) -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt idepanne.support.tech@free.fr
+        fi
+        #################################################################
 	else
 		echo "Ce programme de mise à jour ne fonctionne qu'avec Raspberry Pi OS Lite (Debian 11 et 12)."
 		echo "Il n'est pas compatible avec $varsys."
