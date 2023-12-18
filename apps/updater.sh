@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1291]
+# [1292]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -119,6 +119,11 @@ if [[ -d "/etc/pihole" ]]; then
     cat ~/Apps/temp.txt
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
 	echo ""
+    echo "sudo systemctl status --no-pager cloudflared"
+    sudo systemctl status --no-pager cloudflared
+    echo ""
+    echo "dig @127.0.0.1 -p 5053 raspberrypi.com"
+    dig @127.0.0.1 -p 5053 raspberrypi.com
 else
 	echo "4. Pi-hole :                    [NON INSTALLÉ]"
 fi
