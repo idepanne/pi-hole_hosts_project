@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1296]
+# [1297]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -140,8 +140,8 @@ if [[ -f "Apps/backup.sh" ]]; then
 	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd || return
 else
 	echo "5. backup.sh :                  [NON INSTALLÉ]"
-fi
 echo ""
+fi
 echo ""
 echo ""
 if [[ -d "/etc/ssmtp" ]]; then

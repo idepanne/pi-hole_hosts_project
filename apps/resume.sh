@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1296]                                    |"
+echo "|                                   [1297]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -48,10 +48,10 @@ if [[ -d "/etc/pihole" ]]; then
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
     echo ""
     echo ""
+    echo ""
     echo "Cloudflared     :"
     echo ""
     sudo systemctl status --no-pager cloudflared
-    echo ""
     echo ""
     dig @127.0.0.1 -p 5053 raspberrypi.com
 else
