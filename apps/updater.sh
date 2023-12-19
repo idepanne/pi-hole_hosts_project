@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1292]
+# [1293]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -119,6 +119,8 @@ if [[ -d "/etc/pihole" ]]; then
     cat ~/Apps/temp.txt
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
 	echo ""
+    echo ""
+    echo ""
     echo "sudo systemctl status --no-pager cloudflared"
     sudo systemctl status --no-pager cloudflared
     echo ""

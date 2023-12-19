@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1292]                                    |"
+echo "|                                   [1293]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -46,6 +46,7 @@ if [[ -d "/etc/pihole" ]]; then
     sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,8d' ~/Apps/temp.txt
     cat ~/Apps/temp.txt
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
+    echo ""
 else
     echo >/dev/null 2>&1
 fi
