@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1293]                                    |"
+echo "|                                   [1294]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -130,20 +130,6 @@ else
 		echo ""
 		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies whois traceroute curl lsb-release fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp rsyslog"
 		sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies whois traceroute curl lsb-release fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp rsyslog
-		echo ""
-        echo "$ curl -L https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-archive-keyring.gpg >/dev/null"
-        curl -L https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-archive-keyring.gpg >/dev/null
-		echo ""
-        echo "deb [signed-by=/usr/share/keyrings/cloudflare-archive-keyring.gpg] https://pkg.cloudflare.com/cloudflared $(lsb_release -cs) main" | sudo tee  /etc/apt/sources.list.d/cloudflared.list
-		echo ""
-		echo "$ sudo apt update"
-        sudo apt update
-    	echo ""
-		echo "$ sudo apt install cloudflared"
-        sudo apt install cloudflared
-		echo ""
-		echo "$ sudo useradd -s /usr/sbin/nologin -r -M cloudflared"
-        sudo useradd -s /usr/sbin/nologin -r -M cloudflared
 		echo ""
 		echo "$ curl https://rclone.org/install.sh | sudo bash"
 		curl https://rclone.org/install.sh | sudo bash
