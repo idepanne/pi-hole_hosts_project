@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1300]
+# [1313]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -118,15 +118,34 @@ if [[ -d "/etc/pihole" ]]; then
 	sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,8d' ~/Apps/temp.txt
     cat ~/Apps/temp.txt
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
+    cd
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/pihole_by_idepanne.png > pihole_by_idepanne.png"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/pihole_by_idepanne.png > pihole_by_idepanne.png
+    echo ""
+    echo "$ sudo mv -v pihole_by_idepanne.png /var/www/html/pihole_by_idepanne.png"
+    sudo mv -v pihole_by_idepanne.png /var/www/html/pihole_by_idepanne.png
+    echo ""
+    echo "$ sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old"
+    sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/index.html > index.html"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/index.html > index.html
+    echo ""
+    echo "$ sudo mv -v index.html /var/www/html/index.html"
+    sudo mv -v index.html /var/www/html/index.html
 	echo ""
     echo ""
     echo ""
-    echo "sudo systemctl status --no-pager cloudflared"
     sudo systemctl status --no-pager cloudflared
     echo ""
+    dig @127.0.0.1 raspberrypi.com A
     echo ""
-    echo "dig @127.0.0.1 -p 5053 raspberrypi.com"
-    dig @127.0.0.1 -p 5053 raspberrypi.com
+    dig @127.0.0.1 debian.com AAAA
+    echo ""
+    dig @::1 debian.com A
+    echo ""
+    dig @::1 raspberrypi.com AAAA
 else
 	echo "4. Pi-hole :                    [NON INSTALLÉ]"
     echo ""
