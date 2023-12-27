@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1319]
+# [1320]
 # © 2020-2023 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -120,12 +120,15 @@ if [[ -d "/etc/pihole" ]]; then
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
     cd
 	echo ""
+	echo ""
+	echo ""
 	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/pihole_by_idepanne.png > pihole_by_idepanne.png"
 	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/pihole_by_idepanne.png > pihole_by_idepanne.png
     echo ""
     echo "$ sudo mv -v pihole_by_idepanne.png /var/www/html/pihole_by_idepanne.png"
     sudo mv -v pihole_by_idepanne.png /var/www/html/pihole_by_idepanne.png
     echo ""
+	echo ""
     echo "$ sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old"
     sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old
 	echo ""
