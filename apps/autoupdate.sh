@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1324]                                    |"
+echo "|                                   [1325]                                    |"
 echo "|                © 2020-2023 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -29,7 +29,7 @@ else
 		echo "+=============================================================================+"
 		echo ""
 		echo ""
-		if ping -c 3 1.1.1.2; echo ""; ping -c 3 1.0.0.2; echo ""; ping -c 3 2606:4700:4700::1112; echo ""; ping -c 3 2606:4700:4700::1002; then
+		if ping -c 3 1.1.1.1; echo ""; ping -c 3 1.0.0.1; echo ""; ping -c 3 2606:4700:4700::1111; echo ""; ping -c 3 2606:4700:4700::1001; then
 			echo ""
 			echo ""
 			echo "Connexion Internet : OK"
