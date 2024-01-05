@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1328]                                    |"
+echo "|                                   [1329]                                    |"
 echo "|                © 2020-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -21,27 +21,27 @@ echo "+=========================================================================
 echo "|  • Résumé                                                                   |"
 echo "+=============================================================================+"
 echo ""
-echo -n "Nom d'hôte          :  "; hostname -s
+echo -n "Nom d'hôte        :  "; hostname -s
 echo ""
-echo -n "Système             :  "; echo "$varsys"
+echo -n "Système           :  "; echo "$varsys"
 echo ""
-echo -n "Température         :  "; echo "$(vcgencmd measure_temp | grep -E -o '[0-9]*\.[0-9]*')°C"
+echo -n "Température       :  "; echo "$(vcgencmd measure_temp | grep -E -o '[0-9]*\.[0-9]*')°C"
 echo ""
-echo -n "IPv4/IPv6           :  "; hostname -I
+echo -n "IPv4/IPv6         :  "; hostname -I
 echo ""
-echo -n "Démarré depuis      :  "; echo "$var18 - $var19"
+echo -n "Démarré depuis    :  "; echo "$var18 - $var19"
 echo ""
-echo "Analyse du boot     :"
+echo "Analyse du boot   :"
 systemd-analyze
 echo ""
 echo ""
-echo "Fail2ban            :"
+echo "Fail2ban          :"
 echo ""
 sudo fail2ban-client status sshd
 if [[ -d "/etc/pihole" ]]; then
     echo ""
     echo ""
-    echo "Pi-hole             :"
+    echo "Pi-hole           :"
     echo ""
     sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,8d' ~/Apps/temp.txt
     cat ~/Apps/temp.txt
@@ -49,7 +49,7 @@ if [[ -d "/etc/pihole" ]]; then
     echo ""
     echo ""
 	echo ""
-    echo "Cloudflared         :"
+    echo "Cloudflared       :"
     echo ""
     dig @127.0.0.1 raspberrypi.com A
     echo ""
@@ -60,7 +60,7 @@ fi
 if [[ -d "/etc/nut" ]]; then
     echo ""
     echo ""
-    echo "Network UPS Tools   :"
+    echo "Network UPS Tools :"
     echo ""
     upsc UPS@localhost ups.mfr > ~/Apps/temp.txt 2>&1 ; sed -i '1d' ~/Apps/temp.txt
     echo -n "  • Fabricant  : "; echo "$(cat ~/Apps/temp.txt)"
