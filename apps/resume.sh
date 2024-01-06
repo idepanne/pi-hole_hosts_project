@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1330]                                    |"
+echo "|                                   [1331]                                    |"
 echo "|                © 2020-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -72,9 +72,9 @@ if [[ -d "/etc/nut" ]]; then
     echo -n "  • Charge     :  "; echo "$(cat ~/Apps/temp.txt)%"
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
     upsc UPS@localhost battery.runtime > ~/Apps/temp.txt 2>&1 ; sed -i '1d' ~/Apps/temp.txt
-    vardata=$(cat ~/Apps/temp.txt)
-    vartime=$(seconds2human $vardata)
-    echo -n "  • Autonomie  : "; echo "$vartime"
+    vartime1=$(cat ~/Apps/temp.txt)
+    vartime2=$(echo $(($(($vartime1 - $vartime1/86400*86400))/3600))h $(($(($vartime1 - $vartime1/86400*86400))%3600/60))m $(($(($vartime1 - $vartime1/86400*86400))%60))s)
+    echo -n "  • Autonomie  :  "; echo "$vartime2"
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
     echo ""
     echo "  • Connexions :"
