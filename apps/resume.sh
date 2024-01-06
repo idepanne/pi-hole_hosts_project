@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1329]                                    |"
+echo "|                                   [1330]                                    |"
 echo "|                © 2020-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -62,20 +62,22 @@ if [[ -d "/etc/nut" ]]; then
     echo ""
     echo "Network UPS Tools :"
     echo ""
-    upsc UPS@localhost ups.mfr > ~/Apps/temp.txt 2>&1 ; sed -i '1d' ~/Apps/temp.txt
-    echo -n "  • Fabricant  : "; echo "$(cat ~/Apps/temp.txt)"
-    sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
 	upsc UPS@localhost ups.model > ~/Apps/temp.txt 2>&1 ; sed -i '1d' ~/Apps/temp.txt
-    echo -n "  • Modèle     : "; echo "$(cat ~/Apps/temp.txt)"
+    echo -n "  • Modèle     :  "; echo "$(cat ~/Apps/temp.txt)"
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
     upsc UPS@localhost ups.status > ~/Apps/temp.txt 2>&1 ; sed -i '1d' ~/Apps/temp.txt
-    echo -n "  • Status     : "; echo "$(cat ~/Apps/temp.txt)"
+    echo -n "  • Status     :  "; echo "$(cat ~/Apps/temp.txt)"
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
     upsc UPS@localhost battery.charge > ~/Apps/temp.txt 2>&1 ; sed -i '1d' ~/Apps/temp.txt
-    echo -n "  • Charge     : "; echo "$(cat ~/Apps/temp.txt)%"
+    echo -n "  • Charge     :  "; echo "$(cat ~/Apps/temp.txt)%"
+    sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
+    upsc UPS@localhost battery.runtime > ~/Apps/temp.txt 2>&1 ; sed -i '1d' ~/Apps/temp.txt
+    vardata=$(cat ~/Apps/temp.txt)
+    vartime=$(seconds2human $vardata)
+    echo -n "  • Autonomie  : "; echo "$vartime"
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
     echo ""
-    echo "  • Connexions : "
+    echo "  • Connexions :"
     netstat -t | grep 'ESTABLISHED'
 else
     echo >/dev/null 2>&1
