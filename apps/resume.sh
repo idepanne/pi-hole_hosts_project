@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1331]                                    |"
+echo "|                                   [1332]                                    |"
 echo "|                © 2020-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -15,6 +15,7 @@ echo ""
 varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
 var18=$(uptime -s)
 var19=$(uptime -p)
+varserver=$(sudo grep 0.0.0.0 /etc/nut/upsd.conf)
 ######################################
 
 echo "+=============================================================================+"
@@ -50,14 +51,12 @@ if [[ -d "/etc/pihole" ]]; then
     echo ""
 	echo ""
     echo "Cloudflared       :"
-    echo ""
     dig @127.0.0.1 raspberrypi.com A
-    echo ""
     dig @::1 raspberrypi.com AAAA
 else
     echo >/dev/null 2>&1
 fi
-if [[ -d "/etc/nut" ]]; then
+if [[ $string == *"LISTEN 0.0.0.0 3493"* ]]; then
     echo ""
     echo ""
     echo "Network UPS Tools :"

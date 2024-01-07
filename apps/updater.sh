@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1331]
+# [1332]
 # © 2020-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -139,9 +139,7 @@ if [[ -d "/etc/pihole" ]]; then
     echo "$ sudo mv -v index.html /var/www/html/index.html"
     sudo mv -v index.html /var/www/html/index.html
 	echo ""
-    echo ""
     dig @127.0.0.1 raspberrypi.com A
-    echo ""
     dig @::1 raspberrypi.com AAAA
 else
 	echo "4. Pi-hole :                    [NON INSTALLÉ]"
