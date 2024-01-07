@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1334]
+# [1338]
 # © 2020-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
