@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1332]                                    |"
+echo "|                                   [1333]                                    |"
 echo "|                © 2020-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -78,6 +78,9 @@ if [[ $string == *"LISTEN 0.0.0.0 3493"* ]]; then
     echo ""
     echo "  • Connexions :"
     netstat -t | grep 'ESTABLISHED'
+    echo ""
+    echo "  • Status :"
+    sudo systemctl status --no-pager -l nut-monitor.service
 else
     echo >/dev/null 2>&1
 fi
