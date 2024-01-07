@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1333]                                    |"
+echo "|                                   [1334]                                    |"
 echo "|                © 2020-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -56,7 +56,7 @@ if [[ -d "/etc/pihole" ]]; then
 else
     echo >/dev/null 2>&1
 fi
-if [[ $string == *"LISTEN 0.0.0.0 3493"* ]]; then
+if [[ $varserver == *"LISTEN 0.0.0.0 3493"* ]]; then
     echo ""
     echo ""
     echo "Network UPS Tools :"
@@ -80,7 +80,7 @@ if [[ $string == *"LISTEN 0.0.0.0 3493"* ]]; then
     netstat -t | grep 'ESTABLISHED'
     echo ""
     echo "  • Status :"
-    sudo systemctl status --no-pager -l nut-monitor.service
+    sudo systemctl status --no-pager -l nut-server.service
 else
     echo >/dev/null 2>&1
 fi

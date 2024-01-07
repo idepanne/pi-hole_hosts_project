@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1333]                                    |"
+echo "|                                   [1334]                                    |"
 echo "|                © 2020-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -174,8 +174,8 @@ else
 			sudo service fail2ban restart
 			echo ""
 			sleep 3
-			echo "$ sudo systemctl --no-pager status fail2ban -l"
-			sudo systemctl --no-pager status fail2ban -l
+			echo "$ sudo systemctl status --no-pager -l fail2ban.service"
+			sudo systemctl status --no-pager -l fail2ban.service
 			echo ""
 			sleep 3
 			echo "$ sudo iptables -L -n"
