@@ -3,8 +3,8 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1341]                                    |"
-echo "|                © 2019-2024 iDépanne – L'expert informatique                 |"
+echo "|                                   [1343]                                    |"
+echo "|                © 2019-2024 IDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
 echo ""
@@ -15,7 +15,6 @@ echo ""
 varsys=$(< /etc/os-release grep PRETTY_NAME | cut -c14- | rev | cut -c2- | rev)
 var18=$(uptime -s)
 var19=$(uptime -p)
-varserver=$(sudo grep 0.0.0.0 /etc/nut/upsd.conf)
 ######################################
 
 echo "+=============================================================================+"
@@ -62,6 +61,7 @@ if [[ -d "/etc/nut" ]]; then
     echo ""
     echo "Network UPS Tools :"
     echo ""
+    varserver=$(sudo grep 0.0.0.0 /etc/nut/upsd.conf)
     if [[ $varserver == *"LISTEN 0.0.0.0 3493"* ]]; then
 	    upsc UPS@localhost ups.model > ~/Apps/temp.txt 2>&1 ; sed -i '1d' ~/Apps/temp.txt
         echo -n "  • Modèle     :  "; echo "$(cat ~/Apps/temp.txt)"
