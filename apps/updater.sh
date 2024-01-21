@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1346]
+# [1348]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -139,8 +139,10 @@ if [[ -d "/etc/pihole" ]]; then
     echo "$ sudo mv -v index.html /var/www/html/index.html"
     sudo mv -v index.html /var/www/html/index.html
 	echo ""
-    dig @127.0.0.1 raspberrypi.com A
-    dig @::1 raspberrypi.com AAAA
+    echo ""
+    sudo systemctl status --no-pager -l cloudflaredv4.service
+    echo ""
+    sudo systemctl status --no-pager -l cloudflaredv4.service
 else
 	echo "4. Pi-hole :                    [NON INSTALLÉ]"
     echo ""
@@ -200,7 +202,7 @@ echo "Ancien crontab :"
 crontab -l
 echo ""
 if [[ -f "Apps/email.sh" ]]; then
-    crontab <<<"0 0 1 * * ~/Apps/email.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1month" +"%Y%m")_email_automate.txt 2>&1 ; sleep 5 ; echo 'Fichier log envoi emails' | mail -s 'RaspiCM67-2' -A ~/Apps/log/$(hostname -s)_$(date --date="+1month" +"%Y%m")_email_automate.txt idepanne.support.tech@free.fr
+    crontab <<<"0 0 1 * * ~/Apps/email.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1month" +"%Y%m")_email_automate.txt 2>&1 ; sleep 5 ; echo 'Fichier log envoi emails' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date="+1month" +"%Y%m")_email_automate.txt idepanne.support.tech@free.fr
 0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date="+1day" +"%Y%m%d")_resume.txt idepanne.support.tech@free.fr ; sleep 5 ; ~/Apps/backup.sh >/dev/null 2>&1
 15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 else
