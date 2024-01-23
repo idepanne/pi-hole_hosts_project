@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1348]
+# [1349]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -142,7 +142,7 @@ if [[ -d "/etc/pihole" ]]; then
     echo ""
     sudo systemctl status --no-pager -l cloudflaredv4.service
     echo ""
-    sudo systemctl status --no-pager -l cloudflaredv4.service
+    sudo systemctl status --no-pager -l cloudflaredv6.service
 else
 	echo "4. Pi-hole :                    [NON INSTALLÉ]"
     echo ""

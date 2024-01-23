@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1348]                                    |"
+echo "|                                   [1349]                                    |"
 echo "|                © 2019-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -53,7 +53,7 @@ if [[ -d "/etc/pihole" ]]; then
     echo ""
     sudo systemctl status --no-pager -l cloudflaredv4.service
     echo ""
-    sudo systemctl status --no-pager -l cloudflaredv4.service
+    sudo systemctl status --no-pager -l cloudflaredv6.service
 else
     echo >/dev/null 2>&1
 fi
