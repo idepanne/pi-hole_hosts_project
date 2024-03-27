@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1355]                                    |"
+echo "|                                   [1357]                                    |"
 echo "|                © 2019-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -28,6 +28,9 @@ echo ""
 echo -n "Température       :  "; echo "$(vcgencmd measure_temp | grep -E -o '[0-9]*\.[0-9]*')°C"
 echo ""
 echo -n "IPv4/IPv6         :  "; hostname -I
+echo ""
+echo "Serveurs DNS         :  "
+cat /etc/resolv.conf
 echo ""
 echo -n "Démarré depuis    :  "; echo "$var18 - $var19"
 echo ""
