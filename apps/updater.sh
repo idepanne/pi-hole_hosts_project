@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1361]
+# [1362]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -19,7 +19,6 @@ else
 	echo "$ sudo apt-get purge -y iftop"
 	echo "$var60"
 fi
-echo ""
 echo ""
 echo ""
 echo "+=============================================================================+"
