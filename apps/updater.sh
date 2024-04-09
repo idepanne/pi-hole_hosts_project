@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1365]
+# [1369]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -134,11 +134,18 @@ if [[ -d "/etc/pihole" ]]; then
 	echo ""
 	echo ""
 	echo ""
-	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/pihole_by_idepanne.png > pihole_by_idepanne.png"
-	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/pihole_by_idepanne.png > pihole_by_idepanne.png
+	echo "$ cd /var/www/html/"
+	cd /var/www/html/
+	echo ""
+    echo "$ sudo rm -rv pihole_by_idepanne.png"
+    sudo rm -rv pihole_by_idepanne.png
     echo ""
-    echo "$ sudo mv -v pihole_by_idepanne.png /var/www/html/pihole_by_idepanne.png"
-    sudo mv -v pihole_by_idepanne.png /var/www/html/pihole_by_idepanne.png
+	echo ""
+	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/stop_pub_idepanne_400.jpg > stop_pub_idepanne_400.jpg"
+	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/stop_pub_idepanne_400.jpg > stop_pub_idepanne_400.jpg
+    echo ""
+    echo "$ sudo mv -v stop_pub_idepanne_400.jpg /var/www/html/stop_pub_idepanne_400.jpg"
+    sudo mv -v stop_pub_idepanne_400.jpg /var/www/html/stop_pub_idepanne_400.jpg
     echo ""
 	echo ""
     echo "$ sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old"
