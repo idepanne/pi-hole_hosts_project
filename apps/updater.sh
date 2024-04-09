@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1369]
+# [1370]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -130,17 +130,18 @@ if [[ -d "/etc/pihole" ]]; then
 	sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,8d' ~/Apps/temp.txt
     cat ~/Apps/temp.txt
     sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
-    cd
+    #cd || return
 	echo ""
 	echo ""
 	echo ""
-	echo "$ cd /var/www/html/"
-	cd /var/www/html/
+	echo "$ cd /var/www/html/ || return"
+	cd /var/www/html/ || return
 	echo ""
     echo "$ sudo rm -rv pihole_by_idepanne.png"
     sudo rm -rv pihole_by_idepanne.png
     echo ""
 	echo ""
+	cd || return
 	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/stop_pub_idepanne_400.jpg > stop_pub_idepanne_400.jpg"
 	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/stop_pub_idepanne_400.jpg > stop_pub_idepanne_400.jpg
     echo ""
