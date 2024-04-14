@@ -1,0 +1,62 @@
+# Test Block List
+# © 2019-2024 iDépanne – L'expert informatique
+
+# This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
+# For additions, modifications or corrections, you can send an e-mail to "idepanne.support.tech@free.fr".
+# Last update : 14/04/2024 - 15h40
+
+
+# 18/04/2024 : Noms de domaines devant être bloqués par les FAI
+# https://www.phonandroid.com/streaming-torrent-les-fai-vont-bloquer-des-dizaines-de-sites-voici-lesquels.html
+
+Cpasbien
+Cpasfo
+Cpasmal
+Cpasmieux
+Torrent9
+Torrent411
+Torrentquest
+YggTorrent
+Gktorrent
+Torrentdownload
+Oxtorrent
+Zetorrents
+Flac24bitmusic
+Tirexo
+Zone-Téléchargement
+Zone-annuaire
+JustStream
+StreamLook
+UpMovies
+VideoFutur
+WikiSeriesStreaming
+ATStream
+CineMay
+FilmoFlix
+KiwiStream
+Wawacity
+01Streaming
+CinéComplet
+Cinez
+Coolfix
+DesfilmsVF
+DPStream
+French-Stream
+FrenchStream
+FrenchStream2
+FRMovies
+HDSS
+PopSeries
+MP3
+33Rapfrmp3
+Extreme-down
+Hdmusic
+Hiphopde
+SeriesStreaming
+StreamPourVous
+TonCinéClub
+VoirSries
+Snapinsta
+Losslessalbums
+Rutracker.org
+Rutracker.ru
