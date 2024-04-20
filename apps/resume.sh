@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                  resume.sh                                  |"
-echo "|                                   [1370]                                    |"
+echo "|                                   [1374]                                    |"
 echo "|                © 2019-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -36,16 +36,6 @@ echo -n "Démarré depuis    :  "; echo "$var18 - $var19"
 echo ""
 echo "Analyse du boot   :"
 systemd-analyze
-echo ""
-echo ""
-echo ""
-echo "**** Détection de la backdoor injectée dans XZ 5.6.0 et 5.6.1 (CVE-2024-3094) ****"
-echo ""
-xz --version
-which xz
-echo ""
-echo "Recherche du fichier liblzma_la-crc67-fast.o :"
-sudo find / -type f -name 'liblzma_la-crc67-fast.o'
 echo ""
 echo ""
 echo ""

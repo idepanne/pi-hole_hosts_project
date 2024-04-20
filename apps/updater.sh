@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1370]
+# [1374]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -19,18 +19,6 @@
 #	echo "$ sudo apt-get purge -y iftop"
 #	echo "$var60"
 #fi
-echo ""
-echo ""
-echo ""
-echo "+=============================================================================+"
-echo "|  • Détection de la backdoor injectée dans XZ 5.6.0 et 5.6.1 (CVE-2024-3094) |"
-echo "+=============================================================================+"
-echo ""
-xz --version
-which xz
-echo ""
-echo "Recherche du fichier liblzma_la-crc67-fast.o :"
-sudo find / -type f -name 'liblzma_la-crc67-fast.o'
 echo ""
 echo ""
 echo ""
