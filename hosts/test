@@ -3,57 +3,7 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne.support.tech@free.fr".
-# Last update : 28/04/2024 - 16h30
+# Last update : 28/04/2024 - 18h30
 
 
-# 04/04/2024 : Blocage sur décision de justice.
-# https://www.numerama.com/tech/1669390-la-justice-francaise-ordonne-le-blocage-de-dizaines-de-liens-torrents-et-sites-de-streaming.html
-(\.|^)01streaming$
-(\.|^)33rapfrmp3$
-(\.|^)atstream$
-(\.|^)cinecomplet$
-(\.|^)cinemay$
-(\.|^)cinez$
-(\.|^)coolfix$
-(\.|^)cpasbien$
-(\.|^)cpasfo$
-(\.|^)cpasmal$
-(\.|^)cpasmieux$
-(\.|^)desfilmsvf$
-(\.|^)dpstream$
-(\.|^)extreme-down$
-(\.|^)filmoflix$
-(\.|^)flac24bitmusic$
-(\.|^)french-stream$
-(\.|^)frenchstream$
-(\.|^)frenchstream2$
-(\.|^)frmovies$
-(\.|^)gktorrent$
-(\.|^)hdmusic$
-(\.|^)hdss$
-(\.|^)hiphopde$
-(\.|^)juststream$
-(\.|^)kiwistream$
-(\.|^)losslessalbums$
-(\.|^)mp3$
-(\.|^)oxtorrent$
-(\.|^)popseries$
-(\.|^)seriesstreaming$
-(\.|^)snapinsta$
-(\.|^)streamlook$
-(\.|^)streampourvous$
-(\.|^)tirexo$
-(\.|^)toncineclub$
-(\.|^)torrent411$
-(\.|^)torrent9$
-(\.|^)torrentdownload$
-(\.|^)torrentquest$
-(\.|^)upmovies$
-(\.|^)videofutur$
-(\.|^)voirseries$
-(\.|^)wawacity$
-(\.|^)wikiseriesstreaming$
-(\.|^)yggtorrent$
-(\.|^)zetorrents$
-(\.|^)zone-annuaire$
-(\.|^)zone-telechargement$
+
