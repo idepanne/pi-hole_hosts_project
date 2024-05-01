@@ -1,24 +1,19 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1379]
+# [1381]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
-#echo ""
-#echo ""
-#echo ""
-#echo "+=============================================================================+"
-#echo "|  • Désinstallation des logiciels obsolètes                                  |"
-#echo "+=============================================================================+"
-#echo ""
-#var60=$(sudo apt-get purge -y iftop)
-#if [[ "$var60" =~ "n'est pas installé, et ne peut donc être supprimé" ]]; then
-#	echo "Aucun logiciel obsolète à désinstaller."
-#else
-#	echo "$ sudo apt-get purge -y iftop"
-#	echo "$var60"
-#fi
+echo ""
+echo ""
+echo ""
+echo "+=============================================================================+"
+echo "|  • Suppression des logiciels obsolètes                                      |"
+echo "+=============================================================================+"
+echo ""
+echo "sudo apt purge -y neofetch ; sudo rm -rv ~/.config/neofetch"
+sudo apt purge -y neofetch ; sudo rm -rv ~/.config/neofetch
 echo ""
 echo ""
 echo ""
@@ -198,6 +193,18 @@ if [[ -d "/etc/ssmtp" ]]; then
 #####
 else
 	echo "6. sSMTP :                      [NON INSTALLÉ]"
+fi
+echo ""
+echo ""
+echo ""
+var55=$(fastfetch --version)
+if [[ "$var55" =~ "fastfetch 2.11.0 (aarch64)" ]]; then
+	echo "7. Fastfetch :                      [LOGICEL À JOUR]"
+else
+	echo "7. Fastfetch :                      [MISE À JOUR EN COURS]"
+	echo ""
+    echo "cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.11.0/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb"
+    cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.11.0/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb
 fi
 echo ""
 echo ""
