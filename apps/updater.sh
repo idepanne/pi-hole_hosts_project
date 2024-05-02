@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1381]
+# [1382]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -12,8 +12,8 @@ echo "+=========================================================================
 echo "|  • Suppression des logiciels obsolètes                                      |"
 echo "+=============================================================================+"
 echo ""
-echo "sudo apt purge -y neofetch ; sudo rm -rv ~/.config/neofetch"
-sudo apt purge -y neofetch ; sudo rm -rv ~/.config/neofetch
+echo "sudo apt-get purge -y neofetch ; sudo rm -rv ~/.config/neofetch"
+sudo apt-get purge -y neofetch ; sudo rm -rv ~/.config/neofetch
 echo ""
 echo ""
 echo ""
@@ -120,10 +120,7 @@ if [[ -d "/etc/pihole" ]]; then
 	echo "$ cd /var/www/html/ || return"
 	cd /var/www/html/ || return
 	echo ""
-    echo "$ sudo rm -rv pihole_by_idepanne.png"
-    sudo rm -rv pihole_by_idepanne.png
-    echo ""
-	echo ""
+ 	echo ""
 	cd || return
 	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/stop_pub_idepanne_400.jpg > stop_pub_idepanne_400.jpg"
 	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/stop_pub_idepanne_400.jpg > stop_pub_idepanne_400.jpg
@@ -198,13 +195,13 @@ echo ""
 echo ""
 echo ""
 var55=$(fastfetch --version)
-if [[ "$var55" =~ "fastfetch 2.11.0 (aarch64)" ]]; then
+if [[ "$var55" =~ "fastfetch 2.11.1 (aarch64)" ]]; then
 	echo "7. Fastfetch :                      [LOGICEL À JOUR]"
 else
 	echo "7. Fastfetch :                      [MISE À JOUR EN COURS]"
 	echo ""
-    echo "cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.11.0/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb"
-    cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.11.0/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb
+    echo "cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.11.1/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb"
+    cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.11.1/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb
 fi
 echo ""
 echo ""
