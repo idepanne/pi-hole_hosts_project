@@ -3,7 +3,7 @@ cd ~/Apps || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                autoupdate.sh                                |"
-echo "|                                   [1386]                                    |"
+echo "|                                   [1387]                                    |"
 echo "|                © 2019-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1386]
+# [1387]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -21,7 +21,7 @@ echo "+=========================================================================
 echo "|  • Mise à jour de Raspberry Pi OS                                           |"
 echo "+=============================================================================+"
 echo ""
-pkill apt-get
+sudo pkill apt-get
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
 echo ""
