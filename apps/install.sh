@@ -4,7 +4,7 @@ cd || return
 echo "+=============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                        |"
 echo "|                                 install.sh                                  |"
-echo "|                                   [1387]                                    |"
+echo "|                                   [1388]                                    |"
 echo "|                © 2019-2024 iDépanne – L'expert informatique                 |"
 echo "|                        idepanne.support.tech@free.fr                        |"
 echo "+=============================================================================+"
@@ -30,7 +30,7 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo ""
 		echo ""
 		echo ""
-		wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
+		wget -O - https://raw.githubusercontent.com/idepanne/infosys/master/apps/infosys.sh > infosys.sh && sudo chmod +x infosys.sh && ./infosys.sh
 		echo ""
 		echo ""
 		echo "+=============================================================================+"
