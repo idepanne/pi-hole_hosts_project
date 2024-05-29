@@ -1,19 +1,19 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1396]
+# [1397]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
-#echo ""
-#echo ""
-#echo ""
-#echo "+=============================================================================+"
-#echo "|  • Suppression des logiciels obsolètes                                      |"
-#echo "+=============================================================================+"
-#echo ""
-#echo "sudo apt-get purge -y neofetch ; sudo rm -rv ~/.config/neofetch"
-#sudo apt-get purge -y neofetch ; sudo rm -rv ~/.config/neofetch
+echo ""
+echo ""
+echo ""
+echo "+=============================================================================+"
+echo "|  • Suppression des logiciels obsolètes                                      |"
+echo "+=============================================================================+"
+echo ""
+echo "sudo rm -rv ~/Apps/backup.sh"
+sudo rm -rv ~/Apps/backup.sh
 echo ""
 echo ""
 echo ""
