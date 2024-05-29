@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1403]
+# [1404]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -189,8 +189,8 @@ if [[ "$var55" =~ "fastfetch 2.13.2 (aarch64)" ]]; then
 else
 	echo "6. Fastfetch :                      [MISE À JOUR EN COURS]"
 	echo ""
-    echo "cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.13.2/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb"
-    cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.13.2/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb
+	echo "cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.13.2/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb"
+	cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.13.2/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb
 fi
 echo ""
 echo ""

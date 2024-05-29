@@ -1,13 +1,13 @@
 #!/bin/bash
 clear
 cd || return
-echo "+=============================================================================+"
-echo "|                         Pi-Hole Host Project Updater                        |"
-echo "|                                 install.sh                                  |"
-echo "|                                   [1403]                                    |"
-echo "|                © 2019-2024 iDépanne – L'expert informatique                 |"
-echo "|                        idepanne.support.tech@free.fr                        |"
-echo "+=============================================================================+"
+echo "+==============================================================================+"
+echo "|                         Pi-Hole Host Project Updater                         |"
+echo "|                                  install.sh                                  |"
+echo "|                                    [1404]                                    |"
+echo "|                 © 2019-2024 iDépanne – L'expert informatique                 |"
+echo "|                         idepanne.support.tech@free.fr                        |"
+echo "+==============================================================================+"
 echo ""
 echo ""
 echo ""
@@ -18,7 +18,7 @@ var0=$(< /proc/cpuinfo grep Model)
 ######################################
 
 if [[ $var0 == *"Raspberry Pi"* ]]; then
-    echo "+=============================================================================+"
+	echo "+=============================================================================+"
 	echo "|  • Test de la connexion Internet                                            |"
 	echo "+=============================================================================+"
 	echo ""
