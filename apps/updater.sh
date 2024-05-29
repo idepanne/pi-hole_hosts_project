@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1395]
+# [1396]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -150,19 +150,8 @@ else
 fi
 echo ""
 echo ""
-cd || return
-if [[ -f "Apps/backup.sh" ]]; then
-	echo "5. backup.sh :                  [MISE À JOUR EN COURS]"
-	echo ""
-	cd ~/Apps && wget -O - https://raw.githubusercontent.com/idepanne/backup_to_nas/master/apps/backup.sh > backup.sh && sudo chmod +x backup.sh && cd || return
-else
-	echo "5. backup.sh :                  [NON INSTALLÉ]"
-echo ""
-fi
-echo ""
-echo ""
 if [[ -d "/etc/ssmtp" ]]; then
-	echo "6. sSMTP :                      [MISE À JOUR EN COURS]"
+	echo "5. sSMTP :                      [MISE À JOUR EN COURS]"
 	echo ""
 	echo "$ sudo rm -rv /etc/ssmtp/revaliases"
 	sudo rm -rv /etc/ssmtp/revaliases
@@ -190,16 +179,16 @@ if [[ -d "/etc/ssmtp" ]]; then
 #	sudo chown root:mail /etc/ssmtp/ssmtp.conf
 #####
 else
-	echo "6. sSMTP :                      [NON INSTALLÉ]"
+	echo "5. sSMTP :                      [NON INSTALLÉ]"
 fi
 echo ""
 echo ""
 echo ""
 var55=$(fastfetch --version)
 if [[ "$var55" =~ "fastfetch 2.13.2 (aarch64)" ]]; then
-	echo "7. Fastfetch :                      [LOGICIEL À JOUR]"
+	echo "6. Fastfetch :                      [LOGICIEL À JOUR]"
 else
-	echo "7. Fastfetch :                      [MISE À JOUR EN COURS]"
+	echo "6. Fastfetch :                      [MISE À JOUR EN COURS]"
 	echo ""
     echo "cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.13.2/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb"
     cd || return && wget -O - https://github.com/fastfetch-cli/fastfetch/releases/download/2.13.2/fastfetch-linux-aarch64.deb > fastfetch-linux-aarch64.deb && sudo dpkg -i fastfetch-linux-aarch64.deb ; sudo rm -rv fastfetch-linux-aarch64.deb
@@ -216,16 +205,11 @@ crontab -l
 echo ""
 if [[ -f "Apps/email.sh" ]]; then
 	crontab <<<"0 0 29 * * ~/Apps/email.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1month' +'%Y%m')_email_automate.txt 2>&1 ; sleep 5 ; echo 'Fichier log envoi emails' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1month' +'%Y%m')_email_automate.txt idepanne.support.tech@free.fr
-0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt idepanne.support.tech@free.fr ; sleep 5 ; ~/Apps/backup.sh >/dev/null 2>&1
+0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt idepanne.support.tech@free.fr
 15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 else
-	if [[ -f "Apps/backup.sh" ]]; then
-		crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt idepanne.support.tech@free.fr ; sleep 5 ; ~/Apps/backup.sh >/dev/null 2>&1
+	crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt idepanne.support.tech@free.fr
 15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
-	else
-		crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt idepanne.support.tech@free.fr
-15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
-	fi
 fi
 sudo /etc/init.d/cron restart
 echo ""
