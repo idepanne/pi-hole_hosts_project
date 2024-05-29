@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1399]
+# [1400]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -206,11 +206,13 @@ echo ""
 cd || return
 if [[ -f "Apps/email.sh" ]]; then
 	echo "Fichier email.sh détecté..."
-	echo "
+	echo ""
 	crontab <<<"0 0 29 * * ~/Apps/email.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1month' +'%Y%m')_email_automate.txt 2>&1 ; sleep 5 ; echo 'Fichier log envoi emails' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1month' +'%Y%m')_email_automate.txt idepanne.support.tech@free.fr
 0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt idepanne.support.tech@free.fr
 15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 else
+	echo "Fichier email.sh absent..."
+	echo ""
 	crontab <<<"0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt idepanne.support.tech@free.fr
 15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 fi
