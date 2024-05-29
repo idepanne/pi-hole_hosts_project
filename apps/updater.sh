@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1402]
+# [1403]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -112,9 +112,8 @@ if [[ -d "/etc/pihole" ]]; then
 	fi
 	echo ""
 	sudo timeout 1 pihole -c  > ~/Apps/temp.txt 2>&1 ; sed -i '1,8d' ~/Apps/temp.txt
-    cat ~/Apps/temp.txt
-    sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
-    #cd || return
+	cat ~/Apps/temp.txt
+	sudo rm -rv ~/Apps/temp.txt >/dev/null 2>&1
 	echo ""
 	echo ""
 	echo ""
@@ -125,28 +124,28 @@ if [[ -d "/etc/pihole" ]]; then
 	cd || return
 	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/stop_pub_idepanne_400.jpg > stop_pub_idepanne_400.jpg"
 	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/stop_pub_idepanne_400.jpg > stop_pub_idepanne_400.jpg
-    echo ""
-    echo "$ sudo mv -v stop_pub_idepanne_400.jpg /var/www/html/stop_pub_idepanne_400.jpg"
-    sudo mv -v stop_pub_idepanne_400.jpg /var/www/html/stop_pub_idepanne_400.jpg
-    echo ""
 	echo ""
-    echo "$ sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old"
-    sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old
+	echo "$ sudo mv -v stop_pub_idepanne_400.jpg /var/www/html/stop_pub_idepanne_400.jpg"
+	sudo mv -v stop_pub_idepanne_400.jpg /var/www/html/stop_pub_idepanne_400.jpg
+	echo ""
+	echo ""
+	echo "$ sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old"
+	sudo mv -v /var/www/html/index.lighttpd.html /var/www/html/index.lighttpd.html.old
 	echo ""
 	echo ""
 	echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/index.html > index.html"
 	wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/html/index.html > index.html
-    echo ""
-    echo "$ sudo mv -v index.html /var/www/html/index.html"
-    sudo mv -v index.html /var/www/html/index.html
 	echo ""
-    echo ""
-    sudo systemctl status --no-pager -l cloudflaredv4.service
-    echo ""
-    sudo systemctl status --no-pager -l cloudflaredv6.service
+	echo "$ sudo mv -v index.html /var/www/html/index.html"
+	sudo mv -v index.html /var/www/html/index.html
+	echo ""
+	echo ""
+	sudo systemctl status --no-pager -l cloudflaredv4.service
+	echo ""
+	sudo systemctl status --no-pager -l cloudflaredv6.service
 else
 	echo "4. Pi-hole :                    [NON INSTALLÉ]"
-    echo ""
+	echo ""
 fi
 echo ""
 echo ""
