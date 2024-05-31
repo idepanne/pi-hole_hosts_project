@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1406]
+# [1407]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -15,8 +15,10 @@ echo ""
 cd || return
 echo "sudo rm -rv /usr/bin/rclone"
 sudo rm -rv /usr/bin/rclone
+echo ""
 echo "sudo rm -rv /usr/local/share/man/man1/rclone.1"
 sudo rm -rv /usr/local/share/man/man1/rclone.1
+echo ""
 echo "sudo rm -rv .config/rclone"
 sudo rm -rv .config/rclone
 echo ""
