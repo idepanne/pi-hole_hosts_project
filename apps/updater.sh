@@ -1,19 +1,24 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1405]
+# [1406]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
-#echo ""
-#echo ""
-#echo ""
-#echo "+=============================================================================+"
-#echo "|  • Suppression des logiciels obsolètes                                      |"
-#echo "+=============================================================================+"
-#echo ""
-#echo "sudo rm -rv ~/Apps/backup.sh"
-#sudo rm -rv ~/Apps/backup.sh
+echo ""
+echo ""
+echo ""
+echo "+=============================================================================+"
+echo "|  • Suppression des logiciels obsolètes                                      |"
+echo "+=============================================================================+"
+echo ""
+cd || return
+echo "sudo rm -rv /usr/bin/rclone"
+sudo rm -rv /usr/bin/rclone
+echo "sudo rm -rv /usr/local/share/man/man1/rclone.1"
+sudo rm -rv /usr/local/share/man/man1/rclone.1
+echo "sudo rm -rv .config/rclone"
+sudo rm -rv .config/rclone
 echo ""
 echo ""
 echo ""
@@ -24,10 +29,6 @@ echo ""
 sudo pkill apt-get
 echo "$ sudo apt-get full-upgrade -y"
 sudo apt-get full-upgrade -y
-echo ""
-echo "$ curl https://rclone.org/install.sh | sudo bash"
-curl https://rclone.org/install.sh | sudo bash
-rclone version
 echo ""
 echo ""
 echo ""
