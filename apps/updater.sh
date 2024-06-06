@@ -1,7 +1,7 @@
 #!/bin/bash
 # Pi-Hole Host Project Updater
 # updater.sh
-# [1409]
+# [1410]
 # © 2019-2024 iDépanne – L'expert informatique
 # idepanne.support.tech@free.fr
 
@@ -204,7 +204,7 @@ echo "+=========================================================================
 echo ""
 cd || return
 if [[ -f "Apps/email.sh" ]]; then
-	echo "Détection du fichier email.sh --> Présent"
+	echo "Détection du programme email.sh --> Présent"
 	echo ""
 	echo "Ancien crontab :"
 	crontab -l
@@ -213,7 +213,7 @@ if [[ -f "Apps/email.sh" ]]; then
 0 1 * * * ~/Apps/autoupdate.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt 2>&1 ; sleep 5 ; ~/Apps/resume.sh > ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt 2>&1 ; sleep 5 ; echo 'Fichiers logs de $(hostname -s)' | mail -s '$(hostname -s)' -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_autoupdate.txt -A ~/Apps/log/$(hostname -s)_$(date --date='+1day' +'%Y%m%d')_resume.txt idepanne.support.tech@free.fr
 15 1 * * 1,4 sudo reboot >/dev/null 2>&1"
 else
-	echo "Détection du fichier email.sh --> Absent"
+	echo "Détection du programme email.sh --> Absent"
 	echo ""
 	echo "Ancien crontab :"
 	crontab -l
