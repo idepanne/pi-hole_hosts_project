@@ -3,12 +3,18 @@
 
 # This hosts file adds additional domain names to be blocked in the "Pi-Hole" software. Its use is free.
 # For additions, modifications or corrections, you can send an e-mail to "idepanne.support.tech@free.fr".
-# Last update : 29/05/2024 - 13h01
+# Last update : 11/06/2024 - 20h58
 
 
 # 1
 18tube.sex
 www.18tube.sex
+porn100.com
+www.porn100.com
+porn100.fr
+www.porn100.fr
+porn100.tv
+www.porn100.tv
 
 
 # 2
