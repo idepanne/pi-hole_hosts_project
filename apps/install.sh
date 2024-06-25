@@ -4,7 +4,7 @@ cd || return
 echo "+==============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                         |"
 echo "|                                  install.sh                                  |"
-echo "|                                    [1416]                                    |"
+echo "|                                    [1418]                                    |"
 echo "|                 © 2019-2024 iDépanne – L'expert informatique                 |"
 echo "|                         idepanne.support.tech@free.fr                        |"
 echo "+==============================================================================+"
@@ -158,6 +158,18 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo ""
 		echo "$ sudo chown root:root /etc/fail2ban/jail.conf"
 		sudo chown root:root /etc/fail2ban/jail.conf
+		echo ""
+		echo "$ sudo rm -rv /etc/fail2ban/fail2ban.local"
+		sudo rm -rv /etc/fail2ban/fail2ban.local
+		echo ""
+		echo "$ wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/fail2ban.local > fail2ban.local"
+		wget -O - https://raw.githubusercontent.com/idepanne/pi-hole_hosts_project/master/apps/fail2ban/fail2ban.local > fail2ban.local
+		echo ""
+		echo "$ sudo mv fail2ban.local /etc/fail2ban/fail2ban.local"
+		sudo mv fail2ban.local /etc/fail2ban/fail2ban.local
+		echo ""
+		echo "$ sudo chown root:root /etc/fail2ban/fail2ban.local"
+		sudo chown root:root /etc/fail2ban/fail2ban.local
 		echo ""
 		echo "$ sudo service fail2ban restart"
 		sudo service fail2ban restart
