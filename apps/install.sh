@@ -4,7 +4,7 @@ cd || return
 echo "+==============================================================================+"
 echo "|                         Pi-Hole Host Project Updater                         |"
 echo "|                                  install.sh                                  |"
-echo "|                                    [1414]                                    |"
+echo "|                                    [1415]                                    |"
 echo "|                 © 2019-2024 iDépanne – L'expert informatique                 |"
 echo "|                         idepanne.support.tech@free.fr                        |"
 echo "+==============================================================================+"
@@ -133,8 +133,8 @@ if [[ $var0 == *"Raspberry Pi"* ]]; then
 		echo "|  • Installation des logiciels requis                                        |"
 		echo "+=============================================================================+"
 		echo ""
-		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies whois traceroute curl lsb-release fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp rsyslog"
-		sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies whois traceroute curl lsb-release fail2ban iptables userconf-pi speedometer smartmontools mailutils ssmtp rsyslog
+		echo "$ sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies whois traceroute curl lsb-release fail2ban iptables userconf-pi smartmontools mailutils ssmtp rsyslog"
+		sudo apt-get install -y ca-certificates git binutils dnsutils debian-goodies whois traceroute curl lsb-release fail2ban iptables userconf-pi smartmontools mailutils ssmtp rsyslog
 		echo ""
 		FICHIER=/etc/fail2ban/jail.conf.bak
 		if [ -f "$FICHIER" ]; then
